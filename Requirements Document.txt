@@ -4,9 +4,17 @@ UPOD Software Requirements
 
 1.1 Purpose
 
+UPOD is designed to make easier for student to access physics equations, definitions, explanations, and diagrams. As well as giving professors the ability of updating existing information, and adding new information.
+
 1.2 Scope
 
+UPOD (University Physics Online Database) will make the access and updating of important physics information easier, and more accessible. Students will be able to search for specific topics, and read about them. While professors will also have the ability to edit, create, and delete pages from the database.
+The goal for UPOD is to make it accessible to everyone. This includes applying it to school servers, and have people login using their school login information.
+
+
 1.3 Definitions
+
+Front-end: 
 
 1.4 References
 
