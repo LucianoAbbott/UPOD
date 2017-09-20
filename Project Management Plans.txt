@@ -1,1 +1,84 @@
 UPOD - Project Management Plans
+
+Signature page
+
+Change History
+
+Preface
+
+Table of contents
+
+List of figures
+
+List of tables
+
+1. Overview
+ 1.1 Project Summary
+  1.1.1 Purpose, scope and objectives
+  1.1.2 Assumptions and constraints
+  1.1.3 Project deliverables
+  1.1.4 Schedule and budget summary
+ 1.2 Evolution of the plan
+ 
+2. References
+
+3. Definitions
+
+4. Project organization
+ 4.1 External interfaces
+ 4.2 Internal structure
+ 4.3 Roles and responsibilities 
+ 
+5. Managerial process plans
+ 5.1 Startup plans
+  5.1.1 Estimation plan
+  5.1.2 Staffing plan
+  5.1.3 Resource acquisition plan
+  5.1.4 Project staff training plan
+ 5.2 Work plan
+  5.2.1 Work activities
+  5.2.2 Schedule allocation
+  5.2.3 Resource allocation
+  5.2.4 Budget allocation
+ 5.3 Control plan
+  5.3.1 Requirements control plan
+  5.3.2 Schedule control plan
+  5.3.3 Budget control plan
+  5.3.4 Quality control plan
+  5.3.5 Reporting plan
+  5.3.6 Metrics collection plan
+ 5.4 Risk management plan
+ 5.5 Closeout plan
+ 
+6. Technical process plans
+ 6.1 Process model
+ 6.2 Methods, tools and techniques
+ 6.3 Infastructure plan
+ 6.4 Product acceptance plan
+ 
+7. Supporting process plans
+ 7.1 Configuration management plan
+ 7.2 Verification and validation plan
+ 7.3 Documentation plan
+ 7.4 Quality assurance plan
+ 7.5 Reviews and audits
+ 7.6 Problem resolution plan
+ 7.7 Subcontractor management plan
+ 7.8 Process improvement plan
+
+8. Additional plans
+
+Annexes 
+
+Index
+
+
+
+
+
+Contributors 
+
+Project Management Document    SQA
+Connor Watson (head)
+Richard Bouda
+Abel Worku
