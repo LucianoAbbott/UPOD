@@ -1,17 +1,17 @@
 UPOD - Project Management Plans
 
-Signature page
+Signature page:
 
-Change History
+Change History:
 
-Preface
+Preface:
 
-List of figures
+List of figures:
 
-List of tables
+List of tables:
 
 
-Table of contents:
+Table of contents (add information at the bottom, not under the sections here):
 
 1. Overview
  1.1 Project Summary
@@ -69,12 +69,12 @@ Table of contents:
 
 8. Additional plans
 
-Annexes 
+Annexes: 
 
-Index
+Index:
 
 
-Contributors 
+Contributors: 
 
 Project Management Document    SQA
 Nathan Wickham (head)          Luciano
@@ -84,7 +84,9 @@ Abel Worku                     Ziyi
 
 1. Overview
  1.1 Project Summary
-  1.1.1 Purpose, scope and objectives: The University Physics Online Database (UPOD) is software designed for students to access physics information, equations and diagrams and for professors to add, edit and remove those components. The scope is Wilfrid Laurier University and the objective is to create software that is easy to use for both students and professors alike. More information can be found on the Project Requirements document.
+  1.1.1 Purpose, scope and objectives: The University Physics Online Database (UPOD) is software designed for students to access physics information, equations and diagrams and for professors to add, edit and remove those components. The scope is Wilfrid Laurier University and the objective is to create software that is easy to use for both students and professors alike. The finished version of UPOD will be delievered to David Brown who will also monitor and critique each stage of the development process. More information can be found on the Project Requirements document.
   
-  1.1.2 Assumptions and constraints: The project is to be completed by December 4th. The constraints include working around various group member's schedules to communicate effectively and on time. The assumption is that all work will be completed by each deadline however when set early enough there is room for modification based on progress and completion, as well as satisfaction by quality testers.
+  1.1.2 Assumptions and constraints: The project is to be completed by December 4th. The constraints include working around various group members' schedules to communicate effectively and on time. The assumption is that all work will be completed by each deadline, however when set early enough there is room for modification based on progress and completion, as well as satisfaction by quality testers. Budget is not a factor in this project.
+  
+  1.1.3 Project deliverables: The project (UPOD) will be delivered to the acquirer (David Brown). The project will consist of a requirements document, a project management document, designs, specifications, a user manual, documentation, work logs, source code and all other documents and work that went into the project.
  
