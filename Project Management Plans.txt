@@ -6,11 +6,12 @@ Change History
 
 Preface
 
-Table of contents
-
 List of figures
 
 List of tables
+
+
+Table of contents:
 
 1. Overview
  1.1 Project Summary
@@ -73,12 +74,17 @@ Annexes
 Index
 
 
-
-
-
 Contributors 
 
 Project Management Document    SQA
-Connor Watson (head)
-Richard Bouda
-Abel Worku
+Nathan Wickham (head)          Luciano
+Richard Bouda                  Stephen Maloney
+Abel Worku                     Ziyi
+
+
+1. Overview
+ 1.1 Project Summary
+  1.1.1 Purpose, scope and objectives: The University Physics Online Database (UPOD) is software designed for students to access physics information, equations and diagrams and for professors to add, edit and remove those components. The scope is Wilfrid Laurier University and the objective is to create software that is easy to use for both students and professors alike. More information can be found on the Project Requirements document.
+  
+  1.1.2 Assumptions and constraints: The project is to be completed by December 4th. The constraints include working around various group member's schedules to communicate effectively and on time. The assumption is that all work will be completed by each deadline however when set early enough there is room for modification based on progress and completion, as well as satisfaction by quality testers.
+ 
