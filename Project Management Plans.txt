@@ -8,6 +8,7 @@ Change History:
  0.1-0.2                     Template added, sections 1.1.1-1.1.3 added 
  0.3                         Section 1.1.4 added
  0.4                         Sections 1.2, 2, 3, 4 added
+ 0.5                         misc. changes to sections 1.1.4, 3
  TBA
 
 
@@ -86,11 +87,13 @@ Peter Smerchinski
   1.1.3 Project deliverables: The project (UPOD) will be delivered to the acquirer (David Brown). The project will consist of a requirements document, a project management document, designs, specifications, a user manual, documentation, work logs, source code and all other documents and work that went into the project.
   
   1.1.4 Schedule summary (more to be added): 
+  Monday, September 11th-    Offical start of project
   Friday, September 22nd-    Rough draft of management and requirements documents
   Monday, September 25th-    SQA completed on management and requirements documents
   Wednesday, September 27th- Client request date for management and requirements documents
+  TBD, October 2017-         UML design completion
   Monday, December 4th-      Self-imposed finish date (subject to change)
-  TBA December 2017-         Client due date
+  Monday, December 18th-     Client due date
   
  1.2 Evolution of the plan: The plan is constantly evolving as new dates are scheduled and the project advances.
  
@@ -98,14 +101,15 @@ Peter Smerchinski
 IEEE Standard for Software Project Management Plans
 
 3. Definitions:
-Client- the individual who commissioned us to work on the project and will receive the final version.
+Client-      the individual who commissioned us to work on the project and will receive the final version.
 Deliverable- the final product to be delivered to the client.
-SQA- Software quality assurance
-UPOD- University Physics Online Database
+SQA-         Software quality assurance
+UPOD-        University Physics Online Database
+UML-         Unified Modeling Language
 
 4. Project organization
  4.1 Structure:
- The project will be broadly split into front end and back end, that is the interface and coding respectively.
+ The project will be broadly split into front end and back end, that is the user interface and coding respectively.
  Subject to change.
  
  Front End:                  Back End:
