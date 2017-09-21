@@ -15,8 +15,9 @@ The goal for UPOD is to make it accessible to everyone. This includes applying i
 1.3 Definitions
 
 Front-end: The section of the website that all users are able to access and interact with.
-
+#also the HTML, CSS etc. that the fronted team writes.
 Back-end: The section of the website that sends info from the database to the front-end. Administrators and Moderators are the only users able to access this section of the website.
+#You don't have to include which users can access the backend, I'll include that in section 2.3.
 
 1.4 References
 
@@ -74,16 +75,6 @@ Requirements Documents	SAQ
 Stephanie Pitman	Connor Watson
 Joseph Shannon		Yinhao Zhong
 Nathan Skof		Victor Tang
-Nicholas HALLMEN	Travis Leyenuarniseon
+Nicholas Hallman	Travis Leyenuarniseon
 Lauren Hepditch	 	Rachel Choi
  	 
- 	 
-
-
-Introduction
-
-Purpose
-UPOD is designed to make easier for student to access physics equations, definitions, explanations, and diagrams. As well as giving professors the ability of updating existing information, and adding new information.
-
-Scope
-UPOD (University Physics Online Database)
