@@ -24,7 +24,9 @@ IEEE Recommended Practice for Software Requirements Specifications, IEEE Std 830
 
 1.5 Overview
 
-This document provides a in-depth reference for the software specifications of UPOD. It begins with an introduction and goes on to describe the characteristics, functions, and design of the project. An overview of the requirements follows, with appendices and an index ending the document. 
+This document provides a in-depth reference for the software specifications of UPOD. It begins with an introduction and goes on to
+describe the characteristics, functions, and design of the project. An overview of the requirements follows, with appendices and an
+index ending the document.
 
 2. Overall Description
 
