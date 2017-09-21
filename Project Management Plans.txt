@@ -1,20 +1,20 @@
+Title page:
 UPOD - Project Management Plans
 
 Signature page:
 
 Change History:
-
-Preface:
-
-List of figures:
-
-List of tables:
+ Version                     Description
+ 0.1-0.2                     Template added, sections 1.1.1-1.1.3 added 
+ 0.3                         Section 1.1.4 added
+ 0.4                         Sections 1.2, 2, 3, 4 added
+ TBA
 
 
 Table of contents (add information at the bottom, not under the sections here):
 
 1. Overview
- 1.1 Project Summary
+ 1.1 Project summary
   1.1.1 Purpose, scope and objectives
   1.1.2 Assumptions and constraints
   1.1.3 Project deliverables
@@ -26,9 +26,8 @@ Table of contents (add information at the bottom, not under the sections here):
 3. Definitions
 
 4. Project organization
- 4.1 External interfaces
- 4.2 Internal structure
- 4.3 Roles and responsibilities 
+ 4.1 Structure
+ 4.2 Roles and responsibilities 
  
 5. Managerial process plans
  5.1 Startup plans
@@ -69,21 +68,17 @@ Table of contents (add information at the bottom, not under the sections here):
 
 8. Additional plans
 
-Annexes: 
-
-Index:
-
 
 Contributors: 
 
 Project Management Document    SQA
-Nathan Wickham (head)          Luciano
+Nathan Wickham (head)          Luciano Abbot
 Richard Bouda                  Stephen Maloney
-Abel Worku                     Ziyi
+Abel Worku                     Ziyi Zhang
 
 
 1. Overview
- 1.1 Project Summary
+ 1.1 Project summary
   1.1.1 Purpose, scope and objectives: The University Physics Online Database (UPOD) is software designed for students to access physics information, equations and diagrams and for professors to add, edit and remove those components. The scope is Wilfrid Laurier University and the objective is to create software that is easy to use for both students and professors alike. The finished version of UPOD will be delievered to David Brown who will also monitor and critique each stage of the development process. More information can be found on the Project Requirements document.
   
   1.1.2 Assumptions and constraints: The project is to be completed by December 4th. The constraints include working around various group members' schedules to communicate effectively and on time. The assumption is that all work will be completed by each deadline, however when set early enough there is room for modification based on progress and completion, as well as satisfaction by quality testers. Budget is not a factor in this project.
@@ -97,6 +92,40 @@ Abel Worku                     Ziyi
   Monday, December 4th-      Self-imposed finish date (subject to change)
   TBA December 2017-         Client due date
   
-  
-  
+ 1.2 Evolution of the plan: The plan is constantly evolving as new dates are scheduled and the project advances.
+ 
+2. References:
+IEEE Standard for Software Project Management Plans
+
+3. Definitions:
+Client- the individual who commissioned us to work on the project and will receive the final version.
+Deliverable- the final product to be delivered to the client.
+SQA- Software quality assurance
+UPOD- University Physics Online Database
+
+4. Project organization
+ 4.1 Structure:
+ The project will be broadly split into front end and back end, that is the interface and coding respectively.
+ Subject to change.
+ 
+ Front End:                  Back End:
+ Nicholas Hallman            Nathan Wickham
+ Lidiia Zhitova              Lauren Hepditch
+ Rachel Choi                 Peter Smerchinski
+ Richard Bouda               Xavier Kuttamparambil
+ Abel Worku                  Akkshay Karthikeyan
+ Stephen Maloney             Nathan Skof
+ Yinhao Zheng                Guyue Li
+ Nathan Kohler               Luciano Abbot
+ Connor Watson               Stephanie Pitman
+ Joseph Shannon              Ziyi Zhang
+ Stephanie Pitman            Luke Turnbull
+ Luciano Abbot
+ Ziyi Zhang
+ 
+ 4.2 Roles and responsibilites:
+ Client contact: Lauren Hepditch
+ Repository owner: Luciano Abbot
+ Requirements document head: Stephanie Pitman
+ Management document head: Nathan Wickham
  
