@@ -1,4 +1,4 @@
-UPOD Software Requirements
+﻿UPOD Software Requirements
 
 1. Introduction
 
@@ -70,7 +70,7 @@ Requirements Documents	SAQ
 Stephanie Pitman	Connor Watson
 Joseph Shannon		Yinhao Zhong
 Nathan Skof		Victor Tang
-Nicholas HALLMEN	Travis Leyenuarniseon
+Nicholas Hallman	Travis Leyenuarniseon
 Lauren Hepditch	 
  	 
  	 
