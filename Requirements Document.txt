@@ -1,4 +1,4 @@
-﻿UPOD Software Requirements
+UPOD Software Requirements
 
 1. Introduction
 
@@ -18,11 +18,13 @@ Front-end: The section of the website that all users are able to access and inte
 
 Back-end: The section of the website that sends info from the database to the front-end. Administrators and Moderators are the only users able to access this section of the website.
 
-
 1.4 References
+
+IEEE Recommended Practice for Software Requirements Specifications, IEEE Std 830-1998, IEEE, New York, NY, 1998.
 
 1.5 Overview
 
+This document provides a in-depth reference for the software specifications of UPOD. It begins with an introduction and goes on to describe the characteristics, functions, and design of the project. An overview of the requirements follows, with appendices and an index ending the document. 
 
 2. Overall Description
 
@@ -70,8 +72,8 @@ Requirements Documents	SAQ
 Stephanie Pitman	Connor Watson
 Joseph Shannon		Yinhao Zhong
 Nathan Skof		Victor Tang
-Nicholas Hallman	Travis Leyenuarniseon
-Lauren Hepditch	 
+Nicholas HALLMEN	Travis Leyenuarniseon
+Lauren Hepditch	 	Rachel Choi
  	 
  	 
 
