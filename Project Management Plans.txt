@@ -75,7 +75,7 @@ Project Management Document    SQA
 Nathan Wickham (head)          Luciano Abbot
 Richard Bouda                  Stephen Maloney
 Abel Worku                     Ziyi Zhang
-
+Peter Smerchinski
 
 1. Overview
  1.1 Project summary
