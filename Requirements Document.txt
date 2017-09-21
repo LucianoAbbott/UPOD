@@ -57,6 +57,12 @@ UPOD will require a database, to hold information; a server, for generating page
 
 2.3 User Characteristics
 
+General User  - A general user is not required to have Physics education or experience. It is assumed that they have basic technical knowledge and can navigate a website. They are able to read existing pages (and suggest new pages?) without creating an account.
+
+Moderator - A moderator has all of the privileges of a general user. They require an account with which they can create, update, edit, and delete pages. 
+
+Administrator - 
+
 2.4 Constraints
 
 2.5 Assumptions and Dependencies
