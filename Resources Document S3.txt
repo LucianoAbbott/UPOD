@@ -1,5 +1,70 @@
 3. Specific requirements
 
-Appendices
 
-Index
+
+3.1 External Interface Requirements
+
+
+
+UPOD will have no external interface to rely on other than the Laurier database to cross reference login access for administrators and appointed moderators.
+
+
+
+3.2 Functional Requirements
+
+
+
+3.2.1 Administration Login: 
+
+
+
+Use Case Name	               Sign in to existing Administrator account.
+
+Trigger	                       Host clicks "Sign as Administrator" button.
+
+Precondition	               Host is on Host page of the web app.
+
+Basic Path	               From the Host page, the user clicks "Sign as Administrator" and enters their Laurier username and Laurier password.
+
+Alternative Path	       None.
+
+Postcondition	               Host signs in to an existing.
+
+Exception Paths	               If the username and password are incorrect, Host is asked to resubmit credentials.
+
+Other	                       Multiple administrators can login.
+
+
+
+3.2.2 Search UPOD:
+
+
+
+Use Case Name	               Search UPOD for specific topic.
+
+Trigger	                       Request submited via search bar.
+
+Precondition	               None.
+
+Basic Path	               From the Host page, the user selects the search bar and is able to submit a query.
+
+Alternative Path	       User can also use drop down bar for general searchs.
+
+Postcondition	               Search results page is shown containing results for the specific query.
+
+Exception Paths	               No results are found presents user with an empty results page stating that no results were found.
+
+Other	                       None.
+
+
+
+
+
+
+
+3.3 Security
+
+
+
+UPOD will require a login and password that will be cross referenced with the Laurier Database so the Professors and other administrators can edit the website as well as appoint moderators and other administrators.
+
