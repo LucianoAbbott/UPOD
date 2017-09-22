@@ -111,7 +111,7 @@ UML-         Unified Modelling Language
 4. Project organization
  4.1 Structure:
  The project will be broadly split into front end and back end, that is the user interface and coding respectively.
- Subject to change.
+ This list is based on the competency document and channel members and is subject to change.
  
  Front End:                  Back End:
  Nicholas Hallman            Nathan Wickham
@@ -121,11 +121,11 @@ UML-         Unified Modelling Language
  Abel Worku                  Akkshay Karthikeyan
  Stephen Maloney             Nathan Skof
  Yinhao Zheng                Guyue Li
- Nathan Kohler               Luciano Abbot
+ Nathan Kohler               Luciano Abbott
  Connor Watson               Stephanie Pitman
  Joseph Shannon              Ziyi Zhang
  Stephanie Pitman            Luke Turnbull
- Luciano Abbot
+ Luciano Abbott
  Ziyi Zhang
  
  4.2 Roles and responsibilities:
