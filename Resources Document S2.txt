@@ -1,0 +1,42 @@
+2. Overall Description
+
+
+
+2.1 Product Perspective
+
+The UPOD site is to be self contained supplying its own front and back end. However, UPOD will be integrated into a Laurier Service as to utilize the Single Sign On authentication service provided by idp.wlu.ca.
+UPOD will host full support for the following browsers
+	- Firefox 28
+	- Chrome 21
+	- Safari 6.1
+	- Opera 12.1
+	- MS Edge 11
+And partial support for
+	- Internet Explorer 10
+	- iOS Safari 7.1
+	- Android Browser 4.4
+	- Samsung Internet 5
+UPOD's user interface will run almost exclusively for desktop computers with some, to no, support for mobile browsers. This is primarely because of non resizable elements such as animated and interactable diagrams that will be too large for mobile interfaces.
+UPOD's user interface will contain a search bar, for finding relevent pages; a drop down menu, for secondary site functions such as the moderators panel and about; and a table of contents, consiting of links for navigating each individual pages sections.
+UPOD will require a database, to hold information; a server, for generating pages and fufilling user requests; and a browser, for viewing the site.
+
+
+
+2.2 Product Functions
+
+2.3 User Characteristics
+
+General User  - While UPOD is targeted at university students, a general user is not required to have Physics education or experience.
+It is assumed that they have basic technical knowledge and can navigate a website. They are able to traverse and read existing pages
+(and suggest new ones?) without creating an account.
+
+Moderator - A moderator has all of the privileges of a general user. They also require an account, which can be used to create, update,
+edit, and delete pages. Moderators should have greater physics and technical knowledge than a general user, as they have a greater
+degree of control over the website.
+
+Administrator - An administrator has all moderator privileges, and can add moderators and administrators to the existing list. They also
+require an account, and should have the greatest degree of knowledge and experience.
+
+2.4 Constraints
+
+2.5 Assumptions and Dependencies
