@@ -1,6 +1,7 @@
 2. Overall Description
 
-
+UPOD is a self contained encyclopedia based web site that will supply users with information regarding physics. Because of the large amount of topics and information that physics covers the site will have to be easily navigable and intuitive as well as informative.
+To ensure the site is informative a variety of tools for page creation will be implimented to allow for the organization of information such as page sections, categorization and interactive diagrams. 
 
 2.1 Product Perspective
 
@@ -12,12 +13,22 @@ UPOD will host full support for the following browsers
 	- Opera 12.1
 	- MS Edge 11
 UPOD's user interface will run almost exclusively for desktop computers with some, to no, support for mobile browsers. This is primarely because of non resizable elements such as animated and interactable diagrams that will be too large for mobile interfaces.
-UPOD's user interface will contain a search bar, for finding relevent pages; a drop down menu, for secondary site functions such as the moderators panel and about; and a table of contents, consiting of links for navigating each individual pages sections.
+UPOD's user interface will contain a search bar, for finding relevent pages; a drop down menu or icons, for secondary site functions such as the moderators panel and about; and a table of contents, consiting of links for navigating each individual pages sections and the categories of pages.
 UPOD will require a database, to hold information; a server, for generating pages and fufilling user requests; and a browser, for viewing the site.
 
 2.2 Product Functions
 
-UPOD will function similarly to the vast majority of other wiki based websites. UPOD admins will also be able to create and revoke moderator permissions.
+Navigation
+	UPOD will be navigable using a series of categorical links and a search bar. Categorical based navigation will be based on a hierarchical tree structure implimented by assigning categories to pages.
+Search functions	
+	UPOD will use bots to find and index key terms from the title and body of articles. key terms are compared to the frequency of word use and if under a certain treshold will be indexed.
+Moderator Functions	
+	Moderators will be able to create, delete and edit pages.
+Page functions
+	Pages will have a title, categories, sections, sub sections, formulas and diagrams. 
+Admin Functions	
+	Administrators will be able to promote and revoke moderator status to a user.
+
 
 2.3 User Characteristics
 
