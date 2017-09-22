@@ -54,7 +54,7 @@ Table of contents (add information at the bottom, not under the sections here):
 6. Technical process plans
  6.1 Process model
  6.2 Methods, tools and techniques
- 6.3 Infastructure plan
+ 6.3 Infrastructure plan
  6.4 Product acceptance plan
  
 7. Supporting process plans
@@ -80,14 +80,14 @@ Peter Smerchinski
 
 1. Overview
  1.1 Project summary
-  1.1.1 Purpose, scope and objectives: The University Physics Online Database (UPOD) is software designed for students to access physics information, equations and diagrams and for professors to add, edit and remove those components. The scope is Wilfrid Laurier University and the objective is to create software that is easy to use for both students and professors alike. The finished version of UPOD will be delievered to David Brown who will also monitor and critique each stage of the development process. More information can be found on the Project Requirements document.
+  1.1.1 Purpose, scope and objectives: The University Physics Online Database (UPOD) is software designed for students to access physics information, equations and diagrams and for professors to add, edit and remove those components. The scope is Wilfrid Laurier University and the objective is to create software that is easy to use for both students and professors alike. The finished version of UPOD will be delivered to David Brown who will also monitor and critique each stage of the development process. More information can be found on the Project Requirements document.
   
   1.1.2 Assumptions and constraints: The project is to be completed by December 4th. The constraints include working around various group members' schedules to communicate effectively and on time. The assumption is that all work will be completed by each deadline, however when set early enough there is room for modification based on progress and completion, as well as satisfaction by quality testers. Budget is not a factor in this project.
   
   1.1.3 Project deliverables: The project (UPOD) will be delivered to the acquirer (David Brown). The project will consist of a requirements document, a project management document, designs, specifications, a user manual, documentation, work logs, source code and all other documents and work that went into the project.
   
   1.1.4 Schedule summary (more to be added): 
-  Monday, September 11th-    Offical start of project
+  Monday, September 11th-    Official start of project
   Friday, September 22nd-    Rough draft of management and requirements documents
   Monday, September 25th-    SQA completed on management and requirements documents
   Wednesday, September 27th- Client request date for management and requirements documents
@@ -105,7 +105,7 @@ Client-      the individual who commissioned us to work on the project and will 
 Deliverable- the final product to be delivered to the client.
 SQA-         Software quality assurance
 UPOD-        University Physics Online Database
-UML-         Unified Modeling Language
+UML-         Unified Modelling Language
 
 4. Project organization
  4.1 Structure:
@@ -127,9 +127,37 @@ UML-         Unified Modeling Language
  Luciano Abbot
  Ziyi Zhang
  
- 4.2 Roles and responsibilites:
+ 4.2 Roles and responsibilities:
  Client contact: Lauren Hepditch
  Repository owner: Luciano Abbot
  Requirements document head: Stephanie Pitman
  Management document head: Nathan Wickham
  
+
+
+6. Technical Process Plans
+
+  This project management plan will define 4 outlines: the Process Model, the Methods, Tools and Techniques, the Infrastructure Plan, and the Product Acceptance Plan. 
+
+  6.1 Process Model
+    Development of the product from its beginning to final stages is divided into an incrementally contiguous series of phases, each succeeding the other in their relative aspects, converging steadily over time towards the completion of the product and the fulfilment of the due date. 
+
+    Phase 1: [Introductory Phase] Delineation of group tasks and forming central repository for all project-related files.
+    Phase 2: [Requirements Phase] Completion of Project Management Plan and Requirements Plan 
+    Phase 3: [Design Phase] Initialization of group tasks and prospecting project's front-end and back-end features
+    Phase 4: [Implementation Phase] Development of project's front-end and back-end
+    Phase 5: [Integration Phase] Consolidation of all of project faculties into one singular cohesive product
+
+  6.2 Methods, Tools, And Techniques
+    At this stage in the product's development, it is yet to be anticipated in great detail precisely what development techniques will be used. However, the clearest approximation that can be made now are those languages that are best suited to the needs of the implementation teams, catering to the requirements of both the product's front-end and back-end. Enacting a final decision on which languages will be used while still in the preliminary stages of the product's development [namely its design stage] may negatively affect implementation.  
+
+  6.3 Infrastructure Plan
+    Each member of the project team has access to personal computers, as well as access to computers in the campus of Wilfrid Laurier University. For the centralization of all project-related data, files, and code, the project team will collectively contribute to a singular GitHub repository. In addition, a collaborative workspace on the website "slack.com" has been created to streamline communication between members of the project team.
+
+  6.4 Product Acceptance Plan
+    To ensure the quality of all stages of the product's development, from design to implementation to integration, the project team will include formations of SQA [Software Quality Assurance] to review, refine, advise, debug, and document the product's components. Software Quality Assurance groups will play a significant role in the improvements of each successive version of the project.
+
+
+
+
+
