@@ -2,6 +2,7 @@ Title page:
 UPOD - Project Management Plans
 
 Signature page:
+//Not sure what this is or if we need it
 
 Change History:
  Version                     Description
@@ -9,10 +10,10 @@ Change History:
  0.3                         Section 1.1.4 added
  0.4                         Sections 1.2, 2, 3, 4 added
  0.5                         misc. changes to sections 1.1.4, 3
- TBA
+ 0.6                         Section 6 added
 
 
-Table of contents (add information at the bottom, not under the sections here):
+Table of contents //(add information at the bottom, not under the sections here):
 
 1. Overview
  1.1 Project summary
@@ -139,7 +140,7 @@ UML-         Unified Modelling Language
 
   This project management plan will define 4 outlines: the Process Model, the Methods, Tools and Techniques, the Infrastructure Plan, and the Product Acceptance Plan. 
 
-  6.1 Process Model
+  6.1 Process Model:
     Development of the product from its beginning to final stages is divided into an incrementally contiguous series of phases, each succeeding the other in their relative aspects, converging steadily over time towards the completion of the product and the fulfilment of the due date. 
 
     Phase 1: [Introductory Phase] Delineation of group tasks and forming central repository for all project-related files.
@@ -148,14 +149,16 @@ UML-         Unified Modelling Language
     Phase 4: [Implementation Phase] Development of project's front-end and back-end
     Phase 5: [Integration Phase] Consolidation of all of project faculties into one singular cohesive product
 
-  6.2 Methods, Tools, And Techniques
+  6.2 Methods, Tools, And Techniques:
     At this stage in the product's development, it is yet to be anticipated in great detail precisely what development techniques will be used. However, the clearest approximation that can be made now are those languages that are best suited to the needs of the implementation teams, catering to the requirements of both the product's front-end and back-end. Enacting a final decision on which languages will be used while still in the preliminary stages of the product's development [namely its design stage] may negatively affect implementation.  
 
-  6.3 Infrastructure Plan
+  6.3 Infrastructure Plan:
     Each member of the project team has access to personal computers, as well as access to computers in the campus of Wilfrid Laurier University. For the centralization of all project-related data, files, and code, the project team will collectively contribute to a singular GitHub repository. In addition, a collaborative workspace on the website "slack.com" has been created to streamline communication between members of the project team.
 
-  6.4 Product Acceptance Plan
+  6.4 Product Acceptance Plan:
     To ensure the quality of all stages of the product's development, from design to implementation to integration, the project team will include formations of SQA [Software Quality Assurance] to review, refine, advise, debug, and document the product's components. Software Quality Assurance groups will play a significant role in the improvements of each successive version of the project.
+
+
 
 
 
