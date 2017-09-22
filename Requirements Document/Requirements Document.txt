@@ -57,16 +57,19 @@ UPOD will require a database, to hold information; a server, for generating page
 
 2.3 User Characteristics
 
+2.3 User Characteristics
+
 General User  - While UPOD is targeted at university students, a general user is not required to have Physics education or experience.
-It is assumed that they have basic technical knowledge and can navigate a website. They are able to traverse and read existing pages
-(and suggest new ones?) without creating an account.
+It is assumed that they have basic technical knowledge and can navigate a website. They are able to traverse, read, and suggest new
+pages without creating an account.
 
 Moderator - A moderator has all of the privileges of a general user. They also require an account, which can be used to create, update,
-edit, and delete pages. Moderators should have greater physics and technical knowledge than a general user, as they have a greater
-degree of control over the website.
+edit, and delete pages. Moderators should have a basic knowledge of physics and greater technical knowledge than a general user, as they
+have a greater degree of control over the website. Programming knowledge is not mandatory, however, if they wish to create an
+interactive diagram, the moderator must know javascript.
 
 Administrator - An administrator has all moderator privileges, and can add moderators and administrators to the existing list. They also
-require an account, and should have the greatest degree of knowledge and experience.
+require an account, and should have the greatest degrees of physics knowledge and technical experience.
 
 2.4 Constraints
 
