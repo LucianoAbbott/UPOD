@@ -130,7 +130,7 @@ UML-         Unified Modelling Language
  
  4.2 Roles and responsibilities:
  Client contact: Lauren Hepditch
- Repository owner: Luciano Abbot
+ Repository owner: Luciano Abbott
  Requirements document head: Stephanie Pitman
  Management document head: Nathan Wickham
  
