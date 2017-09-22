@@ -45,4 +45,8 @@ require an account, and should have the greatest degree of knowledge and experie
 
 2.4 Constraints
 
+Due to a lack of resources we will be unable to implement a separate mobile browser, causing our website not to be as functional off desktop browsers.
+
 2.5 Assumptions and Dependencies
+
+The assumption is that any user will be accessible to anyone, where as our administrators and moderators will access from idp.wlu.ca to edit, create, delete and update pages. Not requiring our team to create a database or hashing or encrypting passwords.
