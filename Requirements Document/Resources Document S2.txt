@@ -36,8 +36,9 @@ General User  - While UPOD is targeted at university students, a general user is
 It is assumed that they have basic technical knowledge and can navigate a website. They are able to traverse, read, and suggest new
 pages without creating an account.
 
-Moderator - A moderator has all of the privileges of a general user. They also require an account, which can be used to create, update, edit, and delete pages. Moderators should have a basic knowledge of physics and greater technical knowledge than a general user, as they
-have a greater degree of control over the website. Programming knowledge is not mandatory, however, if they wish to create an
+Moderator - A moderator has all of the privileges of a general user. They also require an account, which can be used to create, update,
+edit, and delete pages. Moderators should have a basic knowledge of physics and greater technical knowledge than a general user, as they
+have a greater degree of control over the website. Programming knowledge is not mandatory, however, if they wish to create an 
 interactive diagram, the moderator must know javascript.
 
 Administrator - An administrator has all moderator privileges, and can add moderators and administrators to the existing list. They also
