@@ -74,7 +74,7 @@ Table of contents //(add information at the bottom, not under the sections here)
 Contributors: 
 
 Project Management Document    SQA
-Nathan Wickham (head)          Luciano Abbot
+Nathan Wickham (head)          Luciano Abbott
 Richard Bouda                  Stephen Maloney
 Abel Worku                     Ziyi Zhang
 Peter Smerchinski
