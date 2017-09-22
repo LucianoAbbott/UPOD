@@ -1,4 +1,23 @@
-UPOD Software Requirements
+﻿UPOD Software Requirements
+
+Table of Contents
+
+1. Introduction
+1.1 Purpose
+1.2 Scope
+1.3 Definitions
+1.4 References
+1.5 Overview
+2. Overall Description
+2.1 Product Perspective
+2.2 Product Functions
+2.3 User Characteristics
+2.4 Constraints
+2.5 Assumptions and Dependencies
+3. Specific requirements
+3.1 External Interface Requirements
+3.2 Functional Requirements
+3.3 Security
 
 1. Introduction
 
@@ -14,9 +33,9 @@ The goal for UPOD is to make it accessible to everyone. This includes applying i
 
 1.3 Definitions
 
-Front-end: The section of the website that all users are able to access and interact with.
+Front-end: The section of the website that is created, using HTML and CSS, created by the front-end programmers.
 #also the HTML, CSS etc. that the fronted team writes.
-Back-end: The section of the website that sends info from the database to the front-end. Administrators and Moderators are the only users able to access this section of the website.
+Back-end: The section of the website that sends info from the database to the front-end. 
 #You don't have to include which users can access the backend, I'll include that in section 2.3.
 
 1.4 References
@@ -51,23 +70,49 @@ UPOD's user interface will run almost exclusively for desktop computers with som
 UPOD's user interface will contain a search bar, for finding relevent pages; a drop down menu, for secondary site functions such as the moderators panel and about; and a table of contents, consiting of links for navigating each individual pages sections.
 UPOD will require a database, to hold information; a server, for generating pages and fufilling user requests; and a browser, for viewing the site.
 
-
-
 2.2 Product Functions
 
 2.3 User Characteristics
-
-General User  - A general user is not required to have Physics education or experience. It is assumed that they have basic technical knowledge and can navigate a website. They are able to read existing pages (and suggest new pages?) without creating an account.
-
-Moderator - A moderator has all of the privileges of a general user. They require an account with which they can create, update, edit, and delete pages. 
-
-Administrator - 
 
 2.4 Constraints
 
 2.5 Assumptions and Dependencies
 
 3. Specific requirements
+
+3.1 External Interface Requirements
+
+UPOD will have no external interface to rely on other than the Laurier database to cross reference login access for administrators and appointed moderators.
+
+3.2 Functional Requirements
+
+3.2.1 Administration Login: 
+
+Use Case Name	               Sign in to existing Administrator account.
+Trigger	                       Host clicks "Sign as Administrator" button.
+Precondition	               Host is on Host page of the web app.
+Basic Path	               From the Host page, the user clicks "Sign as Administrator" and enters their Laurier username and Laurier password.
+Alternative Path	       None.
+Postcondition	               Host signs in to an existing.
+Exception Paths	               If the username and password are incorrect, Host is asked to resubmit credentials.
+Other	                       Multiple administrators can login.
+
+3.2.2 Search UPOD:
+
+Use Case Name	               Search UPOD for specific topic.
+Trigger	                       Request submited via search bar.
+Precondition	               None.
+Basic Path	               From the Host page, the user selects the search bar and is able to submit a query.
+Alternative Path	       User can also use drop down bar for general searchs.
+Postcondition	               Search results page is shown containing results for the specific query.
+Exception Paths	               No results are found presents user with an empty results page stating that no results were found.
+Other	                       None.
+
+
+
+3.3 Security
+
+UPOD will require a login and password that will be cross referenced with the Laurier Database so the Professors and other administrators can edit the website as well as appoint moderators and other administrators.
 
 Appendices
 
