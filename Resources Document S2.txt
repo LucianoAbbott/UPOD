@@ -15,9 +15,9 @@ UPOD's user interface will run almost exclusively for desktop computers with som
 UPOD's user interface will contain a search bar, for finding relevent pages; a drop down menu, for secondary site functions such as the moderators panel and about; and a table of contents, consiting of links for navigating each individual pages sections.
 UPOD will require a database, to hold information; a server, for generating pages and fufilling user requests; and a browser, for viewing the site.
 
-
-
 2.2 Product Functions
+
+UPOD will function similarly to the vast majority of other wiki based websites. UPOD admins will also be able to create and revoke moderator permissions.
 
 2.3 User Characteristics
 
