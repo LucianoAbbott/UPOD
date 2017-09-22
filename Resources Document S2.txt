@@ -11,11 +11,6 @@ UPOD will host full support for the following browsers
 	- Safari 6.1
 	- Opera 12.1
 	- MS Edge 11
-And partial support for
-	- Internet Explorer 10
-	- iOS Safari 7.1
-	- Android Browser 4.4
-	- Samsung Internet 5
 UPOD's user interface will run almost exclusively for desktop computers with some, to no, support for mobile browsers. This is primarely because of non resizable elements such as animated and interactable diagrams that will be too large for mobile interfaces.
 UPOD's user interface will contain a search bar, for finding relevent pages; a drop down menu, for secondary site functions such as the moderators panel and about; and a table of contents, consiting of links for navigating each individual pages sections.
 UPOD will require a database, to hold information; a server, for generating pages and fufilling user requests; and a browser, for viewing the site.
