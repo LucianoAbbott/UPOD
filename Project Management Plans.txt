@@ -11,6 +11,7 @@ Change History:
  0.4                         Sections 1.2, 2, 3, 4 added
  0.5                         misc. changes to sections 1.1.4, 3
  0.6                         Section 6 added
+ 0.7                         Section 5 added
 
 
 Table of contents //(add information at the bottom, not under the sections here):
