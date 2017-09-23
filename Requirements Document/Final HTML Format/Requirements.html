@@ -28,6 +28,7 @@ div{
     <body>
         <header>
             <h1>Requirments Document for UPOD</h1>
+            <!-- Misspelled Word: "Requirements" -->
             <p class="version" > Version 0.1 September 20th, 2017</p>
             <p class="version"> Version 0.2 September 22nd, 2017</p>
             <div>
@@ -56,7 +57,9 @@ div{
                 <li>3. Specific requirements
                     <ul> 
                         <li>3.1 External Interface Requirments</li>
+                        <!-- Misspelled Word: "Requirements" -->
                         <li>3.2 Functional Requirments</li>
+                        <!-- Misspelled Word: "Requirements" -->
                         <li>3.3 Security</li>
                     </ul>
                 </li>
@@ -70,7 +73,7 @@ div{
             <p>UPOD is designed to make easier for student to access physics equations, definitions, explanations, and diagrams. As well as giving professors the ability of updating existing information, and adding new information.</p>
             
             <h3>1.2 Scope</h3>
-            <p>The Undergraduate Physics Online Database (UPOD) is an online physics database targeted at university students and professors. It's user interface (UI) is designed to allow for easy access and updating. UPOD will give students the ability to learn about multiple physics topics, through the use of interactive diagrams, pictures, videos, equations, definitions, and explanations. Professors will be able to add to the students’ learning experience by creating and editing topic pages. The goal for UPOD is to make it accessible to everyone. This includes applying it to school servers, and have people login using their school login information.</p>           
+            <p>The Undergraduate Physics Online Database (UPOD) is an online physics database targeted at university students and professors. It's <!-- Misspelled Word: "Its" -->user interface (UI) is designed to allow for easy access and updating. UPOD will give students the ability to learn about multiple physics topics, through the use of interactive diagrams, pictures, videos, equations, definitions, and explanations. Professors will be able to add to the students’ learning experience by creating and editing topic pages. The goal for UPOD is to make it accessible to everyone. This includes applying it to school servers, and have people login using their school login information.</p>           
             
             <h3>1.3 Definitions</h3>
             <dl>
@@ -83,12 +86,12 @@ div{
             <h3>1.4 References</h3>
             <p>IEEE Recommended Practice for Software Requirements Specifications, IEEE Std 830-1998, IEEE, New York, NY, 1998.</p>
             <h3>1.5 Overview</h3>
-            <p>This document provides a in-depth reference for the software specifications of UPOD. It begins with an introduction and goes on to describe the characteristics, functions, and design of the project. An overview of the requirements follows, with appendices and an index ending the document. </p>
+            <p>This document provides a<!-- Misspelled Word: "an" --> in-depth reference for the software specifications of UPOD. It begins with an introduction and goes on to describe the characteristics, functions, and design of the project. An overview of the requirements follows, with appendices and an index ending the document. </p>
         </div>
 
         <div>
             <h2>2. Overall Description</h2>
-            <p>UPOD is a self contained encyclopedia based web site that will supply users with information regarding physics. Because of the large amount of topics and information that physics covers the site will have to be easily navigable and intuitive as well as informative. To ensure the site is informative a variety of tools for page creation will be implimented to allow for the organization of information such as page sections, categorization and interactive diagrams.</p>
+            <p>UPOD is a self contained encyclopedia based web site that will supply users with information regarding physics. Because of the large amount of topics and information that physics covers the site will have to be easily navigable and intuitive as well as informative. To ensure the site is informative a variety of tools for page creation will be implimented<!-- Misspelled Word: "implemented" --> to allow for the organization of information such as page sections, categorization and interactive diagrams.</p>
             
             <h3>2.1 Product Perspective</h3>
             <p>The UPOD site is to be self contained supplying its own front and back end. However, UPOD will be integrated into a Laurier Service as to utilize the Single Sign On authentication service provided by idp.wlu.ca. UPOD will host full support for the following browsers</p>
@@ -103,14 +106,14 @@ div{
             <h3>2.2 Define Product Functions</h3>
             <dl>
                 <dt>Navigation</dt>
-                    <dd>UPOD will be navigable using a series of categorical links and a search bar. Categorical based navigation will be based on a hierarchical tree structure implimented by assigning categories to pages.</dd>
+                    <dd>UPOD will be navigable using a series of categorical links and a search bar. Categorical based navigation will be based on a hierarchical tree structure implimented<!-- Misspelled Word: "implemented" --> by assigning categories to pages.</dd>
                 <dt>Search</dt>
-                    <dd>UPOD will use bots to find and index key terms from the title and body of articles. key terms are compared to the frequency of word use and if under a certain treshold will be indexed.</dd>
+                    <dd>UPOD will use bots to find and index key terms from the title and body of articles. key<!-- Misspelled Word: "Key" --> terms are compared to the frequency of word use and if under a certain treshold<!-- Misspelled Word: "threshold" --> will be indexed.</dd>
                 <dt>Pages </dt>
                     <dd>Pages will have a title, categories, sections, sub sections, formulas and diagrams. </dd>
                 <dt>Moderator Functions</dt>
                     <dd>Moderators will be able to create, delete and edit pages. </dd>
-                <dt>Admin functions</dt>
+                <dt>Admin functions<!-- Misspelled Word: "Functions" --></dt>
                     <dd>Administrators will be able to promote and revoke moderator status to a user.</dd>
             </dl>
             
@@ -132,12 +135,12 @@ div{
         </div>
 
         <div>
-            <h2>3. Specific Requirments </h2>
+            <h2>3. Specific Requirments <!-- Misspelled Word: "Requirements" --></h2>
 
-            <h3>3.1 External Interface Requirments </h3>
+            <h3>3.1 External Interface Requirments<!-- Misspelled Word: "Requirements" --> </h3>
             <p>UPOD will have no external interface to rely on other than the Laurier database to cross reference login access for administrators and appointed moderators. </p>
 
-            <h3>3.2 Functional Requirments </h3>
+            <h3>3.2 Functional Requirments<!-- Misspelled Word: "Requirements" --> </h3>
             <h4>Administrative Login </h4>
 
             <dl>
@@ -145,7 +148,7 @@ div{
                     <dd>Sign in to existing Administrator account. </dd>
                 <dt>Trigger </dt>
                     <dd>Host clicks "Sign in as Administrator" </dd>
-                <dt>Preconditions </dt>
+                <dt>Preconditions<!-- Maybe no 's' at the end? --> </dt>
                     <dd>Host is on host page of the web app </dd>
                 <dt>Basic Path </dt>
                     <dd>From the Host page, the user clicks "Sign as Administrator" and enters their Laurier username and Laurier password. </dd>
@@ -165,13 +168,13 @@ div{
                 <dt>Use Case Name </dt>
                     <dd>Search UPOD for specific topic. </dd>
                 <dt>Trigger	 </dt>
-                    <dd>Request submited via search bar. </dd>
+                    <dd>Request submited<!-- Misspelled Word: "submitted" --> via search bar. </dd>
                 <dt>Precondition </dt>
                     <dd>None. </dd>
                 <dt>Basic Path </dt>
                     <dd>From the Host page, the user selects the search bar and is able to submit a query. </dd>
                 <dt>Alternative Path </dt>
-                    <dd>User can also use drop down bar for general searchs. </dd>
+                    <dd>User can also use drop down bar for general searchs<!-- Misspelled Word: "searches" -->. </dd>
                 <dt>Postcondition </dt>
                     <dd>Search results page is shown containing results for the specific query. </dd>
                 <dt>Exception Paths </dt>
