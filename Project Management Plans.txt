@@ -134,7 +134,40 @@ UML-         Unified Modelling Language
  Requirements document head: Stephanie Pitman
  Management document head: Nathan Wickham
  
+5. Managerial process plans
 
+ 5.1 Startup Plans
+ 
+  5.1.1 Estimation Plan
+   The final project deadline along with several major milestones have been determined by the Client. However, the methods and work required to meet a given deadline are estimated using prior experience as a reference for time take. It is therefor expected that dates and deadlines will often change.
+   
+   5.1.2 Staffing Plan
+    All members of the project were volunteers from the Fall 2017 CP317. No additional staff will be required or considered.
+    
+   5.1.3 Resource Aquisition Plan
+    As of the requirements phase, no resources have needed to be aquired, nnor can be aquired due to a budget of 0$.
+  
+  5.2 Work plan
+  
+   5.2.1 Work activities
+    Work activities are to be determined in greater detail once the requirements and design have been determined in greater detail. It is however assumed that each individual working on the project will spend an average of five hours a week performing these work activities, with a natural increase in time spent as the final deadline approaches.
+    
+    5.2.2 Schedule allocation
+     Scheduling is the be determinned by concencus within smaller groups, such that they conform to the larger dates agreed upon by the client. The basics of the Schedule will kept in section 1.1.4 of this document, with frequent reminders given to the members of the project.
+     
+    5.3 Control plan
+    
+     5.3.1 Requirements control plan
+      Channges to the requirements will be decided by a combinantion of group concencus, annd client requests. All major changes to the requirements will have to recieve approval from the client, while minor changes will onnly require concencus from affected group memebers.
+      
+      5.3.2 Schedule control plan
+       All milestonens annd schedules are to be laid out well before the deadline, andn failures to meet said deadlines will lead to checks to determinen the initial schedule is still possible, annd to take intno account any relevant changes into future schedules. All deadlines are to, whenever reasonable to do so, include seperate deadlines as to when quality assurance has been completed.
+       
+       5.3.4 Quality control plan
+        All completed tasks are to be subject to qualitiy assurance testing by a team who had no role in completing the task initially. These testers are demonstrate, in whatever mannnenr may be reasonable, that they have thouroughly searched for any flaws, faults, or bugs.
+        
+        5.3.5 Reporting plan
+         All flaws, faults, or bugs found by quality assurance testers will be filed using the inbuilt tools of the repository (gitHub) with a formal template for reporting to be created.
 
 6. Technical Process Plans
 
