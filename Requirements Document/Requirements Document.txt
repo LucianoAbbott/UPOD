@@ -2,24 +2,31 @@ UPOD Software Requirements
 
 1. Introduction
 
+UPOD is a web application that is designed to make the access of information, from the physics database, easier and more efficient for students. It will allow professors to customize topic pages by adding equations, explanations, definitions, and interactive diagrams. Professors will also be able to access the physics database itself, and update the stored information.
+
 1.1 Purpose
 
-UPOD is designed to make easier for student to access physics equations, definitions, explanations, and diagrams. As well as giving professors the ability of updating existing information, and adding new information.
+The purpose of this document is to display the required components that are required to make application. 
 
 1.2 Scope
 
-The Undergraduate Physics Online Database (UPOD) is an online physics database targeted at university students and professors. It's user interface (UI) is designed to allow for easy access and updating. UPOD will give students the ability to learn about multiple physics topics, through the use of interactive diagrams, pictures, videos, equations, definitions, and explanations. Professors will be able to add to the students’ learning experience by creating and editing topic pages.
-The goal for UPOD is to make it accessible to everyone. This includes applying it to school servers, and have people login using their school login information.
+UPOD is an online physics database targeted at university students and professors. The application's UI is designed to allow for easy access and updating. UPOD will give students the ability to explore multiple physics topics, through the use of interactive diagrams, pictures, videos, equations, definitions, and explanations. Professors will be able to add to the students’ learning experience by creating and editing topic pages.
+The goal for UPOD is to make it accessible to everyone. This includes ****
 
 
 1.3 Definitions
 
-Front-end: The section of the website, created by the front-end programmers, made up of HTML and CSS. This section will be how to user access info from the database.
-The section of the website that all users are able to access and interact with. 
-#also the HTML, CSS etc. that the fronted team writes.
-Back-end: The section of the website that sends info from the database to the front-end.
-#You don't have to include which users can access the backend, I'll include that in section 2.3.
+Front-end: The section of the website, created by the front-end programmers, made up of HTML and CSS. This section will be how the user access info from the database.
 
+Back-end: The section of the website that sends info from the database to the front-end.
+
+UPOD: The Undergraduate Physics Online Database.
+
+UI: User Interface. The portion of the website that will interact with the general users.
+
+HTML: HyperText Markup Language. The protion of front-end code that creates the structure of the application.
+
+CSS: Cascading Style Sheets. The portion of the front-end code that makes the application for aesthetically pleasing.
 
 1.4 References
 
@@ -27,7 +34,7 @@ IEEE Recommended Practice for Software Requirements Specifications, IEEE Std 830
 
 1.5 Overview
 
-This document provides a in-depth reference for the software specifications of UPOD. It begins with an introduction and goes on to
+This document provides an in-depth reference for the software specifications of UPOD. It begins with an introduction and goes on to
 describe the characteristics, functions, and design of the project. An overview of the requirements follows, with appendices and an
 index ending the document.
 
@@ -61,7 +68,7 @@ UPOD will require a database, to hold information; a server, for generating page
 
 2.3 User Characteristics
 
-General User  - While UPOD is targeted at university students, a general user is not required to have Physics education or experience.
+General User  - While UPOD is targeted at university students, a general user is not required to have physics education or experience.
 It is assumed that they have basic technical knowledge and can navigate a website. They are able to traverse, read, and suggest new
 pages without creating an account.
 
