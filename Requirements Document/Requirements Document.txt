@@ -34,7 +34,7 @@ IEEE Recommended Practice for Software Requirements Specifications, IEEE Std 830
 
 1.5 Overview
 
-This document provides a in-depth reference for the software specifications of UPOD. It begins with an introduction and goes on to
+This document provides an in-depth reference for the software specifications of UPOD. It begins with an introduction and goes on to
 describe the characteristics, functions, and design of the project. An overview of the requirements follows, with appendices and an
 index ending the document.
 
@@ -68,7 +68,7 @@ UPOD will require a database, to hold information; a server, for generating page
 
 2.3 User Characteristics
 
-General User  - While UPOD is targeted at university students, a general user is not required to have Physics education or experience.
+General User  - While UPOD is targeted at university students, a general user is not required to have physics education or experience.
 It is assumed that they have basic technical knowledge and can navigate a website. They are able to traverse, read, and suggest new
 pages without creating an account.
 
