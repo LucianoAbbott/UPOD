@@ -82,13 +82,14 @@ require an account, and should have the greatest degrees of physics knowledge an
 
 2.4 Constraints
 
-Due to a lack of resources we will be unable to implement a separate mobile browser, causing our website not to be as functional off 
+Due to a lack of resources, UPOD will be unable to implement a separate mobile browser, causing the website not to be as functional off 
 desktop browsers.
 
 2.5 Assumptions and Dependencies
 
-The assumption is that any user will be accessible to anyone, where as our administrators and moderators will access from idp.wlu.ca to 
-edit, create, delete and update pages. Not requiring our team to create a database or hashing or encrypting passwords.
+The assumption is that the general user will be accessible to anyone, where as the administrators and moderators will access from 
+idp.wlu.ca to edit, create, delete and update pages. By having access to idp.wlu.ca, it will not require UPOD to create a separate 
+database or hashing or encrypting passwords.
 
 3. Specific requirements
 
