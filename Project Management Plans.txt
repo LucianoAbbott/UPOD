@@ -12,7 +12,7 @@ Change History:
  0.5                         misc. changes to sections 1.1.4, 3
  0.6                         Section 6 added
  0.7                         Section 5 added
-
+ 0.8                         Section 7 (rough)
 
 Table of contents //(add information at the bottom, not under the sections here):
 
@@ -66,10 +66,7 @@ Table of contents //(add information at the bottom, not under the sections here)
  7.4 Quality assurance plan
  7.5 Reviews and audits
  7.6 Problem resolution plan
- 7.7 Subcontractor management plan
- 7.8 Process improvement plan
-
-8. Additional plans
+ 7.7 Process improvement plan
 
 
 Contributors: 
@@ -82,11 +79,14 @@ Peter Smerchinski
 
 1. Overview
  1.1 Project summary
-  1.1.1 Purpose, scope and objectives: The University Physics Online Database (UPOD) is software designed for students to access physics information, equations and diagrams and for professors to add, edit and remove those components. The scope is Wilfrid Laurier University and the objective is to create software that is easy to use for both students and professors alike. The finished version of UPOD will be delivered to David Brown who will also monitor and critique each stage of the development process. More information can be found on the Project Requirements document.
+  1.1.1 Purpose, scope and objectives: 
+  The University Physics Online Database (UPOD) is software designed for students to access physics information, equations and diagrams and for professors to add, edit and remove those components. The scope is Wilfrid Laurier University and the objective is to create software that is easy to use for both students and professors alike. The finished version of UPOD will be delivered to David Brown who will also monitor and critique each stage of the development process. More information can be found on the Project Requirements document.
   
-  1.1.2 Assumptions and constraints: The project is to be completed by December 4th. The constraints include working around various group members' schedules to communicate effectively and on time. The assumption is that all work will be completed by each deadline, however when set early enough there is room for modification based on progress and completion, as well as satisfaction by quality testers. Budget is not a factor in this project.
+  1.1.2 Assumptions and constraints: 
+  The project is to be completed by December 4th. The constraints include working around various group members' schedules to communicate effectively and on time. The assumption is that all work will be completed by each deadline, however when set early enough there is room for modification based on progress and completion, as well as satisfaction by quality testers. Budget is not a factor in this project.
   
-  1.1.3 Project deliverables: The project (UPOD) will be delivered to the acquirer (David Brown). The project will consist of a requirements document, a project management document, designs, specifications, a user manual, documentation, work logs, source code and all other documents and work that went into the project.
+  1.1.3 Project deliverables: 
+  The project (UPOD) will be delivered to the acquirer (David Brown). The project will consist of a requirements document, a project management document, designs, specifications, a user manual, documentation, work logs, source code and all other documents and work that went into the project.
   
   1.1.4 Schedule summary (more to be added): 
   Monday, September 11th-    Official start of project
@@ -139,35 +139,35 @@ UML-         Unified Modelling Language
 
  5.1 Startup Plans
  
-  5.1.1 Estimation Plan
+  5.1.1 Estimation Plan:
    The final project deadline along with several major milestones have been determined by the Client. However, the methods and work required to meet a given deadline are estimated using prior experience as a reference for time take. It is therefor expected that dates and deadlines will often change.
    
-   5.1.2 Staffing Plan
+   5.1.2 Staffing Plan:
     All members of the project were volunteers from the Fall 2017 CP317. No additional staff will be required or considered.
     
-   5.1.3 Resource Aquisition Plan
+   5.1.3 Resource Aquisition Plan:
     As of the requirements phase, no resources have needed to be aquired, nnor can be aquired due to a budget of 0$.
   
-  5.2 Work plan
+  5.2 Work Plan
   
-   5.2.1 Work activities
+   5.2.1 Work activities:
     Work activities are to be determined in greater detail once the requirements and design have been determined in greater detail. It is however assumed that each individual working on the project will spend an average of five hours a week performing these work activities, with a natural increase in time spent as the final deadline approaches.
     
-    5.2.2 Schedule allocation
+    5.2.2 Schedule allocation:
      Scheduling is the be determinned by concencus within smaller groups, such that they conform to the larger dates agreed upon by the client. The basics of the Schedule will kept in section 1.1.4 of this document, with frequent reminders given to the members of the project.
      
     5.3 Control plan
     
-     5.3.1 Requirements control plan
+     5.3.1 Requirements control plan:
       Channges to the requirements will be decided by a combinantion of group concencus, annd client requests. All major changes to the requirements will have to recieve approval from the client, while minor changes will onnly require concencus from affected group memebers.
       
-      5.3.2 Schedule control plan
-       All milestonens annd schedules are to be laid out well before the deadline, andn failures to meet said deadlines will lead to checks to determinen the initial schedule is still possible, annd to take intno account any relevant changes into future schedules. All deadlines are to, whenever reasonable to do so, include seperate deadlines as to when quality assurance has been completed.
+      5.3.2 Schedule control plan:
+       All milestones annd schedules are to be laid out well before the deadline, andn failures to meet said deadlines will lead to checks to determinen the initial schedule is still possible, annd to take intno account any relevant changes into future schedules. All deadlines are to, whenever reasonable to do so, include seperate deadlines as to when quality assurance has been completed.
        
-       5.3.4 Quality control plan
+       5.3.4 Quality control plan:
         All completed tasks are to be subject to qualitiy assurance testing by a team who had no role in completing the task initially. These testers are demonstrate, in whatever mannnenr may be reasonable, that they have thouroughly searched for any flaws, faults, or bugs.
         
-        5.3.5 Reporting plan
+        5.3.5 Reporting plan:
          All flaws, faults, or bugs found by quality assurance testers will be filed using the inbuilt tools of the repository (gitHub) with a formal template for reporting to be created.
 
 6. Technical Process Plans
@@ -192,9 +192,24 @@ UML-         Unified Modelling Language
   6.4 Product Acceptance Plan:
     To ensure the quality of all stages of the product's development, from design to implementation to integration, the project team will include formations of SQA [Software Quality Assurance] to review, refine, advise, debug, and document the product's components. Software Quality Assurance groups will play a significant role in the improvements of each successive version of the project.
 
+7. Supporting process plans
 
-
-
-
-
+ 7.1 Configuration management plan:
+ 
+ 7.2 Verification and validation plan:
+ All verification and validation is done using the GIT version control system. The repository keeps track of changes and contributions.
+ 
+ 7.3 Documentation plan:
+ All phases of the project must be documented. GitHub itself will assist in this by recording who did what, while the rest will be documented in a variety of means.
+ 
+ 7.4 Quality assurance plan:
+ SQA teams will review and report on all phases of the document, highlighting areas of improvement that the team working on the actual component will fix.
+ 
+ 7.5 Reviews and audits:
+ David Brown will regularly review the project and offer suggestions for improvements.
+ 
+ 7.6 Problem resolution plan:
+ Any problems that may arise are settled democratically. For instance, time conflicts and meetings will be decided by a vote.
+ 
+ 7.7 Process improvement plan:
 
