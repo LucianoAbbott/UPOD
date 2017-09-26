@@ -195,7 +195,7 @@ UML-         Unified Modelling Language
  This project management plan will discuss the following supporting process plans: configuration management plan, verification and validation plan, documentation plan, quality assurance plan, reviews and audits plan, problem resolution plan, and the process improvement plan.
  
  7.1 Configuration Management plan:
- The configuration of the project UPOD will be intrinsically systematized through its own stages of development and the documents that guide them, to be realized through the required components to successively build them. 
+ The configuration of the project UPOD will be intrinsically systematized through its own stages of development and the documents that guide them, to be realized through the required components to successively build them. For example, the project's "Requirements" document will contribute to the team's ability to remain consistent with the goals it sets for the project. In other words, use of the "Requirements" document contributes to how project organization can be tabulated [among each team member] and thus operationalized [among the team as a whole], in which adhering chiefly to the objectives of the project helps to eliminate any misunderstandings of its implementation. 
  
  7.2 Verification and Validation plan:
  All verification and validation is done using the GIT version control system. The repository hosted on GitHub keeps track of the changes and contributions each member makes towards their respective tasks.
