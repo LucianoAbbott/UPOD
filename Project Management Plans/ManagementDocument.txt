@@ -191,27 +191,26 @@ UML-         Unified Modelling Language
   6.4 Product Acceptance Plan:
     To ensure the quality of all stages of the product's development, from design to implementation to integration, the project team will include formations of SQA [Software Quality Assurance] to review, refine, advise, debug, and document the product's components. Software Quality Assurance groups will play a significant role in the improvements of each successive version of the project.
 
-7. Supporting process plans
- 
+7. Supporting Process plans
  This project management plan will discuss the following supporting process plans: configuration management plan, verification and validation plan, documentation plan, quality assurance plan, reviews and audits plan, problem resolution plan, and the process improvement plan.
  
- 7.1 Configuration management plan:
+ 7.1 Configuration Management plan:
+ The configuration of the project UPOD will be intrinsically systematized through its own stages of development and the documents that guide them, to be realized through the required components to successively build them. 
  
- 7.2 Verification and validation plan:
+ 7.2 Verification and Validation plan:
  All verification and validation is done using the GIT version control system. The repository hosted on GitHub keeps track of the changes and contributions each member makes towards their respective tasks.
  
- 7.3 Documentation plan:
+ 7.3 Documentation Plan:
  All phases of the project must be documented. GitHub itself will assist in this by recording who did what, while the rest will be documented in a variety of means. Such means may involve a group-led tracking catalogue to monitor each member's contributions, if applicable, to procure a system of healthy engagement to the project's documentation [and to the project as a whole].
  
- 7.4 Quality assurance plan:
+ 7.4 Quality Assurance Plan:
  SQA teams will review and report on all phases of development, highlighting areas of improvement that the team working on the actual component will fix. Proposals of revised content are encouraged for all aspects of the project and concerns shared among authors of such components.
  
- 7.5 Reviews and audits:
+ 7.5 Reviews and Audits:
  David Brown will regularly review the project and offer suggestions for improvements. 
  
- 7.6 Problem resolution plan:
+ 7.6 Problem Resolution Plan:
  Any problems that may arise are settled democratically by ways of polling and surveying the most supported outcome. For instance, time conflicts and meetings will be decided by a vote, and the time with the highest number of votes will be selected as best representative of the group majority.
  
- 7.7 Process improvement plan:
- 
+ 7.7 Process Improvement Plan:
  Formulation of the process improvement plan should take place post-integration phase, when the team and its members have a more comprehensive understanding and experience of how the project UPOD has moved through the various processes of project development.
