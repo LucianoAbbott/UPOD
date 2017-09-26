@@ -194,6 +194,8 @@ UML-         Unified Modelling Language
 
 7. Supporting process plans
  
+ This project management plan will discuss the following supporting process plans: configuration management plan, verification and validation plan, documentation plan, quality assurance plan, reviews and audits plan, problem resolution plan, and the process improvement plan.
+ 
  7.1 Configuration management plan:
  
  7.2 Verification and validation plan:
@@ -212,4 +214,5 @@ UML-         Unified Modelling Language
  Any problems that may arise are settled democratically by ways of polling and surveying the most supported outcome. For instance, time conflicts and meetings will be decided by a vote, and the time with the highest number of votes will be selected as best representative of the group majority.
  
  7.7 Process improvement plan:
-
+ 
+ Formulation of the process improvement plan should take place post-integration phase, when the team and its members have a more comprehensive understanding and experience of how the project UPOD has moved through the various processes of project development.
