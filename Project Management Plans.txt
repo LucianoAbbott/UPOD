@@ -193,23 +193,23 @@ UML-         Unified Modelling Language
     To ensure the quality of all stages of the product's development, from design to implementation to integration, the project team will include formations of SQA [Software Quality Assurance] to review, refine, advise, debug, and document the product's components. Software Quality Assurance groups will play a significant role in the improvements of each successive version of the project.
 
 7. Supporting process plans
-
+ 
  7.1 Configuration management plan:
  
  7.2 Verification and validation plan:
- All verification and validation is done using the GIT version control system. The repository keeps track of changes and contributions.
+ All verification and validation is done using the GIT version control system. The repository hosted on GitHub keeps track of the changes and contributions each member makes towards their respective tasks.
  
  7.3 Documentation plan:
- All phases of the project must be documented. GitHub itself will assist in this by recording who did what, while the rest will be documented in a variety of means.
+ All phases of the project must be documented. GitHub itself will assist in this by recording who did what, while the rest will be documented in a variety of means. Such means may involve a group-led tracking catalogue to monitor each member's contributions, if applicable, to procure a system of healthy engagement to the project's documentation [and to the project as a whole].
  
  7.4 Quality assurance plan:
- SQA teams will review and report on all phases of the document, highlighting areas of improvement that the team working on the actual component will fix.
+ SQA teams will review and report on all phases of development, highlighting areas of improvement that the team working on the actual component will fix. Proposals of revised content are encouraged for all aspects of the project and concerns shared among authors of such components.
  
  7.5 Reviews and audits:
- David Brown will regularly review the project and offer suggestions for improvements.
+ David Brown will regularly review the project and offer suggestions for improvements. 
  
  7.6 Problem resolution plan:
- Any problems that may arise are settled democratically. For instance, time conflicts and meetings will be decided by a vote.
+ Any problems that may arise are settled democratically by ways of polling and surveying the most supported outcome. For instance, time conflicts and meetings will be decided by a vote, and the time with the highest number of votes will be selected as best representative of the group majority.
  
  7.7 Process improvement plan:
 
