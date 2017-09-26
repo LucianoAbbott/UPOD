@@ -173,31 +173,52 @@
     </div>
 
     <div>
-        <h2>3. Specific Requirements</h2>
+        <h2>3. Specific Requirements </h2>
 
         <h3>3.1 External Interface Requirements </h3>
         <p>UPOD will have no external interface to rely on other than the Laurier database to cross reference login access for administrators and appointed moderators. </p>
 
-        <h3>3.2 Functional Requirments </h3>
+        <h3>3.2 Functional Requirements  </h3>
         <h4>Administrative Login </h4>
 
         <dl>
             <dt>Use Case Name </dt>
-            <dd>Sign in to existing Administrator account. </dd>
+            <dd>Sign in to existing administrator account. </dd>
             <dt>Trigger </dt>
-            <dd>Host clicks "Sign in as Administrator" </dd>
+            <dd>Host clicks "Sign in as Administrator". </dd>
             <dt>Precondition </dt>
-            <dd>Host is on host page of the web app </dd>
+            <dd>Host is on host page of the web application. </dd>
             <dt>Basic Path </dt>
-            <dd>From the Host page, the user clicks "Sign as Administrator" and enters their Laurier username and Laurier password. </dd>
+            <dd>From the host page, the user clicks "Sign as Administrator" and enters their Laurier username and Laurier password. </dd>
             <dt>Alternative Path </dt>
             <dd>None. </dd>
             <dt>Postcondition </dt>
-            <dd>Host signs in to an existing. </dd>
+            <dd>Host signed in to an existing account. </dd>
             <dt>Exception Paths </dt>
-            <dd>If the username and password are incorrect, Host is asked to resubmit credentials. </dd>
+            <dd>If the username and password are incorrect, host is asked to resubmit credentials. </dd>
             <dt>Other </dt>
-            <dd>Multiple administrators can login. </dd>
+            <dd>Multiple administrators can login to mulitple accounts, but only one administrator can login to that administrator's specific account. </dd>
+        </dl>
+
+        <h4>Moderator Login </h4>
+        
+        <dl>
+            <dt>Use Case Name </dt>
+            <dd>Sign in to existing moderator account. </dd>
+            <dt>Trigger </dt>
+            <dd>Host clicks "Sign in as Moderator". </dd>
+            <dt>Precondition </dt>
+            <dd>Host is on host page of the web application. </dd>
+            <dt>Basic Path </dt>
+            <dd>From the host page, the user clicks "Sign as Moderator" and enters their Laurier username and Laurier password. </dd>
+            <dt>Alternative Path </dt>
+            <dd>None. </dd>
+            <dt>Postcondition </dt>
+            <dd>Host signed in to an existing account. </dd>
+            <dt>Exception Paths </dt>
+            <dd>If the username and password are incorrect, host is asked to resubmit credentials. </dd>
+            <dt>Other </dt>
+            <dd>Multiple moderators can login to mulitple accounts, but only one moderator can login to that moderator's specific account. </dd>
         </dl>
 
         <h4> Search UPOD: </h4>
@@ -210,20 +231,21 @@
             <dt>Precondition </dt>
             <dd>None. </dd>
             <dt>Basic Path </dt>
-            <dd>From the Host page, the user selects the search bar and is able to submit a query. </dd>
+            <dd>From the host page, the user selects the search bar and is able to submit a query. </dd>
             <dt>Alternative Path </dt>
-            <dd>User can also use drop down bar for general searches</dd>
+            <dd>User can also use drop down bar for general searches.</dd>
             <dt>Postcondition </dt>
             <dd>Search results page is shown containing results for the specific query. </dd>
             <dt>Exception Paths </dt>
-            <dd>No results are found presents user with an empty results page stating that no results were found. </dd>
+            <dd>If no results are found, the user is presented with an empty results page stating that no results were found. </dd>
+            <dd>If the user submits a query without any input on the search bar, the user is presented with message requesting information. </dd>
             <dt>Other </dt>
             <dd>None. </dd>
 
         </dl>
 
         <h3>3.3 Security </h3>
-        <p>UPOD will require a login and password that will be cross referenced with the Laurier Database so the Professors and other administrators can edit the website as well as appoint moderators and other administrators. </p>
+        <p>UPOD will require a login and password that will be cross referenced with the Laurier Database, so the professors and other administrators can edit the website, as well as appoint moderators and other administrators. </p>
     </div>
 
 </body>
