@@ -12,6 +12,7 @@ Change History:
  0.7                         Section 5 added
  0.8                         Section 7 (rough)
  0.9                         Section 7 finished, overall doc close to completion
+ 1.0                         First finished version
 
 Table of contents //(add information at the bottom, not under the sections here):
 
