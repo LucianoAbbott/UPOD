@@ -45,8 +45,8 @@
 <body>
     <header>
         <h1>Requirements Document for UPOD</h1>
-        <p class="version">Authors:Stephanie Pitman, Joseph Shannon, Nathan Skof, Nicholas Hallman, and Lauren Hepditch</p>
-        <p class="version"> Version 0.5 September 27th, 2017</p>
+        <p class="version">Authors: Stephanie Pitman, Joseph Shannon, Nathan Skof, Nicholas Hallman, and Lauren Hepditch</p>
+        <p class="version"> Version 1.0 September 27th, 2017</p>
         <div>
             <h2> Table of Contents </h2>
             <ul>
@@ -124,13 +124,13 @@
 
     <div>
         <h2>2. Overall Description</h2>
-        <p>UPOD is a self-contained encyclopedia based website that will supply users with information regarding physics. Because of the large amount of topics and information that physics covers, 
-            the website will have to be be intuitive, informative, and easy
-            to navigate. To ensure the website is informative, a variety of tools for page creation will be implemented to allow for the organization of information contributed to the website.</p>
+        <p>UPOD is a self-contained website based on the functionality of a physics encyclopedia. Therefore, UPOD supplies users with information they request in regards to physics. The goal is to make UPOD intuitive to the user 
+            through the use of known heristics in user interface (UI) design, and to make the website easier to use then other physics databases. To ensure the website is informative, moderators, in this case writers for the site, 
+            can add, delete and edit pages and information in the database while administrators, the manager of the moderators, can promote and revoke moderator status.</p>
 
         <h3>2.1 Product Perspective</h3>
-        <p>The UPOD website is to be self contained supplying its own front-end and back-end. However, UPOD will be integrated into a Laurier Service as to utilize the Single Sign On authentication service 
-            provided by idp.wlu.ca for moderator and admin login only. UPOD will host full support for
+        <p>The UPOD website is self contained supplying its own front-end and back-end. However, UPOD is a Laurier Service and can utilize the Single Sign On authentication service 
+            provided by idp.wlu.ca for moderator and admin login only. UPOD hosts full support for
             the following browsers.</p>
         <ul>
             <li>Firefox 28</li>
@@ -139,19 +139,19 @@
             <li>Opera 12.1</li>
             <li>MS Edge 11</li>
         </ul>
-        <p>UPOD's user interface (UI) will be designed exclusively for desktop machines with little to no consideration for mobile usability</p>
+        <p>UPOD's user interface (UI) is designed exclusively for desktop machines with little to no consideration for mobile usability.</p>
         <h3>2.2 Define Product Functions</h3>
         <dl>
             <dt>Navigation</dt>
-            <dd>UPOD will be navigable using a series of categorical links and a search bar. Categorical based navigation will be based on a hierarchical tree structure implemented by assigning categories to pages.</dd>
+            <dd>UPOD is navigable using a series of categorical links and a search bar. Categorical based navigation is based on a hierarchical tree structure implemented by assigning categories to pages.</dd>
             <dt>Search</dt>
-            <dd>UPOD will use an algorithm to find and index key terms from the title and body of articles. Key terms are compared to the frequency of word use and if under a certain threshold will be indexed.</dd>
+            <dd>UPOD has a search algorithm to find and index key terms from the title and body of articles. Key terms are compared to the frequency of word use and if under a certain threshold are indexed.</dd>
             <dt>Pages </dt>
-            <dd>Pages will have a title, categories, sections, sub sections, formulas, and diagrams. </dd>
+            <dd>Pages have a title, categories, sections, sub sections, formulas, and diagrams. </dd>
             <dt>Moderator Functions</dt>
-            <dd>Moderators will be able to create, delete and edit pages. </dd>
+            <dd>Moderators can create, delete and edit pages. </dd>
             <dt>Administrator Functions</dt>
-            <dd>Administrators will be able to promote, and revoke moderator status to and from user status.</dd>
+            <dd>Administrators can promote, and revoke moderator status to and from user status.</dd>
         </dl>
 
         <h3>2.3 User Characteristics</h3>
@@ -265,7 +265,7 @@
         </dl>
 
         <h3>3.3 Security </h3>
-        <p>UPOD will require a login and password for non general users. This login will be cross be referenced with the Laurier single sign on authentication, so that professors and other administrators can edit the 
+        <p>UPOD requires a login and password for moderators and administrators. This login is cross referenced with the Laurier single sign on authentication, so that professors and other administrators can edit the 
             website, as well as appoint moderators and other administrators. </p>
     </div>
 
