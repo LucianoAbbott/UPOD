@@ -23,7 +23,7 @@ Table of Contents
 Contributors               SQA
 Travis Leyenaar-Mission    Nathan Skof
 Ziyi Zhang                 Lauren Hepditch
-Abel Worku
+Abel Worku                 Rachel Choi
 Joseph Shannon
 Richard Bouda
 Peter Smerchinski
