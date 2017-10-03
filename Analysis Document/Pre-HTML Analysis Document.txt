@@ -26,6 +26,7 @@ Ziyi Zhang                 Lauren Hepditch
 Abel Worku
 Joseph Shannon
 Richard Bouda
+Peter Smerchinski
 
 1. Introduction
 UPOD (University Physics Online Database) is a single, all-encompassing online database that organizes and displays all of Wilfrid Laurier's physics information. This document analyzes and refines the details found in the requirements document, and determines exactly what UPOD does. The document also details the specfications of the project with clear, complete and unambiguous wording, free of contradictions. It is also presented in HTML format and UML diagrams, as well as an initial draft done with plaintext.
