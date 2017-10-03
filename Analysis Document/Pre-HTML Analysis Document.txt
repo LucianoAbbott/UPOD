@@ -74,5 +74,9 @@ GraphicsEdit - coordinates the adding and deleting graphics.
 5. Diagrams
 
 5.1 Use Case Diagram
+Administrator has all the privileges of a Moderator and be able to Manage Permissions.
+Moderator has all the privileges of a General User and be able to Manage Feedback and Manage Content.
+General Useris able to Search UPOD, View Page, and Submit Feedback.
+
 [Insert Use Case Diagram here]
 Insert cool description here. 
