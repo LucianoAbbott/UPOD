@@ -1,0 +1,127 @@
+﻿<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+<style>
+    html {
+        background-color: #78909C;
+    }
+    
+    body {
+        background-color: #ffffff;
+        min-width: 480px;
+        max-width: 1000px;
+        margin: 0% auto;
+        padding: 3% 3% 3% 3%;
+        box-shadow: 0px 0px 10px #313131;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    dd,
+    dt,
+    li,
+    ul {
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    .version {
+        font-size: 12;
+    }
+    
+    div {
+        border: 1px solid #313131;
+        border-width: 1px 0px 0px 0px;
+    }
+    
+    .errors {
+        color: #FF0055;
+    }
+</style>
+
+<html>
+
+<body>
+    <header>
+        <h1>Requirements Document for UPOD</h1>
+        <p class="version">Authors: Travis Leyenaar-Misson, Ziyi Zhang</p>
+        <div>
+            <h2> Table of Contents </h2>
+            <ul>
+                <li><a href="#introduction">1. Introduction </a></li>
+
+                <li><a href="#purposes_and_uses">2. Purposes and Uses </a></li>
+
+                <li><a href="#object_classification">3. Object Classification</a>
+                    <ul>
+                        <li><a href="#entity_objects">3.1 Entity Objects</a></li>
+                        <li><a href="#boundary_objects">3.2 Boundary Objects</a></li>
+                        <li><a href="#control_objects">3.3 Control Objects</a></li>
+                    </ul>
+                </li>
+		
+		<li><a href="#diagrams">4. Diagrams</a>
+		    <ul>
+			<li><a href="#use_case_diagram">4.1 Use Case Diagram</a></li>
+            </ul>
+        </div>
+    </header>
+    <div>
+        <h2 id="introduction">1. Introduction</h2>
+        <p> </p>
+    </div>
+
+    <div>
+        <h2 id="purposes_and_uses">2. Purposes and Uses</h2>
+        <p> </p>
+    </div>
+
+    <div>
+        <h2 id="object_classification">3. Object Classification </h2>
+		<h3 id="entity_objects">3.1 Entity Objects</h3>
+		<ul>
+			<li><b>Page</b> - created, read, updated, and deleted. Stored in the database. </li>
+			<li><b>Forumula</b> - created, read, updated, and deleted. Stored in the database. </li>
+			<li><b>Search Bar</b> - where a user types in keywords to be searched. </li>
+			<li><b>Suggestion</b> - added, flagged, and deleted. Stored in the database. </li>
+			<li><b>General User</b> - a user who can read pages.</li>
+			<li><b>Moderator</b> - a user who can create, read, update, and delete pages. </li>
+			<li><b>Administrator</b> - a user who can create, read, update, and delete pages as well as be able to add and remove moderators and administrators. </li>
+		</ul>
+		<h3 id="boundary_objects">3.2 Boundary Objects</h3>
+		<ul>
+			<li><b>Login</b> - where a moderator or administrator logs into UPOD to create, update, and delete pages. </li>
+			<li><b>Search</b> - where a user searches for pages.  </li>
+			<li><b>SearchResult</b> - where a user views the results of a search. </li>
+			<li><b>PageView</b> - where a user views information on a physics topic. </li>
+			<li><b>PageEdit</b> - creates, updates, and deletes pages. </li>
+			<li><b>FormulaEdit</b> - creates, updates, and deletes formulas. </li>
+			<li><b>GraphicsEdit</b> - adds and deletes graphics. </li>
+		</ul>
+		<h3 id="control_objects">3.3 Control Objects</h3>
+		<ul>
+			<li><b>LoginController</b> - coordinates the logins of moderators and administrators. </li>
+			<li><b>SearchController</b> - coordinates the search function. </li>
+			<li><b>PageViewController</b> - coordinates which page to show. </li>
+			<li><b>PageEditController</b> - coordinates the creating, updating, and deleting of pages. </li>
+			<li><b>ForumulaEditController</b> - coordinates the creating, updating, and deleting of formulas. </li>
+			<li><b>GraphicsEdit</b> - coordinates the adding and deleting graphics. </li>
+		</ul>
+    </div>
+
+    <div>
+	<h2 id="diagrams">4. Diagrams</h2>
+	<h3 id="use_case_diagram">4.1 Use Case Diagram </h2>
+        <a href="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Analysis%20Document/UPOD2017UML/UseCase_01.png">
+		<img src="../UPOD2017UML/UseCase_01.png" style="max-width:1000px;">
+	</a>
+	<ul>
+		 <li><b>Administrator</b> has all the privileges of a Moderator and be able to <i>Manage Permissions</i>. </li>
+		 <li><b>Moderator</b> has all the privileges of a General User and be able to <i>Manage Feedback</i> and <i>Manage Content</i>. </li>
+		 <li><b>General User</b> is able to <i>Search UPOD</i>, <i>View Page</i>, and <i>Submit Feedback<i>. </li>
+	</ul>
+    </div>
+</body> 
+
+</html>

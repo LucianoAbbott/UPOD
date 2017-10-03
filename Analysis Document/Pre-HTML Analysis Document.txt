@@ -14,7 +14,8 @@ Table of Contents
 3.1 Entity Objects
 3.2 Boundary Objects
 3.3 Control Objects
-
+4. Diagrams
+4.1 Use Case Diagram
 
 
 3.1 Entity Objects
@@ -42,3 +43,9 @@ PageViewController - coordinates which page to show.
 PageEditController - coordinates the creating, updating, and deleting of pages. 
 ForumulaEditController - coordinates the creating, updating, and deleting of formulas. 
 GraphicsEdit - coordinates the adding and deleting graphics. 
+
+4. Diagrams
+
+4.1 Use Case Diagram
+[Insert Use Case Diagram here]
+Insert cool description here. 
