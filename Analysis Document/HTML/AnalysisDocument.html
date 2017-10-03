@@ -45,41 +45,63 @@
 <body>
     <header>
         <h1>Analysis Document for UPOD</h1>
-        <p class="version">Authors: Travis Leyenaar-Misson, Ziyi Zhang</p>
+        <p class="version">Authors: Travis Leyenaar-Misson, Ziyi Zhang, Peter Smerchinski, Abel Worku, Joseph Shannon, Richard Bouda </p>
+	<p class="version"> Version 0.3 October 3rd, 2017</p>
         <div>
             <h2> Table of Contents </h2>
             <ul>
                 <li><a href="#introduction">1. Introduction </a></li>
 
                 <li><a href="#purposes_and_uses">2. Purposes and Uses </a></li>
+		    
+		 <li><a href="#purposes_and_uses">3. Definitions </a></li>
 
-                <li><a href="#object_classification">3. Object Classification</a>
+                <li><a href="#object_classification">4. Object Classification</a>
                     <ul>
-                        <li><a href="#entity_objects">3.1 Entity Objects</a></li>
-                        <li><a href="#boundary_objects">3.2 Boundary Objects</a></li>
-                        <li><a href="#control_objects">3.3 Control Objects</a></li>
+                        <li><a href="#entity_objects">4.1 Entity Objects</a></li>
+                        <li><a href="#boundary_objects">4.2 Boundary Objects</a></li>
+                        <li><a href="#control_objects">4.3 Control Objects</a></li>
                     </ul>
                 </li>
 		
-		<li><a href="#diagrams">4. Diagrams</a>
+		<li><a href="#diagrams">5. Diagrams</a>
 		    <ul>
-			<li><a href="#use_case_diagram">4.1 Use Case Diagram</a></li>
+			<li><a href="#use_case_diagram">5.1 Use Case Diagram</a></li>
             </ul>
         </div>
     </header>
     <div>
         <h2 id="introduction">1. Introduction</h2>
-        <p> </p>
+        <p> UPOD (University Physics Online Database) is a single, all-encompassing online database that organizes and displays all of Wilfrid Laurier's physics information. 
+This document analyzes and refines the details found in the requirements document, and determines exactly what UPOD does. The document also details the specfications of the project with clear, complete and unambiguous wording, free of contradictions. 
+It is also presented in HTML format and UML diagrams, as well as an initial draft done with plaintext. </p>
     </div>
 
     <div>
         <h2 id="purposes_and_uses">2. Purposes and Uses</h2>
-        <p> </p>
+        <p> The purpose of this document is to provide an in-depth anaylsis of the project beyond just the initial requirements phase. 
+It is used as a basis for the design document as well as the project as a whole. The class, use case and sequence diagrams are used 
+in conjunction with object-oriented analysis to create a starting point for the actual coding. </p>
+    </div>
+	   
+    <div>
+        <h2 id="definitions">3. Definitions </h2>
+        <ul>
+			<li><b>Actor</b> - any user (such as general users, administrators, moderators). </li>
+			<li><b>Boundary Object</b> - represents the system with actors that interact with other actors. Forms, windows, notices and messages are included. </li>
+			<li><b>Class Diagram</b> - a structure diagram that outlines all classes, methods and attributes used in the project as well as their relationships. </li>
+			<li><b>Control Object</b> - coordinates boundary and entity objects. Created at the beginning of a use case, and ceases to exist afterwards. </li>
+			<li><b>Entity Object</b> - represents persistent, immutable information which form the core of the model. Often identified by nouns. </li>
+			<li><b>Sequence Diagram</b> - an interaction diagram that shows how objects interact with each other. </li>
+			<li><b>UML</b> - Unified Modeling Language. The basis for all diagrams used in this document. </li>
+			<li><b>Use Case</b> - a method or action between two actors, connected through communication. </li>
+			<li><b>Use Case Diagram</b> - a behaviour diagram illustrated with actors and use cases, with communications between them to display their relationships. </li>
+	</ul>
     </div>
 
     <div>
-        <h2 id="object_classification">3. Object Classification </h2>
-		<h3 id="entity_objects">3.1 Entity Objects</h3>
+        <h2 id="object_classification">4. Object Classification </h2>
+		<h3 id="entity_objects">4.1 Entity Objects</h3>
 		<ul>
 			<li><b>Page</b> - created, read, updated, and deleted. Stored in the database. </li>
 			<li><b>Forumula</b> - created, read, updated, and deleted. Stored in the database. </li>
@@ -89,7 +111,7 @@
 			<li><b>Moderator</b> - a user who can create, read, update, and delete pages. </li>
 			<li><b>Administrator</b> - a user who can create, read, update, and delete pages as well as be able to add and remove moderators and administrators. </li>
 		</ul>
-		<h3 id="boundary_objects">3.2 Boundary Objects</h3>
+		<h3 id="boundary_objects">4.2 Boundary Objects</h3>
 		<ul>
 			<li><b>Login</b> - where a moderator or administrator logs into UPOD to create, update, and delete pages. </li>
 			<li><b>Search</b> - where a user searches for pages.  </li>
@@ -99,7 +121,7 @@
 			<li><b>FormulaEdit</b> - creates, updates, and deletes formulas. </li>
 			<li><b>GraphicsEdit</b> - adds and deletes graphics. </li>
 		</ul>
-		<h3 id="control_objects">3.3 Control Objects</h3>
+		<h3 id="control_objects">4.3 Control Objects</h3>
 		<ul>
 			<li><b>LoginController</b> - coordinates the logins of moderators and administrators. </li>
 			<li><b>SearchController</b> - coordinates the search function. </li>
@@ -111,8 +133,8 @@
     </div>
 
     <div>
-	<h2 id="diagrams">4. Diagrams</h2>
-	<h3 id="use_case_diagram">4.1 Use Case Diagram </h2>
+	<h2 id="diagrams">5. Diagrams</h2>
+	<h3 id="use_case_diagram">5.1 Use Case Diagram </h2>
         <a href="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Analysis%20Document/UPOD2017UML/UseCase_01.png">
 		<img src="../UPOD2017UML/UseCase_01.png" style="max-width:1000px;">
 	</a>
