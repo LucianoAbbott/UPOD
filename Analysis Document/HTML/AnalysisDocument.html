@@ -87,15 +87,15 @@ in conjunction with object-oriented analysis to create a starting point for the 
     <div>
         <h2 id="definitions">3. Definitions </h2>
         <ul>
-			<li><b>Actor</b> - any user (such as general users, administrators, moderators). </li>
-			<li><b>Boundary Object</b> - represents the system with actors that interact with other actors. Forms, windows, notices and messages are included. </li>
-			<li><b>Class Diagram</b> - a structure diagram that outlines all classes, methods and attributes used in the project as well as their relationships. </li>
-			<li><b>Control Object</b> - coordinates boundary and entity objects. Created at the beginning of a use case, and ceases to exist afterwards. </li>
-			<li><b>Entity Object</b> - represents persistent, immutable information which form the core of the model. Often identified by nouns. </li>
-			<li><b>Sequence Diagram</b> - an interaction diagram that shows how objects interact with each other. </li>
+			<li><b>Actor</b> - Any user (such as general users, administrators, moderators). </li>
+			<li><b>Boundary Object</b> - Represents the system with actors that interact with other actors. Forms, windows, notices and messages are included. </li>
+			<li><b>Class Diagram</b> - A structure diagram that outlines all classes, methods and attributes used in the project as well as their relationships. </li>
+			<li><b>Control Object</b> - Coordinates boundary and entity objects. Created at the beginning of a use case, and ceases to exist afterwards. </li>
+			<li><b>Entity Object</b> - Represents persistent, immutable information which form the core of the model. Often identified by nouns. </li>
+			<li><b>Sequence Diagram</b> - An interaction diagram that shows how objects interact with each other. </li>
 			<li><b>UML</b> - Unified Modeling Language. The basis for all diagrams used in this document. </li>
-			<li><b>Use Case</b> - a method or action between two actors, connected through communication. </li>
-			<li><b>Use Case Diagram</b> - a behaviour diagram illustrated with actors and use cases, with communications between them to display their relationships. </li>
+			<li><b>Use Case</b> - A method or action between two actors, connected through communication. </li>
+			<li><b>Use Case Diagram</b> - A behaviour diagram illustrated with actors and use cases, with communications between them to display their relationships. </li>
 	</ul>
     </div>
 
@@ -103,32 +103,32 @@ in conjunction with object-oriented analysis to create a starting point for the 
         <h2 id="object_classification">4. Object Classification </h2>
 		<h3 id="entity_objects">4.1 Entity Objects</h3>
 		<ul>
-			<li><b>Page</b> - created, read, updated, and deleted. Stored in the database. </li>
-			<li><b>Forumula</b> - created, read, updated, and deleted. Stored in the database. </li>
-			<li><b>Search Bar</b> - where a user types in keywords to be searched. </li>
-			<li><b>Suggestion</b> - added, flagged, and deleted. Stored in the database. </li>
-			<li><b>General User</b> - a user who can read pages.</li>
-			<li><b>Moderator</b> - a user who can create, read, update, and delete pages. </li>
-			<li><b>Administrator</b> - a user who can create, read, update, and delete pages as well as be able to add and remove moderators and administrators. </li>
+			<li><b>Page</b> - Created, read, updated, and deleted. Stored in the database. </li>
+			<li><b>Forumula</b> - Created, read, updated, and deleted. Stored in the database. </li>
+			<li><b>Search Bar</b> - Where a user types in keywords to be searched. </li>
+			<li><b>Suggestion</b> - Added, flagged, and deleted. Stored in the database. </li>
+			<li><b>General User</b> - A user who can read pages.</li>
+			<li><b>Moderator</b> - A user who can create, read, update, and delete pages. </li>
+			<li><b>Administrator</b> - A user who can create, read, update, and delete pages as well as be able to add and remove moderators and administrators. </li>
 		</ul>
 		<h3 id="boundary_objects">4.2 Boundary Objects</h3>
 		<ul>
-			<li><b>Login</b> - where a moderator or administrator logs into UPOD to create, update, and delete pages. </li>
-			<li><b>Search</b> - where a user searches for pages.  </li>
-			<li><b>SearchResult</b> - where a user views the results of a search. </li>
-			<li><b>PageView</b> - where a user views information on a physics topic. </li>
-			<li><b>PageEdit</b> - creates, updates, and deletes pages. </li>
-			<li><b>FormulaEdit</b> - creates, updates, and deletes formulas. </li>
-			<li><b>GraphicsEdit</b> - adds and deletes graphics. </li>
+			<li><b>Login</b> - Where a moderator or administrator logs into UPOD to create, update, and delete pages. </li>
+			<li><b>Search</b> - Where a user searches for pages.  </li>
+			<li><b>SearchResult</b> - Where a user views the results of a search. </li>
+			<li><b>PageView</b> - Where a user views information on a physics topic. </li>
+			<li><b>PageEdit</b> - Creates, updates, and deletes pages. </li>
+			<li><b>FormulaEdit</b> - Creates, updates, and deletes formulas. </li>
+			<li><b>GraphicsEdit</b> - Adds and deletes graphics. </li>
 		</ul>
 		<h3 id="control_objects">4.3 Control Objects</h3>
 		<ul>
-			<li><b>LoginController</b> - coordinates the logins of moderators and administrators. </li>
-			<li><b>SearchController</b> - coordinates the search function. </li>
-			<li><b>PageViewController</b> - coordinates which page to show. </li>
-			<li><b>PageEditController</b> - coordinates the creating, updating, and deleting of pages. </li>
-			<li><b>ForumulaEditController</b> - coordinates the creating, updating, and deleting of formulas. </li>
-			<li><b>GraphicsEdit</b> - coordinates the adding and deleting graphics. </li>
+			<li><b>LoginController</b> - Coordinates the logins of moderators and administrators. </li>
+			<li><b>SearchController</b> - Coordinates the search function. </li>
+			<li><b>PageViewController</b> - Coordinates which page to show. </li>
+			<li><b>PageEditController</b> - Coordinates the creating, updating, and deleting of pages. </li>
+			<li><b>ForumulaEditController</b> - Coordinates the creating, updating, and deleting of formulas. </li>
+			<li><b>GraphicsEdit</b> - Coordinates the adding and deleting graphics. </li>
 		</ul>
     </div>
 
