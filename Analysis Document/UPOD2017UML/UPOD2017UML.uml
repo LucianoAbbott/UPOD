@@ -6,13 +6,13 @@
   <packagedElement xmi:type="uml:Actor" xmi:id="_ofTX8KewEeeZQ95KcMiVbg" name="Administrator"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_MOcU8KexEeeZQ95KcMiVbg" name="Search UPOD"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_NcYHsKexEeeZQ95KcMiVbg" name="View Page"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_OccdkKexEeeZQ95KcMiVbg" name="Submit Feedback"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_OccdkKexEeeZQ95KcMiVbg" name="Submit Request"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_QfDOgKexEeeZQ95KcMiVbg" name="Edit page"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_R0RVAKexEeeZQ95KcMiVbg" name="Create Page"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_SyTDgKexEeeZQ95KcMiVbg" name="Delete page"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_kc7SMKexEeeZQ95KcMiVbg" name="View Feedback"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_mtMEoKexEeeZQ95KcMiVbg" name="Flag Feedback"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_oM6yAKexEeeZQ95KcMiVbg" name="Delete Feedback"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_kc7SMKexEeeZQ95KcMiVbg" name="View Request"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_mtMEoKexEeeZQ95KcMiVbg" name="Flag Request"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_oM6yAKexEeeZQ95KcMiVbg" name="Delete Request"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_-ycNYKexEeeZQ95KcMiVbg" name="Edit Formula"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_AEENUKeyEeeZQ95KcMiVbg" name="Create Formula"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_BEiL0KeyEeeZQ95KcMiVbg" name="Delete Formula"/>
@@ -39,7 +39,7 @@
   <packagedElement xmi:type="uml:Association" xmi:id="_cNpxYKe2EeeZQ95KcMiVbg"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_ebZbUKe2EeeZQ95KcMiVbg"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_fbyhUKe2EeeZQ95KcMiVbg"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_iRBpEKe2EeeZQ95KcMiVbg" name="Manage Feedback"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_iRBpEKe2EeeZQ95KcMiVbg" name="Manage Request"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_jbAI4Ke2EeeZQ95KcMiVbg" name="Manage Permissions"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_kUFF8Ke2EeeZQ95KcMiVbg" name="Grant Permission"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_lU3NgKe2EeeZQ95KcMiVbg" name="Retract Permission"/>
