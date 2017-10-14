@@ -1,0 +1,9 @@
+Test 1
+
+Test 2 - Changing a txt
+
+<<<<<<< HEAD
+Test 3 - I just undo-ed something and you'll never know what it was! 
+=======
+Test 2-1 - T was also here
+>>>>>>> 4365671f70971e70139b6c03c30749dbdcf7318a
