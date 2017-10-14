@@ -1,23 +1,55 @@
+
+***********PLEASE EDIT THE HTML VERSION INSTEAD, FROM NOW ON*********************
+
+
 Title page: 
 UPOD - Analysis Document
 
+Last Updated: 11:30 AM on 10/03/2017
 
 Change History:
  Version                     Description
  0.1                         Object Classifications added
+ 0.2                         Sections 1,2 and Contributors added
 
 Table of Contents
 
 1. Introduction
 2. Purposes and Uses
-3. Object Classification
-3.1 Entity Objects
-3.2 Boundary Objects
-3.3 Control Objects
+3. Definitions
+4. Object Classification
+4.1 Entity Objects
+4.2 Boundary Objects
+4.3 Control Objects
+5. Diagrams
+5.1 Use Case Diagram
 
+Contributors               SQA
+Travis Leyenaar-Mission    Nathan Skof
+Ziyi Zhang                 Lauren Hepditch
+Abel Worku                 Rachel Choi
+Joseph Shannon
+Richard Bouda
+Peter Smerchinski
 
+1. Introduction
+UPOD (University Physics Online Database) is a single, all-encompassing online database that organizes and displays all of Wilfrid Laurier's physics information. This document analyzes and refines the details found in the requirements document, and determines exactly what UPOD does. The document also details the specfications of the project with clear, complete and unambiguous wording, free of contradictions. It is also presented in HTML format and UML diagrams, as well as an initial draft done with plaintext.
 
-3.1 Entity Objects
+2. Purposes and Uses
+The purpose of this document is to provide an in-depth anaylsis of the project beyond just the initial requirements phase. It is used as a basis for the design document as well as the project as a whole. The class, use case and sequence diagrams are used in conjunction with object-oriented analysis to create a starting point for the actual coding.
+
+3. Definitions
+Actors - Any user (such as general users, administrators, moderators).
+Boundary Object - Represents the system with actors that interact with other actors. Forms, windows, notices and messages are included.
+Class Diagram - A structure diagram that outlines all classes, methods and attributes used in the project as well as their relationships.
+Control Object - Coordinates boundary and entity objects. Created at the beginning of a use case, and ceases to exist afterwards. 
+Entity Object - Represents persistent, immutable information which form the core of the model. Often identified by nouns.
+Sequence Diagram - An interaction diagram that shows how objects interact with each other.
+UML - Unified Modeling Language. The basis for all diagrams used in this document.
+Use Case - A method or action between two actors, connected through communication.
+Use Case Diagram - A behaviour diagram illustrated with actors and use cases, with communications between them to display their relationships.
+
+4.1 Entity Objects
 Page - created, read, updated, and deleted. Stored in the database. 
 Forumula - created, read, updated, and deleted. Stored in the database. 
 Search Bar - where a user types in keywords to be searched. 
@@ -26,7 +58,7 @@ General User - a user who can read pages.
 Moderator - a user who can create, read, update, and delete pages. 
 Administrator - a user who can create, read, update, and delete pages as well as be able to add and remove moderators and administrators. 
 
-3.2 Boundary Objects
+4.2 Boundary Objects
 Login - where a moderator or administrator logs into UPOD to create, update, and delete pages. 
 Search - where a user searches for pages.  
 SearchResult - where a user views the results of a search. 
@@ -35,10 +67,20 @@ PageEdit - creates, updates, and deletes pages.
 FormulaEdit - creates, updates, and deletes formulas. 
 GraphicsEdit - adds and deletes graphics. 
 
-3.3 Control Objects
+4.3 Control Objects
 LoginController - coordinates the logins of moderators and administrators. 
 SearchController - coordinates the search function. 
 PageViewController - coordinates which page to show. 
 PageEditController - coordinates the creating, updating, and deleting of pages. 
 ForumulaEditController - coordinates the creating, updating, and deleting of formulas. 
 GraphicsEdit - coordinates the adding and deleting graphics. 
+
+5. Diagrams
+
+5.1 Use Case Diagram
+Administrator has all the privileges of a Moderator and be able to Manage Permissions.
+Moderator has all the privileges of a General User and be able to Manage Feedback and Manage Content.
+General Useris able to Search UPOD, View Page, and Submit Feedback.
+
+[Insert Use Case Diagram here]
+Insert cool description here. 
