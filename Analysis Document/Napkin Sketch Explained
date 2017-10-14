@@ -1,9 +1,0 @@
-The file Napkin_Sketch.jpg is a rough Psuedo-UML prototype of the analysis doc for UPOD.
-
-The upper section presents the core entities involved in UPOD - Users, and Content. It then begins an initial breakdown of their elements and some basic (though as yet unlabelled) associations. 
-
-The lower section presents a hybrid use case/entity diagram, tracing out the core behaviours of UPOD.
-
-I will endeavour to refine this into a series of more formal documents over the weekend (Sept29-OCT1), and will incorporate any changes or missed requirements from the previous and upcoming meetings.
-
--Travis Leyenaar-Misson, Sept 29 2017

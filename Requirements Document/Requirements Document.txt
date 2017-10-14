@@ -6,16 +6,17 @@ UPOD is a web application that is designed to make the access of information, fr
 
 1.1 Purpose
 
-The purpose of this document is to display the required components that are required to make application. It is designed so that any users or developers who read it will leave with a strong understanding of the application. 
+The purpose of this document is to display the required components that are required to make application. 
 
 1.2 Scope
 
 UPOD is an online physics database targeted at university students and professors. The application's UI is designed to allow for easy access and updating. UPOD will give students the ability to explore multiple physics topics, through the use of interactive diagrams, pictures, videos, equations, definitions, and explanations. Professors will be able to add to the students’ learning experience by creating and editing topic pages.
-The goal for UPOD is to make it easily accessible to the students and professors, through the Laurier Single Sign on system. 
+The goal for UPOD is to make it accessible to everyone. This includes ****
+
 
 1.3 Definitions
 
-Front-end: The section of the website, created by the front-end programmers, made up of programming languages. This section will be how the user access info from the database.
+Front-end: The section of the website, created by the front-end programmers, made up of HTML and CSS. This section will be how the user access info from the database.
 
 Back-end: The section of the website that sends info from the database to the front-end.
 
@@ -23,11 +24,9 @@ UPOD: The Undergraduate Physics Online Database.
 
 UI: User Interface. The portion of the website that will interact with the general users.
 
-HTML: HyperText Markup Language. The portion of front-end code that creates the structure of the application.
+HTML: HyperText Markup Language. The protion of front-end code that creates the structure of the application.
 
 CSS: Cascading Style Sheets. The portion of the front-end code that makes the application for aesthetically pleasing.
-
-Web Application: A program which is accessed over the internet.
 
 1.4 References
 
@@ -83,14 +82,13 @@ require an account, and should have the greatest degrees of physics knowledge an
 
 2.4 Constraints
 
-Due to a lack of resources, UPOD will be unable to implement a separate mobile browser, causing the website not to be as functional off 
+Due to a lack of resources we will be unable to implement a separate mobile browser, causing our website not to be as functional off 
 desktop browsers.
 
 2.5 Assumptions and Dependencies
 
-The assumption is that the general user will be accessible to anyone, where as the administrators and moderators will access from 
-idp.wlu.ca to edit, create, delete and update pages. By having access to idp.wlu.ca, it will not require UPOD to create a separate 
-database or hashing or encrypting passwords.
+The assumption is that any user will be accessible to anyone, where as our administrators and moderators will access from idp.wlu.ca to 
+edit, create, delete and update pages. Not requiring our team to create a database or hashing or encrypting passwords.
 
 3. Specific requirements
 
