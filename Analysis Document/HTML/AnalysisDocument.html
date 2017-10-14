@@ -75,7 +75,7 @@
     <div>
         <h2 id="introduction">1. Introduction</h2>
         <p> UPOD (University Physics Online Database) is a comprehensive online database designed to organize information pertaining to fundamental physics concepts, and present them in a straightforward, efficient manner for user retrieval. UPOD reduces the need to search through multiple sites and provides users a central location for reliable data. 
-This analysis document formalizes the parameters determined for the project in its requirements plan, and refines in greater detail and scope the objectives of UPOD. In addition to the project's objectives, project specifications will be articulated with clarity and concision so as to better remove uncertainty concerning any of the project's faculties during the implementation phase. 
+This analysis document formalizes the parameters determined for the project in its requirements plan, and refines in greater detail and scope the objectives of UPOD. In addition to the project's objectives, project specifications are articulated with clarity and concision so as to better remove uncertainty concerning any of the project's faculties during the implementation phase. 
 It is also presented in HTML format and UML diagrams, as well as an initial draft composed with plaintext. </p>
     </div>
 
@@ -112,8 +112,8 @@ in conjunction with object-oriented design to create a starting point for projec
 			<li><b>Search Bar</b> - Where a user types in keywords to be searched. </li>
 			<li><b>Suggestion</b> - Added, flagged, and deleted. Stored in the database. </li>
 			<li><b>General User</b> - A user who can read pages.</li>
-			<li><b>Moderator</b> - A user who can create, read, update, and delete pages. </li>
-			<li><b>Administrator</b> - A user who can create, read, update, and delete pages. Also has the ability to add and remove moderators and administrators. </li>
+			<li><b>Moderator</b> - A user who can create, read, update, and delete pages. Can also flag and delete requests. </li>
+			<li><b>Administrator</b> - A user who can create, read, update, and delete pages. Also has the ability to add and remove moderators and administrators, as well as flag and delete requests. </li>
 		</ul>
 		<h3 id="boundary_objects">4.2 Boundary Objects</h3>
 		<ul>
@@ -132,7 +132,7 @@ in conjunction with object-oriented design to create a starting point for projec
 			<li><b>PageViewController</b> - Coordinates which page to show. </li>
 			<li><b>PageEditController</b> - Coordinates the creating, updating, and deleting of pages. </li>
 			<li><b>FormulaEditController</b> - Coordinates the creating, updating, and deleting of formulas. </li>
-			<li><b>GraphicsEdit</b> - Coordinates the adding and deleting graphics. </li>
+			<li><b>GraphicsEditController</b> - Coordinates the adding and deleting graphics. </li>
 		</ul>
     </div>
 
@@ -144,8 +144,8 @@ in conjunction with object-oriented design to create a starting point for projec
 	</a>
 	<ul>
 		 <li><b>Administrator</b> has all the privileges of a Moderator and is able to <i>Manage Permissions</i>. </li>
-		 <li><b>Moderator</b> has all the privileges of a General User and is able to <i>Manage Feedback</i> and <i>Manage Content</i>. </li>
-		 <li><b>General User</b> is able to <i>Search UPOD</i>, <i>View Page</i>, and <i>Submit Feedback</i>. </li>
+		 <li><b>Moderator</b> has all the privileges of a General User and is able to <i>Manage Requests</i> and <i>Manage Content</i>. </li>
+		 <li><b>General User</b> is able to <i>Search UPOD</i>, <i>View Page</i>, and <i>Submit Requests</i>. </li>
 	</ul>
     </div>
     <div>
@@ -153,11 +153,11 @@ in conjunction with object-oriented design to create a starting point for projec
 	 <h2 id="object_classification">6. Administrator/Moderator/General User Overview </h2>
 	 <ul>
 	    <li><b>Manage Permissions</b> - The user's ability to give administrator and moderator privileges. </li>
-	    <li><b>Manage Feedback</b> - The user's ability to delete or otherwise manage page comments. </li>
+	    <li><b>Manage Requests</b> - The user's ability to delete or otherwise manage page comments. </li>
 	    <li><b>Manage Content</b> - The user's ability to delete or otherwise manage page content, such as diagrams, text, and images. </li>
 	    <li><b>Search UPOD</b> - The action taken by the user to search the database for specific information. </li>
 	    <li><b>View Page</b> - The action taken by the user to view a specific page on the database. </li>
-	    <li><b>Submit Feedback</b> - The action taken by the user to submit comments on the layout of the database, the content or anything that the user may interact with. </li>
+	    <li><b>Submit Requests</b> - The action taken by the user to submit comments on the layout of the database, the content or anything that the user may interact with. </li>
 	 </ul>
     </div>    
 </body> 
