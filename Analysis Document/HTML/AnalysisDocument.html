@@ -75,13 +75,13 @@
     <div>
         <h2 id="introduction">1. Introduction</h2>
         <p> UPOD (University Physics Online Database) is a comprehensive online database designed to organize information pertaining to fundamental physics concepts, and present them in a straightforward, efficient manner for user retrieval. UPOD reduces the need to search through multiple sites and provides users a central location for reliable data. 
-This analysis document formalizes the parameters determined for the project in its requirements plan, and refines in greater detail and scope the objectives of UPOD. In addition to the project's objectives, project specifications are articulated with clarity and concision so as to better remove uncertainty concerning any of the project's faculties during the implementation phase. 
+This analysis document formalizes the parameters determined for the project in its requirements plan, and refines in greater detail and scope the objectives of UPOD. In addition to the project's objectives, project specifications are articulated with clarity and concision to better remove uncertainty concerning any of the project's faculties during the implementation phase. 
 It is also presented in HTML format and UML diagrams, as well as an initial draft composed with plaintext. </p>
     </div>
 
     <div>
         <h2 id="purposes_and_uses">2. Purposes and Uses</h2>
-        <p> The purpose of this document is to provide an in-depth analysis of the project beyond the initial requirements phase, as it is a basis for the design document as well as for the project as a whole. The class, use case, and sequence diagrams are used 
+        <p> The purpose of this document is to provide an in-depth analysis of the project beyond the initial requirements phase, as it is a basis for the design document as well as for the project. The class, use case, and sequence diagrams are used 
 in conjunction with object-oriented design to create a starting point for project development. </p>
     </div>
 	   
@@ -107,33 +107,35 @@ in conjunction with object-oriented design to create a starting point for projec
         <h2 id="object_classification">4. Object Classification </h2>
 		<h3 id="entity_objects">4.1 Entity Objects</h3>
 		<ul>
-			<li><b>Page</b> - Created, read, updated, and deleted. Stored in the database. </li>
+			<li><b>Administrator</b> - A user who can create, read, update, and delete pages. Also has the ability to add and remove moderators and administrators, as well as flag and delete requests. </li>
 			<li><b>Formula</b> - Created, read, updated, and deleted. Stored in the database. </li>
+	    		<li><b>General User</b> - A user who can read pages.</li>
+			<li><b>Moderator</b> - A user who can create, read, update, and delete pages. Can also flag and delete requests. </li>
+			<li><b>Page</b> - Created, read, updated, and deleted. Stored in the database. </li>
 			<li><b>Search Bar</b> - Where a user types in keywords to be searched. </li>
 			<li><b>Suggestion</b> - Added, flagged, and deleted. Stored in the database. </li>
-			<li><b>General User</b> - A user who can read pages.</li>
-			<li><b>Moderator</b> - A user who can create, read, update, and delete pages. Can also flag and delete requests. </li>
-			<li><b>Administrator</b> - A user who can create, read, update, and delete pages. Also has the ability to add and remove moderators and administrators, as well as flag and delete requests. </li>
-		</ul>
+	    	</ul>
 		<h3 id="boundary_objects">4.2 Boundary Objects</h3>
 		<ul>
-			<li><b>Login</b> - Where a moderator or administrator logs into UPOD to create, update, and delete pages. </li>
-			<li><b>Search</b> - Where a user searches for pages.  </li>
-			<li><b>SearchResult</b> - Where a user views the results of a search. </li>
-			<li><b>PageView</b> - When a user views the physics information on a page. </li>
-			<li><b>PageEdit</b> - Creates, updates, and deletes pages. </li>
 			<li><b>FormulaEdit</b> - Creates, updates, and deletes formulas. </li>
 			<li><b>GraphicsEdit</b> - Adds and deletes graphics. </li>
-		</ul>
+			<li><b>Login</b> - Where a moderator or administrator logs into UPOD to create, update, and delete pages. </li>
+			<li><b>PageEdit</b> - Creates, updates, and deletes pages. </li>
+			<li><b>PageView</b> - When a user views the physics information on a page. </li>
+			<li><b>Search</b> - Where a user searches for pages.  </li>
+			<li><b>SearchResult</b> - Where a user views the results of a search. </li>
+			
+	    </ul>
 		<h3 id="control_objects">4.3 Control Objects</h3>
 		<ul>
-			<li><b>LoginController</b> - Coordinates the logins of moderators and administrators. </li>
-			<li><b>SearchController</b> - Coordinates the search function. </li>
-			<li><b>PageViewController</b> - Coordinates which page to show. </li>
-			<li><b>PageEditController</b> - Coordinates the creating, updating, and deleting of pages. </li>
 			<li><b>FormulaEditController</b> - Coordinates the creating, updating, and deleting of formulas. </li>
 			<li><b>GraphicsEditController</b> - Coordinates the adding and deleting graphics. </li>
-		</ul>
+			<li><b>LoginController</b> - Coordinates the logins of moderators and administrators. </li>
+			<li><b>PageEditController</b> - Coordinates the creating, updating, and deleting of pages. </li>
+			<li><b>PageViewController</b> - Coordinates which page to show. </li>
+			<li><b>SearchController</b> - Coordinates the search function. </li>
+			
+	    </ul>
     </div>
 
     <div>
