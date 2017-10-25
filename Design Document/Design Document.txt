@@ -1,0 +1,212 @@
+Design Document for Undergraduate Physics Online Database
+
+Version 1.0
+October 24, 2017
+
+Table of Contents
+
+1. Introduction
+1.1 Purpose
+1.2 Scope
+1.3 References
+2. Diagrams
+2.1 Back End Diagram
+2.2 Front End Diagram
+1. Introduction
+
+1.1 Purpose
+
+The purpose of this document is to explain how the requirements in the SRS will be satisfied by outlining the design and setup of the UPOD application. This document should provide sufficient information for the software to be built.
+
+1.2 Scope
+
+This document is intended to describe a system that if implemented fully will satisfy the requirements of the UPOD project.
+
+1.3 References
+
+IEEE. IEEE Std 1016-1998 IEEE Recommended Practice for Software Design Descriptions. IEEE Computer Society, 1998
+
+2. Use Cases
+2.1 Actors
+2.1.1 General User - The general user is any user on the website to access the content it serves.
+2.1.2 Moderator - The moderator is a user charged with creating and editing the content on UPOD.
+2.1.3 Administrator - The administrator is a user responsible for maintaining the list of moderators and administrators.
+
+It should be noted that the moderator has access to the website's content and the administrator has access to both the website's content and the moderator's privileges.
+
+2.2 List of Use Cases
+2.2.1 General User Use Cases
+2.2.1.1 Learn a specific concept
+2.2.1.2 Learn a number of concepts
+
+2.2.2 Moderator Use Cases
+2.2.2.1 Create a new page
+2.2.2.2 Edit an existing page
+2.2.2.3 Remove a page that is deemed unwanted
+
+2.2.3 Administrator Use Cases
+2.2.3.1 Add a moderator
+2.2.3.2 Remove a moderator
+2.2.4.1 Add an administrator
+2.2.4.2 Remove an administrator
+
+
+Back End UML
+
+
+Front End UML
+
+4. Method Detailed Design
+This section describes the specific objects used in the back end package. It details the specific requirements of each method.
+
+4.1 Controllers
+These objects are responsible for receiving api calls, triggering the correct actions and preparing a well formed response.
+
+4.1.1 PageCtrl
+This controller handles the page modification endpoints.
+4.1.1.1 updatePage(String currentUser, String postBody)
+Request type: POST
+1. Check that currentUser is a moderator
+2. Build page object from postBody JSON string
+3. Call PageService updatePage
+4. Return ResponseEntity with success or error message
+
+4.1.1.2 createPage(String currentUser, String postBody)
+Request type: POST
+1. Check that currentUser is a moderator
+2. Build page object from postBody JSON string
+3. Call PageService createPage
+4. Return ResponseEntity with success or error message
+
+4.1.1.3 deletePage(String currentUser, String url)
+Request type: DELETE
+1. Check that currentUser is a moderator
+2. Call PageService deletePage
+3. Return ResponseEntity with success or error message
+
+4.1.2 PermissionsCtrl
+This controller handles the permission control endpoints.
+4.1.2.1 addMod(String currentUser, String userToMod)
+Request type: PUT
+1. Call PermissionService.addMod(String currentUser, String userToMod)
+2. Return ResponseEntity with success or error message
+
+4.1.2.2 removeMod(String currentUser, String userToRemove)
+Request type: DELETE
+1. Call PermissionService.removeMod(String currentUser, String userToRemove)
+2. Return ResponseEntity with success or error message
+
+4.1.2.3 addAdmin(String currentUser, String userToAdmin)
+Request type: PUT
+1. Call PermissionService.addAdmin(String currentUser, String userToAdmin)
+2. Return ResponseEntity with success or error message
+
+4.1.2.4 removeAdmin(String currentUser, String userToRemove)
+Request type: DELETE
+1. Call PermissionService.removeAdmin(String currentUser, String userToRemove)
+2. Return ResponseEntity with success or error message
+
+4.2 Services
+
+4.2.1 PageService
+This service handles the page modification operations.
+
+4.2.1.1 createPage(String currentUser, Page page)
+1. Check that currentUser is a moderator
+2. Check that page does not already exist
+3. Call UpodDao addPage with page's url
+3. Call updatePage with page
+4. Return success or failure
+
+4.2.1.2 deletePage(String currentUser, String url)
+1. Check that currentUser is a moderator
+2. Delete html file at url
+3. Return success or failure
+
+4.2.1.3 updatePage(String currentUser, Page page)
+1. Check that currentUser is a moderator
+2. Convert page object to html
+3. Save html file to site directory
+4. Return success or failure
+
+4.2.2 PermissionService
+This service handles permission checks, moderator list operations, and administrator list operations.
+4.2.2.1 addMod (String currentUser, String userToMod)
+1. Check that currentUser is an admin
+2. Call UpodDao addMod with userToMod
+3. Return success or failure
+
+4.2.2.2 removeMod (String currentUser, String userToRemove)
+1. Check that currentUser is an admin
+2. Call UpodDao removeMod with userToRemove
+3. Return success or failure
+
+4.2.2.3 addAdmin (String currentUser, String userToAdmin)
+1. Check that currentUser is an admin
+2. Call UpodDao addAdmin with userToAdmin
+3. Return success or failure
+
+4.2.2.4 removeAdmin (String currentUser, String userToRemove)
+1. Check that currentUser is an admin
+2. Call UpodDao removeAdmin with userToRemove
+3. Return success or failure
+
+4.3 UpodDao
+This object encapsulates all of the database's interactions with the system. All methods are simple operations. The database stores page urls, moderators and administrators.
+There will be one instance of the UpodDao created at application startup and accessable through the static Application getUpodDaoInstance method
+
+4.3.1 pageExists(String url)
+1. Does url exist in page table?
+2. Return result
+
+4.3.2 addPage(String url)
+1. Add url to page table
+2. Return success or failure
+
+4.3.3 removePage(String url)
+1. Remove url from page table
+2. Return success or failure
+
+4.3.4 isMod(String user)
+1. Is user in the moderator table or the administrator table?
+2. Return result
+
+4.3.5 isAdmin(String user)
+1. Is user in the administrator table?
+2. Return result
+
+4.3.6 addMod(String user)
+1. Add user to moderator table
+2. Return success or failure
+
+4.3.7 removeMod(String user)
+1. Remove user from moderator table
+2. Return success or failure
+
+4.3.8 addAdmin(String user)
+1. Add user to administrator table
+2. Return success or failure
+
+4.3.9 removeAdmin(String user)
+1. Remove user from administrator table
+2. Return success or failure
+
+4.4 Application
+This object contains the main method and hosts the single static instance of UpodDao.
+
+4.4.1 getUpodDaoInstance()
+1. Return the UpodDao
+
+4.5 Data Objects
+These objects represent data that will be passed from the front end.
+
+4.5.1 Page
+Represents a single entry in the database
+4.5.1.1 Page(String JSON)
+1. Construct the page object from a JSON string
+Note: Each section will be a separate object and will need to be assembled into an ArrayList
+
+4.5.2 Section
+Represents a subsection of a page, can contain a title, text and an image with description.
+
+Written by Luciano Abbott, Luke Turnbull
