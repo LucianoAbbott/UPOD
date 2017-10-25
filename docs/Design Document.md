@@ -1,18 +1,42 @@
-Design Document for Undergraduate Physics Online Database
+# Design Document for Undergraduate Physics Online Database
 
 Version 1.0
+
 October 24, 2017
 
-Table of Contents
+### Table of Contents
+1. Introduction
+
+1.1 Purpose
+
+1.2 Scope
+
+1.3 References
+
+2. Use Cases
+
+2.1 Actors
+
+2.2 List of Use Cases
+
+4. Method Detailed Design
+
+4.1 Controllers
+
+4.2 Services
+
+4.3 UpodDao
+
+4.4 Application
+
+4.5 Data Objects
+
+5. Diagrams
+
+5.1 Back End UML
 
 1. Introduction
-1.1 Purpose
-1.2 Scope
-1.3 References
-2. Diagrams
-2.1 Back End Diagram
-2.2 Front End Diagram
-1. Introduction
+
 
 1.1 Purpose
 
@@ -49,12 +73,6 @@ It should be noted that the moderator has access to the website's content and th
 2.2.4.1 Add an administrator
 2.2.4.2 Remove an administrator
 
-3. Diagrams
-
-Back End UML
-
-
-Front End UML
 
 4. Method Detailed Design
 This section describes the specific objects used in the back end package. It details the specific requirements of each method.
@@ -208,5 +226,10 @@ Note: Each section will be a separate object and will need to be assembled into 
 
 4.5.2 Section
 Represents a subsection of a page, can contain a title, text and an image with description.
+
+5. Diagrams
+5.1
+Back End UML
+![UML](https://LucianoAbbott.github.io/UPOD/uml.png)
 
 Written by Luciano Abbott, Luke Turnbull
