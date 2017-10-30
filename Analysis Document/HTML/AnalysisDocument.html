@@ -45,7 +45,7 @@
 <body>
     <header>
         <h1>Analysis Document for UPOD</h1>
-        <p class="version">Authors: Travis Leyenaar-Misson, Ziyi Zhang, Peter Smerchinski, Abel Worku, Joseph Shannon, Richard Bouda </p>
+        <p class="version">Authors: Travis Leyenaar-Misson, Ziyi Zhang, Peter Smerchinski, Abel Worku, Joseph Shannon, Richard Bouda, Stephen Maloney </p>
 	<p class="version"> Version 1.0 October 17, 2017</p>
         <div>
             <h2> Table of Contents </h2>
@@ -67,6 +67,7 @@
 		<li><a href="#diagrams">5. Diagrams</a>
 		    <ul>
 			<li><a href="#use_case_diagram">5.1 Use Case Diagram</a></li>
+			<li><a href="#class_diagram">5.2 Class Diagram</a></li>
 		</ul>    
 		<li><a href="#diagrams">6. Administrator/Moderator/General User Overview</a></li>
 
@@ -139,18 +140,23 @@ in conjunction with object-oriented design to create a starting point for projec
 
     <div>
 	<h2 id="diagrams">5. Diagrams</h2>
-	<h3 id="use_case_diagram">5.1 Use Case Diagram </h2>
-        <a href="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Analysis%20Document/UPOD2017UML/UseCase_01_01.png">
+	<h3 id="use_case_diagram">5.1 Use Case Diagram </h3>
+    <a href="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Analysis%20Document/UPOD2017UML/UseCase_01_01.png">
 		<img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Analysis%20Document/UPOD2017UML/UseCase_01_01.png" style="max-width:1000px;">
 	</a>
+	
 	<ul>
 		 <li><b>Administrator</b> has all the privileges of a Moderator and is able to <i>Manage Permissions</i>. </li>
 		 <li><b>Moderator</b> has all the privileges of a General User and is able to <i>Manage Comments</i> and <i>Manage Content</i>. </li>
 		 <li><b>General User</b> is able to <i>Search UPOD</i>, <i>View Page</i>, and <i>Submit Comments</i>. </li>
 	</ul>
-    </div>
-    <div>
-	    
+    
+	<h3 id="class_diagram">5.2 Class Diagram </h3>
+    <a href="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Analysis%20Document/UPOD2017UML/class diagram.png">
+		<img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Analysis%20Document/UPOD2017UML/class diagram.png" style="max-width:1000px;">
+	</a>
+	</div>
+    <div>    
 	 <h2 id="object_classification">6. Administrator/Moderator/General User Overview </h2>
 	 <ul>
 	    <li><b>Manage Permissions</b> - The user's ability to give administrator and moderator privileges. </li>
