@@ -45,8 +45,8 @@
 <body>
     <header>
         <h1>Analysis Document for UPOD</h1>
-        <p class="version">Authors: Travis Leyenaar-Misson, Ziyi Zhang, Peter Smerchinski, Abel Worku, Joseph Shannon, Richard Bouda </p>
-	<p class="version"> Version 1.0 October 17, 2017</p>
+        <p class="version">Authors: Travis Leyenaar-Misson, Ziyi Zhang, Peter Smerchinski, Abel Worku, Joseph Shannon, Richard Bouda, Stephen Maloney </p>
+	<p class="version"> Version 1.3 November 1st, 2017</p>
         <div>
             <h2> Table of Contents </h2>
             <ul>
@@ -67,6 +67,7 @@
 		<li><a href="#diagrams">5. Diagrams</a>
 		    <ul>
 			<li><a href="#use_case_diagram">5.1 Use Case Diagram</a></li>
+			<li><a href="#class_diagram">5.2 Class Diagram</a></li>
 		</ul>    
 		<li><a href="#diagrams">6. Administrator/Moderator/General User Overview</a></li>
 
@@ -82,7 +83,7 @@ It is presented in HTML format with UML diagrams. </p>
     <div>
         <h2 id="purposes_and_uses">2. Purposes and Uses</h2>
         <p> The purpose of this document is to provide an in-depth analysis of the project beyond the initial requirements phase, as it is a basis for the design document as well as for the project. The class, use case, and sequence diagrams are used 
-in conjunction with object-oriented design to create a starting point for project development. </p>
+in conjunction with object-oriented design to create a starting point for project implementation. </p>
     </div>
 	   
     <div>
@@ -107,14 +108,16 @@ in conjunction with object-oriented design to create a starting point for projec
         <h2 id="object_classification">4. Object Classification </h2>
 		<h3 id="entity_objects">4.1 Entity Objects</h3>
 		<ul>
-			<li><b>Administrator</b> - A user who can create, read, update, and delete pages. Also has the ability to add and remove moderators and administrators, as well as flag and delete requests. </li>
+			<li><b>Administrator</b> - A user who can create, read, update, and delete pages. Also has the ability to add and remove moderators and administrators. </li>
 			<li><b>Formula</b> - Created, read, updated, and deleted. Stored in the database. </li>
-	    		<li><b>Moderator</b> - A user who can create, read, update, and delete pages. Can also flag and delete requests. </li>
+			<li><b>Graphic</b> - Created, read, updated, and deleted. Stored in the database. </li>
+	    		<li><b>Moderator</b> - A user who can create, read, update, and delete pages. Can also flag and delete comments. </li>
 			<li><b>Page</b> - Created, read, updated, and deleted. Stored in the database. </li>
-			<li><b>Suggestion</b> - Added, flagged, and deleted. Stored in the database. </li>
+			<li><b>Comment</b> - Added, flagged, and deleted. Stored in the database. </li>
 	    	</ul>
 		<h3 id="boundary_objects">4.2 Boundary Objects</h3>
 		<ul>
+			<li><b>CommentEdit</b> - Adds and deletes comments. </li>
 			<li><b>FormulaEdit</b> - Creates, updates, and deletes formulas. </li>
 			<li><b>GraphicsEdit</b> - Adds and deletes graphics. </li>
 			<li><b>Login</b> - Where a moderator or administrator logs into UPOD to create, update, and delete pages. </li>
@@ -127,8 +130,9 @@ in conjunction with object-oriented design to create a starting point for projec
 	    </ul>
 		<h3 id="control_objects">4.3 Control Objects</h3>
 		<ul>
+			<li><b>CommentEditController</b> - Coordinates the adding and deleting of comments. </li>
 			<li><b>FormulaEditController</b> - Coordinates the creating, updating, and deleting of formulas. </li>
-			<li><b>GraphicsEditController</b> - Coordinates the adding and deleting graphics. </li>
+			<li><b>GraphicsEditController</b> - Coordinates the adding and deleting of graphics. </li>
 			<li><b>LoginController</b> - Coordinates the logins of moderators and administrators. </li>
 			<li><b>PageEditController</b> - Coordinates the creating, updating, and deleting of pages. </li>
 			<li><b>PageViewController</b> - Coordinates which page to show. </li>
@@ -139,26 +143,30 @@ in conjunction with object-oriented design to create a starting point for projec
 
     <div>
 	<h2 id="diagrams">5. Diagrams</h2>
-	<h3 id="use_case_diagram">5.1 Use Case Diagram </h2>
-        <a href="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Analysis%20Document/UPOD2017UML/UseCase_01_01.png">
+	<h3 id="use_case_diagram">5.1 Use Case Diagram </h3>
+    <a href="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Analysis%20Document/UPOD2017UML/UseCase_01_01.png">
 		<img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Analysis%20Document/UPOD2017UML/UseCase_01_01.png" style="max-width:1000px;">
 	</a>
+	
 	<ul>
 		 <li><b>Administrator</b> has all the privileges of a Moderator and is able to <i>Manage Permissions</i>. </li>
-		 <li><b>Moderator</b> has all the privileges of a General User and is able to <i>Manage Requests</i> and <i>Manage Content</i>. </li>
-		 <li><b>General User</b> is able to <i>Search UPOD</i>, <i>View Page</i>, and <i>Submit Requests</i>. </li>
+		 <li><b>Moderator</b> has all the privileges of a General User and is able to <i>Manage Comments</i> and <i>Manage Content</i>. </li>
+		 <li><b>General User</b> is able to <i>Search UPOD</i>, <i>View Page</i>, and <i>Submit Comments</i>. </li>
 	</ul>
-    </div>
-    <div>
-	    
+    
+	<h3 id="class_diagram">5.2 Class Diagram </h3>
+    <a href="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Analysis%20Document/UPOD2017UML/class diagram.png">
+		<img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Analysis%20Document/UPOD2017UML/class diagram.png" style="max-width:1000px;">
+	</a>
+	</div>
+    <div>    
 	 <h2 id="object_classification">6. Administrator/Moderator/General User Overview </h2>
 	 <ul>
 	    <li><b>Manage Permissions</b> - The user's ability to give administrator and moderator privileges. </li>
-	    <li><b>Manage Requests</b> - The user's ability to delete or otherwise manage page comments. </li>
+	    <li><b>Manage Comments</b> - The user's ability to delete or otherwise manage submitted comments. </li>
 	    <li><b>Manage Content</b> - The user's ability to delete or otherwise manage page content, such as diagrams, text, and images. </li>
 	    <li><b>Search UPOD</b> - The action taken by the user to search the database for specific information. </li>
 	    <li><b>View Page</b> - The action taken by the user to view a specific page on the database. </li>
-	    <li><b>Submit Requests</b> - The action taken by the user to submit comments on the layout of the database, the content or anything that the user may interact with. </li>
 	 </ul>
     </div>    
 </body> 
