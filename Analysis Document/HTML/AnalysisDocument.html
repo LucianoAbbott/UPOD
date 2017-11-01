@@ -111,13 +111,11 @@ in conjunction with object-oriented design to create a starting point for projec
 			<li><b>Administrator</b> - A user who can create, read, update, and delete pages. Also has the ability to add and remove moderators and administrators. </li>
 			<li><b>Formula</b> - Created, read, updated, and deleted. Stored in the database. </li>
 			<li><b>Graphic</b> - Created, read, updated, and deleted. Stored in the database. </li>
-	    		<li><b>Moderator</b> - A user who can create, read, update, and delete pages. Can also flag and delete comments. </li>
+	    		<li><b>Moderator</b> - A user who can create, read, update, and delete pages. </li>
 			<li><b>Page</b> - Created, read, updated, and deleted. Stored in the database. </li>
-			<li><b>Comment</b> - Added, flagged, and deleted. Stored in the database. </li>
 	    	</ul>
 		<h3 id="boundary_objects">4.2 Boundary Objects</h3>
 		<ul>
-			<li><b>CommentEdit</b> - Adds and deletes comments. </li>
 			<li><b>FormulaEdit</b> - Creates, updates, and deletes formulas. </li>
 			<li><b>GraphicsEdit</b> - Adds and deletes graphics. </li>
 			<li><b>Login</b> - Where a moderator or administrator logs into UPOD to create, update, and delete pages. </li>
@@ -130,7 +128,6 @@ in conjunction with object-oriented design to create a starting point for projec
 	    </ul>
 		<h3 id="control_objects">4.3 Control Objects</h3>
 		<ul>
-			<li><b>CommentEditController</b> - Coordinates the adding and deleting of comments. </li>
 			<li><b>FormulaEditController</b> - Coordinates the creating, updating, and deleting of formulas. </li>
 			<li><b>GraphicsEditController</b> - Coordinates the adding and deleting of graphics. </li>
 			<li><b>LoginController</b> - Coordinates the logins of moderators and administrators. </li>
@@ -151,7 +148,7 @@ in conjunction with object-oriented design to create a starting point for projec
 	<ul>
 		 <li><b>Administrator</b> has all the privileges of a Moderator and is able to <i>Manage Permissions</i>. </li>
 		 <li><b>Moderator</b> has all the privileges of a General User and is able to <i>Manage Comments</i> and <i>Manage Content</i>. </li>
-		 <li><b>General User</b> is able to <i>Search UPOD</i>, <i>View Page</i>, and <i>Submit Comments</i>. </li>
+		 <li><b>General User</b> is able to <i>Search UPOD</i> and <i>View Page</i>. </li>
 	</ul>
     
 	<h3 id="class_diagram">5.2 Class Diagram </h3>
