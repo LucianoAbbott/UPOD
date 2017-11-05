@@ -25,6 +25,12 @@
     dt,
     li,
     table#t01,
+    table#t02,
+    table#t03,
+    table#t04,
+    table#t05,
+    table#t06,
+    table#t07,
     ul {
         font-family: 'Open Sans', sans-serif;
     }
@@ -104,40 +110,40 @@
         <col width="1000">
   		<col width="10000">
   			<tr>
-    			<td><b>Front-end: </b></td>
+    			<td valign="top"><b>Front-end: </b></td>
         		<td> The section is how the user accesses information from the database. </td>
         	</tr>
         	<tr>
-        		<td><b>Back-end: </b></td>
+        		<td valign="top"><b>Back-end: </b></td>
         		<td> The section of the website that sends information from the physics database to the front-end.</td>
             </tr>
             <tr>
-        		<td><b>UPOD: </b></td>
+        		<td valign="top"><b>UPOD: </b></td>
         		<td> The Undergraduate Physics Online Database. </td>
             </tr>
             <tr>
-        		<td><b>UI: </b></td>
+        		<td valign="top"><b>UI: </b></td>
         		<td> User Interface. The portion of the website that interacts with the general users. </td>
             </tr>
             <tr>
-        		<td><b>HTML: </b></td>
+        		<td valign="top"><b>HTML: </b></td>
         		<td> HyperText Markup Language. The portion of front-end code that creates the structure of the application. </td>
             </tr>
             <tr>
-        		<td><b>CSS: </b></td>
+        		<td valign="top"><b>CSS: </b></td>
         		<td> Cascading Style Sheets. 
                 The portion of the front-end code that makes the application aesthetically pleasing. </td>
             </tr>
             <tr>
-        		<td><b>Web Application: </b></td>
+        		<td valign="top"><b>Web Application: </b></td>
         		<td> A program which is accessed over the internet. </td>
             </tr>
             <tr>
-        		<td><b>The Website: </b></td>
+        		<td valign="top"><b>The Website: </b></td>
         		<td> The online front-end portion of the application that can be used to search, read, modify, add to, and delete information from the database. </td>
             </tr>
             <tr>
-        		<td><b>The Database: </b></td>
+        		<td valign="top"><b>The Database: </b></td>
         		<td> The stored physics information accessed by back-end, and displayed by front-end. </td>
             </tr>
         </table>
@@ -169,35 +175,65 @@
         </ul>
         <p>UPOD's user interface (UI) is designed exclusively for desktop machines with little to no consideration for mobile usability.</p>
         <h3 id = "productFunctions">2.2 Define Product Functions</h3>
-        <dl>
-            <dt>Navigation</dt>
-            <dd>UPOD is navigable using a series of categorical links and a search bar. Categorical based navigation is based on a hierarchical tree structure implemented by assigning categories to pages.</dd>
-            <dt>Search</dt>
-            <dd>UPOD has a search algorithm to find and index key terms from the title and body of articles. Key terms are compared to the frequency of word use and if under a certain threshold are indexed.</dd>
-            <dt>Pages </dt>
-            <dd>Pages have a title, categories, sections, sub sections, formulas, and diagrams. </dd>
-            <dt>Moderator Functions</dt>
-            <dd>Moderators can create, delete, and edit pages. </dd>
-            <dt>Administrator Functions</dt>
-            <dd>Administrators can promote, and revoke moderator status to and from user status.</dd>
-        </dl>
-
+        
+        <table id="t02" style="table-layout: fixed;">
+        <col width="300">
+  		<col width="1000">
+        <tr>
+    			<td valign="top"><b>Navigation: </b></td>
+        		<td> UPOD is navigable using a series of categorical links and a search bar. Categorical based navigation is based on a hierarchical tree structure implemented by assigning categories to pages. </td>
+        </tr>
+        <tr>
+    			<td valign="top"><b>Search: </b></td>
+        		<td> UPOD has a search algorithm to find and index key terms from the title and body of articles. Key terms are compared to the frequency of word use and if under a certain threshold are indexed. </td>
+        </tr>
+        <tr>
+    			<td valign="top"><b>Pages: </b></td>
+        		<td> Pages have a title, categories, sections, sub sections, formulas, and diagrams. </td>
+        </tr>
+        <tr>
+    			<td valign="top"><b>Moderator Functions: </b></td>
+        		<td> Moderators can create, delete, and edit pages. </td>
+        </tr>
+        <tr>
+    			<td valign="top"><b>Administrator Functions: </b></td>
+        		<td> Administrators can promote, and revoke moderator status to and from user status. </td>
+        </tr>
+        </table>
+        
         <h3 id = "userCharacteristics">2.3 User Characteristics</h3>
-        <dl>
-            <dt>General Users</dt>
-            <dd>While UPOD is targeted at university students, a general user is not required to have physics education or experience. It is assumed that a general user has basic technical 
+        
+        <table id="t03" style="table-layout: fixed;">
+        <col width="300">
+  		<col width="1000">
+        <tr>
+    			<td valign="top"><b>General Users: </b></td>
+        		<td> While UPOD is targeted at university students, a general user is not required to have physics education or experience. It is assumed that a general user has basic technical 
                 knowledge and can navigate a website. They are able to traverse the website and read pages
-                without creating an account.</dd>
-            <dt>Moderators</dt>
-            <dd>A moderator has all of the privileges of a general user. They also require an account, which can be used to create, update, edit, and delete pages. Moderators should have a 
+                without creating an account. </td>
+        </tr>
+        <tr>
+    			<td valign="top"><b>Moderators: </b></td>
+        		<td> A moderator has all of the privileges of a general user. They also require an account, which can be used to create, update, edit, and delete pages. Moderators should have a 
                 basic knowledge of physics and greater technical knowledge than a
                 general user, as they have a greater degree of control over the website. Programming knowledge is not mandatory, however, if a moderator wishes to create an interactive 
-                diagram, they must know JavaScript.</dd>
-            <dt>Administrators</dt>
-            <dd>An administrator has all moderator privileges, and can add moderators and administrators to the pre-existing list of moderators and administrators. Administrators also require an account, and should 
+                diagram, they must know JavaScript. </td>
+        </tr>
+        <tr>
+    			<td valign="top"><b>Administrators: </b></td>
+        		<td> Pages have a title, categories, sections, sub sections, formulas, and diagrams. </td>
+        </tr>
+        <tr>
+    			<td valign="top"><b>Moderator Functions: </b></td>
+        		<td> Moderators can create, delete, and edit pages. </td>
+        </tr>
+        <tr>
+    			<td valign="top"><b>Administrator Functions: </b></td>
+        		<td> An administrator has all moderator privileges, and can add moderators and administrators to the pre-existing list of moderators and administrators. Administrators also require an account, and should 
                 have the greatest degrees of physics knowledge
-                and technical experience.</dd>
-        </dl>
+                and technical experience. </td>
+        </tr>
+        </table>
 
         <h3 id = "constraints">2.4 Constraints</h3>
         <p>Due to the interactive and technical nature of the front-end, the website does not have an exclusive interface for mobile devices. </p>
@@ -215,82 +251,164 @@
         <p>UPOD will have no external interface to rely on other than the Laurier database to cross reference login access for administrators and appointed moderators. </p>
 
         <h3 id = "functionalRequirements">3.2 Functional Requirements  </h3>
-        <dl>
         <dt>Each function description are divided into the following categories:</dt>
         <dl>
-        <dd>Use Case Name – A description of the function preformed.</dd>
-        <dd>Trigger – The action that causes the function to be performed.</dd>
-        <dd>Precondition – The precondition(s) that have to be meet for the function to be performed.</dd>
-        <dd>Basic Path – The website pages that appear or change based on the function preformed.</dd>
-        <dd>Alternative Path – An alternative path that the website can preform to fulfill the functions desired result.</dd>
-        <dd>Postcondition – The end result after the function is performed.</dd>
-        <dd>Exception Paths – Actions that can cause the function to preform incorrectly and how the function deals with them accordingly.</dd>
-        <dd>Other – Anything else that the function needs or occurs that needs clarification about its function.</dd>
+        
+        <table id="t04" style="table-layout: fixed;">
+        <col width="200">
+  		<col width="1000">
+        <tr>
+    			<td valign="top"><b>Use Case Name: </b></td>
+        		<td> A description of the function preformed. </td>
+        </tr>
+        <tr>
+    			<td valign="top"><b>Trigger : </b></td>
+        		<td> The action that causes the function to be performed. </td>
+        </tr>
+        <tr>
+    			<td valign="top"><b>Precondition : </b></td>
+        		<td> The precondition(s) that have to be meet for the function to be performed. </td>
+        </tr>
+        <tr>
+    			<td valign="top"><b>Basic Path: </b></td>
+        		<td> The website pages that appear or change based on the function preformed. </td>
+        </tr>
+        <tr>
+    			<td valign="top"><b>Alternative Path: </b></td>
+        		<td> An alternative path that the website can preform to fulfill the functions desired result. </td>
+        </tr>
+        <tr>
+    			<td valign="top"><b>Postcondition : </b></td>
+        		<td> The end result after the function is performed. </td>
+        </tr>
+        <tr>
+    			<td valign="top"><b>Exception Paths  : </b></td>
+        		<td> Anything else that the function needs or occurs that needs clarification about its function. </td>
+        </tr>
+        <tr>
+    			<td valign="top"><b>Other: </b></td>
+        		<td> The end result after the function is performed. </td>
+        </tr>
+        </table>
+     
 
         <h4>Administrative Login </h4>
-
-        <dl>
-            <dt>Use Case Name </dt>
-            <dd>Sign in to existing administrator account. </dd>
-            <dt>Trigger </dt>
-            <dd>Host clicks "Sign in as Administrator". </dd>
-            <dt>Precondition </dt>
-            <dd>Host is on host page of the web application. </dd>
-            <dt>Basic Path </dt>
-            <dd>From the host page, the user clicks "Sign as Administrator" and enters their Laurier username and Laurier password. </dd>
-            <dt>Alternative Path </dt>
-            <dd>None. </dd>
-            <dt>Postcondition </dt>
-            <dd>Host signed in to an existing account. </dd>
-            <dt>Exception Paths </dt>
-            <dd>If the username and password are incorrect, host is asked to resubmit credentials. </dd>
-            <dt>Other </dt>
-            <dd>An administrator account cannot be accessed by multiple computers. </dd>
-        </dl>
-
-        <h4>Moderator Login </h4>
         
-        <dl>
-            <dt>Use Case Name </dt>
-            <dd>Sign in to existing moderator account. </dd>
-            <dt>Trigger </dt>
-            <dd>Host clicks "Sign in as Moderator". </dd>
-            <dt>Precondition </dt>
-            <dd>Host is on host page of the web application. </dd>
-            <dt>Basic Path </dt>
-            <dd>From the host page, the user clicks "Sign as Moderator" and enters their Laurier username and Laurier password. </dd>
-            <dt>Alternative Path </dt>
-            <dd>None. </dd>
-            <dt>Postcondition </dt>
-            <dd>Host signed in to an existing account. </dd>
-            <dt>Exception Paths </dt>
-            <dd>If the username and password are incorrect, host is asked to resubmit credentials. </dd>
-            <dt>Other </dt>
-            <dd>A moderator account cannot be accessed by multiple computers.</dd>
-        </dl>
+        <table id="t05" style="table-layout: fixed;">
+        <col width="200">
+  		<col width="1000">
+        <tr>
+    			<td valign="top">Use Case Name: </td>
+        		<td> Sign in to existing administrator account. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Trigger : </td>
+        		<td> Host clicks "Sign in as Administrator". </td>
+        </tr>
+        <tr>
+    			<td valign="top">Precondition : </td>
+        		<td> Host is on host page of the web application. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Basic Path: </td>
+        		<td> From the host page, the user clicks "Sign as Administrator" and enters their Laurier username and Laurier password. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Alternative Path: </td>
+        		<td> None. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Postcondition : </td>
+        		<td> Host signed in to an existing account. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Exception Paths  : </td>
+        		<td> If the username and password are incorrect, host is asked to resubmit credentials. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Other: </td>
+        		<td> An administrator account cannot be accessed by multiple computers. </td>
+        </tr>
+        </table>
+
+       <h4>Moderator Login </h4>
+       
+        <table id="t06" style="table-layout: fixed;">
+        <col width="200">
+  		<col width="1000">
+        <tr>
+    			<td valign="top">Use Case Name: </td>
+        		<td> Sign in to existing moderator account. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Trigger : </td>
+        		<td> Host clicks "Sign in as Moderator". </td>
+        </tr>
+        <tr>
+    			<td valign="top">Precondition : </td>
+        		<td> Host is on host page of the web application. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Basic Path: </td>
+        		<td> From the host page, the user clicks "Sign as Moderator" and enters their Laurier username and Laurier password. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Alternative Path: </td>
+        		<td> None. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Postcondition : </td>
+        		<td> Host signed in to an existing account. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Exception Paths  : </td>
+        		<td> If the username and password are incorrect, host is asked to resubmit credentials. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Other: </td>
+        		<td> A moderator account cannot be accessed by multiple computers. </td>
+        </tr>
+        </table>
 
         <h4> Search UPOD: </h4>
-
-        <dl>
-            <dt>Use Case Name </dt>
-            <dd>Search UPOD for specific topic. </dd>
-            <dt>Trigger	 </dt>
-            <dd>Request submitted via search bar. </dd>
-            <dt>Precondition </dt>
-            <dd>None. </dd>
-            <dt>Basic Path </dt>
-            <dd>From the host page, the user selects the search bar and is able to submit a query. </dd>
-            <dt>Alternative Path </dt>
-            <dd>User can also use drop-down bar for general searches.</dd>
-            <dt>Postcondition </dt>
-            <dd>Search results page is shown containing results for the specific query. </dd>
-            <dt>Exception Paths </dt>
-            <dd>If no results are found, the user is presented with an empty results page stating that no results were found. </dd>
-            <dd>If the user submits a query without any input on the search bar, the user is presented with a message requesting information. </dd>
-            <dt>Other </dt>
-            <dd>None. </dd>
-
-        </dl>
+        
+        <table id="t07" style="table-layout: fixed;">
+        <col width="200">
+  		<col width="1000">
+        <tr>
+    			<td valign="top">Use Case Name: </td>
+        		<td> Search UPOD for specific topic. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Trigger : </td>
+        		<td> Request submitted via search bar.. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Precondition : </td>
+        		<td> Host is on host page of the web application. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Basic Path: </td>
+        		<td> From the host page, the user selects the search bar and is able to submit a query.</td>
+        </tr>
+        <tr>
+    			<td valign="top">Alternative Path: </td>
+        		<td> User can also use drop-down bar for general searches. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Postcondition : </td>
+        		<td> Search results page is shown containing results for the specific query. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Exception Paths  : </td>
+        		<td> If no results are found, the user is presented with an empty results page stating that no results were found.
+If the user submits a query without any input on the search bar, the user is presented with a message requesting information. </td>
+        </tr>
+        <tr>
+    			<td valign="top">Other: </td>
+        		<td> None. </td>
+        </tr>
+        </table>
 
         <h3 id = "security">3.3 Security </h3>
         <p>UPOD requires a login and password for moderators and administrators. This login is cross-referenced with the Laurier single sign-on authentication, so that professors and other administrators can edit the 
@@ -300,19 +418,3 @@
 </body>
 
 </html>
-
-
-<ul align="center">
-	<a href="#top">Back to Top</a>
-	&nbsp;
-	<a href="#tableOfContents">Table of Contents</a>
-	&nbsp;
-	<br></br>
-	<div>
-		<a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Project%20Management%20Plans/ManagementDocumentFormatted.html"><br>Project Management Document</br></a>
-		
-		<a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Analysis%20Document/HTML/AnalysisDocument.html"><br>Analysis Document</br></a>
-
-		<a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Design%20Document/design.html"><br>Design Document</br></a>
-	</div>
-</ul>
