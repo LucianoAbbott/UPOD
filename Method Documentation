@@ -2,4 +2,4 @@ Description - Purpose of the method
 Preconditions - Names and types of all variables used by the method
 Postconditions - Names and types of all variables returned by the method
 Exceptions - The errors that may be caused by the method, information on whether the method declares or catches them
-Date - The date of the last change made to the method
+Updated - The date of the last change made to the method
