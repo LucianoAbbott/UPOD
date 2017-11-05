@@ -1,5 +1,5 @@
-Description - State the purpose of the method
-Preconditions - State what the method needs to function, the required variables, arrays etc.
-Postconditions - State what the method will result in, a new variable, a list, a array, etc
-Exceptions - If possible state the exceptions what the program requires
-Date - The date of the last change so to document each shift
+Description - Purpose of the method
+Preconditions - Names and types of all variables used by the method
+Postconditions - Names and types of all variables returned by the method
+Exceptions - The errors that may be caused by the method, information on whether the method declares or catches them
+Date - The date of the last change made to the method
