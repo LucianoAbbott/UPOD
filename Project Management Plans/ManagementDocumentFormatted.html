@@ -51,14 +51,30 @@
 	<p class="version", align="right"> Version 2.4.5</p> 
 	<p class="version", id="demo", align="right"></p>
 	<script>
-		var d = new Date();
-		document.getElementById("demo").innerHTML = d;
+		var currentDate = new Date();
+		document.getElementById("demo").innerHTML = currentDate;
 	</script>
 
-	    
 	<h2 id="changeHistory">Change History:</h2>
 	    
-    <ul>   
+	<button onclick="showTable()">Show/Hide Table</button>
+
+	<script>
+		function showTable() {
+			var table = document.getElementById("myTable");
+			if (table.style.display == "none") {
+				table.style.display = "block";
+			} else {
+				table.style.display = "none";
+			}
+			
+		}
+	</script>
+
+	<br></br>
+
+    <ul id="myTable", style="display:none">
+	    
     <table style = "width:100%", border = 1>
 	
 	<tr>
@@ -202,6 +218,7 @@
 	    
 	</table>
 	</ul>
+
 &nbsp;
 
 	<div>
