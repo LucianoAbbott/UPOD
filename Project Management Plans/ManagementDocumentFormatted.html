@@ -44,9 +44,9 @@
     .button {
     	background-color: #e7e7e7; 
     	border: none;
-    	border-radius: 50px;
+	border-radius: 10px;
     	color: white;
-    	padding: 15px 32px;
+    	padding: 10px 28px;
     	text-align: center;
     	text-decoration: none;
     	display: inline-block;
@@ -60,6 +60,7 @@
     	background-color: white;
     	color: black;
     	border: 2px solid #555555;
+	box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
     }
 
     .showTableButton:hover {
@@ -82,9 +83,9 @@
 		document.getElementById("demo").innerHTML = currentDate;
 	</script>
 
-	<h2 id="changeHistory">Change History:</h2>
+	<h2 id="changeHistory"></h2>
 	    
-	<button class = "button showTableButton", onclick="showTable()">Show/Hide Table</button>
+	<button class = "button showTableButton", onclick="showTable()">Show/Hide Change History</button>
 
 	<script>
 		function showTable() {
@@ -97,8 +98,6 @@
 			
 		}
 	</script>
-
-	<br></br>
 
     <ul id="myTable", style="display:none">
 	    
@@ -250,11 +249,7 @@
 	    
 	</table>
 	</ul>
-
-&nbsp;
-
-	<div>
-					
+			
 	<h2 id="tableOfContents">Table of Contents</h2>
 	<ul>
 		<li><a href="#overview">1. Overview </a></li>
@@ -333,7 +328,6 @@
 		</ul>
 		
 	</ul>
-	</div>
 	</header>
 
 <div>
