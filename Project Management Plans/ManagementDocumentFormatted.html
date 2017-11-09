@@ -40,6 +40,33 @@
     .errors {
         color: #FF0055;
     }
+	
+    .button {
+    	background-color: #e7e7e7; 
+    	border: none;
+    	border-radius: 50px;
+    	color: white;
+    	padding: 15px 32px;
+    	text-align: center;
+    	text-decoration: none;
+    	display: inline-block;
+    	font-size: 16px;
+    	margin: 6px 0px;
+    	transition-duration:0.4s;
+    	cursor: pointer;
+    }
+
+    .showTableButton {
+    	background-color: white;
+    	color: black;
+    	border: 2.5px solid #555555;
+    }
+
+    .showTableButton:hover {
+    	background-color: #555555;
+    	color: white;
+    }
+	
 </style>
 
 <html>
@@ -57,7 +84,7 @@
 
 	<h2 id="changeHistory">Change History:</h2>
 	    
-	<button onclick="showTable()">Show/Hide Table</button>
+	<button class = "button showTableButton", onclick="showTable()">Show/Hide Table</button>
 
 	<script>
 		function showTable() {
