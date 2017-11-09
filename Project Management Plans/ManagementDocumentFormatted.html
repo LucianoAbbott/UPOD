@@ -3,69 +3,113 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 <style>
-    html {
-        background-color: #78909C;
-    }
-    
-    body {
-        background-color: #ffffff;
-        min-width: 480px;
-        max-width: 1000px;
-        margin: 0% auto;
-        padding: 3% 3% 3% 3%;
-        box-shadow: 0px 0px 10px #313131;
-    }
-    
-    h1,
-    h2,
-    h3,
-    h4,
-    p,
-    dd,
-    dt,
-    li,
-    ul {
-        font-family: 'Open Sans', sans-serif;
-    }
-    
-    .version {
-        font-size: 12;
-    }
-    
-    div {
-        border: 1px solid #313131;
-        border-width: 1px 0px 0px 0px;
-    }
-    
-    .errors {
-        color: #FF0055;
-    }
-	
-    .button {
-    	background-color: #e7e7e7; 
-    	border: none;
-	border-radius: 10px;
-    	color: white;
-    	padding: 10px 28px;
-    	text-align: center;
-    	text-decoration: none;
-    	display: inline-block;
-    	font-size: 16px;
-    	margin: 6px 0px;
-    	transition-duration:0.4s;
-    	cursor: pointer;
-    }
+	html {
+		background-color: #78909C;
+	}
+
+	body {
+		background-color: #ffffff;
+		min-width: 480px;
+		max-width: 1000px;
+		margin: 0% auto;
+		padding: 3% 3% 3% 3%;
+		box-shadow: 0px 0px 10px #313131;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	p,
+	dd,
+	dt,
+	li,
+	ul {
+		font-family: 'Open Sans', sans-serif;
+	}
+
+	.version {
+		font-size: 12;
+	}
+
+	div {
+		border: 1px solid #313131;
+		border-width: 1px 0px 0px 0px;
+	}
+
+	.errors {
+		color: #FF0055;
+	}
+
+	.button {
+		background-color: #e7e7e7; 
+		border: none;
+		border-radius: 10px;
+		color: white;
+		padding: 10px 28px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 6px 0px;
+		transition-duration:0.4s;
+		cursor: pointer;
+	}
+
 
     .showTableButton {
-    	background-color: white;
+       	background-color: white;
     	color: black;
-    	border: 2px solid #555555;
-	box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
+    	border: 2px solid #3D3D3D;
+    	box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
     }
 
     .showTableButton:hover {
-    	background-color: #555555;
+    	background-color: #3D3D3D;
     	color: white;
+    }
+	
+    .hoverButton {
+		display: inline-block;
+		border-radius: 10px;
+		background-color: white;
+		border: none;
+		border-width:2px;  
+		border-style:double;
+		border-color:#2A2A2A;
+		color: #2A2A2A;
+		text-align: center;
+		font-size: 16px;
+		padding: 10px;
+		width: 200px;
+		transition: all 0.5s;
+		cursor: pointer;
+		margin: 5px;
+    }
+
+    .hoverButton span {
+		cursor:pointer;
+    	display: inline-block;
+    	position: relative;
+    	transition: 0.5s;
+    }
+
+    .hoverButton span:after {
+    	content: '\00bb';
+    	position: absolute;
+    	opacity: 0;
+    	top: 0;
+    	right: -20px;
+    	transition: 0.5s;
+    }
+
+    .hoverButton:hover span {
+    	padding-right: 25px;
+    }
+
+    .hoverButton:hover span:after {
+    	opacity: 1;
+    	right: 0;
     }
 	
 </style>
@@ -101,153 +145,156 @@
 
     <ul id="myTable", style="display:none">
 	    
-    <table style = "width:100%", border = 1>
-	
-	<tr>
-  		<th>Version Number</th>
-  		<th>Description</th>
- 	</tr>
-  
-  	<tr>
-  		<th>0.1-0.2</th>
-      		<td>Template added, sections 1.1.1-1.1.3 added</td>
-  	</tr>
+		<table style = "width:100%", border = "0">
 
-  	<tr>
-		<th>0.3</th>
-      		<td>Section 1.1.4 added</td>
-  	</tr>
+		<tr>
+			<th>Version Number</th>
+			<th>Description</th>
+		</tr>
 
-  	<tr>	
-		<th>0.4</th>
-      		<td>Sections 1.2,2,3,4 added </td>
-  	</tr>
+		<tr>
+			<th>0.1-0.2</th>
+			<td>Template added, sections 1.1.1-1.1.3 added</td>
+		</tr>
 
-  	<tr>
-		<th>0.5</th>
-      		<td>Misc. changes to sections 1.1.4,3</td>
-  	</tr>
+		<tr>
+			<th>0.3</th>
+			<td>Section 1.1.4 added</td>
+		</tr>
 
-  	<tr>
-		<th>0.6</th>
-      		<td>Section 6 added</td>
-  	</tr>
+		<tr>	
+			<th>0.4</th>
+			<td>Sections 1.2,2,3,4 added </td>
+		</tr>
 
-  	<tr>
-		<th>0.7</th>
-      		<td>Section 5 added</td>
-  	</tr>
+		<tr>
+			<th>0.5</th>
+			<td>Misc. changes to sections 1.1.4,3</td>
+		</tr>
 
-  	<tr>
-		<th>0.8</th>
-      		<td>Section 7 (rough)</td>
-  	</tr>
+		<tr>
+			<th>0.6</th>
+			<td>Section 6 added</td>
+		</tr>
 
-  	<tr>
-		<th>0.9</th>
-      		<td>Section 7 finished, overall doc close to completion</td>
-  	</tr>
+		<tr>
+			<th>0.7</th>
+			<td>Section 5 added</td>
+		</tr>
 
-  	<tr>
-		<th>1.0</th>
-      		<td>First finished version</td>
-  	</tr>
+		<tr>
+			<th>0.8</th>
+			<td>Section 7 (rough)</td>
+		</tr>
 
-  	<tr>
-		<th>1.1</th>
-      		<td>Document formatted using HTML formatting, primary document changes to this HTML version</td>
-  	</tr>
+		<tr>
+			<th>0.9</th>
+			<td>Section 7 finished, overall doc close to completion</td>
+		</tr>
 
-  	<tr>
-		<th>1.2</th>
-      		<td>First batch of SQA issues fixed</td>
-  	</tr>
+		<tr>
+			<th>1.0</th>
+			<td>First finished version</td>
+		</tr>
 
-  	<tr>
-		<th>1.3</th>
-      		<td>More SQA fixes, added sub-group section</td>
-  	</tr>
+		<tr>
+			<th>1.1</th>
+			<td>Document formatted using HTML formatting, primary document changes to this HTML version</td>
+		</tr>
 
-  	<tr>
-		<th>1.3.5</th>
-      		<td>Updated subgroups section under sections 4.1 and 4.2</td>
+		<tr>
+			<th>1.2</th>
+			<td>First batch of SQA issues fixed</td>
+		</tr>
 
-  	<tr>
-		<th>1.4</th>
-      		<td>Grammatical improvements made to sections 5 and 7 to incorporate active voice</td>
-  	</tr>
+		<tr>
+			<th>1.3</th>
+			<td>More SQA fixes, added sub-group section</td>
+		</tr>
 
-  	<tr>
-		<th>1.5</th>
-      		<td>New dates</td>
-  	</tr>
+		<tr>
+			<th>1.3.5</th>
+			<td>Updated subgroups section under sections 4.1 and 4.2</td>
 
-  	<tr>
-	 	<th>1.6</th>
-      		<td>Minor phrasing modifications made to section 5</td>
-  	</tr>
+		<tr>
+			<th>1.4</th>
+			<td>Grammatical improvements made to sections 5 and 7 to incorporate active voice</td>
+		</tr>
 
-  	<tr>
-		<th>1.7</th>
-      		<td>Table of contents links added for referencing parts of the document</td>
-  	</tr>
+		<tr>
+			<th>1.5</th>
+			<td>New dates</td>
+		</tr>
 
-  	<tr>
-		<th>1.8</th>
-      		<td>Clickable footer hyperlinks added to the document</td>
-  	</tr>
-	    
-	<tr>
-		<th>1.9</th>
-		<td>Reformatted Change History into an organized table by version number and description of changes made</td>
-	</tr>
-	    
-	<tr>
-		<th>1.9.5</th>
-		<td>Reformatted Schedule Summary and Roles and Responsibilities data into organized tables</td>
-	</tr>
-	    
-	<tr>
-		<th>2.0</th>
-		<td>Reformatted Process Model data into an organized table</td> 
-	</tr>
-	    
-	<tr>
-		<th>2.0.5</th>
-		<td>Stylistic changes</td>
-	</tr>
+		<tr>
+			<th>1.6</th>
+			<td>Minor phrasing modifications made to section 5</td>
+		</tr>
 
-	<tr>
-		<th>2.1</th>
-		<td>Footer hyperlinks to Requirements, Analysis, and Design Documents added</td>
-	</tr>
-	    
-	<tr>
-		<th>2.2</th>
-		<td>Project Documents teams added as new subsection 4.2.1, and SQA teams added as new subsection 4.2.2</td>
-	</tr>
-	    
-	<tr>
-		<th>2.3</th>
-		<td>General fixes and additions, increased uniformity with other documents</td>
-	</tr>
-	    
-	<tr>
-		<th>2.4</th>
-		<td>Added "Back to Repository" footer hyperlink</td>
-	</tr>
+		<tr>
+			<th>1.7</th>
+			<td>Table of contents links added for referencing parts of the document</td>
+		</tr>
 
-	<tr>
-		<th>2.4.5</th>
-		<td>Added self-updating date and time to document header</td>
-	</tr>
-	    
-	<tr>
-		<th>2.5</th>
-		<td>Added show/hide button for the visibility of the Change History table</td>
-	</tr>
-	    
-	</table>
+		<tr>
+			<th>1.8</th>
+			<td>Clickable footer hyperlinks added to the document</td>
+		</tr>
+
+		<tr>
+			<th>1.9</th>
+			<td>Reformatted Change History into an organized table by version number and description of changes made</td>
+		</tr>
+
+		<tr>
+			<th>1.9.5</th>
+			<td>Reformatted Schedule Summary and Roles and Responsibilities data into organized tables</td>
+		</tr>
+
+		<tr>
+			<th>2.0</th>
+			<td>Reformatted Process Model data into an organized table</td> 
+		</tr>
+
+		<tr>
+			<th>2.0.5</th>
+			<td>Stylistic changes</td>
+		</tr>
+
+		<tr>
+			<th>2.1</th>
+			<td>Footer hyperlinks to Requirements, Analysis, and Design Documents added</td>
+		</tr>
+
+		<tr>
+			<th>2.2</th>
+			<td>Project Documents teams added as new subsection 4.2.1, and SQA teams added as new subsection 4.2.2</td>
+		</tr>
+
+		<tr>
+			<th>2.3</th>
+			<td>General fixes and additions, increased uniformity with other documents</td>
+		</tr>
+
+		<tr>
+			<th>2.4</th>
+			<td>Added "Back to Repository" footer hyperlink</td>
+		</tr>
+
+		<tr>
+			<th>2.4.5</th>
+			<td>Added self-updating date and time to document header</td>
+		</tr>
+
+		<tr>
+			<th>2.5</th>
+			<td>Added show/hide button for the visibility of the Change History table</td>
+		</tr>
+
+		<tr>
+			<th>2.5.5</th>
+			<td>Restyled show/hide button into a dynamic button, restyled "Back to Repository" hyperlink into a dynamic button, and removed border lines from Change History table.</td>
+		</table>
 	</ul>
 			
 	<h2 id="tableOfContents">Table of Contents</h2>
@@ -743,6 +790,7 @@
 
 <ul align ="right">
 	<div>
-		<a href="https://github.com/LucianoAbbott/UPOD"><br>Back to Repository</br></a>
+		<button onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButton", style="vertical-align:middle; margin-top: 20px"><span>Back to Repository</span></button>
+	
 	</div>
 </ul>
