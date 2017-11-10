@@ -70,25 +70,25 @@
     }
 	
     .hoverButton {
-		display: inline-block;
-		border-radius: 10px;
-		background-color: white;
-		border: none;
-		border-width:2px;  
-		border-style:double;
-		border-color:#2A2A2A;
-		color: #2A2A2A;
-		text-align: center;
-		font-size: 16px;
-		padding: 10px;
-		width: 200px;
-		transition: all 0.5s;
-		cursor: pointer;
-		margin: 5px;
+	display: inline-block;
+	border-radius: 10px;
+	background-color: white;
+	border: none;
+	border-width:2px;  
+	border-style:double;
+	border-color:#2A2A2A;
+	color: #2A2A2A;
+	text-align: center;
+	font-size: 16px;
+	padding: 10px;
+	width: 200px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
     }
 
     .hoverButton span {
-		cursor:pointer;
+	cursor:pointer;
     	display: inline-block;
     	position: relative;
     	transition: 0.5s;
@@ -112,11 +112,50 @@
     	right: 0;
     }
 	
+    .navbar {
+		overflow: hidden;
+		background-color: #333;
+		position: fixed;
+		bottom: 0;
+		width: 74.15%;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		text-align: center;
+    }
+
+	.navbar a {
+		float: none;
+		display: inline-block;
+		color: #f2f2f2;
+		text-align: center;
+		padding: 5px 9px;
+		text-decoration: none;
+		font-size: 14px;
+		font-family: sans-serif;
+	}	
+	
 </style>
 
 <html>
 
 <body>
+	
+	<div class="navbar">
+		<a href="#overview">Overview </a>
+
+		<a href = "#references">References</a>
+
+		<a href = "#definitions">Definitions</a>
+
+		<a href = "#projectOrganization">Project Organization</a>
+
+		<a href = "#managerialPlan">Managerial Process Plans</a> 
+
+		<a href = "#technicalProcessPlan">Technical Process Plans</a> 
+
+		<a href = "#supportingProcessPlan">Supporting Process Plans</a> 
+	</div>
+	
     <header>
 	<h1>UPOD - Project Management Plan</h1>
 	<p class="version">Authors: Richard Bouda, Abel Worku, Peter Smerchinski, Nathan Wickham</p>
