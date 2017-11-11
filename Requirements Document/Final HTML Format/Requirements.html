@@ -127,6 +127,33 @@
 	border-bottom-right-radius: 10px;
     }
 	
+    #backToTopButton {
+        background-color: white;
+        border: none;   
+        border-radius: 5px;
+        color: black;
+        padding: 11px;
+        text-align: center;
+        text-decoration-none;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration:0.2s;
+        cursor:pointer;
+        position: fixed;
+        top: 5px;
+        right: 5px;
+        z-index: 99;
+        outline: none;
+        opacity: 0.7;
+
+    }
+
+    #backToTopButton:hover {
+        opacity: 0.9;
+        background-color: #3d3d3d;
+        color: white;
+    }
+	
 </style>
 
 <html>
@@ -145,10 +172,29 @@
         <h1>Requirements Document for UPOD</h1>
         <p class="version">Authors: Stephanie Pitman, Joseph Shannon, Nathan Skof, Nicholas Hallman, Lauren Hepditch</p>
 	<p class="version", align="right"> Version 1.0</p> 
-        <p class="version", id="demo", align="right"></p>
+        <p class="version", id="date", align="right"></p>
         <script>
-            var d = new Date();
-            document.getElementById("demo").innerHTML = d;
+            var currentDate = new Date();
+            document.getElementById("date").innerHTML = currentDate;
+        </script>
+	    
+	<button onclick="topFunction()" id="backToTopButton" title="Scroll to top">Top</button>
+        <script>
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    document.getElementById("backToTopButton").style.display = "block";
+
+                } else {
+                    document.getElementById("backToTopButton").style.display = "none";
+                }
+            }
+
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
         </script>
 	    
         <div>
