@@ -250,13 +250,13 @@
     <div>
         <h2 id = "overallDescription">2. Overall Description</h2>
         <p>UPOD is a self-contained website based on the functionality of a physics encyclopedia. Therefore, UPOD supplies users with information they request in regards to physics. The goal is to make UPOD intuitive to the user 
-            through the use of known heuristics in user interface (UI) design, and to make the website easier to use then other physics databases. To ensure the website is informative, moderators, in this case writers for the site, 
-            can add, delete and edit pages and information in the database while administrators, the manager of the moderators, can promote and revoke moderator status.</p>
+            through the use of known heuristics in user interface (UI) design, and to make the website easier to use then other physics databases. To ensure the website is informative, moderators [ie. the writers for the site], 
+            can add, delete, and edit pages and information in the database, while administrators [ie. the managers of the moderators], can promote and revoke moderator status.</p>
 
         <h3 id = "productPerspective">2.1 Product Perspective</h3>
         <p>The UPOD website is self-contained supplying its own front-end and back-end. However, UPOD is a Laurier Service and can utilize the Single Sign On authentication service 
-            provided by idp.wlu.ca for moderator and admin login only. UPOD hosts full support for
-            the following browsers.</p>
+            provided by idp.wlu.ca for moderator and administrator login only. UPOD hosts full support for
+            the following browsers:</p>
         <ul>
             <li>Firefox 28</li>
             <li>Chrome 21</li>
@@ -276,7 +276,7 @@
         </tr>
         <tr>
     			<td valign="top"><b>Search: </b></td>
-        		<td> UPOD has a search algorithm to find and index key terms from the title and body of articles. Key terms are compared to the frequency of word use and if under a certain threshold are indexed. </td>
+        		<td> UPOD has a search algorithm to find and index key terms from the title and body of articles. Key terms are compared to the frequency of word use and indexed if under a certain threshold. </td>
         </tr>
         <tr>
     			<td valign="top"><b>Pages: </b></td>
@@ -312,7 +312,7 @@
         </tr>
         <tr>
     			<td valign="top"><b>Administrators: </b></td>
-        		<td> Pages have a title, categories, sections, sub sections, formulas, and diagrams. </td>
+        		<td> Pages have a title, categories, sections, subsections, formulas, and diagrams. </td>
         </tr>
         <tr>
     			<td valign="top"><b>Moderator Functions: </b></td>
@@ -330,7 +330,7 @@
         <p>Due to the interactive and technical nature of the front-end, the website does not have an exclusive interface for mobile devices. </p>
 
         <h3 id = "assumptionsAndDependencies">2.5 Assumptions and Dependencies</h3>
-        <p>The assumption is that the general user is accessible to anyone, whereas the administrators and moderators have access from idp.wlu.ca to edit, create, delete and 
+        <p>The assumption is that the general user is accessible to anyone, whereas the administrators and moderators have access from idp.wlu.ca to edit, create, delete, and 
             update pages. By having access to idp.wlu.ca, it does not require UPOD to
             create a separate database for hashing and / or encrypting passwords.</p>
     </div>
@@ -342,7 +342,7 @@
         <p>UPOD will have no external interface to rely on other than the Laurier database to cross-reference login access for administrators and appointed moderators. </p>
 
         <h3 id = "functionalRequirements">3.2 Functional Requirements  </h3>
-        <dt>Each function description are divided into the following categories:</dt>
+        <dt>Each function description is divided into the following categories:</dt>
         <dl>
         
         <table id="t04" style="table-layout: fixed;">
@@ -350,14 +350,14 @@
   		<col width="1000">
         <tr>
     			<td valign="top"><b>Use Case Name: </b></td>
-        		<td> A description of the function preformed. </td>
+        		<td> A description of the function performed. </td>
         </tr>
         <tr>
-    			<td valign="top"><b>Trigger : </b></td>
+    			<td valign="top"><b>Trigger: </b></td>
         		<td> The action that causes the function to be performed. </td>
         </tr>
         <tr>
-    			<td valign="top"><b>Precondition : </b></td>
+    			<td valign="top"><b>Precondition: </b></td>
         		<td> The precondition(s) that have to be met for the function to be performed. </td>
         </tr>
         <tr>
@@ -366,14 +366,14 @@
         </tr>
         <tr>
     			<td valign="top"><b>Alternative Path: </b></td>
-        		<td> An alternative path that the website can preform to fulfill the functions desired result. </td>
+        		<td> An alternative path that the website can perform to fulfill the function's desired result. </td>
         </tr>
         <tr>
-    			<td valign="top"><b>Postcondition : </b></td>
+    			<td valign="top"><b>Postcondition: </b></td>
         		<td> The end result after the function is performed. </td>
         </tr>
         <tr>
-    			<td valign="top"><b>Exception Paths  : </b></td>
+    			<td valign="top"><b>Exception Paths: </b></td>
         		<td> Anything else that the function needs or occurs that needs clarification about its function. </td>
         </tr>
         <tr>
@@ -393,11 +393,11 @@
         		<td> Sign in to existing administrator account. </td>
         </tr>
         <tr>
-    			<td valign="top">Trigger : </td>
+    			<td valign="top">Trigger: </td>
         		<td> Host clicks "Sign in as Administrator". </td>
         </tr>
         <tr>
-    			<td valign="top">Precondition : </td>
+    			<td valign="top">Precondition: </td>
         		<td> Host is on host page of the web application. </td>
         </tr>
         <tr>
@@ -409,11 +409,11 @@
         		<td> None. </td>
         </tr>
         <tr>
-    			<td valign="top">Postcondition : </td>
+    			<td valign="top">Postcondition: </td>
         		<td> Host signed in to an existing account. </td>
         </tr>
         <tr>
-    			<td valign="top">Exception Paths  : </td>
+    			<td valign="top">Exception Paths: </td>
         		<td> If the username and password are incorrect, host is asked to resubmit credentials. </td>
         </tr>
         <tr>
@@ -432,11 +432,11 @@
         		<td> Sign in to existing moderator account. </td>
         </tr>
         <tr>
-    			<td valign="top">Trigger : </td>
+    			<td valign="top">Trigger: </td>
         		<td> Host clicks "Sign in as Moderator". </td>
         </tr>
         <tr>
-    			<td valign="top">Precondition : </td>
+    			<td valign="top">Precondition: </td>
         		<td> Host is on host page of the web application. </td>
         </tr>
         <tr>
@@ -448,11 +448,11 @@
         		<td> None. </td>
         </tr>
         <tr>
-    			<td valign="top">Postcondition : </td>
+    			<td valign="top">Postcondition: </td>
         		<td> Host signed in to an existing account. </td>
         </tr>
         <tr>
-    			<td valign="top">Exception Paths  : </td>
+    			<td valign="top">Exception Paths: </td>
         		<td> If the username and password are incorrect, host is asked to resubmit credentials. </td>
         </tr>
         <tr>
@@ -471,11 +471,11 @@
         		<td> Search UPOD for specific topic. </td>
         </tr>
         <tr>
-    			<td valign="top">Trigger : </td>
+    			<td valign="top">Trigger: </td>
         		<td> Request submitted via search bar.</td>
         </tr>
         <tr>
-    			<td valign="top">Precondition : </td>
+    			<td valign="top">Precondition: </td>
         		<td> Host is on host page of the web application. </td>
         </tr>
         <tr>
@@ -487,11 +487,11 @@
         		<td> User can also use drop-down bar for general searches. </td>
         </tr>
         <tr>
-    			<td valign="top">Postcondition : </td>
+    			<td valign="top">Postcondition: </td>
         		<td> Search results page is shown containing results for the specific query. </td>
         </tr>
         <tr>
-    			<td valign="top">Exception Paths  : </td>
+    			<td valign="top">Exception Paths: </td>
         		<td> If no results are found, the user is presented with an empty results page stating that no results were found.
 If the user submits a query without any input on the search bar, the user is presented with a message requesting information. </td>
         </tr>
