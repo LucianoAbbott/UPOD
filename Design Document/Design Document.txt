@@ -1,3 +1,7 @@
+
+***********THIS IS AN OUTDATED VERSION. PLEASE EDIT AND/OR EVALUATE THE HTML VERSION INSTEAD*********************
+
+
 Design Document for Undergraduate Physics Online Database
 
 Version 1.0
