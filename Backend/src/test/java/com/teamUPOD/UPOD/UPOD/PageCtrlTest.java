@@ -17,16 +17,31 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class DemoControllerTest {
+public class PageCtrlTest {
 
     @Autowired
     private MockMvc mvc;
 
     @Test
-    public void getHello() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/demo")
+    public void updateTest() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/update")
         		.accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Api call worked")));
+                .andExpect(status().isOk());
     }
+
+    @Test
+    public void createTest() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/create")
+        		.accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+    
+    @Test
+    public void deleteTest() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/delete")
+        		.accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
+
 }
