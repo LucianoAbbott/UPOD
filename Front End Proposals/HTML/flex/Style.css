@@ -31,7 +31,6 @@ body {
 .ghostButton {
     cursor: pointer;
     margin: 20px 20px;
-    margin-bottom: 100px;
     padding: 5px 10px;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
@@ -100,7 +99,7 @@ body {
     user-select: none;
     /* Likely future */
     color: #3366FF;
-    margin-top: 100px;
+    margin-top: -25px;
     align-self: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 100px;
@@ -164,3 +163,69 @@ body {
     display: flex;
     flex-direction: row;
 }
+
+/* About Page CSS */
+
+.aboutPage {
+    margin: auto;
+    box-shadow: 0px 10px 30px -5px #222;
+    max-width: 1000px;
+    width:80%;
+    padding: 7% 4%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.aboutTitle{
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Likely future */
+    color: #3366FF;
+    align-self: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100px;
+    height: 50px;
+    cursor: default;
+}
+
+.rowAlign{
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.sideBySide{
+    width: 30%;
+    
+}
+
+  
+ h1,
+    h2,
+    h3,
+    h4,
+    p,
+    dd,
+    dt,
+    li,
+    ul {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    h2{
+        border-bottom-style:solid;
+        border-width:1px;
+        width:100%;
+        border-color: #aaa;
+    }

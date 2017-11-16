@@ -1,136 +1,58 @@
+
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
-
-<style>
-  
- h1,
-    h2,
-    h3,
-    h4,
-    p,
-    dd,
-    dt,
-    li,
-    ul {
-        font-family: 'Open Sans', sans-serif;
-    }
-    
-    .version {
-        font-size: 12;
-    }
-  
-body{
-    min-width:720px;
-    display:flex;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color:#3366FF;
-}
-  
-
-  
-.page{
-    box-shadow: 0px 10px 30px -5px #222;
-    max-width:720px;
-    padding:20% 15%;
-    display: flex;
-    flex-direction: column;
-    margin:auto;
-    background-color: #fff;
-    padding:auto;
-    border-radius:10px;
-}
-  
-  .ghostButton{
-    cursor:pointer;
-    margin: 20px 20px;
-    margin-bottom:50px;
-    padding: 5px 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-size:18px;
-    background-color: #fff;
-    border-style: solid;
-    border-width:1px;
-    border-color: #888;
-    border-radius:3px;
-    color:#444;
-}
-
-.ghostButton:hover{
-    background-color: #3366FF;
-    color:#fff;
-    transition: color 100ms, background-color 300ms;
-}
-.center-row{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-}
-.title{
-    -webkit-user-select: none;  /* Chrome all / Safari all */
-    -moz-user-select: none;     /* Firefox all */
-    -ms-user-select: none;      /* IE 10+ */
-    user-select: none;          /* Likely future */ 
-    color: #3366FF;
-    margin-top: 45px;
-    align-self: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 70px;
-    height: 50px;
-    cursor:default;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="flex/Style.css">
 
 <html>
 <body>
-    <div class="page">
-        <p class="title">About</p>
-          <h2 id="description">Description</h2>
-            <p> UPOD is Wilfrid Laurier's online physics database. </p>
+    <div class="aboutPage">
+        <p class="aboutTitle">About</p>
+        <h2 id="description">Description</h2>
+        <p> UPOD is Wilfrid Laurier's online physics database. </p>
       
-          <h2 id="team">The Team</h2>
-      <ul>
+        <h2 id="team">The Team</h2>
+        <div class="rowAlign">
+        <div class="sideBySide">
 			<li><strong>Front-End</strong>
-		<ul>                  
- 			<li>Nicholas Hallman</li>                         
- 			<li>Rachel Choi</li>                 
- 			<li>Richard Bouda</li>               
- 			<li>Abel Worku</li>                  
- 			<li>Stephen Maloney</li>             
- 			<li>Yinhao Zheng</li>                
- 			<li>Nathan Kohler</li>               
- 			<li>Connor Watson</li>               
- 			<li>Joseph Shannon</li>              
- 			<li>Stephanie Pitman</li>            
- 			<li>Ziyi Zhang</li>
-			
-		</ul>
-		</li>
-			<p>
-        
-      </p>
-			<li><strong>Back-End</strong>
-		<ul>
-			<li>Nathan Wickham</li>
-			<li>Luciano Abbott</li>
-			<li>Lauren Hepditch</li>
-			<li>Peter Smerchinski</li>
-			<li>Xavier Kuttamparambil</li>
-			<li>Akkshay Karthikeyan</li>
-			<li>Nathan Skof</li>
-			<li>Guyue Li</li>
-			<li>Luke Turnbull</li>
-			<li>Ziyi Zhang</li>
-			<li>Travis Leyenaar-Misson</li>
-		</ul>
-</li>
-          <h2 id="contact">Contact</h2>       
-          <p> For suggestions, please contact us at email@wlu.ca </p>
-           <form class="center-row">
-              <button type="button" class="ghostButton">Back</button>
-          </form>
+		    <ul>                  
+ 			    <li>Nicholas Hallman</li>                         
+ 			    <li>Rachel Choi</li>                 
+ 			    <li>Richard Bouda</li>               
+ 			    <li>Abel Worku</li>                  
+ 			    <li>Stephen Maloney</li>             
+ 			    <li>Yinhao Zheng</li>                
+ 			    <li>Nathan Kohler</li>               
+ 			    <li>Connor Watson</li>               
+ 			    <li>Joseph Shannon</li>              
+ 			    <li>Stephanie Pitman</li>            
+ 			    <li>Ziyi Zhang</li>
+            </ul>
         </div>
+
+        <div class="sideBySide">
+		    </li>
+			    <li><strong>Back-End</strong>
+		    <ul>
+			    <li>Nathan Wickham</li>
+			    <li>Luciano Abbott</li>
+			    <li>Lauren Hepditch</li>
+			    <li>Peter Smerchinski</li>
+			    <li>Xavier Kuttamparambil</li>
+			    <li>Akkshay Karthikeyan</li>
+			    <li>Nathan Skof</li>
+			    <li>Guyue Li</li>
+			    <li>Luke Turnbull</li>
+			    <li>Ziyi Zhang</li>
+			    <li>Travis Leyenaar-Misson</li>
+            </ul>
+            </li>
+        </div>
+        </div>
+
+        <h2 id="contact">Contact</h2>       
+        <p> For suggestions, please contact us at email@wlu.ca </p>
+        <form class="center-row">
+            <button type="button" class="ghostButton">Back</button>
+        </form>
     </div>
 </body>
 </html>
