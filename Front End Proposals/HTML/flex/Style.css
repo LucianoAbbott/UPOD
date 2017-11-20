@@ -6,7 +6,6 @@ html {
 
 body {
     min-width: 600px;
-    height: 100%;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -30,13 +29,13 @@ body {
     transition: transform 100ms, box-shadow 100ms;
 }
 
-.solidButton:hover{
+.solidButton:hover {
     box-shadow: 0px 2px 0px 0px #013;
     transform: translateY(-2px);
     transition: transform 100ms, box-shadow 100ms;
 }
 
-.solidButton:active{
+.solidButton:active {
     box-shadow: 0px 0px 0px 0px #013;
     transform: translateY(0px);
     transition: transform 50ms, box-shadow 50ms;
@@ -82,20 +81,30 @@ body {
     transition: color 100ms, background-color 300ms;
 }
 
-.keyline{
-    border-bottom-style:solid;
-    border-color:#aaa;
-    border-width:1px;
+.keyline {
+    border-bottom-style: solid;
+    border-color: #aaa;
+    border-width: 1px;
 }
 
-.image{
-    margin-left:3px;
-    margin-bottom:3px;
-    background-color:#3366ff;
-    width:107px;
-    height:100px;
+.image {
+    margin-left: 3px;
+    margin-bottom: 3px;
+    background-color: #3366ff;
+    width: 107px;
+    height: 100px;
 }
 
+<<<<<<< HEAD
+=======
+a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    test-decoration: none;
+}
+
+
+>>>>>>> 9678849a599232a23d67047dc5b0fcd78d71efe0
 /*Home Page CSS*/
 
 .page {
@@ -171,7 +180,7 @@ body {
     margin-left: 0px;
 }
 
-.sectionForm{
+.sectionForm {
     margin-left: 20px;
 }
 
@@ -186,7 +195,7 @@ body {
 
 .sidebarSections {
     width: 20%;
-    padding:10px;
+    padding: 10px;
 }
 
 .sectionEdit {
@@ -202,17 +211,19 @@ body {
     flex-direction: row;
 }
 
-.sectionSide{
-    width:80%;
-}
-.sectionImage{
-    width:20%;
+.sectionSide {
+    width: 80%;
 }
 
-.sectionWrap{
-    display:flex;
+.sectionImage {
+    width: 20%;
+}
+
+.sectionWrap {
+    display: flex;
     flex-direction: row;
 }
+
 
 /* About Page CSS */
 
@@ -220,7 +231,7 @@ body {
     margin: auto;
     box-shadow: 0px 10px 30px -5px #222;
     max-width: 1000px;
-    width:80%;
+    width: 80%;
     padding: 7% 4%;
     display: -webkit-box;
     display: -moz-box;
@@ -232,7 +243,7 @@ body {
     border-radius: 10px;
 }
 
-.aboutTitle{
+.aboutTitle {
     -webkit-user-select: none;
     /* Chrome all / Safari all */
     -moz-user-select: none;
@@ -249,20 +260,22 @@ body {
     cursor: default;
 }
 
-.rowAlign{
-    display:flex;
+.rowAlign {
+    display: block;
     justify-content: center;
     flex-direction: row;
 }
 
-.rowAlignLeft{
-    display:flex;
+.rowAlignLeft {
+    margin: auto;
+    display: flex;
     justify-content: flex-start;
     flex-direction: row;
 }
 
-.sideBySide{
+.sideBySide {
     width: 30%;
+<<<<<<< HEAD
     margin-bottom:5px;
     margin-top:0px;
 }
@@ -345,4 +358,29 @@ body {
     border-width: 0.5px;  
     position: absolute;
     top:60px;      
+=======
+    margin-bottom: 5px;
+    margin-top: 0px;
+    float: left;
+}
+
+li {
+    display: block;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+dd,
+dt,
+li,
+ul {
+    font-family: 'Montserrat', sans-serif;
+>>>>>>> 9678849a599232a23d67047dc5b0fcd78d71efe0
 }

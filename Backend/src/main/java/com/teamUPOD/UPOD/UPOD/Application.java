@@ -8,6 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+/**
+ * Home of the main method and getters for static class
+ * 
+ * @author luciano
+ */
 @SpringBootApplication
 public class Application {
 
