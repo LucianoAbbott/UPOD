@@ -123,6 +123,10 @@ a {
     border-radius: 10px;
 }
 
+.homeBody {
+    height: 100%;
+}
+
 .center-row {
     display: flex;
     flex-direction: row;
