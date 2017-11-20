@@ -94,7 +94,8 @@ body {
     width: 107px;
     height: 100px;
 }
-a{
+
+a {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     test-decoration: none;
@@ -228,7 +229,6 @@ a{
     box-shadow: 0px 10px 30px -5px #222;
     max-width: 1000px;
     width: 80%;
-    height: 100vh;
     padding: 7% 4%;
     display: -webkit-box;
     display: -moz-box;
