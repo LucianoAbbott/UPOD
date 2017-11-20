@@ -1,4 +1,156 @@
-UPOD Version 0.0.0.0.0
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+<style>	
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    dd,
+    dt,
+    li,
+    a,
+    ul {
+	font-family: 'Open Sans', sans-serif;
+    }
+	
+    .version {
+	font-size: 12;
+    }
+
+    tab { 
+    	padding-left: 2em; 
+    }
+
+    .button {
+	background-color: #e7e7e7; 
+	border: none;
+	border-radius: 10px;
+	color: white;
+	padding: 10px 28px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 6px 0px;
+	transition-duration:0.2s;
+	cursor: pointer;
+	font-family: 'Open Sans', sans-serif;
+    }
+
+    .showDocsButton {
+       	background-color: white;
+    	color: black;
+    	border: 2px solid #3D3D3D;
+    	box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
+    }
+
+    .showDocsButton:hover {
+    	background-color: #3D3D3D;
+    	color: white;
+    }
+
+    #navigation ul {
+    	margin: 0;
+    	padding: 0;
+    }
+
+    #navigation ul li {
+        list-style-type: none;
+    	display: inline;
+    }
+
+    #navigation li:not(:first-child):before {
+	content: " | ";
+    }
+
+</style>
+
+<html>
+	<head>
+		<title>Index.html</title>
+	</head>
+	<body align="center">
+		<h1>UPOD Version 0.0.0.0.0</h1>
+
+		<p class="version", id="date"></p>
+		<script>
+			var currentDate = new Date();
+			document.getElementById("date").innerHTML = currentDate;
+		</script>		
 
 
-<a href="Design Document.txt">Design Doc</a>
+		<button class = "button showDocsButton", onclick="showDocs()">Show/Hide UPOD Documents</button>
+
+		
+		<script>
+			function showDocs() {
+				var table = document.getElementById("myDocs");
+				if (table.style.display == "none") {
+					table.style.display = "block";
+				} else {
+					table.style.display = "none";
+				}
+				
+			}
+		</script>
+
+		<div id="myDocs", style="display:none">
+			<h3>Project Management Document</h3>
+
+			<div id="navigation">
+			    <ul>
+			        <li><a href="ManagementDocumentFormatted.html">Index Link</a></li>
+			        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Project%20Management%20Plans/ManagementDocumentFormatted.html">Web Link</a></li>
+			    </ul>
+			</div>
+
+			<h3>Requirements Document</h3>
+
+			<div id="navigation">
+			    <ul>
+			        <li><a href="Requirements.html">Index Link</a></li>
+			        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Requirements%20Document/Final%20HTML%20Format/Requirements.html">Web Link</a></li>
+			    </ul>
+			</div>
+
+			<h3>Analysis Document</h3>
+
+			<div id="navigation">
+			    <ul>
+			        <li><a href="AnalysisDocument.html">Index Link</a></li>
+			        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Analysis%20Document/HTML/AnalysisDocument.html">Web Link</a></li>
+			    </ul>
+			</div>			
+
+			<h3>Design Document</h3>
+
+			<div id="navigation">
+			    <ul>
+			        <li><a href="design.html">Index Link</a></li>
+			        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Design%20Document/design.html">Web Link</a></li>
+			    </ul>
+			</div>	
+		</div>
+
+
+		<div>
+			<h3>Front-End Components:</h3>
+			
+			<div id="navigation">
+			    <ul>
+			        <li><a href="https://github.com/LucianoAbbott/UPOD/tree/master/Front%20End%20Proposals/HTML/flex">Web Link</a></li>
+			    </ul>
+			</div>				
+
+			<h3>Back-End Components:</h3>
+
+			<div id="navigation">
+			    <ul>
+			        <li><a href="https://github.com/LucianoAbbott/UPOD/tree/master/Backend">Web Link</a></li>
+			    </ul>
+			</div>		
+		</div>
+
+	</body>
+</html>

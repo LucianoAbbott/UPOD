@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+    <script src="fileUp.js"></script> 
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+
+<body>
+    
+    <div>
+		<table id="top_bar">
+			<tbody>
+				<tr id="header">
+					<th class="barItems" id="titleBar">UPOD</th>
+					<th style="width: 2vw"> </th>
+					<th class="barItems" id="barSearch">
+            			<input type="text" name="searchBar" class="searchBar">
+            			<button type="button" class="searchButton">➜</button>
+					</th>
+					<th style="width:15vw"> </th>
+					<th id="topButtonBar">
+						<button type="button" class="barButton" id="editButton">Edit</button>
+						<button type="button" class="barButton" id="logButton">Logout</button>
+						<a href="about.html"><button type="button" class="ghostButton">About</button></a>
+					</th>
+				</tr>
+			</tbody>
+		</table>
+		<hr id="headerLine">
+	</div>
+    
+    <div class="pageEdit">
+        <div class="sidebarSections">
+            <h2>Sections: </h2>
+        </div>
+        <div class="sectionEdit">
+            <div class="articleForm">
+                <h1 class=articleTitle>Article Name: </h1>
+                <form>
+                    <input type="text" name="articleTitle" class="articleTitleBox">
+                    <button type="button" class="solidButton">Save Changes</button>
+                    <button type="button" class="ghostButtonRed">Delete Page</button>
+                </form>
+            </div>
+            <div class="sectionForm">
+                <div class="rowAlignLeft keyline">
+                    <h2 class = "sideBySide">Section 1:</h2>
+                    <form class="sideBySide">
+                        <button type="button" class="solidButton">+</button>
+                        <button type="button" class="solidButton">-</button>
+                    </form>
+                </div>
+                <div>
+                    <form>
+                        <input type="text" name="sectionTitle" class="articleTitleBox">
+                        <button type="button" class="ghostButtonRed">Delete</button>
+                    </form>
+                    <div class="sectionWrap">
+                        <div class="cestionSide">
+                            <textarea rows="20" cols="109"></textArea>
+                        </div>
+                        <div class="sectionImage">
+                            <div class="image" id="disp"></div>
+                            <form>
+                                <input id="fileInput" type="file" style="display:none;" />
+                                <button type="file" class="solidButton" onclick="document.getElementById('fileInput').click();" >Add Image</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

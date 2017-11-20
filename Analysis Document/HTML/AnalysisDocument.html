@@ -22,7 +22,13 @@
     dd,
     dt,
     li,
-    ul {
+    table#t01,
+    table#t02,
+    table#t03,
+    table#t04,
+    table#t05,
+    ul
+    {
         font-family: 'Open Sans', sans-serif;
     }
     
@@ -94,7 +100,6 @@
 	border-bottom-right-radius: 5px;
 	text-align: center;
     }
-
     .navbar a {
 	display: inline-block;
 	color: #f2f2f2;
@@ -133,13 +138,11 @@
         outline: none;
         opacity: 0.7;
     }
-
     #backToTopButton:hover {
         opacity: 0.9;
         background-color: #3d3d3d;
         color: white;
     }
-
 </style>
 
 <html>
@@ -163,7 +166,7 @@
     <header>
         <h1>Analysis Document for UPOD</h1>
         <p class="version">Authors: Travis Leyenaar-Misson, Ziyi Zhang, Peter Smerchinski, Abel Worku, Joseph Shannon, Richard Bouda, Stephen Maloney </p>
-	<p class="version", align="right"> Version 1.9 </p> 
+	<p class="version", align="right"> Version 2.0 </p> 
     	<p class="version", id="date", align="right"></p>
 	<script>
 		var currentDate = new Date();
@@ -173,16 +176,13 @@
         <button onclick="topFunction()" id="backToTopButton" title="Scroll to top">Top</button>
         <script>
             window.onscroll = function() {scrollFunction()};
-
             function scrollFunction() {
                 if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
                     document.getElementById("backToTopButton").style.display = "block";
-
                 } else {
                     document.getElementById("backToTopButton").style.display = "none";
                 }
             }
-
             function topFunction() {
                 document.body.scrollTop = 0;
                 document.documentElement.scrollTop = 0;
@@ -219,7 +219,7 @@
     </header>
     <div>
         <h2 id="introduction">1. Introduction</h2>
-        <p> UPOD (University Physics Online Database) is a comprehensive online database designed to organize information pertaining to fundamental physics concepts, and present them in a straightforward, efficient manner for user retrieval. UPOD eliminates the need to search through multiple sites and provides users a single location for accurate data. 
+        <p> UPOD (Undergraduate Physics Online Database) is a comprehensive online database designed to organize information pertaining to fundamental physics concepts, and present them in a straightforward, efficient manner for user retrieval. UPOD eliminates the need to search through multiple sites and provides users a single location for accurate data. 
 This analysis document formalizes the parameters determined for the project in its requirements plan, and refines in greater detail and scope the objectives of UPOD. In addition to the project's objectives, project specifications are articulated with clarity and concision to better remove uncertainty concerning any of the project's elements during the design and implementation phases. 
 It is presented in HTML format with UML diagrams. </p>
     </div>
@@ -232,54 +232,161 @@ in conjunction with object-oriented design to establish a starting point for pro
 	   
     <div>
         <h2 id="definitions">3. Definitions </h2>
-        <ul>
-			<li><b>Actor</b> - Any type of user (such as general users, administrators, and moderators) of the program. </li>
-			<li><b>Boundary Object</b> - Represents the system with actors which interact with other actors. Forms, windows, notices, and messages are included. </li>
-			<li><b>Behaviour Diagram</b> - A type of diagram that models a system's operations through the functions of its components. </li>
-			<li><b>Class Diagram</b> - A structure diagram that outlines all classes, methods, and attributes used in the project as well as their relationships. </li>
-			<li><b>Control Object</b> - Coordinates boundary and entity objects. Created at the beginning of a use case, and ceases to exist afterwards. </li>
-			<li><b>Entity Object</b> - Represents persistent, immutable information which form the core of the model. Often identified by nouns. </li>
-			<li><b>Interaction Diagram</b> - A type of diagram that models how system elements affect and influence each other. </li>
-			<li><b>Sequence Diagram</b> - An interaction diagram that shows how objects interact with each other in the temporal context of events. </li>
-			<li><b>Structural Diagram</b> - A type of diagram that models the anatomy and architecture of a program. </li>
-			<li><b>UML</b> - Unified Modeling Language. The basis for all diagrams used in this document. </li>
-			<li><b>Use Case</b> - A method or action between two actors, connected through a communication (which is represented by a straight line). </li>
-			<li><b>Use Case Diagram</b> - A behaviour diagram illustrated with actors and use cases, with communications between them to display their relationships. </li>
-	</ul>
+        
+        <table id="t01" style="table-layout: fixed;">
+        <col width="1500">
+  		<col width="10000">
+  			<tr>
+    			<td valign="top"><b>Actor: </b></td>
+        		<td> Any type of user (such as general users, administrators, and moderators) of the program.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Boundary Object: </b></td>
+        		<td> Represents the system with actors which interact with other actors. Forms, windows, notices, and messages are included.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Behaviour Diagram: </b></td>
+        		<td> A type of diagram that models a system's operations through the functions of its components.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Class Diagram: </b></td>
+        		<td> A structure diagram that outlines all classes, methods, and attributes used in the project as well as their relationships.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Control Object: </b></td>
+        		<td> Coordinates boundary and entity objects. Created at the beginning of a use case, and ceases to exist afterwards.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Entity Object: </b></td>
+        		<td> Represents persistent, immutable information which form the core of the model. Often identified by nouns.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Interaction Diagram: </b></td>
+        		<td> A type of diagram that models how system elements affect and influence each other.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Sequence Diagram: </b></td>
+        		<td> An interaction diagram that shows how objects interact with each other in the temporal context of events.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Structural Diagram: </b></td>
+        		<td> A type of diagram that models the anatomy and architecture of a program.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>UML: </b></td>
+        		<td> Unified Modeling Language. The basis for all diagrams used in this document.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Use Case: </b></td>
+        		<td> A method or action between two actors, connected through a communication (which is represented by a straight line).</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Use Case Diagram: </b></td>
+        		<td> A behaviour diagram illustrated with actors and use cases, with communications between them to display their relationships.</td>
+        	</tr>
+        </table>
     </div>
 
     <div>
         <h2 id="object_classification">4. Object Classification </h2>
 		<h3 id="entity_objects">4.1 Entity Objects</h3>
-		<ul>
-			<li><b>Administrator</b> - A user who can create, read, update, and delete pages. Also has the ability to add and remove moderators and administrators. </li>
-			<li><b>Formula</b> - A mathematical diagram that can be created, read, updated, and deleted. It is stored in the database. </li>
-			<li><b>Graphic</b> - A computer generated image that can be created, read, updated, and deleted. It is stored in the database. </li>
-	    		<li><b>Moderator</b> - A user who can create, read, update, and delete pages. </li>
-			<li><b>Page</b> - A single element that belongs to a section. It can be created, read, updated, and deleted. It is stored in the database. </li>
-	    	</ul>
+        
+        <table id="t02" style="table-layout: fixed;">
+        <col width="1000">
+  		<col width="10000">
+  			<tr>
+    			<td valign="top"><b>Administrator: </b></td>
+        		<td> A user who can create, read, update, and delete pages. Also has the ability to add and remove moderators and administrators.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Formula: </b></td>
+        		<td> A mathematical diagram that can be created, read, updated, and deleted. It is stored in the database.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Graphic: </b></td>
+        		<td> A computer generated image that can be created, read, updated, and deleted. It is stored in the database.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Moderator: </b></td>
+        		<td> A user who can create, read, update, and delete pages.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Page: </b></td>
+        		<td> A single element that belongs to a section. It can be created, read, updated, and deleted. It is stored in the database.</td>
+        	</tr>
+        </table>
+
 		<h3 id="boundary_objects">4.2 Boundary Objects</h3>
-		<ul>
-			<li><b>FormulaEdit</b> - Creates, updates, and deletes formulas. </li>
-			<li><b>GraphicsEdit</b> - Adds and deletes graphics. </li>
-			<li><b>Login</b> - Where a moderator or administrator logs into UPOD to create, update, and delete pages. </li>
-			<li><b>PageEdit</b> - Creates, updates, and deletes pages. </li>
-			<li><b>PageView</b> - When a user views the physics information on a page. </li>
-			<li><b>Search</b> - Where a user searches for pages.  </li>
-			<li><b>Search Bar</b> - Where a user types in keywords to be searched. </li>
-			<li><b>SearchResult</b> - Where a user views the results of a search. </li>
-			
-	    </ul>
+        
+        <table id="t03" style="table-layout: fixed;">
+        <col width="1000">
+  		<col width="10000">
+  			<tr>
+    			<td valign="top"><b>FormulaEdit: </b></td>
+        		<td> Creates, updates, and deletes formulas.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>GraphicsEdit: </b></td>
+        		<td> Adds and deletes graphics.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Login: </b></td>
+        		<td> Where a moderator or administrator logs into UPOD to create, update, and delete pages.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>PageEdit: </b></td>
+        		<td> Creates, updates, and deletes pages.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>PageView: </b></td>
+        		<td> When a user views the physics information on a page.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Search: </b></td>
+        		<td> Where a user searches for pages.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Search Bar: </b></td>
+        		<td> Where a user types in keywords to be searched.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>SearchResult: </b></td>
+        		<td> Where a user views the results of a search.</td>
+        	</tr>
+        </table>
+        
 		<h3 id="control_objects">4.3 Control Objects</h3>
-		<ul>
-			<li><b>FormulaEditController</b> - Coordinates the creating, updating, and deleting of formulas. </li>
-			<li><b>GraphicsEditController</b> - Coordinates the adding and deleting of graphics. </li>
-			<li><b>LoginController</b> - Coordinates the logins of moderators and administrators. </li>
-			<li><b>PageEditController</b> - Coordinates the creating, updating, and deleting of pages. </li>
-			<li><b>PageViewController</b> - Coordinates which page to show. </li>
-			<li><b>SearchController</b> - Coordinates the search function. </li>
-			
-	    </ul>
+        
+        <table id="t04" style="table-layout: fixed;">
+        <col width="1000">
+  		<col width="10000">
+  			<tr>
+    			<td valign="top"><b>FormulaEditController: </b></td>
+        		<td> Coordinates the creating, updating, and deleting of formulas.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>GraphicsEditController: </b></td>
+        		<td> Coordinates the adding and deleting of graphics.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>LoginController: </b></td>
+        		<td> Coordinates the logins of moderators and administrators.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>PageEditController: </b></td>
+        		<td> Coordinates the creating, updating, and deleting of pages.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>PageViewController: </b></td>
+        		<td> Coordinates which page to show.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>SearchController: </b></td>
+        		<td> Coordinates the search function.</td>
+            </tr>
+        
+        </table>
+
     </div>
 
     <div>
@@ -306,13 +413,28 @@ in conjunction with object-oriented design to establish a starting point for pro
 	</div>
     <div>    
 	 <h2 id="user_overview">6. Administrator/Moderator/General User Overview </h2>
-	 <ul>
-	    <li><b>Manage Permissions</b> - Allocates administrator and moderator privileges. </li>
-	    <li><b>Manage Comments</b> - Deletes or otherwise manages submitted comments. </li>
-	    <li><b>Manage Content</b> - Deletes or otherwise manages page content, such as diagrams, text, and images. </li>
-	    <li><b>Search UPOD</b> - Searches the database for specific information. </li>
-	    <li><b>View Page</b> - Views a specific page on the database. </li>
-	 </ul>
+     
+     <table id="t04" style="table-layout: fixed;">
+        <col width="1000">
+  		<col width="10000">
+  			<tr>
+    			<td valign="top"><b>Manage Permissions: </b></td>
+        		<td> Allocates administrator and moderator privileges.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Manage Content: </b></td>
+        		<td> Deletes or otherwise manages page content, such as diagrams, text, and images.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Search UPOD: </b></td>
+        		<td> Searches the database for specific information.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>View Page: </b></td>
+        		<td> Views a specific page on the database.</td>
+        	</tr>
+        
+        </table>
     </div>    
 </body> 
 
