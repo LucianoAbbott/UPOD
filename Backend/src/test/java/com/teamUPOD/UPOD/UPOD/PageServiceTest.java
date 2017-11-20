@@ -4,21 +4,25 @@ package com.teamUPOD.UPOD.UPOD;
 import org.junit.Assert;
 import org.junit.Test;
 
+import datatypes.Page;
+
 public class PageServiceTest {
 
+	private PageService fixture = new PageService();
+	
 	@Test
 	public void updatePageTest() {
-		Assert.assertFalse(PageService.updatePage());
+		Assert.assertFalse(fixture.updatePage(0, new Page()));
 	}
 
 	@Test
 	public void deletePageTest() {
-		Assert.assertFalse(PageService.deletePage());
+		Assert.assertFalse(fixture.deletePage(0));
 	}
 	
 	@Test
-	public void createPageTest() {
-		Assert.assertFalse(PageService.createPage());
+	public void getPageTest() {
+		Assert.assertNull(fixture.getPage(0));
 	}
 
 }
