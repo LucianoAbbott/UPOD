@@ -11,36 +11,35 @@
     li,
     a,
     ul {
-      font-family: 'Open Sans', 
-      sans-serif;
+	font-family: 'Open Sans', sans-serif;
     }
-
-    div {
-      border: 1px solid #313131;
-      border-width: 1px 0px 0px 0px;
+	
+    .version {
+	font-size: 12;
     }
 
     tab { 
-    	padding-left: 4em; 
+    	padding-left: 2em; 
     }
 
     .button {
-      background-color: #e7e7e7; 
-      border: none;
-      border-radius: 10px;
-      color: white;
-      padding: 10px 28px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 6px 0px;
-      transition-duration:0.2s;
-      cursor: pointer;
+	background-color: #e7e7e7; 
+	border: none;
+	border-radius: 10px;
+	color: white;
+	padding: 10px 28px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 6px 0px;
+	transition-duration:0.2s;
+	cursor: pointer;
+	font-family: 'Open Sans', sans-serif;
     }
 
     .showDocsButton {
-      background-color: white;
+       	background-color: white;
     	color: black;
     	border: 2px solid #3D3D3D;
     	box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
@@ -51,18 +50,38 @@
     	color: white;
     }
 
+    #navigation ul {
+    	margin: 0;
+    	padding: 0;
+    }
+
+    #navigation ul li {
+        list-style-type: none;
+    	display: inline;
+    }
+
+    #navigation li:not(:first-child):before {
+	content: " | ";
+    }
+
 </style>
 
 <html>
 	<head>
 		<title>Index.html</title>
 	</head>
-	<body>
+	<body align="center">
 		<h1>UPOD Version 0.0.0.0.0</h1>
 
-		<ul>
-			<button class = "button showDocsButton", onclick="showDocs()">Show/Hide Docs</button>
-		</ul>
+		<p class="version", id="date"></p>
+		<script>
+			var currentDate = new Date();
+			document.getElementById("date").innerHTML = currentDate;
+		</script>		
+
+
+		<button class = "button showDocsButton", onclick="showDocs()">Show/Hide UPOD Documents</button>
+
 		
 		<script>
 			function showDocs() {
@@ -76,38 +95,62 @@
 			}
 		</script>
 
-		<ul id="myDocs", style="display:none">
-			<h2><small>Project Management Document</small></h2>
-			<a href="ManagementDocumentFormatted.html">Index Link</a><br/>
+		<div id="myDocs", style="display:none">
+			<h3>Project Management Document</h3>
+
+			<div id="navigation">
+			    <ul>
+			        <li><a href="ManagementDocumentFormatted.html">Index Link</a></li>
+			        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Project%20Management%20Plans/ManagementDocumentFormatted.html">Web Link</a></li>
+			    </ul>
+			</div>
+
+			<h3>Requirements Document</h3>
+
+			<div id="navigation">
+			    <ul>
+			        <li><a href="Requirements.html">Index Link</a></li>
+			        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Requirements%20Document/Final%20HTML%20Format/Requirements.html">Web Link</a></li>
+			    </ul>
+			</div>
+
+			<h3>Analysis Document</h3>
+
+			<div id="navigation">
+			    <ul>
+			        <li><a href="AnalysisDocument.html">Index Link</a></li>
+			        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Analysis%20Document/HTML/AnalysisDocument.html">Web Link</a></li>
+			    </ul>
+			</div>			
+
+			<h3>Design Document</h3>
+
+			<div id="navigation">
+			    <ul>
+			        <li><a href="design.html">Index Link</a></li>
+			        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Design%20Document/design.html">Web Link</a></li>
+			    </ul>
+			</div>	
+		</div>
+
+
+		<div>
+			<h3>Front-End Components:</h3>
 			
-			<a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Project%20Management%20Plans/ManagementDocumentFormatted.html">Web Link</a>
+			<div id="navigation">
+			    <ul>
+			        <li><a href="https://github.com/LucianoAbbott/UPOD/tree/master/Front%20End%20Proposals/HTML/flex">Web Link</a></li>
+			    </ul>
+			</div>				
 
-			<h2><small>Requirements Document</small></h2>
+			<h3>Back-End Components:</h3>
 
-			<a href="Requirements.html">Index Link</a><br/>
-			<a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Requirements%20Document/Final%20HTML%20Format/Requirements.html">Web Link</a>
-
-			<h2><small>Analysis Document</small></h2>
-
-			<a href="AnalysisDocument.html">Index Link</a><br/>
-			<a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Analysis%20Document/HTML/AnalysisDocument.html">Web Link</a>
-
-			<h2><small>Design Document</small></h2>
-
-			<a href="design.html">Index Link</a><br/>
-			<a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Design%20Document/design.html">Web Link</a>
-		</ul>
-
-		<ul>
-			<h2><small>Front-End Components:</small></h2>
-			
-			<a href="https://github.com/LucianoAbbott/UPOD/tree/master/Front%20End%20Proposals/HTML/flex">Web Link</a>
-
-			<h2><small>Back-End Components:</small></h2>
-
-			<a href="https://github.com/LucianoAbbott/UPOD/tree/master/Backend">Web Link</a>	
-
-		</ul>
+			<div id="navigation">
+			    <ul>
+			        <li><a href="https://github.com/LucianoAbbott/UPOD/tree/master/Backend">Web Link</a></li>
+			    </ul>
+			</div>		
+		</div>
 
 	</body>
 </html>
