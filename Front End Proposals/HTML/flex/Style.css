@@ -96,81 +96,6 @@ body {
     height:100px;
 }
 
-/*For title bar CSS*/
-#topBar{
-    list-style-type: none;
-        margin: 0;
-    padding-left: 10vw;
-    padding-right: 10vw;
-    width:100%;
-}
-#titleBar{
-    -webkit-user-select: none;  /* Chrome all / Safari all */
-    -moz-user-select: none;     /* Firefox all */
-    -ms-user-select: none;      /* IE 10+ */
-    user-select: none;          /* Likely future */ 
-    color: #3366FF;
-    /*margin-top:100px;*/
-    align-self: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 50px;
-    margin: 0 10px 0 10px;
-    /*height: 50px;*/
-    cursor:default;
-}
-#barSearch{
-    width:50vh;
-}
-#editButton{
-    visibility: hidden;
-}
-#logButton{
-    visibility: hidden;
-}
-#headerLine{
-    width:98%;
-    margin: 0;
-    margin-left: 1vw;
-    border-color: #888;
-    border-width: 0.5px;            
-}
-#topButtonBar{
-    margin-right: 
-}
-.barItems{
-    display:inline;
-}
-.barButton{
-    cursor:pointer;
-    margin: 8px 8px;
-    padding: 5px 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-size:18px;
-    background-color: #fff;
-    border-style: solid;
-    border-width:1px;
-    border-color: #888;
-    border-radius:3px;
-    color:#444;
-}
-.searchBar{
-    width:45vw;
-    min-width:400px;
-    max-width:600px;
-    font-size: 20px;
-}
-
-.searchButton{
-    cursor:pointer;
-    font-size:18px;
-    padding:3px 5px;
-    border-style: solid;
-    border-color: #3366FF;
-    border-width:0px;
-    color:#fff;
-    background-color: #3366FF;
-}
-
 /*Home Page CSS*/
 
 .page {
@@ -354,3 +279,70 @@ body {
     ul {
         font-family: 'Montserrat', sans-serif;
     }
+
+
+/*Search Bar CSS*/
+.topBar {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top:0px;
+    background-color: #FFFFFF;
+    width:100%;
+    height:20%;
+}
+#titleBar{
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */ 
+    margin-left: 1vw;
+    margin-right: 1vw;
+    color: #3366FF;
+    align-self: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    cursor:default;
+}
+.searchBar{
+    width:45vw;
+    min-width:400px;
+    max-width:600px;
+    font-size: 20px;
+}
+
+.searchButton{
+    cursor:pointer;
+    font-size:18px;
+    padding:3px 5px;
+    border-style: solid;
+    border-color: #3366FF;
+    border-width:0px;
+    color:#fff;
+    background-color: #3366FF;
+}
+#buttonBar{
+    flex:2;
+    margin-right: 1vw;
+}
+.barButton{
+    cursor:pointer;
+    margin: 8px 8px;
+    padding: 5px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:18px;
+    background-color: #fff;
+    border-style: solid;
+    border-width:1px;
+    border-color: #888;
+    border-radius:3px;
+    color:#444;
+}
+#headerLine{
+    width:97%;
+    margin: 0;
+    border-color: #888;
+    border-width: 0.5px;  
+    position: absolute;
+    top:60px;      
+}
