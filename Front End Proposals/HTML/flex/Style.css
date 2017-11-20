@@ -306,6 +306,11 @@ body {
     background-color: #fff;
     border-radius: 10px;
 }
+ul{
+
+    list-style: none;
+
+}
 
 .aboutTitle{
     -webkit-user-select: none;
