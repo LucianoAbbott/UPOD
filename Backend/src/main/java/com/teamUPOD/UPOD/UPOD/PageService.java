@@ -15,6 +15,10 @@ public class PageService {
 
 	// TODO: PageService.deletePage
 	public boolean deletePage(int pageId) {
+		if (UpodDao.pageExists(pageId)) {
+			UpodDao.deletePage(pageId);
+			return true;
+		}
 		return false;
 	}
 
