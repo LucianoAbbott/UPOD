@@ -91,8 +91,8 @@ body {
     margin-left: 3px;
     margin-bottom: 3px;
     background-color: #3366ff;
-    width: 107px;
-    height: 100px;
+    width: 50%;
+    height: 50%;
 }
 
 a {
@@ -183,6 +183,7 @@ a {
 
 .sectionForm {
     margin-left: 20px;
+    margin-bottom: 20px;
 }
 
 .articleTitleBox {
@@ -202,6 +203,12 @@ a {
 .sectionEdit {
     width: 80%;
     padding-right: 20px;
+}
+
+.sectionTitle {
+    float:left;
+    margin-right: 20px;
+    margin-top: 0px;
 }
 
 .pageEdit {
@@ -298,7 +305,6 @@ ul {
 .topBar {
     display: flex;
     align-items: center;
-    position: absolute;
     top: 0px;
     background-color: #FFFFFF;
     width: 100%;
@@ -347,29 +353,21 @@ ul {
 }
 
 .barButton {
-    cursor: pointer;
-    margin: 8px 8px;
-    padding: 5px 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    background-color: #fff;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #888;
-    border-radius: 3px;
-    color: #444;
+    margin-right: 0px
 }
 
 #headerLine {
-    width: 97%;
+    width: 98%;
     margin: 0;
     border-color: #888;
-    border-width: 0.5px;
+    border-width: 1px;
     position: absolute;
     top: 60px;
-    =======margin-bottom: 5px;
-    margin-top: 0px;
+    margin-bottom: 5px;
+    margin-top: 10px;
     float: left;
+    border-style:none;
+    border-bottom-style:solid;
 }
 
 li {
@@ -390,5 +388,4 @@ dt,
 li,
 ul {
     font-family: 'Montserrat', sans-serif;
-    >>>>>>>9678849a599232a23d67047dc5b0fcd78d71efe0
 }
