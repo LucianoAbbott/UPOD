@@ -276,7 +276,7 @@ a {
 
 .sideBySide {
     width: 30%;
-    <<<<<<< HEAD margin-bottom: 5px;
+    float:left;
     margin-top: 0px;
 }
 
