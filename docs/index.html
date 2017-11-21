@@ -23,10 +23,6 @@
 	font-size: 12;
     }
 
-    tab { 
-    	padding-left: 2em; 
-    }
-
     .button {
 	background-color: #e7e7e7; 
 	border: none;
@@ -40,7 +36,6 @@
 	margin: 6px 0px;
 	transition-duration:0.2s;
 	cursor: pointer;
-	font-family: 'Open Sans', sans-serif;
     }
 
     .showDocsButton {
@@ -67,6 +62,49 @@
 
     #navigation li:not(:first-child):before {
 	content: " | ";
+    }
+	
+    .hoverButton {
+	display: inline-block;
+	border-radius: 10px;
+	background-color: white;
+	border: none;
+	border-width:2px;  
+	border-style:solid;
+	border-color: #1E1E1E;
+	color: black;
+	text-align: center;
+	font-size: 16px;
+	padding: 10px;
+	width: 200px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+    }
+
+    .hoverButton span {
+	cursor:pointer;
+    	display: inline-block;
+    	position: relative;
+    	transition: 0.5s;
+    }
+
+    .hoverButton span:after {
+    	content: '\00bb';
+    	position: absolute;
+    	opacity: 0;
+    	top: 0;
+    	right: -20px;
+    	transition: 0.5s;
+    }
+
+    .hoverButton:hover span {
+    	padding-right: 25px;
+    }
+
+    .hoverButton:hover span:after {
+    	opacity: 1;
+    	right: 0;
     }
 
 </style>
@@ -156,6 +194,11 @@
 			    </ul>
 			</div>		
 		</div>
-
+		
+		<br/>
+		<hr/>
+		<div align ="right">
+			<button onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButton", style="vertical-align:middle; margin-top: 20px"><span>Back to Repository</span></button>
+		</div>		
 	</body>
 </html>
