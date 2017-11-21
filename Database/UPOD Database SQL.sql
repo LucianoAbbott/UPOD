@@ -44,3 +44,10 @@ PRIMARY KEY(pageId,sectionId),
 FOREIGN KEY(pageId) REFERENCES PAGE(pageId),
 FOREIGN KEY(equId) REFERENCES EQUATION(equId),
 FOREIGN KEY(graphicId) REFERENCES GRAPHIC(graphicId));
+
+CREATE TABLE MAXID(
+sectionId INT,
+graphicId INT,
+pageId INT,
+equId INT,
+varId INT);
