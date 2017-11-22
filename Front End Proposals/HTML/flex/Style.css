@@ -362,9 +362,20 @@ ul {
     border-color: #888;
     border-width: 1px;
     position: absolute;
+<<<<<<< HEAD
+    top:19%;      
+=======
+    margin-bottom: 5px;
+=======
     top: 60px;
+<<<<<<< HEAD
+    =======margin-bottom: 5px;
+>>>>>>> 4512537b1b8ca6443d297e3164d7a1f6efee73d8
+    margin-top: 0px;
+=======
     margin-bottom: 5px;
     margin-top: 10px;
+>>>>>>> c47a9a9560204f91ad418f1e801e9b1023382057
     float: left;
     border-style:none;
     border-bottom-style:solid;

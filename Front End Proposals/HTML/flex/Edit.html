@@ -5,7 +5,8 @@
 
 <head>
     <meta charset="ISO-8859-1"> 
-    <script src="fileUp.js"></script> 
+    <script src="fileUp.js"></script>
+    <script src="UPOD.js"></script>
     <link rel="stylesheet" type="text/css" href="Style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
@@ -19,12 +20,10 @@
 	            <button type="button" class="searchButton">&#10148</button>
 		    </div>
 		    <div id="buttonBar" align="right">
-		  	    <button type="button" class="ghostButton barButton" id="editButton">Edit</button>
 		  	    <button type="button" class="ghostButton barButton" id="logButton">Logout</button>
                 	    <a href="about.html"><button type="button" class="ghostButton barButton" id= "aboutButton">About</button></a>
 		    </div>
 		</div>
-        <hr id="headerLine">
     </div>
         
     <div class="pageEdit">
@@ -38,10 +37,11 @@
         </div>
         <div class="sectionEdit">
             <div class="articleForm">
-                <h1 class=articleTitle>Article Name: </h1>
+                <h1 class=articleTitle>Page: </h1>
                 <form>
+		    <h1><strong><font size="5">Page Name: </font></strong></h1>
                     <input type="text" name="articleTitle" class="articleTitleBox">
-                    <button type="button" class="solidButton">Save Changes</button>
+                    <button type="button" class="solidButton">Save</button>
                     <button type="button" class="ghostButtonRed">Delete Page</button>
                 </form>
             </div>
@@ -57,7 +57,7 @@
                 <div>
                     <form>
                         <input type="text" name="sectionTitle" class="articleTitleBox">
-                        <button type="button" class="ghostButtonRed">Delete</button>
+                        <button type="button" class="ghostButtonRed">Delete Section</button>
                     </form>
                     <div class="sectionWrap">
                         <div class="sectionSide">
@@ -78,14 +78,14 @@
                 <div class="rowAlignLeft keyline">
                     <h2 class = "sectionTitle">Section 1:</h2>
                     <form class="sideBySide">
-                        <button type="button" class="solidButton">+</button>
+                        <button type="button" class="solidButton" onclick="addSection()">+</button>
                         <button type="button" class="solidButton">-</button>
                     </form>
                 </div>
                 <div>
                     <form>
                         <input type="text" name="sectionTitle" class="articleTitleBox">
-                        <button type="button" class="ghostButtonRed">Delete</button>
+                        <button type="button" class="ghostButtonRed">Delete Section</button>
                     </form>
                     <div class="sectionWrap">
                         <div class="sectionSide">
