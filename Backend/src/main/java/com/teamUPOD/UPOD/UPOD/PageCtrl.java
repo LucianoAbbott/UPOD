@@ -18,18 +18,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RestController
 public class PageCtrl {
 	//TODO: Tests for this class don't work
-	private PageService pageService = new PageService();
+	private PageService pageService;
 	
 	/**
 	 * Endpoint to post a page to the database with a given id
 	 * 
-	 * @param pageId 	id of the page to update - if unused creates new page at that id
+	 * @param pageId 	id of the page to update - if INVALID_ID creates a new page with the next available id
 	 * @param page   	the page object to put in the database
 	 * @return Success or failure http code
 	 */
 	@RequestMapping(method = RequestMethod.POST, value = "update/{pageid}")
     public ResponseEntity<Boolean> updatePage(@PathVariable("pageid") int pageId, @RequestBody Page page) {
-    		if (pageService.updatePage(pageId, page)) {
+		if (pageId == UpodDao.INVALID_ID) {
+			pageService.createPage(page);
+		} else if (pageService.updatePage(pageId, page)) {
     			return new ResponseEntity<Boolean>(HttpStatus.OK);
     		}
         return new ResponseEntity<Boolean>(HttpStatus.INTERNAL_SERVER_ERROR);
