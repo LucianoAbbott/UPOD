@@ -79,14 +79,29 @@ public class UpodDao {
 		 return MaxID;
 	}
 	
-	//TODO: pageExists
 	/**
-	 * Query the database with the given page Id
+	 * Query the database with the given table, idType and id
 	 * @param pageId
-	 * @return true if there is a page with the given Id that is not empty
+	 * @return true if there is a idType with the given Id that is not empty
+	 * @Author Nathan Skof
 	 */
-	public boolean pageExists(int pageId) {
+	public static boolean idExists(String Table,String idType, int id) {
+		String check = "SELECT * FROM "+Table+" WHERE "+ idType +" = " + id;
+		 try {
+			stmt = upodDao.getInstance();
+			ResultSet rs  = stmt.executeQuery(check);
+			
+			if(rs.absolute(1)){
+				return true;
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return false;
+		 
 	}
 
 	//TODO: updatePage
