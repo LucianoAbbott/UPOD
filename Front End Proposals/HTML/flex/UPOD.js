@@ -1,12 +1,9 @@
-function addSection(){
+var i = 0;
 
-    	var div = document.createElement("div");
-	div.style.width = "100px";
-	div.style.height = "100px";
-	div.style.background = "red";
-	div.style.color = "white";
-	div.innerHTML = "Hello";
-
-	document.getElementById("main").appendChild(div);
-
+function addSection() {
+    var original = document.getElementById('duplicater' + i);
+    var clone = original.cloneNode(true); // "deep" clone
+   clone.id = "duplicater" + ++i; // there can only be one element with an ID
+    clone.onclick = duplicate; // event handlers are not cloned
+    original.parentNode.appendChild(clone);
 }
