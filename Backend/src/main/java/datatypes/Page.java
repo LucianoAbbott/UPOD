@@ -25,12 +25,13 @@ public class Page {
 	}
 	
 	public void setPage(Page page){
+		Statement stmt = UpodDao.getStmt()
 		
 		if(pageExists(page.pageId)){
-			//"UPDATE PAGE SET title = "+page.title+", URL = "+page.URL+", editing = "+page.editing+" WHERE PageId= "+page.pageId+";"
+			stmt.executeUpdate("UPDATE PAGE SET title = '"+page.title+"', URL = '"+page.URL+"', editing = "+page.editing+" WHERE PageId= "+page.pageId+";");
 			
 		}else{
-			//"INSERT INTO PAGE VALUES('"+page.pageId+"','"+page.title+"','"page.URL+"','"+page.editing+"');"
+			stmt.executeUpdate("INSERT INTO PAGE VALUES('"+page.pageId+"','"+page.title+"','"page.URL+"','"+page.editing+"');");
 		}
 	}
 	
