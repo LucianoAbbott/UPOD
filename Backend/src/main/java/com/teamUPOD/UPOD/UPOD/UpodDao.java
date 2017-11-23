@@ -48,8 +48,8 @@ public class UpodDao {
 	public static int nextAvailableId( String Table, String id ){
 		 int MaxID = 0;
 		 try {
-			stmt = connection.createStatement();
-			stmt.executeQuery("SELECT MAX("+ id +") FROM "+ Table);
+			upodDao.getInstance();
+			upodDao.stmt.executeQuery("SELECT MAX("+ id +") FROM "+ Table);
 			ResultSet rs2 = stmt.getResultSet();
 			if(rs2.next()){
 				MaxID = rs2.getInt(1);
