@@ -45,7 +45,7 @@ public class UpodDao {
 	 * @return a valid Id with no attached page
 	 * @Author Nathan Skof
 	 */
-	public int nextAvailableId( String Table, String id ){
+	public static int nextAvailableId( String Table, String id ){
 		 int MaxID = 0;
 		 try {
 			stmt = connection.createStatement();
