@@ -11,7 +11,7 @@ import datatypes.Section;
  */
 public class Graphic {
   
-  private int graphicId;
+	private int graphicId;
 	private String graphicURL; 
 	private String descrpition; 
 	
@@ -28,32 +28,28 @@ public class Graphic {
 			//"UPDATE Graphic url"
 			
 		}
-    else{
+    		else{
 			//"Create graphic url"
-      //call  graphic set Description 
+		      //call  graphic set Description 
       
 		}
 	}
 	
 	public void setDescription(Graphic graphic, String gDescription ){
-    if(graphicExists(graphicId){
-      //Update 
+		if(graphicExists(graphicId){
+      			//Update 	
       
-    }
-    else{
-      //create graphic
-    }
+    		}
+		else{
+    			//create graphic
+    		}
   
-  }
-  public static int getGraphicCount(){
-    //return count of graphics
-  
-  }
-  public boolean graphicExists(int gId)
-  {
-    //return if graphic exists or not
-  }
-	
-	
-  
+  	}
+	public static int getGraphicCount(){
+    		//return count of graphics
+  	}
+		   
+	public boolean graphicExists(int gId) {
+    		//return if graphic exists or not
+  	}
 }
