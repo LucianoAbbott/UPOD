@@ -41,11 +41,24 @@ public class UpodDao {
 
 	//TODO: nextAvailableId
 	/**
-	 * Get an Id that is not in use
+	 * Get an Id that is not in use works for any table. 
 	 * @return a valid Id with no attached page
+	 * @Author Nathan Skof
 	 */
-	public int nextAvailableId() {
-		return -1;
+	public int nextAvailableId( String Table, String id ){
+		 int MaxID = 0;
+		 try {
+			stmt = connection.createStatement();
+			stmt.executeQuery("SELECT MAX("+ id +") FROM "+ Table);
+			ResultSet rs2 = stmt.getResultSet();
+			if(rs2.next()){
+				MaxID = rs2.getInt(1);
+			}
+			MaxID +=1;
+		} catch (SQLException e) {
+			System.out.println("No connection");
+		}
+		 return MaxID;
 	}
 	
 	//TODO: pageExists
