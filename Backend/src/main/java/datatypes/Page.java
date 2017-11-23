@@ -21,8 +21,6 @@ public class Page {
 		title = pTitle;
 		URL = pURL;
 		editing = pEditing;
-			
-		return self;
 	}
 	
 	public void setPage(Page page){
