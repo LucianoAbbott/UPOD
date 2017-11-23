@@ -6,7 +6,6 @@ import datatypes.Section;
 
 /**
  * Data type representing a complete page in the wiki
- * @author Lauren Hepditch
  * @author Nathan Skof
  */
 public class Graphic {
@@ -70,7 +69,21 @@ public class Graphic {
 		 
 	}
 	public static int getGraphicCount(){
-    		//return count of graphics
+    		 Statement stmt = null;
+		 int count = 0;
+		 try {
+			stmt = upodDao.getInstance();
+			ResultSet rs2 = stmt.executeQuery("SELECT COUNT(*) FROM GRAPHIC"); 
+			while(rs2.next()){
+				count = rs2.getInt(1);
+			}
+			
+		 } catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 
+		 return count;
   	}
 		   
 	public boolean graphicExists(int gId) {
