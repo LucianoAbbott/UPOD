@@ -22,17 +22,30 @@ public class Graphic {
 		description = gDescription;
 	}
 	
-	public void setGraphicURL(Graphic graphic){
+	public static void  setGraphicURL(Graphic graphic,String GraphicURL){
+		String Table = "GRAPHIC";
+		String idType = "graphicId";
 		
-		if(graphicExists(graphic.graphicId)){
-			//"UPDATE Graphic url"
+		Statement stmt = null;
+		try {
+			stmt = upodDao.getInstance();
+			if(upodDao.idExists(Table,idType, graphic.graphicId)){
+				//update graphic object 
+				graphic.graphicURL = GraphicURL;
+				//update database
+				stmt.executeUpdate("UPDATE GRAPHIC SET graphicURL = '"+graphic.graphicURL+"' WHERE graphicId ="+graphic.graphicId);
 			
 		}
-    		else{
-			//"Create graphic url"
-		      //call  graphic set Description 
-      
+			else{
+				//update graphic object 
+				graphic.graphicURL = GraphicURL;
+				//create new graphic in the database
+				stmt.executeUpdate("INSERT INTO GRAPHIC VALUES ("+graphic.graphicId+", '"+graphic.graphicURL+"', '"+graphic.description+"')");
+			}
+		}catch (SQLException e) {
+			System.out.println("No connection");
 		}
+		 
 	}
 	
 	public void setDescription(Graphic graphic, String gDescription ){
