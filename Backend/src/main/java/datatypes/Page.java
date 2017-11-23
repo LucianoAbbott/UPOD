@@ -25,14 +25,19 @@ public class Page {
 	}
 	
 	public void setPage(Page page){
-		Statement stmt = UpodDao.getStmt()
-		
-		if(pageExists(page.pageId)){
-			stmt.executeUpdate("UPDATE PAGE SET title = '"+page.title+"', URL = '"+page.URL+"', editing = "+page.editing+" WHERE PageId= "+page.pageId+";");
-			
-		}else{
-			stmt.executeUpdate("INSERT INTO PAGE VALUES('"+page.pageId+"','"+page.title+"','"page.URL+"','"+page.editing+"');");
-		}
+		Statement stmt = UpodDao.getStmt();
+		try{
+			if(pageExists(page.pageId)){
+				
+				stmt.executeUpdate("UPDATE PAGE SET title = '"+page.title+"', URL = '"+page.URL+"', editing = "+page.editing+" WHERE PageId= "+page.pageId+";");
+				
+			}else{
+				stmt.executeUpdate("INSERT INTO PAGE VALUES('"+page.pageId+"','"+page.title+"','"+page.URL+"','"+page.editing+"');");
+
+			}
+		}catch(SQLException e){
+				throw new IllegalStateException("Could not perform page update.", e);
+			}
 	}
 	
 	public Page getPage(int pageId){
