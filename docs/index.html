@@ -27,6 +27,7 @@
 	font-size: 12;
     }
 
+    /*General button CSS*/
     .button {
 	background-color: #e7e7e7; 
 	border: none;
@@ -42,6 +43,7 @@
 	cursor: pointer;
     }
 
+    /*CSS for button that shows list of documents*/
     .showDocsButton {
        	background-color: white;
     	color: black;
@@ -54,6 +56,7 @@
     	color: white;
     }
 
+    /*CSS for horizontally contiguous hyperlinks*/
     #navigation ul {
     	margin: 0;
     	padding: 0;
@@ -68,6 +71,7 @@
 	content: " | ";
     }
 	
+	/*CSS for Back to Repository button*/
     .hoverButton {
 	display: inline-block;
 	border-radius: 10px;
@@ -87,7 +91,7 @@
     }
 
     .hoverButton span {
-	cursor:pointer;
+		cursor:pointer;
     	display: inline-block;
     	position: relative;
     	transition: 0.5s;
@@ -110,6 +114,45 @@
     	opacity: 1;
     	right: 0;
     }
+
+    /*CSS for download button*/
+	.downloadButton {
+		background-color: white;
+    	color: black;
+    	border: 2px solid #3D3D3D;
+	    position: relative;
+	    -webkit-transition-duration: 0.4s; /* Safari */
+	    transition-duration: 0.2s;
+	    overflow: hidden;
+    	box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
+	}
+
+    .downloadButton:hover {
+    	background-color: #3D3D3D;
+    	color: white;
+    }
+
+	.downloadButton:after {
+	    content: "";
+	    background: #FEFEFE;
+	    display: block;
+	    border-radius: 10px;
+	    position: absolute;
+	    padding-top: 300%;
+	    padding-left: 350%;
+	    border-radius: 50px; 	
+	    margin-left: -100px !important;
+	    margin-top: -120%;
+	    opacity: 0;
+	    transition: all 1.5s
+	}
+
+	.downloadButton:active:after {
+	    padding: 0;
+	    margin: 0;
+	    opacity: 1;
+	    transition: 0s
+	}
 
 </style>
 
@@ -201,8 +244,10 @@
 		</div>
 		
 		<hr style="width: 450px; text-align:center">
-		<div align ="right">
-			<button onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButton", style="vertical-align:middle; margin-top: 10px"><span>Back to Repository</span></button>
+		<div>
+			<button title = "Download the UPOD repository", onclick="window.location='https://github.com/LucianoAbbott/UPOD/archive/master.zip';", class="button downloadButton", style="vertical-align:middle; margin-top: 10px; width: 261px;"><span>Download UPOD-master.zip</span></button>
+			<br/>
+			<button title = "UPOD on GitHub", onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButton", style="vertical-align:middle; margin-top: 25px"><span>Back to Repository</span></button>
 		</div>		
 	</body>
 </html>
