@@ -25,7 +25,16 @@ public class UpodDao {
 	
 	//TODO: UpodDao constructor
 	private UpodDao () {
-		
+		String username = "";
+		String password = "";
+		String url = "";
+		try{
+			connection = DriverManager.getConnection(url, username, password);
+			stmt = connection.createStatement();
+		} 
+		catch (SQLException e) {
+	 		throw new IllegalStateException("Cannot connect to the database.", e);
+		}
 	}
 	
 	/**
@@ -33,10 +42,18 @@ public class UpodDao {
 	 * @return the UpodDao instance
 	 */
 	public static UpodDao getInstance() { 
-		if (upodDao == null) {
+		if (upodDao == null){
 			upodDao = new UpodDao();
 		}
 		return upodDao;
+	}
+	
+	public static Connection getConn(){
+		return getInstance().connection;
+	}
+	
+	public static Statement getStmt(){
+		return getInstance().stmt;
 	}
 
 	//TODO: nextAvailableId
