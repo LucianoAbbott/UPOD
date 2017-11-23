@@ -87,6 +87,7 @@ public class UpodDao {
 	 */
 	public static boolean idExists(String Table,String idType, int id) {
 		String check = "SELECT * FROM "+Table+" WHERE "+ idType +" = " + id;
+		Statement stmt = null;
 		 try {
 			stmt = upodDao.getInstance();
 			ResultSet rs  = stmt.executeQuery(check);
