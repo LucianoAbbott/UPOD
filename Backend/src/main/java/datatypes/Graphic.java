@@ -23,13 +23,12 @@ public class Graphic {
 	}
 	
 	public static void  setGraphicURL(Graphic graphic,String GraphicURL){
-		String Table = "GRAPHIC";
-		String idType = "graphicId";
+		
 		
 		Statement stmt = null;
 		try {
 			stmt = upodDao.getInstance();
-			if(upodDao.idExists(Table,idType, graphic.graphicId)){
+			if(graphicExists(gId)){
 				//update graphic object 
 				graphic.graphicURL = GraphicURL;
 				//update database
@@ -49,13 +48,11 @@ public class Graphic {
 	}
 	
 	public static void  setDescription(Graphic graphic,String gDescription){
-		String Table = "GRAPHIC";
-		String idType = "graphicId";
 		
 		Statement stmt = null;
 		 try {
 			stmt = upodDao.getInstance();
-			if(upodDao.idExists(Table,idType, graphic.graphicId)){
+			if(graphicExists(int gId)){
 				//update graphic object 
 				graphic.description = gDescription;
 				//update database
@@ -78,5 +75,8 @@ public class Graphic {
 		   
 	public boolean graphicExists(int gId) {
     		//return if graphic exists or not
+		String Table = "GRAPHIC";
+		String idType = "graphicId";
+		return upodDao.idExists(Table,idType, gId);
   	}
 }
