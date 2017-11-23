@@ -48,16 +48,30 @@ public class Graphic {
 		 
 	}
 	
-	public void setDescription(Graphic graphic, String gDescription ){
-		if(graphicExists(graphicId){
-      			//Update 	
-      
-    		}
-		else{
-    			//create graphic
-    		}
-  
-  	}
+	public static void  setDescription(Graphic graphic,String gDescription){
+		String Table = "GRAPHIC";
+		String idType = "graphicId";
+		
+		Statement stmt = null;
+		 try {
+			stmt = upodDao.getInstance();
+			if(upodDao.idExists(Table,idType, graphic.graphicId)){
+				//update graphic object 
+				graphic.description = gDescription;
+				//update database
+				stmt.executeUpdate("UPDATE GRAPHIC SET description = '"+graphic.description+"' WHERE graphicId ="+graphic.graphicId);
+		}
+			else{
+				//update graphic object 
+				graphic.description = gDescription;
+				//create new graphic in the database
+				stmt.executeUpdate("INSERT INTO GRAPHIC VALUES ("+graphic.graphicId+", '"+graphic.graphicURL+"', '"+graphic.description+"')");
+		}
+		}catch (SQLException e) {
+			System.out.println("No connection");
+		}
+		 
+	}
 	public static int getGraphicCount(){
     		//return count of graphics
   	}
