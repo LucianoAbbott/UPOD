@@ -7,15 +7,16 @@ import datatypes.Section;
 /**
  * Data type representing a complete page in the wiki
  * @author luciano abbott
+ * @author Lauren Hepditch
  */
 public class Page {
   
-  private int pageId;
+  	private int pageId;
 	private String title; 
 	private String URL; 
 	private Boolean editing; 
 	
-	private Page(int pId, String pTitle, String pURL, Boolean pEditing){
+	public Page(int pId, String pTitle, String pURL, Boolean pEditing){
 		
 		pageId = pId;
 		title = pTitle;
@@ -24,7 +25,6 @@ public class Page {
 	}
 	
 	public void setPage(Page page){
-		
 		
 		if(pageExists(page.pageId)){
 			//"UPDATE PAGE SET title = "+page.title+", URL = "+page.URL+", editing = "+page.editing+" WHERE PageId= "+page.pageId+";"
@@ -47,7 +47,7 @@ public class Page {
 		
 		Section[] sections = new Section[nSections];
 				
-		//get all sections in page
+		//get all section data in page
 		
 		return sections;
 	}
@@ -68,6 +68,11 @@ public class Page {
 		Boolean exists = false;
 		//check if page exists 
 		return exists;
+	}
+	private int numSections(int pageId){
+		int num = 0;
+		//get number of sections for given page id
+		return num;
 	}
   
 }
