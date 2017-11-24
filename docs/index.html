@@ -189,9 +189,9 @@
 		<script>
 			function localDir() {
 				var url = document.URL; 
-
+				
 				if (url == "http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html") {
-					alert("The local directory can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
 				} else {
 	        			var baseURL = url.substring(0, url.lastIndexOf('/')); 
 					baseURL = baseURL.substring(0, baseURL.lastIndexOf('/')); 
@@ -201,58 +201,87 @@
 
 			function openProjDoc() {
 				var url = document.URL; 
-        			var spmpURL = url.substring(0, url.lastIndexOf('/')); 
-				spmpURL = spmpURL.substring(0, spmpURL.lastIndexOf('/')); 
-				spmpURL += "/Project%20Management%20Plans/ManagementDocumentFormatted.html"
-				window.open(spmpURL);
+				if (url == "http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html") {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					var spmpURL = url.substring(0, url.lastIndexOf('/')); 
+					spmpURL = spmpURL.substring(0, spmpURL.lastIndexOf('/')); 
+					spmpURL += "/Project%20Management%20Plans/ManagementDocumentFormatted.html"
+					window.open(spmpURL);
+				}
 			}
 
 			function openReqDoc() {
 				var url = document.URL; 
-        			var reqURL = url.substring(0, url.lastIndexOf('/')); 
-				reqURL = reqURL.substring(0, reqURL.lastIndexOf('/')); 
-				reqURL += "/Project%20Management%20Plans/ManagementDocumentFormatted.html"
-				window.open(reqURL);
+				
+				if (url == "http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html") {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					var reqURL = url.substring(0, url.lastIndexOf('/')); 
+					reqURL = reqURL.substring(0, reqURL.lastIndexOf('/')); 
+					reqURL += "/Requirements%20Document/Final%20HTML%20Format/Requirements.html"
+					window.open(reqURL);
+				}
 			}
 
 			function openAnalysisDoc() {
 				var url = document.URL; 
-        			var analysisURL = url.substring(0, url.lastIndexOf('/')); 
-				analysisURL = analysisURL.substring(0, analysisURL.lastIndexOf('/')); 
-				analysisURL += "/Project%20Management%20Plans/ManagementDocumentFormatted.html"
-				window.open(analysisURL);
+				if (url == "http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html") {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					var analysisURL = url.substring(0, url.lastIndexOf('/')); 
+					analysisURL = analysisURL.substring(0, analysisURL.lastIndexOf('/')); 
+					analysisURL += "/Analysis%20Document/HTML/AnalysisDocument.html"
+					window.open(analysisURL);
+				}
 			}
 
 			function openDesDoc() {
 				var url = document.URL; 
-        			var desURL = url.substring(0, url.lastIndexOf('/')); 
-				desURL = desURL.substring(0, desURL.lastIndexOf('/')); 
-				desURL += "/Project%20Management%20Plans/ManagementDocumentFormatted.html"
-				window.open(desURL);
+				if (url == "http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html") {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					var desURL = url.substring(0, url.lastIndexOf('/')); 
+					desURL = desURL.substring(0, desURL.lastIndexOf('/')); 
+					desURL += "/Design%20Document/design.html"
+					window.open(desURL);
+				}
 			}
 
 			function openFrontEnd() {
 				var url = document.URL; 
-        			var frontEndURL = url.substring(0, url.lastIndexOf('/')); 
-				frontEndURL = frontEndURL.substring(0, frontEndURL.lastIndexOf('/')); 
-				frontEndURL += "/Front End Proposals/HTML/flex"
-				window.open(frontEndURL);
+				if (url == "http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html") {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					var frontEndURL = url.substring(0, url.lastIndexOf('/')); 
+					frontEndURL = frontEndURL.substring(0, frontEndURL.lastIndexOf('/')); 
+					frontEndURL += "/Front End Proposals/HTML/flex"
+					window.open(frontEndURL);
+				}
 			}
 
 			function openBackend() {
 				var url = document.URL; 
-        			var frontEndURL = url.substring(0, url.lastIndexOf('/')); 
-				frontEndURL = frontEndURL.substring(0, frontEndURL.lastIndexOf('/')); 
-				frontEndURL += "/Backend"
-				window.open(frontEndURL);
+				if (url == "http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html") {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					var backEndURL = url.substring(0, url.lastIndexOf('/')); 
+					backEndURL = backEndURL.substring(0, backEndURL.lastIndexOf('/')); 
+					backEndURL += "/Backend"
+					window.open(backEndURL);
+				}
 			}			
 
 			function openDatabase() {
 				var url = document.URL; 
-        			var frontEndURL = url.substring(0, url.lastIndexOf('/')); 
-				frontEndURL = frontEndURL.substring(0, frontEndURL.lastIndexOf('/')); 
-				frontEndURL += "/Database"
-				window.open(frontEndURL);
+				if (url == "http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html") {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					var dbURL = url.substring(0, url.lastIndexOf('/')); 
+					dbURL = dbURL.substring(0, dbURL.lastIndexOf('/')); 
+					dbURL += "/Database"
+					window.open(dbURL);
+				}
 			}
 
 		</script>
