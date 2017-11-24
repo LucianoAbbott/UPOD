@@ -7,10 +7,11 @@ function addSection() {
     clone.onclick = duplicate; // event handlers are not cloned
     original.parentNode.appendChild(clone);*/
     i++;
-
+    var secParent = document.getElementsByClassName("sectionContainer")[0];
     var table = document.getElementsByClassName("sidebarSections")[0];
     var sectionTC = document.createElement("a");
     sectionTC.href="#duplicator" + i;
+    sectionTC.className = "sideBarLink a";
     sectionTC.innerHTML= "new \<br>";
     sectionTC.width = "100%";
     table.insertBefore(sectionTC,table.childNodes[table.childNodes.length - 2]);
@@ -35,6 +36,8 @@ function addSection() {
     addButton.className ="solidButton";
     removeButton.className = "solidButton";
     
+    
+
     f.appendChild(addButton);
     f.appendChild(removeButton);
 	rowA.appendChild(f);
@@ -54,6 +57,14 @@ function addSection() {
     sectionTitleText.placeholder = "Section Title";
     sectionDeleteButton.className = "ghostButtonRed";
     sectionDeleteButton.innerHTML = "Delete Section";
+    sectionDeleteButton.onclick = "getData();"
+
+    sectionDeleteButton.type = "button";
+    sectionDeleteButton.onclick = function(){
+        table.removeChild(sectionTC);
+        secParent.removeChild(newSection);
+        console.log(i);
+    };
 
     titleform.appendChild(sectionTitleText);
     titleform.appendChild(sectionDeleteButton);
@@ -68,15 +79,32 @@ function addSection() {
     var sectionWrapDiv = document.createElement("div");
     var sectionSideDiv = document.createElement("div");
     var sectionAreaText = document.createElement("textarea");
+    var sectionLatexText = document.createElement("textarea");
+    var diaForm = document.createElement("form");
+    var diagramUrl = document.createElement("input");
     sectionWrapDiv.className = "sectionWrap";
     sectionSideDiv.className = "sectionSide";
-    sectionAreaText.rows = "20";
-    sectionAreaText.cols = "109";
+
+    sectionAreaText.rows = "10";
+    sectionAreaText.cols = "70";
     sectionAreaText.width = "90%";
+
+    sectionLatexText.rows = "10";
+    sectionLatexText.cols = "50";
+    sectionLatexText.width = "90%";
+
     sectionAreaText.placeholder = "Content";
+    sectionLatexText.placeholder = "Latex";
+    diagramUrl.className = "articleTitleBox";
+    diagramUrl.type = "text";
+    diagramUrl.placeholder = "Diagram URL";
+    diagramUrl.name="diagram URL " + i;
 
 
     sectionSideDiv.appendChild(sectionAreaText);
+    sectionSideDiv.appendChild(sectionLatexText);
+    diaForm.appendChild(diagramUrl);
+    sectionSideDiv.appendChild(diaForm);
     sectionWrapDiv.appendChild(sectionSideDiv);
 
     var sectionImage = document.createElement("div");
@@ -105,6 +133,10 @@ function addSection() {
     newSection.appendChild(infoInput);
 
 
-    document.getElementsByClassName("sectionContainer")[0].appendChild(newSection);
+    secParent.appendChild(newSection);
 
+}
+
+function genJson(){
+    
 }

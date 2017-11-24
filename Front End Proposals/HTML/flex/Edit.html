@@ -21,7 +21,7 @@
 
 <body class="editBody">   
 
-    <div class="topBar">
+    <div class="topBar keyline">
 		<div id="titleBar">UPOD</div>
 		    <div class="barSearch">
 		  	    <input type="text" name="searchBar" class="searchBar">
@@ -33,14 +33,12 @@
 		  	    <button type = "button" class="ghostButton barButton"  id="aboutButton">About</button>
 		    </div>
 		</div>
-        <hr id="headerLine">
     </div>
 
     <div class="pageEdit">
         <div class="sidebarSections">
             <h2 class="sectionBarTitle keyline">Sections: </h2>
             <a id="newLink" onclick="addSection()" href="javascript:void(0);">+ New Section</a>
-        
         </div>
         <div class="sectionContainer">
         <div class="sectionEdit">
@@ -48,7 +46,7 @@
                 <h1>Page Name: </h1>
                 <form>
                     <input type="text" name="articleTitle" class="articleTitleBox" placeHolder="Page Name">
-                    <button type="button" class="solidButton">Save Changes</button>
+                    <button type="button" class="solidButton" type="button" onclick="genJson();">Save Changes</button>
                     <button type="button" class="ghostButtonRed">Delete Page</button>
                 </form>
             </div>
