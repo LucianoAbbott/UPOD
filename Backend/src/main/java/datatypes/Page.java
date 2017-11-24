@@ -22,6 +22,15 @@ public class Page {
 		sections = null;
 	}
 	
+	public Page(){
+		
+		pageId = null;
+		title = null;
+		URL = null;
+		editing = false;
+		sections = null;
+	}
+	
 	public int getId(){
 		return this.pageId;	
 	}
