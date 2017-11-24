@@ -1,10 +1,5 @@
 package datatypes;
 
-import java.sql.*;
-import java.util.ArrayList;
-import com.teamUPOD.UPOD.UPOD.UpodDao;
-import datatypes.Section;
-
 /**
  * Data type representing an equation. 
  * @author Ziyi Zhang
@@ -18,4 +13,11 @@ public class Equation {
 			equationId = eId;
 			equationURL = eURL;
 		}
+	
+	public int getId(){
+		return this.equationId;
+	}	
+	public String getURL(){
+		return this.equationURL;
+	}
 }
