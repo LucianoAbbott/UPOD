@@ -158,12 +158,12 @@ public class UpodDao {
 		Statement stmt=dao.stmt;
 		try {
 			//update equation
-			if(equationExists(equation.equationId)){
-				stmt.executeUpdate("UPDATE EQUATION SET equationURL = '" +equation.equationURL+ "' WHERE equId="+equation.equationId);
+			if(equationExists(equation.getId())){
+				stmt.executeUpdate("UPDATE EQUATION SET equationURL = '" +equation.getURL()+ "' WHERE equId="+equation.getId());
 				//update variables
 				
 			}else{ //create equation
-				stmt.executeUpdate("INSERT INTO EQUATION VALUES ("+equation.equationId+",'"+equation.equationURL+"')");
+				stmt.executeUpdate("INSERT INTO EQUATION VALUES ("+equation.getId()+",'"+equation.getURL()+"')");
 				//create variables
 			}
 		}catch (SQLException e) {
@@ -171,6 +171,20 @@ public class UpodDao {
 			}
 		return;
 	}
+	
+	public void deleteEquation(Equation equation){
+		UpodDao dao=getInstance();
+		Statement stmt=dao.stmt;
+		try{
+			stmt.executeQuery("delete from EQUVAR where equId="+equation.getId()+";");
+			stmt.executeQuery("delete from EQUATION where equId="+equation.getId()+";");
+			
+		}catch (SQLException e){
+			e.printStackTrace();
+		}
+		return;
+	}
+	
 	
 	/**
 	 * Gets a list of variables that are in the equation. 
@@ -183,7 +197,7 @@ public class UpodDao {
 		Statement stmt=dao.stmt;
 		ArrayList<ArrayList<String>> varResult = new ArrayList<ArrayList<String>>();
 		try{
-			ResultSet rs = stmt.executeQuery("SELECT symbol,name,category,description FROM VARIABLE WHERE varId IN (SELECT varId FROM EQUVAR WHERE equId = "+equation.equationId+")");
+			ResultSet rs = stmt.executeQuery("SELECT symbol,name,category,description FROM VARIABLE WHERE varId IN (SELECT varId FROM EQUVAR WHERE equId = "+equation.getId()+")");
 			//fill varResult
 			while (rs.next()){
 				ArrayList<String> varInfo = new ArrayList<String>();
@@ -229,7 +243,6 @@ public class UpodDao {
 		Statement stmt=dao.stmt;
 		try{
 			ResultSet rs=stmt.executeQuery("select * from EQUATION where equId =" + eId); 
-			
 			return rs.next();
 		}catch (SQLException e) {
 			e.printStackTrace();
