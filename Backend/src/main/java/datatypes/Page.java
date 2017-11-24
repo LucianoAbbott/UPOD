@@ -1,5 +1,7 @@
 package datatypes;
 
+import java.util.ArrayList;
+
 /**
  * Data type representing a complete page in the wiki
  * @author luciano abbott
@@ -11,7 +13,7 @@ public class Page {
 	private String title; 
 	private String URL; 
 	private Boolean editing; 
-	private Section[] sections;
+	private ArrayList<Section> sections;
 	
 	public Page(int pId, String pTitle, String pURL, Boolean pEditing){
 		
@@ -19,7 +21,7 @@ public class Page {
 		title = pTitle;
 		URL = pURL;
 		editing = pEditing;
-		sections = null;
+		sections = new ArrayList<Section>();
 	}
 	
 	public Page(){

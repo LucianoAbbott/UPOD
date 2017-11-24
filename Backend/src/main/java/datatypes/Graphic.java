@@ -12,13 +12,13 @@ public class Graphic {
   
 	private int graphicId;
 	private String graphicURL; 
-	private String descrpition; 
+	private String description; 
 	
 	public Graphic(int gId, String gURL, String gDescription){
 		
-		graphicId = gId;
-		graphicURL = gURL;
-		description = gDescription;
+		this.graphicId = gId;
+		this.graphicURL = gURL;
+		this.description = gDescription;
 	}
 	
 	public static void  setGraphicURL(Graphic graphic,String GraphicURL){
