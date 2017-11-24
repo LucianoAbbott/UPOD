@@ -2,10 +2,8 @@ package datatypes;
 
 import java.sql.*;
 import java.util.ArrayList;
-/*
 import com.teamUPOD.UPOD.UPOD.UpodDao;
 import datatypes.Section;
-*/
 
 /**
  * Data type representing an equation. 
