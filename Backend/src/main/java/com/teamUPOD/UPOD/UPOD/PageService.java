@@ -19,7 +19,7 @@ public class PageService {
 	 * @return true if page was created successfully
 	 */
 	public boolean createPage(Page page) {
-		return upodDao.updatePage(upodDao.nextAvailableId(), page);
+		return upodDao.updatePage(upodDao.nextAvailableId(UpodDao.PAGE_TABLE_KEY), page);
 	}
 	
 	/**

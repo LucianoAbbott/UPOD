@@ -1,10 +1,14 @@
 package com.teamUPOD.UPOD.UPOD;
 
-import datatypes.Page;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Collections;
+import java.util.HashMap;
+
+import datatypes.Page;
 
 /**
  * Database Access Object for the backend server
@@ -16,15 +20,25 @@ public class UpodDao {
 	//TODO: Discussion on passing error codes instead of boolean success/fail
 	
 	
-	Connection connection = null;
-    	Statement stmt = null;
+	private Connection connection = null;
+    	private Statement stmt = null;
 	
 	private static UpodDao upodDao = null;
 
-	public static int INVALID_ID = -1;
+	public static final int INVALID_ID = -1;
+	
+	public static final String PAGE_TABLE_KEY = "Page";
+	public static final String PAGE_TABLE_ID = "PageId";
+	
+	private static final HashMap<String, String> TABLE_ID_MAP;
+	static {
+		HashMap<String, String> map = new HashMap<String,String>();
+		map.put(PAGE_TABLE_KEY, PAGE_TABLE_ID);
+		TABLE_ID_MAP = (HashMap<String, String>) Collections.unmodifiableMap(map);
+	}
 	
 	//TODO: UpodDao constructor
-	private UpodDao () {
+	private UpodDao() {
 		String username = "";
 		String password = "";
 		String url = "";
@@ -48,12 +62,12 @@ public class UpodDao {
 		return upodDao;
 	}
 	
-	public static Connection getConn(){
-		return getInstance().connection;
+	private Connection getConnection(){
+		return this.connection;
 	}
 	
-	public static Statement getStmt(){
-		return getInstance().stmt;
+	private Statement getStatement(){
+		return this.stmt;
 	}
 
 	
@@ -62,12 +76,12 @@ public class UpodDao {
 	 * @return a valid Id with no attached page
 	 * @Author Nathan Skof
 	 */
-	public static int nextAvailableId( String Table, String id ){
+	public int nextAvailableId(String table){
 		 int MaxID = 0;
 		 Statement stmt = null;
 		 try {
-			stmt = upodDao.getInstance();
-			stmt.executeQuery("SELECT MAX("+ id +") FROM "+ Table);
+			stmt = this.getConnection().createStatement();
+			stmt.executeQuery("SELECT MAX("+ TABLE_ID_MAP.get(table) +") FROM "+ table);
 			ResultSet rs2 = stmt.getResultSet();
 			if(rs2.next()){
 				MaxID = rs2.getInt(1);
@@ -109,26 +123,9 @@ public class UpodDao {
 	public boolean deletePage(int pageId) {
 		try {
 			connection.createStatement().execute("DELETE FROM Page WHERE PageId = " + pageId);
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
-		try
-		{
-		    Class.forName(""); // not sure wht goes in there
-		    connection = DriverManager.getConnection(""); // not sure wht goes in there
-
-		    stmt = connection.createStatement();
-		    stmt.execute("DELETE FROM Page WHERE PageId = " + pageId);
-		}
-		catch (Exception e) {
-		    e.printStackTrace();
-		}finally {
-		    try {  
-			stmt.close();
-			connection.close();
-		    } catch (Exception e) {
+			return true;
+		} catch (SQLException e) {
 			e.printStackTrace();
-		    }
 		}
 		return false;
 	}
