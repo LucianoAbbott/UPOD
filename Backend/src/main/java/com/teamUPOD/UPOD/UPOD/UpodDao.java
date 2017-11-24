@@ -93,14 +93,30 @@ public class UpodDao {
 		 return MaxID;
 	}
 	
-	//TODO: pageExists
 	/**
-	 * Query the database with the given page Id
+	 * Query the database with the given table, idType and id
 	 * @param pageId
-	 * @return true if there is a page with the given Id that is not empty
+	 * @return true if there is a idType with the given Id that is not empty
+	 * @Author Nathan Skof
 	 */
-	public boolean pageExists(int pageId) {
+	public static boolean idExists(String Table,String idType, int id) {
+		String check = "SELECT * FROM "+Table+" WHERE "+ idType +" = " + id;
+		Statement stmt = null;
+		 try {
+			stmt = upodDao.getInstance();
+			ResultSet rs  = stmt.executeQuery(check);
+			
+			if(rs.absolute(1)){
+				return true;
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return false;
+		 
 	}
 
 	//TODO: updatePage
@@ -133,4 +149,80 @@ public class UpodDao {
 	public Page getPage(int pageId) {
 		return null;
 	}
+	//---------------------------------------------------------------------------------------------------------------------
+	//Equations
+	/**
+	 * Creates Equation if none exists, updates otherwise. 
+	 * @param Equation object
+	 * @author Ziyi Zhang
+	 */
+	public void setEquationURL(Equation equation){ //THIS ONE'S NOT DONEEEEEEEE the others are tested and work
+		Statement stmt=UpodDao.getStmt();
+		
+		//update equation
+		if(equationExists(equation.equationId)){
+			stmt.executeUpdate("UPDATE EQUATION SET equationURL = '" +equation.equationURL+ "' WHERE equId="+equation.equationId);
+			//update variables
+			
+		}else{ //create equation
+			stmt.executeUpdate("INSERT INTO EQUATION VALUES ("+equation.equationId+",'"+equation.equationURL+"')");
+			//create variables
+		}
+		return;
+	}
+	
+	/**
+	 * Gets a list of variables that are in the equation. 
+	 * @param Equation object
+	 * @return ArrayList<ArrayList<String>> varResult - all values of variables except varId
+	 * @author Ziyi Zhang
+	 */
+	public ArrayList<ArrayList<String>> getVariable(Equation equation){
+		Statement stmt = UpodDao.getStmt();
+		ResultSet rs = stmt.executeQuery("SELECT symbol,name,category,description FROM VARIABLE WHERE varId IN (SELECT varId FROM EQUVAR WHERE equId = "+equation.equationId+")");
+		ArrayList<ArrayList<String>> varResult = new ArrayList<ArrayList<String>>();
+		//fill varResult
+		while (rs.next()){
+			ArrayList<String> varInfo = new ArrayList<String>();
+			for (int i=1;i<=4;i++){
+				varInfo.add(rs.getString(i));
+			}
+			varResult.add(varInfo);
+		}
+		return varResult;
+	}
+
+	/**
+	 * Gets the number of equations in the database.
+	 * @return Integer count
+	 * @author Ziyi Zhang
+	 */
+	public static int getEquationCount(){
+		Statement stmt=UpodDao.getStmt();
+		//get count
+		ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM EQUATION");
+		int count = 0;
+		rs.next();
+		count = rs.getInt(1);
+		
+		return count;
+	}
+
+	/**
+	 * Returns true if the equation exists, false otherwise. 
+	 * @param int eId - equation id
+	 * @return boolean 
+	 * @author Ziyi Zhang
+	 */
+	public boolean equationExists(int eId) {
+		Statement stmt=UpodDao.getStmt();
+		try{
+			ResultSet rs=stmt.executeQuery("select * from EQUATION where equId =" + eId); 
+			
+			return rs.next();
+		}catch(SQLException e){System.out.println("equationExists failed");}
+		
+		return false;
+	}
+	//---------------------------------------------------------------------------------------------------------------------
 }

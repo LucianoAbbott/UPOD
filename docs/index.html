@@ -91,7 +91,7 @@
     }
 
     .hoverButton span {
-		cursor:pointer;
+	cursor:pointer;
     	display: inline-block;
     	position: relative;
     	transition: 0.5s;
@@ -144,7 +144,7 @@
 	margin-left: -100px !important;
 	margin-top: -120%;
 	opacity: 0;
-	transition: all 0.8s
+	transition: all 0.8s	
     }	
 
     .downloadButton:active:after {
@@ -161,7 +161,7 @@
 		<title>Index.html</title>
 	</head>
 	<body>
-		<h1>UPOD Version 0.0.0.0.0</h1>
+		<h1>UPOD Version 0.0.1.0.0</h1>
 
 		<p class="version", id="date"></p>
 		<script>
@@ -169,9 +169,7 @@
 			document.getElementById("date").innerHTML = currentDate;
 		</script>		
 
-
 		<button class = "button showDocsButton", onclick="showDocs()">Show/Hide UPOD Documents</button>
-
 		
 		<script>
 			function showDocs() {
@@ -185,13 +183,162 @@
 			}
 		</script>
 
+		<br/>
+		<button style="margin-top: 10px"; class = "button showDocsButton", onclick="localDir()">Local Directory</button>
+
+		<script>
+			function localDir() {
+				/*This function grabs the base url (without the specific document identifier) from the address.
+				  Before it does that, it will perform a check on the document's url it is operating on to see 
+				  if it is 1) a file, and 2) a file that contains the identifier "UPOD-master" in its url. The 
+				  2nd condition is especially important as it provides a unique distinction for the file being 
+				  in the repository itself, and not as a stray html file that can pass the first "is a file" 
+				  condition. If the url does not meet any of the 2 conditions, an alert will pop up prompting the
+				  user to download the repository first, and open the index.html file from there, so that its
+				  associated operations of taking the base URL can be made. The functions below this one 
+				  essentially perform the same steps with varying degrees; while they make the same condition
+				  checks, they follow by appending the specific document identifiers desired for their target url, which 
+				  can only be done if index.html is sitting in the downloaded (and extracted) UPOD-master.zip. The 
+				  reason for adding this function (and the functions below it) is to avoid the user seeing a page redirect to
+				  a page that doesn't exist, after clicking a faulty index link. 
+				*/
+				var url = document.URL; 
+				
+				if (url.startsWith("file")==false) {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					if (url.includes("UPOD-master")) {
+						var baseURL = url.substring(0, url.lastIndexOf('/')); 
+						baseURL = baseURL.substring(0, baseURL.lastIndexOf('/')); 
+						window.open(baseURL);						
+					} else {
+						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")											
+					}
+				}
+			}
+
+			function openProjDoc() {
+				var url = document.URL; 
+				if (url.startsWith("file")==false) {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					if (url.includes("UPOD-master")) {
+						var spmpURL = url.substring(0, url.lastIndexOf('/')); 
+						spmpURL = spmpURL.substring(0, spmpURL.lastIndexOf('/')); 
+						spmpURL += "/Project%20Management%20Plans/ManagementDocumentFormatted.html"
+						window.open(spmpURL);
+					} else {
+						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")						
+					}
+				}
+			}
+
+			function openReqDoc() {
+				var url = document.URL; 
+				
+				if (url.startsWith("file")==false) {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else { 
+					if (url.includes("UPOD-master")) {
+						var reqURL = url.substring(0, url.lastIndexOf('/')); 
+						reqURL = reqURL.substring(0, reqURL.lastIndexOf('/')); 
+						reqURL += "/Requirements%20Document/Final%20HTML%20Format/Requirements.html"
+						window.open(reqURL);
+					} else {
+						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")										
+					}
+				}
+			}
+
+			function openAnalysisDoc() {
+				var url = document.URL; 
+				if (url.startsWith("file")==false) {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					if (url.includes("UPOD-master")) {
+						var analysisURL = url.substring(0, url.lastIndexOf('/')); 
+						analysisURL = analysisURL.substring(0, analysisURL.lastIndexOf('/')); 
+						analysisURL += "/Analysis%20Document/HTML/AnalysisDocument.html"
+						window.open(analysisURL);						
+					} else {
+						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")						
+					}
+				}
+			}
+
+			function openDesDoc() {
+				var url = document.URL; 
+				if (url.startsWith("file")==false) {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					if (url.includes("UPOD-master")) {
+						var desURL = url.substring(0, url.lastIndexOf('/')); 
+						desURL = desURL.substring(0, desURL.lastIndexOf('/')); 
+						desURL += "/Design%20Document/design.html"
+						window.open(desURL);
+					} else {
+						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")												
+					}
+				}
+			}
+
+			function openFrontEnd() {
+				var url = document.URL; 
+				if (url.startsWith("file")==false) {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					if (url.includes("UPOD-master")) {
+						var frontEndURL = url.substring(0, url.lastIndexOf('/')); 
+						frontEndURL = frontEndURL.substring(0, frontEndURL.lastIndexOf('/')); 
+						frontEndURL += "/Front End Proposals/HTML/flex"
+						window.open(frontEndURL);						
+					} else {
+						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")						
+					}
+				}
+			}
+
+			function openBackend() {
+				var url = document.URL; 
+				if (url.startsWith("file")==false) {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					if (url.includes("UPOD-master")) {
+						var backEndURL = url.substring(0, url.lastIndexOf('/')); 
+						backEndURL = backEndURL.substring(0, backEndURL.lastIndexOf('/')); 
+						backEndURL += "/Backend"
+						window.open(backEndURL);	
+					} else {
+						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")						
+					}
+				}
+			}			
+
+			function openDatabase() {
+				var url = document.URL; 
+				if (url.startsWith("file")==false) {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					if (url.includes("UPOD-master")) {
+						var dbURL = url.substring(0, url.lastIndexOf('/')); 
+						dbURL = dbURL.substring(0, dbURL.lastIndexOf('/')); 
+						dbURL += "/Database"
+						window.open(dbURL);	
+					} else {
+						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")						
+					}
+				}
+			}
+
+		</script>
+
 		<div id="myDocs", style="display:none">
 			<h3>Project Management Document</h3>
 
 			<div id="navigation">
 			    <ul>
-			        <li><a href="ManagementDocumentFormatted.html">Index Link</a></li>
 			        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Project%20Management%20Plans/ManagementDocumentFormatted.html", target = "_blank">Web Link</a></li>
+			        <li><a href="", onclick="openProjDoc()">Index Link</a></li>
 			    </ul>
 			</div>
 
@@ -199,8 +346,8 @@
 
 			<div id="navigation">
 			    <ul>
-			        <li><a href="Requirements.html">Index Link</a></li>
 			        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Requirements%20Document/Final%20HTML%20Format/Requirements.html", target = "_blank">Web Link</a></li>
+			        <li><a href="", onclick="openReqDoc()">Index Link</a></li>				    
 			    </ul>
 			</div>
 
@@ -208,8 +355,8 @@
 
 			<div id="navigation">
 			    <ul>
-			        <li><a href="AnalysisDocument.html">Index Link</a></li>
 			        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Analysis%20Document/HTML/AnalysisDocument.html", target = "_blank">Web Link</a></li>
+			        <li><a href="", onclick="openAnalysisDoc()">Index Link</a></li>				    
 			    </ul>
 			</div>			
 
@@ -217,11 +364,12 @@
 
 			<div id="navigation">
 			    <ul>
-			        <li><a href="design.html">Index Link</a></li>
 			        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Design%20Document/design.html", target = "_blank">Web Link</a></li>
+			        <li><a href="", onclick="openDesDoc()">Index Link</a></li>				    
 			    </ul>
 			</div>
 			<hr style="width: 90%; text-align:center">
+			
 		</div>
 
 
@@ -230,7 +378,8 @@
 			
 			<div id="navigation">
 			    <ul>
-			        <li><a href="https://github.com/LucianoAbbott/UPOD/tree/master/Front%20End%20Proposals/HTML/flex", target = "_blank">Web Link</a></li>
+			        <li><a href="https://github.com/LucianoAbbott/UPOD/tree/master/Front%20End%20Proposals/HTML/flex", target = "_blank">(Web) flex</a></li>
+			        <li><a href="", onclick="openFrontEnd()">(Index) /flex</a></li>
 			    </ul>
 			</div>				
 
@@ -238,16 +387,32 @@
 
 			<div id="navigation">
 			    <ul>
-			        <li><a href="https://github.com/LucianoAbbott/UPOD/tree/master/Backend", target = "_blank">Web Link</a></li>
+			        <li><a href="https://github.com/LucianoAbbott/UPOD/tree/master/Backend", target = "_blank">(Web) Backend</a></li>
+			        <li><a href="https://github.com/LucianoAbbott/UPOD/tree/master/Database", target = "_blank">(Web) Database</a></li>
+				<li><a href="", onclick="openBackend()">(Index) /Backend</a></li>
+				<li><a href="", onclick="openDatabase()">(Index) /Database</a></li>
+
 			    </ul>
-			</div>		
+			</div>	
+			
 		</div>
 		
 		<hr style="width: 450px; text-align:center">
-		<div>
-			<button title = "Download the UPOD repository", onclick="window.location='https://github.com/LucianoAbbott/UPOD/archive/master.zip';", class="button downloadButton", style="vertical-align:middle; margin-top: 10px; width: 261px;"><span>Download UPOD-master.zip</span></button>
+
+		<div id="bookmarklet", style="font-size: 15px">
+			<p><i>Drag this bookmarklet to your bookmarks bar or desktop to download UPOD anywhere, anytime!</i>
 			<br/>
-			<button title = "Back to the UPOD repository on github", onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButton", style="vertical-align:middle; margin-top: 25px"><span>Back to Repository</span></button>
+			<a style="font-size: 15px", href="https://github.com/LucianoAbbott/UPOD/archive/master.zip">Download UPOD repository</a>
+			</p>
 		</div>		
+		
+		<hr style="width: 450px; text-align:center">
+		
+		<div>
+			<button title = "Download the UPOD repository", onclick="window.location='https://github.com/LucianoAbbott/UPOD/archive/master.zip';", class="button downloadButton", style="vertical-align:middle; margin-top: 3px; width: 261px;"><span>Download UPOD-master.zip</span></button>
+			<br/>
+			<button title = "Back to the UPOD repository on github", onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButton", style="vertical-align:middle; margin-top: 14px;"><span>Back to Repository</span></button>
+		</div>	
+		
 	</body>
 </html>
