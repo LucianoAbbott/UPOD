@@ -4,214 +4,84 @@
 
 
 
-<html>
+<html class="editHtml">
 
 
 
 <head>
 
     <meta charset="ISO-8859-1"> 
-
-    <script src="fileUp.js"></script> 
-
+    <script src="UPOD.js"></script> 
     <link rel="stylesheet" type="text/css" href="Style.css">
-
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 </head>
 
 
 
-<body>   
-
-    
+<body class="editBody">   
 
     <div class="topBar">
-
 		<div id="titleBar">UPOD</div>
-
 		    <div class="barSearch">
-
 		  	    <input type="text" name="searchBar" class="searchBar">
-
 	            <button type="button" class="searchButton">&#10148</button>
-
 		    </div>
-
 		    <div id="buttonBar" align="right">
-
 		  	    <button type="button" class="ghostButton barButton" id="editButton">Edit</button>
-
 		  	    <button type="button" class="ghostButton barButton" id="logButton">Logout</button>
-
 		  	    <button type = "button" class="ghostButton barButton"  id="aboutButton">About</button>
-
 		    </div>
-
 		</div>
-
         <hr id="headerLine">
-
     </div>
-
-        
-
     <div class="pageEdit">
-
         <div class="sidebarSections">
-
-            <h2 class="keyline">Sections: </h2>
-
+            <h2 class="sectionBarTitle keyline">Sections: </h2>
             <p>title</p>
-
-            <p>title</p>
-
-            <p>title</p>
-
-            <p>title</p>
-
-            <p>title</p>
-
+            <a onclick="addSection()" href="javascript:void(0);">+ New Section</a>
         </div>
-
+        <div class="sectionContainer">
         <div class="sectionEdit">
-
-            <div class="articleForm">
-
-                <h1 class=articleTitle>Article Name: </h1>
-
+            <div class="articleForm keyline">
+                <h1>Page Name: </h1>
                 <form>
-
-                    <input type="text" name="articleTitle" class="articleTitleBox">
-
+                    <input type="text" name="articleTitle" class="articleTitleBox" placeHolder="Page Name">
                     <button type="button" class="solidButton">Save Changes</button>
-
                     <button type="button" class="ghostButtonRed">Delete Page</button>
-
                 </form>
-
             </div>
 
-
-
-            <div class="sectionForm">
-
-                <div class="rowAlignLeft keyline">
-
-                    <h2 class = "sectionTitle">Section 1:</h2>
-
+            <div class="sectionForm keyline">
+                <div class="rowAlignLeft">
+                    <h2 class = "sectionTitle">Section:</h2>
                     <form class="sideBySide">
-
-                        <button type="button" class="solidButton">+</button>
-
-                        <button type="button" class="solidButton">-</button>
-
+                        <button type="button" class="solidButton">&#65514</button>
+                        <button type="button" class="solidButton">&#65516</button>
                     </form>
-
                 </div>
-
                 <div>
-
                     <form>
-
-                        <input type="text" name="sectionTitle" class="articleTitleBox">
-
-                        <button type="button" class="ghostButtonRed">Delete</button>
-
+                        <input type="text" name="sectionTitle" class="articleTitleBox" placeHolder="Section Title">
+                        <button type="button" class="ghostButtonRed">Delete Section</button>
                     </form>
-
                     <div class="sectionWrap">
-
                         <div class="sectionSide">
-
-                            <textarea rows="20" cols="109" style="width:90%;"></textArea>
-
+                            <textarea rows="20" cols="109" style="width:90%;margin-bottom:50px;" placeHolder="Content"></textArea>
                         </div>
-
                         <div class="sectionImage">
-
                             <div class="image" id="disp"></div>
-
                             <form>
-
                                 <input id="fileInput" type="file" style="display:none;" />
-
                                 <button type="file" class="solidButton" onclick="document.getElementById('fileInput').click();" >Add Image</button>
-
                             </form>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
-
-
-            <div class="sectionForm">
-
-                <div class="rowAlignLeft keyline">
-
-                    <h2 class = "sectionTitle">Section 1:</h2>
-
-                    <form class="sideBySide">
-
-                        <button type="button" class="solidButton">+</button>
-
-                        <button type="button" class="solidButton">-</button>
-
-                    </form>
-
-                </div>
-
-                <div>
-
-                    <form>
-
-                        <input type="text" name="sectionTitle" class="articleTitleBox">
-
-                        <button type="button" class="ghostButtonRed">Delete</button>
-
-                    </form>
-
-                    <div class="sectionWrap">
-
-                        <div class="sectionSide">
-
-                            <textarea rows="20" cols="109" style="width:90%;"></textArea>
-
-                        </div>
-
-                        <div class="sectionImage">
-
-                            <div class="image" id="disp"></div>
-
-                            <form>
-
-                                <input id="fileInput" type="file" style="display:none;" />
-
-                                <button type="file" class="solidButton" onclick="document.getElementById('fileInput').click();" >Add Image</button>
-
-                            </form>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
         </div>
-
+        </div>
     </div>
-
 </body>
-
-
 
 </html>

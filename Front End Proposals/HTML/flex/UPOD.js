@@ -7,13 +7,13 @@ function addSection() {
     clone.onclick = duplicate; // event handlers are not cloned
     original.parentNode.appendChild(clone);*/
     var newSection = document.createElement("div");
-    newSection.className = "sectionForm";
+    newSection.className = "sectionForm keyline";
     i++;
     newSection.id="duplicator"+i;
     /*newSection.innerHTML = "WE MADE IT";*/
 
     var rowA = document.createElement("div");
-    rowA.className ="rowAlignLeft keyline";
+    rowA.className ="rowAlignLeft";
     var h2 = document.createElement("h2");
     h2.className  ="sectionTitle";
     h2.innerHTML = "Section:";
@@ -22,10 +22,8 @@ function addSection() {
     var addButton = document.createElement("button");
     var removeButton = document.createElement("button");
     f.className = "sideBySide";
-    addButton.innerHTML = "+";
-    addButton.setAttribute('onclick', 'addSection()' );
-    addButton.onclick = "addSection()"
-    removeButton.innerHTML = "-";
+    addButton.innerHTML = "&#65514";
+    removeButton.innerHTML = "&#65516";
     addButton.className ="solidButton";
     removeButton.className = "solidButton";
 
@@ -46,6 +44,7 @@ function addSection() {
     sectionTitleText.type="text";
     sectionTitleText.name = "sectionTitle";
     sectionTitleText.className = "articleTitleBox";
+    sectionTitleText.placeholder = "Section Title";
     sectionDeleteButton.className = "ghostButtonRed";
     sectionDeleteButton.innerHTML = "Delete Section";
 
@@ -63,6 +62,7 @@ function addSection() {
     sectionAreaText.rows = "20";
     sectionAreaText.cols = "109";
     sectionAreaText.width = "90%";
+    sectionAreaText.placeholder = "Content";
 
 
     sectionSideDiv.appendChild(sectionAreaText);
@@ -94,6 +94,10 @@ function addSection() {
     newSection.appendChild(infoInput);
 
 
-    document.getElementsByClassName("sectionEdit")[0].appendChild(newSection);
+    document.getElementsByClassName("sectionContainer")[0].appendChild(newSection);
+
+}
+
+function reflectName(){
 
 }
