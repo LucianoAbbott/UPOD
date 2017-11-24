@@ -21,6 +21,7 @@
 	
     a {
     	font-size: 17;
+    	padding: 15px;
     }
 	
     .version {
@@ -153,6 +154,42 @@
         opacity: 1;
         transition: 0s
     }
+
+	/*CSS for a drop-down list*/ 
+	.droplink {
+	    background-color: #ffffff;.
+	}
+
+	.dropdown {
+	    position: relative;
+	    display: inline-block;
+	}
+
+	.dropdown-content {
+	    display: none;
+	    position: absolute;
+	    background-color: #f9f9f9;
+	    min-width: 160px;
+	    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	    z-index: 1;
+	}
+
+	.dropdown-content a {
+	    color: black;
+	    padding: 12px 16px;
+	    text-decoration: none;
+	    display: block;
+	}
+
+	.dropdown-content a:hover {background-color: #f1f1f1}
+
+	.dropdown:hover .dropdown-content {
+	    display: block;
+	}
+
+	.dropdown:hover .droplink{
+	    background-color: #f9f9f9;
+	}
 
 </style>
 
@@ -330,6 +367,86 @@
 				}
 			}
 
+			function openHomeHTML() {
+				var url = document.URL; 
+				if (url.startsWith("file")==false) {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					if (url.includes("UPOD-master")) {
+						var homeURL = url.substring(0, url.lastIndexOf('/')); 
+						homeURL = homeURL.substring(0, homeURL.lastIndexOf('/')); 
+						homeURL += "/Front%20End%20Proposals/HTML/flex/home.html"
+						window.open(homeURL);	
+					} else {
+						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")						
+					}
+				}	
+			}		
+
+			function openAboutHTML() {
+				var url = document.URL; 
+				if (url.startsWith("file")==false) {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					if (url.includes("UPOD-master")) {
+						var aboutURL = url.substring(0, url.lastIndexOf('/')); 
+						aboutURL = dbURL.substring(0, aboutURL.lastIndexOf('/')); 
+						aboutURL += "/Front%20End%20Proposals/HTML/flex/about.html"
+						window.open(aboutURL);	
+					} else {
+						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")						
+					}
+				}
+			}		
+
+			function openEditHTML() {
+				var url = document.URL; 
+				if (url.startsWith("file")==false) {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					if (url.includes("UPOD-master")) {
+						var editURL = url.substring(0, url.lastIndexOf('/')); 
+						editURL = editURL.substring(0, editURL.lastIndexOf('/')); 
+						editURL += "/Front%20End%20Proposals/HTML/flex/Edit.html"
+						window.open(editURL);	
+					} else {
+						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")						
+					}
+				}	
+			}		
+
+			function openPageHTML() {
+				var url = document.URL; 
+				if (url.startsWith("file")==false) {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					if (url.includes("UPOD-master")) {
+						var pageURL = url.substring(0, url.lastIndexOf('/')); 
+						pageURL = pageURL.substring(0, pageURL.lastIndexOf('/')); 
+						pageURL += "/Front%20End%20Proposals/HTML/flex/page.html"
+						window.open(pageURL);	
+					} else {
+						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")						
+					}
+				}	
+			}	
+
+			function openSearchHTML() {
+				var url = document.URL; 
+				if (url.startsWith("file")==false) {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+					if (url.includes("UPOD-master")) {
+						var searchURL = url.substring(0, url.lastIndexOf('/')); 
+						searchURL = searchURL.substring(0, searchURL.lastIndexOf('/')); 
+						searchURL += "/Front%20End%20Proposals/HTML/flex/SearchResultView.html"
+						window.open(searchURL);	
+					} else {
+						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")						
+					}
+				}	
+			}									
+
 		</script>
 
 		<div id="myDocs", style="display:none">
@@ -379,8 +496,24 @@
 			<div id="navigation">
 			    <ul>
 			        <li><a href="https://github.com/LucianoAbbott/UPOD/tree/master/Front%20End%20Proposals/HTML/flex", target = "_blank">(Web) flex</a></li>
-			        <li><a href="", onclick="openFrontEnd()">(Index) /flex</a></li>
+
+					<li>
+						<div class="dropdown">
+							<a href="", class="droplink", onclick="openFrontEnd()">(Index) /flex</a>
+
+							<div class="dropdown-content">
+								<a href="", onclick="openHomeHTML()">home.html</a>
+						        <a href="", onclick="openAboutHTML()">about.html</a>
+						        <a href="", onclick="openEditHTML()">edit.html</a>
+						        <a href="", onclick="openPageHTML()">page.html</a>
+						        <a href="", onclick="openSearchHTML()">SearchResultView.html</a>							
+							</div>
+
+						</div>
+					</li>
+
 			    </ul>
+
 			</div>				
 
 			<h3>Back-End Components:</h3>
