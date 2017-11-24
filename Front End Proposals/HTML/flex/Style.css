@@ -232,11 +232,18 @@ a {
 
 .sectionSide {
     width: 80%;
+    
 }
 
 .sectionImage {
     width: 20%;
     height: 25%;
+}
+
+.tArea{
+    width: 90%;
+    height:100%;
+    margin-bottom:10px;
 }
 
 .sectionWrap {

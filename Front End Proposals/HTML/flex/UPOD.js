@@ -18,7 +18,7 @@ function addSection() {
 
 
     var newSection = document.createElement("div");
-    newSection.className = "sectionForm keyline";
+    newSection.className = "sectionForm";
     
     newSection.id="duplicator"+i;
     /*newSection.innerHTML = "WE MADE IT";*/
@@ -85,13 +85,15 @@ function addSection() {
     sectionWrapDiv.className = "sectionWrap";
     sectionSideDiv.className = "sectionSide";
 
-    sectionAreaText.rows = "10";
-    sectionAreaText.cols = "70";
-    sectionAreaText.width = "90%";
+    sectionWrapDiv.width = "100%";
 
-    sectionLatexText.rows = "10";
-    sectionLatexText.cols = "50";
-    sectionLatexText.width = "90%";
+    sectionLatexText.rows = "5";
+    sectionLatexText.cols = "20";
+    sectionAreaText.className = "tArea";
+
+    sectionLatexText.rows = "5";
+    sectionLatexText.cols = "20";
+    sectionLatexText.className = "tArea";
 
     sectionAreaText.placeholder = "Content";
     sectionLatexText.placeholder = "Latex";
