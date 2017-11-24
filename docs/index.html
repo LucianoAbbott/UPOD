@@ -390,7 +390,7 @@
 				} else {
 					if (url.includes("UPOD-master")) {
 						var aboutURL = url.substring(0, url.lastIndexOf('/')); 
-						aboutURL = dbURL.substring(0, aboutURL.lastIndexOf('/')); 
+						aboutURL = aboutURL.substring(0, aboutURL.lastIndexOf('/')); 
 						aboutURL += "/Front%20End%20Proposals/HTML/flex/about.html"
 						window.open(aboutURL);	
 					} else {
@@ -455,7 +455,7 @@
 					if (url.includes("UPOD-master")) {
 						var adminURL = url.substring(0, url.lastIndexOf('/')); 
 						adminURL = adminURL.substring(0, adminURL.lastIndexOf('/')); 
-						adminURL += "/Front%20End%20Proposals/HTML/flex/SearchResultView.html"
+						adminURL += "/Front%20End%20Proposals/HTML/flex/adminView.html"
 						window.open(adminURL);	
 					} else {
 						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")						
