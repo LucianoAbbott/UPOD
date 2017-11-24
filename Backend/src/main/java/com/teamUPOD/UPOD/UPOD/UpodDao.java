@@ -59,14 +59,48 @@ public class UpodDao {
 		return upodDao;
 	}
 	
-	private Connection getConnection(){
-		return this.connection;
+	/**
+	 * Create a page object containing all page data. 
+	 * @return a complete page object.
+	 * @Author Lauren Hepditch
+	 */
+	public Page getPage(int pageId){
+		Page page = null;
+		
+		try{
+			
+		UpodDao dao = UpodDao.getInstance();
+		Statement stmt = dao.stmt;
+		ResultSet rs;
+			
+		rs = stmt.executeQuery("SELECT * FROM PAGE WHERE pageId = "+pageId);
+			
+		}catch(SQLException e){
+			throw new IllegalStateException("Could not get page from database.", e);
+		}
+		return page;
 	}
 	
-	private Statement getStatement(){
-		return this.stmt;
+	/**
+	 * Changes or creates a new page in the database. 
+	 * @return 
+	 * @Author Lauren Hepditch
+	 */
+	public void setPage(Page page){
+		UpodDao dao = UpodDao.getInstance();
+		Statement stmt = dao.stmt;
+		try{
+			//update page information
+			stmt.executeUpdate("");
+			//update section information
+			//update graphic and equation information
+			//update equvar relationships
+			//update variable information
+				
+		}catch(SQLException e){
+			throw new IllegalStateException("Could not perform page update.", e);
+		}
 	}
-
 	
 	/**
 	 * Get an Id that is not in use works for any table. 
@@ -143,9 +177,6 @@ public class UpodDao {
 		return false;
 	}
 	
-	public Page getPage(int pageId) {
-		return null;
-	}
 	//---------------------------------------------------------------------------------------------------------------------
 	//Equations
 	/**
