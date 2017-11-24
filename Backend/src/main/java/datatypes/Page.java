@@ -24,7 +24,7 @@ public class Page {
 	
 	public Page(){
 		
-		pageId = null;
+		pageId = 0;
 		title = null;
 		URL = null;
 		editing = false;
