@@ -91,7 +91,7 @@
     }
 
     .hoverButton span {
-		cursor:pointer;
+	cursor:pointer;
     	display: inline-block;
     	position: relative;
     	transition: 0.5s;
@@ -144,7 +144,7 @@
 	margin-left: -100px !important;
 	margin-top: -120%;
 	opacity: 0;
-	transition: all 0.8s
+	transition: all 0.8s	
     }	
 
     .downloadButton:active:after {
@@ -169,9 +169,7 @@
 			document.getElementById("date").innerHTML = currentDate;
 		</script>		
 
-
 		<button class = "button showDocsButton", onclick="showDocs()">Show/Hide UPOD Documents</button>
-
 		
 		<script>
 			function showDocs() {
@@ -185,12 +183,86 @@
 			}
 		</script>
 
+		<br/>
+		<button style="margin-top: 10px"; class = "button showDocsButton", onclick="localDir()">Local Directory</button>
+
+		<script>
+			function localDir() {
+				var url = document.URL; 
+
+				if (url == "http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html") {
+					alert("The local directory can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/docs/index.html")					
+				} else {
+	        			var baseURL = url.substring(0, url.lastIndexOf('/')); 
+					baseURL = baseURL.substring(0, baseURL.lastIndexOf('/')); 
+					window.open(baseURL);
+				}
+			}
+
+			function openProjDoc() {
+				var url = document.URL; 
+        			var spmpURL = url.substring(0, url.lastIndexOf('/')); 
+				spmpURL = spmpURL.substring(0, spmpURL.lastIndexOf('/')); 
+				spmpURL += "/Project%20Management%20Plans/ManagementDocumentFormatted.html"
+				window.open(spmpURL);
+			}
+
+			function openReqDoc() {
+				var url = document.URL; 
+        			var reqURL = url.substring(0, url.lastIndexOf('/')); 
+				reqURL = reqURL.substring(0, reqURL.lastIndexOf('/')); 
+				reqURL += "/Project%20Management%20Plans/ManagementDocumentFormatted.html"
+				window.open(reqURL);
+			}
+
+			function openAnalysisDoc() {
+				var url = document.URL; 
+        			var analysisURL = url.substring(0, url.lastIndexOf('/')); 
+				analysisURL = analysisURL.substring(0, analysisURL.lastIndexOf('/')); 
+				analysisURL += "/Project%20Management%20Plans/ManagementDocumentFormatted.html"
+				window.open(analysisURL);
+			}
+
+			function openDesDoc() {
+				var url = document.URL; 
+        			var desURL = url.substring(0, url.lastIndexOf('/')); 
+				desURL = desURL.substring(0, desURL.lastIndexOf('/')); 
+				desURL += "/Project%20Management%20Plans/ManagementDocumentFormatted.html"
+				window.open(desURL);
+			}
+
+			function openFrontEnd() {
+				var url = document.URL; 
+        			var frontEndURL = url.substring(0, url.lastIndexOf('/')); 
+				frontEndURL = frontEndURL.substring(0, frontEndURL.lastIndexOf('/')); 
+				frontEndURL += "/Front End Proposals/HTML/flex"
+				window.open(frontEndURL);
+			}
+
+			function openBackend() {
+				var url = document.URL; 
+        			var frontEndURL = url.substring(0, url.lastIndexOf('/')); 
+				frontEndURL = frontEndURL.substring(0, frontEndURL.lastIndexOf('/')); 
+				frontEndURL += "/Backend"
+				window.open(frontEndURL);
+			}			
+
+			function openDatabase() {
+				var url = document.URL; 
+        			var frontEndURL = url.substring(0, url.lastIndexOf('/')); 
+				frontEndURL = frontEndURL.substring(0, frontEndURL.lastIndexOf('/')); 
+				frontEndURL += "/Database"
+				window.open(frontEndURL);
+			}
+
+		</script>
+
 		<div id="myDocs", style="display:none">
 			<h3>Project Management Document</h3>
 
 			<div id="navigation">
 			    <ul>
-			        <li><a href="ManagementDocumentFormatted.html">Index Link</a></li>
+			        <li><a href="", onclick="openProjDoc()">Index Link</a></li>
 			        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Project%20Management%20Plans/ManagementDocumentFormatted.html", target = "_blank">Web Link</a></li>
 			    </ul>
 			</div>
@@ -199,7 +271,7 @@
 
 			<div id="navigation">
 			    <ul>
-			        <li><a href="Requirements.html">Index Link</a></li>
+			        <li><a href="", onclick="openReqDoc()">Index Link</a></li>
 			        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Requirements%20Document/Final%20HTML%20Format/Requirements.html", target = "_blank">Web Link</a></li>
 			    </ul>
 			</div>
@@ -208,7 +280,7 @@
 
 			<div id="navigation">
 			    <ul>
-			        <li><a href="AnalysisDocument.html">Index Link</a></li>
+			        <li><a href="", onclick="openAnalysisDoc()">Index Link</a></li>
 			        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Analysis%20Document/HTML/AnalysisDocument.html", target = "_blank">Web Link</a></li>
 			    </ul>
 			</div>			
@@ -217,11 +289,12 @@
 
 			<div id="navigation">
 			    <ul>
-			        <li><a href="design.html">Index Link</a></li>
+			        <li><a href="", onclick="openDesDoc()">Index Link</a></li>
 			        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Design%20Document/design.html", target = "_blank">Web Link</a></li>
 			    </ul>
 			</div>
 			<hr style="width: 90%; text-align:center">
+			
 		</div>
 
 
@@ -230,7 +303,8 @@
 			
 			<div id="navigation">
 			    <ul>
-			        <li><a href="https://github.com/LucianoAbbott/UPOD/tree/master/Front%20End%20Proposals/HTML/flex", target = "_blank">Web Link</a></li>
+			        <li><a href="https://github.com/LucianoAbbott/UPOD/tree/master/Front%20End%20Proposals/HTML/flex", target = "_blank">(Web) flex</a></li>
+			        <li><a href="", onclick="openFrontEnd()">(Index) /flex</a></li>
 			    </ul>
 			</div>				
 
@@ -238,9 +312,14 @@
 
 			<div id="navigation">
 			    <ul>
-			        <li><a href="https://github.com/LucianoAbbott/UPOD/tree/master/Backend", target = "_blank">Web Link</a></li>
+			        <li><a href="https://github.com/LucianoAbbott/UPOD/tree/master/Backend", target = "_blank">(Web) Backend</a></li>
+			        <li><a href="https://github.com/LucianoAbbott/UPOD/tree/master/Database", target = "_blank">(Web) Database</a></li>
+				<li><a href="", onclick="openBackend()">(Index) /Backend</a></li>
+				<li><a href="", onclick="openDatabase()">(Index) /Database</a></li>
+
 			    </ul>
-			</div>		
+			</div>	
+			
 		</div>
 		
 		<hr style="width: 450px; text-align:center">
@@ -253,10 +332,12 @@
 		</div>		
 		
 		<hr style="width: 450px; text-align:center">
+		
 		<div>
-			<button title = "Download the UPOD repository", onclick="window.location='https://github.com/LucianoAbbott/UPOD/archive/master.zip';", class="button downloadButton", style="vertical-align:middle; margin-top: 10px; width: 261px;"><span>Download UPOD-master.zip</span></button>
+			<button title = "Download the UPOD repository", onclick="window.location='https://github.com/LucianoAbbott/UPOD/archive/master.zip';", class="button downloadButton", style="vertical-align:middle; margin-top: 3px; width: 261px;"><span>Download UPOD-master.zip</span></button>
 			<br/>
-			<button title = "Back to the UPOD repository on github", onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButton", style="vertical-align:middle; margin-top: 25px"><span>Back to Repository</span></button>
-		</div>		
+			<button title = "Back to the UPOD repository on github", onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButton", style="vertical-align:middle; margin-top: 14px;"><span>Back to Repository</span></button>
+		</div>	
+		
 	</body>
 </html>

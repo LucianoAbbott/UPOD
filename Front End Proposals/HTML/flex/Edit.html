@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 
 <html>
 
@@ -20,20 +18,19 @@
 	            <button type="button" class="searchButton">&#10148</button>
 		    </div>
 		    <div id="buttonBar" align="right">
-		  	    <button type="button" class="ghostButton barButton" id="logButton">Logout</button>
+		  	    <a href="home.html"><button type="button" class="ghostButton barButton" id="logButton">Logout</button>
                 	    <a href="about.html"><button type="button" class="ghostButton barButton" id= "aboutButton">About</button></a>
 		    </div>
 		</div>
     </div>
         
     <div class="pageEdit">
-        <div class="sidebarSections">
-            <h2 class="keyline">Sections: </h2>
-            <p>title</p>
-            <p>title</p>
-            <p>title</p>
-            <p>title</p>
-            <p>title</p>
+	    <div class="sidebarSections">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
         </div>
         <div class="sectionEdit">
             <div class="articleForm">
@@ -50,7 +47,7 @@
                 <div class="rowAlignLeft keyline">
                     <h2 class = "sectionTitle">Section:</h2>
                     <form class="sideBySide">
-                        <button type="button" class="solidButton" onclick="addSection()">+</button>
+                        <button type="button" class="solidButton" onclick="javascript:addSection()">+</button>
                         <button type="button" class="solidButton">-</button>
                     </form>
                 </div>
@@ -63,7 +60,7 @@
                         <div class="sectionSide">
                             <textarea rows="20" cols="109" style="width:90%;"></textArea>
                         </div>
-                        <div class="sectionImage">
+                        <div class="sectionImage" height= "100px">
                             <div class="image" id="disp"></div>
                             <form>
                                 <input id="fileInput" type="file" style="display:none;" />
