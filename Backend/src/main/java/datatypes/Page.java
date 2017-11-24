@@ -6,11 +6,12 @@ package datatypes;
  * @author Lauren Hepditch
  */
 public class Page {
-  
-  	private int pageId;
+	
+	private int pageId;
 	private String title; 
 	private String URL; 
-	private Boolean editing;
+	private Boolean editing; 
+	private Section[] sections;
 	
 	public Page(int pId, String pTitle, String pURL, Boolean pEditing){
 		
@@ -18,5 +19,22 @@ public class Page {
 		title = pTitle;
 		URL = pURL;
 		editing = pEditing;
+		sections = null;
+	}
+	
+	public int getId(){
+		return this.pageId;	
+	}
+	
+	public String getTitle(){
+ 		return this.title;	
+	}
+	
+	public String getURL(){
+		return this.URL;	
+	}
+	
+	public Boolean getEditStatus(){
+		return this.editing;	
 	}
 }
