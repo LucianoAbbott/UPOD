@@ -37,4 +37,20 @@ public class Page {
 	public Boolean getEditStatus(){
 		return this.editing;	
 	}
+	
+	public void setId(int id){
+		this.pageId = id;
+	}
+	
+	public void setTitle(String title){
+		this.title = title;
+	}
+	
+	public void setURL(String URL){
+		this.URL = URL;
+	}
+	
+	public void setEditStatus(Boolean edit){
+		this.editing = edit;
+	}
 }
