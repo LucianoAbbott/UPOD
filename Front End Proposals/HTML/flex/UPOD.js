@@ -6,17 +6,25 @@ function addSection() {
    clone.id = "duplicater" + ++i; // there can only be one element with an ID
     clone.onclick = duplicate; // event handlers are not cloned
     original.parentNode.appendChild(clone);*/
+    i++;
+
+    var table = document.getElementsByClassName("sidebarSections")[0];
+    var sectionTC = document.createElement("a");
+    sectionTC.href="#duplicator" + i;
+    sectionTC.innerHTML= "new \<br>";
+    sectionTC.width = "100%";
+    table.insertBefore(sectionTC,table.childNodes[table.childNodes.length - 2]);
+
+
     var newSection = document.createElement("div");
     newSection.className = "sectionForm keyline";
-    i++;
+    
     newSection.id="duplicator"+i;
     /*newSection.innerHTML = "WE MADE IT";*/
 
     var rowA = document.createElement("div");
     rowA.className ="rowAlignLeft";
-    var h2 = document.createElement("h2");
-    h2.className  ="sectionTitle";
-    h2.innerHTML = "Section:";
+
     /*var titleForm = document.createElement("form");*/
     var f = document.createElement("form");
     var addButton = document.createElement("button");
@@ -26,8 +34,7 @@ function addSection() {
     removeButton.innerHTML = "&#65516";
     addButton.className ="solidButton";
     removeButton.className = "solidButton";
-
-    rowA.appendChild(h2);
+    
     f.appendChild(addButton);
     f.appendChild(removeButton);
 	rowA.appendChild(f);
@@ -52,6 +59,10 @@ function addSection() {
     titleform.appendChild(sectionDeleteButton);
     infoInput.appendChild(titleform);
     //newSection.appendChild(infoInput);
+
+    sectionTitleText.addEventListener("keyup", function(event){
+        sectionTC.innerHTML = sectionTitleText.value + "\<br>";
+    });
 
 
     var sectionWrapDiv = document.createElement("div");
@@ -95,9 +106,5 @@ function addSection() {
 
 
     document.getElementsByClassName("sectionContainer")[0].appendChild(newSection);
-
-}
-
-function reflectName(){
 
 }

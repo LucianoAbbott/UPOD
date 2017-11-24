@@ -181,6 +181,7 @@ a {
     margin-left: 20px;
     margin-bottom: 20px;
     margin-top:20px;
+    padding-bottom:20px;
 }
 
 .articleTitleBox {
@@ -195,6 +196,7 @@ a {
 .sidebarSections {
     width: 20%;
     padding: 10px;
+    position:relative;
 }
 
 .sectionEdit {
