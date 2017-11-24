@@ -308,7 +308,6 @@ public class UpodDao {
 	 * @author Ziyi Zhang
 	 */
 	public boolean equationExists(int eId) {
-		UpodDao dao = getInstance();
 		try {
 			ResultSet rs = this.createStatement().executeQuery("select * from EQUATION where equId =" + eId);
 			return rs.next();
