@@ -1,14 +1,11 @@
-package com.teamUPOD.UPOD.UPOD;
+//package com.teamUPOD.UPOD.UPOD;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Collections;
 import java.util.HashMap;
-
+import java.util.ArrayList;
 import datatypes.Page;
+import datatypes.Equation;
 
 /**
  * Database Access Object for the backend server
@@ -157,17 +154,21 @@ public class UpodDao {
 	 * @author Ziyi Zhang
 	 */
 	public void setEquationURL(Equation equation){ //THIS ONE'S NOT DONEEEEEEEE the others are tested and work
-		Statement stmt=UpodDao.getStmt();
-		
-		//update equation
-		if(equationExists(equation.equationId)){
-			stmt.executeUpdate("UPDATE EQUATION SET equationURL = '" +equation.equationURL+ "' WHERE equId="+equation.equationId);
-			//update variables
-			
-		}else{ //create equation
-			stmt.executeUpdate("INSERT INTO EQUATION VALUES ("+equation.equationId+",'"+equation.equationURL+"')");
-			//create variables
-		}
+		UpodDao dao = getInstance();
+		Statement stmt=dao.stmt;
+		try {
+			//update equation
+			if(equationExists(equation.equationId)){
+				stmt.executeUpdate("UPDATE EQUATION SET equationURL = '" +equation.equationURL+ "' WHERE equId="+equation.equationId);
+				//update variables
+				
+			}else{ //create equation
+				stmt.executeUpdate("INSERT INTO EQUATION VALUES ("+equation.equationId+",'"+equation.equationURL+"')");
+				//create variables
+			}
+		}catch (SQLException e) {
+				e.printStackTrace();
+			}
 		return;
 	}
 	
@@ -178,17 +179,22 @@ public class UpodDao {
 	 * @author Ziyi Zhang
 	 */
 	public ArrayList<ArrayList<String>> getVariable(Equation equation){
-		Statement stmt = UpodDao.getStmt();
-		ResultSet rs = stmt.executeQuery("SELECT symbol,name,category,description FROM VARIABLE WHERE varId IN (SELECT varId FROM EQUVAR WHERE equId = "+equation.equationId+")");
+		UpodDao dao = getInstance();
+		Statement stmt=dao.stmt;
 		ArrayList<ArrayList<String>> varResult = new ArrayList<ArrayList<String>>();
-		//fill varResult
-		while (rs.next()){
-			ArrayList<String> varInfo = new ArrayList<String>();
-			for (int i=1;i<=4;i++){
-				varInfo.add(rs.getString(i));
+		try{
+			ResultSet rs = stmt.executeQuery("SELECT symbol,name,category,description FROM VARIABLE WHERE varId IN (SELECT varId FROM EQUVAR WHERE equId = "+equation.equationId+")");
+			//fill varResult
+			while (rs.next()){
+				ArrayList<String> varInfo = new ArrayList<String>();
+				for (int i=1;i<=4;i++){
+					varInfo.add(rs.getString(i));
+				}
+				varResult.add(varInfo);
 			}
-			varResult.add(varInfo);
-		}
+		}catch (SQLException e) {
+				e.printStackTrace();
+			}
 		return varResult;
 	}
 
@@ -198,13 +204,17 @@ public class UpodDao {
 	 * @author Ziyi Zhang
 	 */
 	public static int getEquationCount(){
-		Statement stmt=UpodDao.getStmt();
-		//get count
-		ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM EQUATION");
+		UpodDao dao = getInstance();
+		Statement stmt=dao.stmt;
 		int count = 0;
-		rs.next();
-		count = rs.getInt(1);
-		
+		try{
+			//get count
+			ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM EQUATION");
+			rs.next();
+			count = rs.getInt(1);
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return count;
 	}
 
@@ -215,13 +225,15 @@ public class UpodDao {
 	 * @author Ziyi Zhang
 	 */
 	public boolean equationExists(int eId) {
-		Statement stmt=UpodDao.getStmt();
+		UpodDao dao = getInstance();
+		Statement stmt=dao.stmt;
 		try{
 			ResultSet rs=stmt.executeQuery("select * from EQUATION where equId =" + eId); 
 			
 			return rs.next();
-		}catch(SQLException e){System.out.println("equationExists failed");}
-		
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return false;
 	}
 	//---------------------------------------------------------------------------------------------------------------------
