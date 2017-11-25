@@ -173,12 +173,6 @@ a {
     background-color:#ffffff;
 }
 
-/* Edit Page CSS*/
-
-.editHtml{
-    background-color:#ffffff;
-}
-
 .articleForm {
     margin-left: 0px;
 }
@@ -252,6 +246,12 @@ a {
 
 .sectionBarTitle{
     width:80%;
+}
+
+/* Edit Page CSS*/
+
+.editHtml{
+    background-color:#ffffff;
 }
 
 
