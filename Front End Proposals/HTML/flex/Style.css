@@ -490,14 +490,18 @@ ul {
 .adminHtml {
     margin: auto;
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     display: flex;
     flex-direction: row;
     height: 100vh;
-    width: 100%;
 }
 
-.adminList{
+.adminPage{
+   background-color: #ffffff;
+  
+}
+
+.adminListTitle{
     margin-left: 100px;
 }
 
@@ -506,7 +510,7 @@ ul {
 }
 
 .adminPage {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
 }
 
 .editButtonRed {
@@ -515,14 +519,14 @@ ul {
     font-size: 18px;
     border-style: solid;
     border-width: 1px;
-    border-color: #FF0000;
-    background-color: #FF0000;
+    border-color: #ff0000;
+    background-color: #ff0000;
     border-radius: 3px;
     color: #ffffff;
 }
 
 .editButtonRed:hover {
-    background-color: #FF0000;
+    background-color: #ff0000;
     color: #ffffff;
     transition: color 100ms, background-color 300ms;
 }
