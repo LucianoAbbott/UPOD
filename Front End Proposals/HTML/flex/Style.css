@@ -497,6 +497,10 @@ ul {
     width: 100%;
 }
 
+.adminList{
+    margin-left: 100px;
+}
+
 .adminButton {
     display: flex;
 }
