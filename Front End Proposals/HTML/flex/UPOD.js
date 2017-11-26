@@ -10,7 +10,7 @@ function addSection() {
     var secParent = document.getElementsByClassName("sectionContainer")[0];
     var table = document.getElementsByClassName("sidebarSections")[0];
     var sectionTC = document.createElement("a");
-    sectionTC.href="#duplicator" + i;
+    sectionTC.href="#section" + i;
     sectionTC.className = "sideBarLink a";
     sectionTC.innerHTML= "new \<br>";
     sectionTC.width = "100%";
@@ -20,7 +20,7 @@ function addSection() {
     var newSection = document.createElement("div");
     newSection.className = "sectionForm";
     
-    newSection.id="duplicator"+i;
+    newSection.id="section"+i;
     /*newSection.innerHTML = "WE MADE IT";*/
 
     var rowA = document.createElement("div");
