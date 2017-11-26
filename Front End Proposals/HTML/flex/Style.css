@@ -476,3 +476,20 @@ ul {
     overflow: hidden;
 
 }
+
+/*adminView*/
+
+.adminHtml{
+  background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width:100%;
+}
+.adminButton{
+  display: flex;
+}
+
+.adminPage{
+  background-color: #FFFFFF;
+}
