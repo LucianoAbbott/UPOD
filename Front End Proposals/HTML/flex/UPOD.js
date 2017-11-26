@@ -10,21 +10,21 @@ function addSection() {
     var secParent = document.getElementsByClassName("sectionContainer")[0];
     var table = document.getElementsByClassName("sidebarSections")[0];
     var sectionTC = document.createElement("a");
-    sectionTC.href="#section" + i;
+    sectionTC.href = "#section" + i;
     sectionTC.className = "sideBarLink a";
-    sectionTC.innerHTML= "new \<br>";
+    sectionTC.innerHTML = "new \<br>";
     sectionTC.width = "100%";
-    table.insertBefore(sectionTC,table.childNodes[table.childNodes.length - 2]);
+    table.insertBefore(sectionTC, table.childNodes[table.childNodes.length - 2]);
 
 
     var newSection = document.createElement("div");
     newSection.className = "sectionForm";
-    
-    newSection.id="section"+i;
+
+    newSection.id = "section" + i;
     /*newSection.innerHTML = "WE MADE IT";*/
 
     var rowA = document.createElement("div");
-    rowA.className ="rowAlignLeft";
+    rowA.className = "rowAlignLeft";
 
     /*var titleForm = document.createElement("form");*/
     var f = document.createElement("form");
@@ -33,14 +33,14 @@ function addSection() {
     f.className = "sideBySide";
     addButton.innerHTML = "&#65514";
     removeButton.innerHTML = "&#65516";
-    addButton.className ="solidButton";
+    addButton.className = "solidButton";
     removeButton.className = "solidButton";
-    
-    
+
+
 
     f.appendChild(addButton);
     f.appendChild(removeButton);
-	rowA.appendChild(f);
+    rowA.appendChild(f);
 
     /*titleform.appendChild(addButton);
     titleform.appendChild(removeButton);
@@ -51,8 +51,9 @@ function addSection() {
     var titleform = document.createElement("form");
     var sectionTitleText = document.createElement("input");
     var sectionDeleteButton = document.createElement("button");
-    sectionTitleText.type="text";
+    sectionTitleText.type = "text";
     sectionTitleText.name = "sectionTitle";
+    sectionTitleText.id = "sectionTitle" + i;
     sectionTitleText.className = "articleTitleBox";
     sectionTitleText.placeholder = "Section Title";
     sectionDeleteButton.className = "ghostButtonRed";
@@ -60,7 +61,7 @@ function addSection() {
     sectionDeleteButton.onclick = "getData();"
 
     sectionDeleteButton.type = "button";
-    sectionDeleteButton.onclick = function(){
+    sectionDeleteButton.onclick = function() {
         table.removeChild(sectionTC);
         secParent.removeChild(newSection);
         console.log(i);
@@ -71,7 +72,7 @@ function addSection() {
     infoInput.appendChild(titleform);
     //newSection.appendChild(infoInput);
 
-    sectionTitleText.addEventListener("keyup", function(event){
+    sectionTitleText.addEventListener("keyup", function(event) {
         sectionTC.innerHTML = sectionTitleText.value + "\<br>";
     });
 
@@ -100,7 +101,7 @@ function addSection() {
     diagramUrl.className = "articleTitleBox";
     diagramUrl.type = "text";
     diagramUrl.placeholder = "Diagram URL";
-    diagramUrl.name="diagram URL " + i;
+    diagramUrl.name = "diagram URL " + i;
 
 
     sectionSideDiv.appendChild(sectionAreaText);
@@ -120,10 +121,10 @@ function addSection() {
     fileIn.id = "fileInput";
     fileIn.type = "file";
     fileIn.style.display = "none";
-    getImageButton.type ="file";
+    getImageButton.type = "file";
     getImageButton.className = "solidButton";
-    getImageButton.onclick ="document.getElementById('fileInput').click();";
-    getImageButton.innerHTML ="Add Image";
+    getImageButton.onclick = "document.getElementById('fileInput').click();";
+    getImageButton.innerHTML = "Add Image";
 
     sectionImage.appendChild(imageDiv);
     imageForm.appendChild(fileIn);
@@ -139,6 +140,25 @@ function addSection() {
 
 }
 
-function genJson(){
-    
+function genJson() {
+    var submitText = "";
+    var sections = document.getElementsByClassName("sectionForm");
+
+    var title = document.getElementById("pageTitle").value;
+    submitText = "{\n";
+    submitText += "\t\"Page\":{ \n";
+    submitText += "\t\t\"title\":\"" + title + "\",\n";
+    submitText += "\t\t\"sections\":{ \n"
+
+    // go through the sections and get their data
+    for (var secNum = 0; secNum < sections.length; secNum++) {
+
+        submitText += "\t\t\t\"section" + secNum + "\":{\n";
+        submitText += "\t\t\t\"secTitle\":\"" + document.getElementById("sectionTitle" + (secNum + 1)).value + "\",\n";
+        submitText += "\t\t\t\"content\":{ \n"
+    }
+    submitText += "\t\t}\n";
+    submitText += "\t}\n";
+    submitText += "}\n";
+    console.log(submitText);
 }

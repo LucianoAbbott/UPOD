@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 
 <html class="editHtml">
+
 <head>
 
-    <meta charset="ISO-8859-1"> 
-    <script src="UPOD.js"></script> 
+    <meta charset="ISO-8859-1">
+    <script src="UPOD.js"></script>
     <link rel="stylesheet" type="text/css" href="Style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 </head>
 
-<body class="editBody">   
+<body class="editBody">
 
     <div class="topBar keyline">
-		<div id="titleBar">UPOD</div>
-		    <div class="barSearch">
-		  	    <input type="text" name="searchBar" class="searchBar">
-	            <button type="button" class="searchButton">&#10148</button>
-		    </div>
-		    <div id="buttonBar" align="right">
-		  	    <button type="button" class="ghostButton barButton" id="editButton">Edit</button>
-		  	    <button type="button" class="ghostButton barButton" id="logButton">Logout</button>
-		  	    <button type = "button" class="ghostButton barButton"  id="aboutButton">About</button>
-		    </div>
-		</div>
+        <div id="titleBar">UPOD</div>
+        <div class="barSearch">
+            <input type="text" name="searchBar" class="searchBar">
+            <button type="button" class="searchButton">&#10148</button>
+        </div>
+        <div id="buttonBar" align="right">
+            <button type="button" class="ghostButton barButton" id="editButton">Edit</button>
+            <button type="button" class="ghostButton barButton" id="logButton">Logout</button>
+            <button type="button" class="ghostButton barButton" id="aboutButton">About</button>
+        </div>
+    </div>
     </div>
 
     <div class="pageEdit">
@@ -32,17 +33,17 @@
             <a id="newLink" onclick="addSection()" href="javascript:void(0);">+ New Section</a>
         </div>
         <div class="sectionContainer">
-        <div class="sectionEdit">
-            <div class="articleForm keyline">
-                <h1>Page Name: </h1>
-                <form>
-                    <input type="text" name="articleTitle" class="articleTitleBox" placeHolder="Page Name">
-                    <button type="button" class="solidButton" type="button" onclick="genJson();">Save Changes</button>
-                    <button type="button" class="ghostButtonRed">Delete Page</button>
-                </form>
+            <div class="sectionEdit">
+                <div class="articleForm keyline">
+                    <h1>Page Name: </h1>
+                    <form>
+                        <input type="text" name="articleTitle" class="articleTitleBox" placeHolder="Page Name" id="pageTitle">
+                        <button type="button" class="solidButton" type="button" onclick="genJson();">Save Changes</button>
+                        <button type="button" class="ghostButtonRed">Delete Page</button>
+                    </form>
+                </div>
+
             </div>
-            
-        </div>
         </div>
     </div>
 </body>

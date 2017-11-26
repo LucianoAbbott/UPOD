@@ -170,9 +170,10 @@ a {
 
 /* Edit Page CSS*/
 
-.editHtml{
-    background-color:#ffffff;
+.editHtml {
+    background-color: #ffffff;
 }
+
 .articleForm {
     margin-left: 0px;
 }
@@ -180,8 +181,8 @@ a {
 .sectionForm {
     margin-left: 20px;
     margin-bottom: 20px;
-    margin-top:20px;
-    padding-bottom:20px;
+    margin-top: 20px;
+    padding-bottom: 20px;
 }
 
 .articleTitleBox {
@@ -196,12 +197,12 @@ a {
 .sidebarSections {
     width: 20%;
     padding: 10px;
-    margin-top:75px;
-    position:fixed;
+    margin-top: 75px;
+    position: fixed;
 }
 
-.sideBarlink a{
-    margin-bottom:40px;
+.sideBarlink a {
+    margin-bottom: 40px;
 }
 
 .sectionEdit {
@@ -210,7 +211,7 @@ a {
 }
 
 .sectionTitle {
-    float:left;
+    float: left;
     margin-right: 20px;
     margin-top: 0px;
 }
@@ -223,27 +224,33 @@ a {
     flex-direction: row;
 }
 
-.sectionContainer{
-    width:80%;
-    margin-left:auto;
-    display:flex;
+.sectionContainer {
+    width: 80%;
+    margin-left: auto;
+    display: flex;
     flex-direction: column;
 }
 
 .sectionSide {
     width: 80%;
-    
+    display: inline-block;
+    height: 100%;
+    float: left;
 }
 
 .sectionImage {
     width: 20%;
     height: 25%;
+    float: left;
 }
 
-.tArea{
+.tArea {
     width: 90%;
-    height:100%;
-    margin-bottom:10px;
+    height: 200px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    float: left;
 }
 
 .sectionWrap {
@@ -251,8 +258,8 @@ a {
     flex-direction: row;
 }
 
-.sectionBarTitle{
-    width:80%;
+.sectionBarTitle {
+    width: 80%;
 }
 
 
@@ -306,7 +313,7 @@ a {
 
 .sideBySide {
     width: 30%;
-    float:left;
+    float: left;
     margin-top: 0px;
 }
 
@@ -386,7 +393,7 @@ ul {
     border-color: #888;
     border-width: 1px;
     position: absolute;
-    top:19%;   
+    top: 19%;
     margin-bottom: 5px;
     top: 60px;
     margin-bottom: 5px;
@@ -394,8 +401,8 @@ ul {
     margin-bottom: 5px;
     margin-top: 10px;
     float: left;
-    border-style:none;
-    border-bottom-style:solid;
+    border-style: none;
+    border-bottom-style: solid;
 }
 
 li {
@@ -418,31 +425,33 @@ ul {
     font-family: 'Montserrat', sans-serif;
 }
 
+
 /*Search Results*/
 
-.searchContainer{
+.searchContainer {
     display: flex;
     flex-direction: row;
     height: 100vh;
-    width:100%;
+    width: 100%;
 }
 
-#rightSpace{
-    flex:1;
-    height: 
+#rightSpace {
+    flex: 1;
+    height:
 }
-#leftSpace{
+
+#leftSpace {
     flex: 0.35;
 }
 
-#resultView{
-    flex:1.3;
+#resultView {
+    flex: 1.3;
     background-color: #FFFFFF;
     display: flex;
 }
 
-.searchResult{
-    flex:1;
+.searchResult {
+    flex: 1;
     height: 50vh;
     margin: 3vh 3vh 3vh 3vh;
     border-style: solid;
@@ -453,43 +462,43 @@ ul {
     flex-direction: column;
 }
 
-#foundTitleBox{
-    flex:0.5;
+#foundTitleBox {
+    flex: 0.5;
     background-color: #3366FF;
 }
 
-#foundTitle{
-
+#foundTitle {
     margin: 3vh 0 3vh 3vh;
     font-size: 8vh;
     color: #FFFFFF;
 }
 
-#foundDesBox{
-    flex:2;
+#foundDesBox {
+    flex: 2;
 }
 
-#foundDes{
+#foundDes {
     margin: 5vh 5vh 5vh 5vh;
     font-size: 4vh;
     color: #888;
     overflow: hidden;
-
 }
+
 
 /*adminView*/
 
-.adminHtml{
-  background-color: #FFFFFF;
+.adminHtml {
+    background-color: #FFFFFF;
     display: flex;
     flex-direction: row;
     height: 100vh;
-    width:100%;
-}
-.adminButton{
-  display: flex;
+    width: 100%;
 }
 
-.adminPage{
-  background-color: #FFFFFF;
+.adminButton {
+    display: flex;
+}
+
+.adminPage {
+    background-color: #FFFFFF;
 }
