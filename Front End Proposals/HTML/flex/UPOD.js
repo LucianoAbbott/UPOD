@@ -12,7 +12,7 @@ function addSection() {
     var sectionTC = document.createElement("a");
     sectionTC.href = "#section" + i;
     sectionTC.className = "sideBarLink a";
-    sectionTC.innerHTML = "new \<br>";
+    sectionTC.innerHTML = "new " + i + "\<br>";
     sectionTC.width = "100%";
     table.insertBefore(sectionTC, table.childNodes[table.childNodes.length - 2]);
 
@@ -176,4 +176,8 @@ function genJson() {
     submitText += "}\n";
     console.log(submitText);
     //todo submit to data base yo
+}
+
+function parseJSON() {
+    var file = JSON.parse("example.JSON");
 }
