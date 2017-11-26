@@ -511,14 +511,14 @@ ul {
     font-size: 18px;
     border-style: solid;
     border-width: 1px;
-    border-color: #f04;
-    background-color: #f04;
+    border-color: #FF0000;
+    background-color: #FF0000;
     border-radius: 3px;
     color: #ffffff;
 }
 
 .editButtonRed:hover {
-    background-color: #f04;
+    background-color: #FF0000;
     color: #ffffff;
     transition: color 100ms, background-color 300ms;
 }
