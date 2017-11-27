@@ -12,7 +12,7 @@ function addSection() {
     var sectionTC = document.createElement("a");
     sectionTC.href = "#section" + i;
     sectionTC.className = "sideBarLink a";
-    sectionTC.innerHTML = "new \<br>";
+    sectionTC.innerHTML = "new " + i + "\<br>";
     sectionTC.width = "100%";
     table.insertBefore(sectionTC, table.childNodes[table.childNodes.length - 2]);
 
@@ -90,23 +90,21 @@ function addSection() {
     var diagramUrl = document.createElement("input");
     sectionWrapDiv.className = "sectionWrap";
     sectionSideDiv.className = "sectionSide";
-
     sectionWrapDiv.width = "100%";
-
     sectionLatexText.rows = "5";
     sectionLatexText.cols = "20";
     sectionAreaText.className = "tArea";
-
     sectionLatexText.rows = "5";
     sectionLatexText.cols = "20";
     sectionLatexText.className = "tArea";
-
     sectionAreaText.placeholder = "Content";
     sectionLatexText.placeholder = "Latex";
+    sectionAreaText.id = "textArea" + i;
+    sectionLatexText.id = "latexArea" + i;
     diagramUrl.className = "articleTitleBox";
     diagramUrl.type = "text";
     diagramUrl.placeholder = "Diagram URL";
-    diagramUrl.name = "diagram URL " + i;
+    diagramUrl.id = "diagramURL" + i;
 
 
     sectionSideDiv.appendChild(sectionAreaText);
@@ -245,16 +243,40 @@ function genJson() {
     // go through the sections and get their data
     for (var secNum = 0; secNum < sections.length; secNum++) {
 
+        var sectionText = document.getElementById("textArea" + (secNum + 1)).value;
+        var sectionDiagram = document.getElementById("diagramURL" + (secNum + 1)).value;
+        var sectionEquation = document.getElementById("latexArea" + (secNum + 1)).value;
+        var sectionImage = "";
+
         submitText += "\t\t\t\"section" + secNum + "\":{\n";
-        submitText += "\t\t\t\"secTitle\":\"" + document.getElementById("sectionTitle" + (secNum + 1)).value + "\",\n";
-        submitText += "\t\t\t\"content\":{ \n"
+        submitText += "\t\t\t\t\"secTitle\":\"" + document.getElementById("sectionTitle" + (secNum + 1)).value + "\",\n";
+        submitText += "\t\t\t\t\"content\":{ \n";
+        submitText += "\t\t\t\t\t\"text\":\"" + sectionText + "\",\n"
+        submitText += "\t\t\t\t\t\"image\":\"" + sectionImage + "\",\n"
+        submitText += "\t\t\t\t\t\"diagram\":\"" + sectionDiagram + "\",\n"
+        submitText += "\t\t\t\t\t\"equation\":\"" + sectionEquation + "\"\n"
+        submitText += "\t\t\t\t}\n";
+        if (secNum == sections.length - 1) {
+            submitText += "\t\t\t}\n";
+        } else {
+            submitText += "\t\t\t},\n";
+        }
+
     }
     submitText += "\t\t}\n";
     submitText += "\t}\n";
     submitText += "}\n";
     console.log(submitText);
+<<<<<<< HEAD
 }
 
 function helloWorld(){
 	alert("Hello World");
+=======
+    //todo submit to data base yo
+}
+
+function parseJSON() {
+    var file = JSON.parse("example.JSON");
+>>>>>>> b90683eb6b67d25069a24a674167dc28b6c8c13f
 }

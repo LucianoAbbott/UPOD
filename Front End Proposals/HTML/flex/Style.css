@@ -488,11 +488,21 @@ ul {
 /*adminView*/
 
 .adminHtml {
-    background-color: #FFFFFF;
+    margin: auto;
+    width: 100%;
+    background-color: #ffffff;
     display: flex;
     flex-direction: row;
     height: 100vh;
-    width: 100%;
+}
+
+.adminPage{
+   background-color: #ffffff;
+  
+}
+
+.adminListTitle{
+    margin-left: 100px;
 }
 
 .adminButton {
@@ -500,5 +510,41 @@ ul {
 }
 
 .adminPage {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
+}
+
+.editButtonRed {
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ff0000;
+    background-color: #ff0000;
+    border-radius: 3px;
+    color: #ffffff;
+}
+
+.editButtonRed:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+    transition: color 100ms, background-color 300ms;
+}
+
+.editButtonGreen {
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #008000;
+    background-color: #008000;
+    border-radius: 3px;
+    color: #ffffff;
+}
+
+.editButtonGreen:hover {
+    background-color: #008000;
+    color: #ffffff;
+    transition: color 100ms, background-color 300ms;
 }
