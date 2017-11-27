@@ -1,0 +1,38 @@
+Alright so this is my attempt to explain what is going on in our backend because our old design document is hopelessly out of date
+
+Purpose
+1 store all the data we need for upod
+2 provide an api for the front end to access and modify the data (CRUD operations)
+
+Structure
+{
+
+PageController -> PageService -> UpodDao
+
+Controller functions are called when the server receives a matching request ex. www.upod.com/get/pageid
+Responsible for:
+Parsing the request
+Calling the appropriate PageService function
+Creating a proper response (OK/Page object/Useful error message)
+
+PageService functions are responsible for implementing any application logic relevant to the function ex. check that a page exists before updating
+
+Responsible for:
+Ensuring bad input is handled
+Calling appropriate dao functions
+
+UpodDao is responsible for ALL database requests - the database does not exist outside of this class
+
+A UpodDao function should consist of making a database request and returning the result of that request
+A UpodDao function should throw an exception if there was any error
+
+Constants
+Data that doesn't change but is useful to have labelled
+
+Datatypes
+Java objects with getters and setters - should have no logic
+No logic has 1 exception - Variables should split a string of "symbol name" in their constructor to two variables of name symbol and string
+
+Application - Class that houses our main method, don't touch
+}
+
