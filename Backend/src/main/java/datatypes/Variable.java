@@ -1,5 +1,10 @@
 package datatypes;
 
+/**
+ * Variable object of symbol/name pair
+ * @author luciano
+ *
+ */
 public class Variable {
 	private String symbol;
 	private String name;
