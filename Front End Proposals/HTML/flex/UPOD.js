@@ -309,3 +309,10 @@ function parseJSON() {
     var file = JSON.parse("example.JSON");
     //todo submit to data base yo
 }
+
+function genSearchSection() {
+    var topDiv = document.createElement("div");
+    var titleDiv = document.createElement("div");
+    var searchDiv = document.createElement("div");
+    var buttonDiv = document.createElement("div");
+}
