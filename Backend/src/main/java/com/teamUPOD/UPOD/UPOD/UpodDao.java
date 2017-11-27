@@ -56,18 +56,47 @@ public class UpodDao {
 	 * @return a complete page object.
 	 * @Author Lauren Hepditch
 	 */
-	public Page getPage(int pageId) {
+	public Page getPage(int pageId) { //working except for variables, will be added
 		Page page = null;
 
 		try {
+			UpodDao dao = UpodDao.getInstance();
+			Statement stmt = dao.connection.createStatement();
+		    	Statement stmtG = dao.connection.createStatement();
+			ResultSet rs,rsG;
+			
+			rs = stmt.executeQuery("SELECT * FROM PAGE WHERE pageId = "+pageId); //get page infomation
+		   	rs.next();
+			
+			Page page = new Page(rs.getInt("pageId"),rs.getString("title"),rs.getString("URL"),false);
+			
+			rs = stmt.executeQuery("SELECT * FROM SECTION WHERE pageId = " + pageId); //get sections
+			
+		   	while(rs.next()){
+			   Section s = new Section();
+			   s.setSectionId(rs.getInt("sectionId"));
+			   s.setTitle(rs.getString("sectionTitle"));
+			   s.setText(rs.getString("sectionText"));
+			   s.setEquation(rs.getString("equation"));
+			   
+			   rsG = stmtG.executeQuery("SELECT * FROM GRAPHIC WHERE graphicId = "+rs.getInt("graphicId"));
+				
+			   if(rsG.next()){   
+			   	s.setGraphic(new Graphic(rsG.getInt("graphicId"),rsG.getString("graphicURL"),rsG.getString("description")));   
+			   }
+			   else{
+				s.setGraphic(null);
+			   }
+		
+			   page.getSections().add(s);
+		   	   }
 
-			Statement stmt = this.createStatement();
-			stmt.executeQuery("SELECT * FROM PAGE WHERE pageId = " + pageId);
-
+			return page;
+			
 		} catch (SQLException e) {
 			throw new IllegalStateException("Could not get page from database.", e);
 		}
-		return page;
+		
 	}
 
 	/**
