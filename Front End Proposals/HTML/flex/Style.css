@@ -37,13 +37,6 @@ body {
     transition: transform 100ms, box-shadow 100ms;
 }
 
-.blueGhost {
-    border-color: #36f !important;
-    color: #36f !important;
-    margin: 0px !important;
-    margin-right: 20px !important;
-}
-
 .solidButton:hover {
     box-shadow: 0px 2px 0px 0px #013;
     transform: translateY(-2px);
@@ -54,6 +47,13 @@ body {
     box-shadow: 0px 0px 0px 0px #013;
     transform: translateY(0px);
     transition: transform 50ms, box-shadow 50ms;
+}
+
+.blueGhost {
+    border-color: #36f !important;
+    color: #36f !important;
+    margin: 0px !important;
+    margin-right: 20px !important;
 }
 
 .ghostButton {
