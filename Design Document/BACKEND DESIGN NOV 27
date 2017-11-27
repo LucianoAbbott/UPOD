@@ -26,8 +26,8 @@ UpodDao is responsible for ALL database requests - the database does not exist o
 A UpodDao function should consist of making a database request and returning the result of that request
 A UpodDao function should throw an exception if there was any error
 
-Constants
-Data that doesn't change but is useful to have labelled
+Utils
+Classes that perform useful functions that are useful anywhere in the domain
 
 Datatypes
 Java objects with getters and setters - should have no logic
