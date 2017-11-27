@@ -6,57 +6,71 @@ package datatypes;
  */
 public class Section {
   
-  private int sectionId;
+	private int sectionId;
+	private int pageId;
 	private String title;
-	private String text;
-	private Equation equ;
+	private String bodyText;
+	private Equation equation;
 	private Graphic graphic;
 	
-	public Section(int sId, String sTitle, String sText, Equation e,Graphic g){
-		
-		sectionId = sId;
-		title = sTitle;
-		text = sText;
-		equ = e;
-		graphic = g;
-		
+	public Section(int sectionId, int pageId, String title, String bodyText, Equation equation, Graphic graphic){
+		this.sectionId = sectionId;
+		this.pageId = pageId;
+		this.title = title;
+		this.bodyText = bodyText;
+		this.equation = equation;
+		this.graphic = graphic;
 	} 
 	
 	public Section(){
 		
-		sectionId = 0;
-		pageId = 0;
-		title = null;
-		text = null;
-		equ = null;
-		graphic = null;
+		this.sectionId = 0;
+		this.pageId = 0;
+		this.title = null;
+		this.bodyText = null;
+		this.equation = null;
+		this.graphic = null;
 		
 	} 
   
-  public int getSecId(){
+	public int getSectionId(){
 		return this.sectionId;
 	}
 	
-	public String getSecTitle(){
+	public Equation getEquation() {
+		return equation;
+	}
+
+	public void setEquation(Equation equation) {
+		this.equation = equation;
+	}
+
+	public Graphic getGraphic() {
+		return graphic;
+	}
+
+	public void setGraphic(Graphic graphic) {
+		this.graphic = graphic;
+	}
+
+	public int getPageId() {
+		return pageId;
+	}
+
+	public String getTitle(){
 		return this.title;
 	}
 	
-	public String getSecText(){
-		return this.text;
+	public String getText(){
+		return this.bodyText;
 	}
-	
-	public int setSecId(int id){
-		this.sectionId = id;
-	}
-	
-	public String setSecTitle(String sTitle){
+		
+	public void setTitle(String sTitle){
 		this.title = sTitle;
 	}
 	
-	public String setSecText(String sText){
-		this.text = sText;
+	public void setText(String sText){
+		this.bodyText = sText;
 	}
-  
-  //still need setters and getters for equations and graphics
   
 }

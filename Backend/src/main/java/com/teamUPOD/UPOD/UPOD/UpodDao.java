@@ -6,11 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 
 import datatypes.Equation;
 import datatypes.Page;
+import datatypes.Table;
+import utils.TableIdMap;
 
 /**
  * Database Access Object for the backend server Is responsible for all
@@ -22,38 +22,11 @@ public class UpodDao {
 	// TODO: Discussion on passing error codes instead of boolean success/fail
 
 	private Connection connection = null;
-
 	private static UpodDao upodDao = null;
 
 	public static final int INVALID_ID = -1;
 
-	public static final String PAGE_TABLE_KEY = "Page";
-	public static final String PAGE_TABLE_ID = "PageId";
-
-	public static final String EQUATION_TABLE_KEY = "EQUATION";
-	public static final String EQUATION_TABLE_ID = "equId";
-
-	public static final String VARIABLE_TABLE_KEY = "VARIABLE";
-	public static final String VARIABLE_TABLE_ID = "varId";
-
-	public static final String SECTION_TABLE_KEY = "SECTION";
-	public static final String SECTION_TABLE_ID = "sectionId";
-
-	public static final String GRAPHIC_TABLE_KEY = "GRAPHIC";
-	public static final String GRAPHIC_TABLE_ID = "graphicId";
-
-	private static final HashMap<String, String> TABLE_ID_MAP;
-	static {
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put(PAGE_TABLE_KEY, PAGE_TABLE_ID);
-		map.put(EQUATION_TABLE_KEY, EQUATION_TABLE_ID);
-		map.put(VARIABLE_TABLE_KEY, VARIABLE_TABLE_ID);
-		map.put(SECTION_TABLE_KEY, SECTION_TABLE_ID);
-		map.put(GRAPHIC_TABLE_KEY, GRAPHIC_TABLE_ID);
-
-		TABLE_ID_MAP = (HashMap<String, String>) Collections.unmodifiableMap(map);
-	}
-
+	
 	private UpodDao() {
 		String username = "";
 		String password = "";
@@ -78,7 +51,7 @@ public class UpodDao {
 	}
 
 	/**
-	 * Create a page object containing all page data.
+	 * Pull a page object containing all page data from the database.
 	 * 
 	 * @return a complete page object.
 	 * @Author Lauren Hepditch
@@ -137,12 +110,12 @@ public class UpodDao {
 	 * @return a valid Id with no attached page
 	 * @Author Nathan Skof
 	 */
-	public int nextAvailableId(String table) {
+	public int nextAvailableId(Table table) {
 		int MaxID = 0;
 		Statement stmt = null;
 		try {
 			stmt = this.createStatement();
-			stmt.executeQuery("SELECT MAX(" + TABLE_ID_MAP.get(table) + ") FROM " + table);
+			stmt.executeQuery("SELECT MAX(" + TableIdMap.getId(table) + ") FROM " + table.getName());
 			ResultSet rs2 = stmt.getResultSet();
 			if (rs2.next()) {
 				MaxID = rs2.getInt(1);
@@ -181,6 +154,7 @@ public class UpodDao {
 	}
 
 	// TODO: updatePage
+	// TODO: When we update page, we will receive a list of variables
 	/**
 	 * Post a page to the database with the given page Id
 	 * 
