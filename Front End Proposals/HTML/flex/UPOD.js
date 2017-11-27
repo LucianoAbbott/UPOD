@@ -26,26 +26,21 @@ function addSection() {
     var rowA = document.createElement("div");
     rowA.className = "rowAlignLeft";
 
-    var form = document.createElement("form");
-    var upButton = document.createElement("button");
-    var downButton = document.createElement("button");
-    form.className = "sideBySide";
-    upButton.innerHTML = "&#65514";
-    downButton.innerHTML = "&#65516";
-    upButton.className = "solidButton";
-    downButton.className = "solidButton";
-    upButton.id = "upButton"+i;
-    downButton.id = "downButton"+i;
-    var input = i;
-    upButton.addEventListener("click",function(){moveUpSection(input);})
-    downButton.addEventListener("click",function(){moveDownSection(input);})
-    upButton.type = "button";
-    downButton.type = "button";
+    /*var titleForm = document.createElement("form");*/
+    var f = document.createElement("form");
+    var addButton = document.createElement("button");
+    var removeButton = document.createElement("button");
+    f.className = "sideBySide";
+    addButton.innerHTML = "&#65514";
+    removeButton.innerHTML = "&#65516";
+    addButton.className = "solidButton";
+    removeButton.className = "solidButton";
 
 
-    form.appendChild(upButton);
-    form.appendChild(downButton);
-    rowA.appendChild(form);
+
+    f.appendChild(addButton);
+    f.appendChild(removeButton);
+    rowA.appendChild(f);
 
     /*titleform.appendChild(addButton);
     titleform.appendChild(removeButton);
@@ -143,93 +138,6 @@ function addSection() {
 
 }
 
-function moveUpSection(sectionNum){
-	var secParent = document.getElementsByClassName("sectionContainer")[0].children;
-	if(sectionNum-1>0){
-		var newTopSec = document.getElementById('section'+sectionNum);
-		var bottom = sectionNum -1;
-		var newBottomSec = document.getElementById('section'+bottom);
-		newTopSec.id = "section"+bottom;
-		newBottomSec.id = "section"+sectionNum;
-
-		var clone = newTopSec.cloneNode(true);
-		var clone1 = newBottomSec.cloneNode(true);
-		var secParent = document.getElementsByClassName("sectionContainer")[0];
-		secParent.insertBefore(clone,newBottomSec);
-		secParent.insertBefore(clone1,newTopSec);
-
-		secParent.removeChild(newTopSec);
-		secParent.removeChild(newBottomSec);
-
-		newTopSec = document.getElementById('section'+sectionNum);
-		newBottomSec.id = "section"+sectionNum;
-
-		var newBottomButton =document.getElementById("upButton"+bottom);
-		var newTopButton =document.getElementById("upButton"+sectionNum);
-		newBottomButton.addEventListener("click",function(){moveUpSection(sectionNum);});
-		newTopButton.addEventListener("click",function(){moveUpSection(sectionNum-1);});
-		newBottomButton.id = "upButton"+sectionNum;
-		bottom = sectionNum -1;
-		newTopButton.id = "upButton"+bottom;
-
-		newBottomButton =document.getElementById("downButton"+bottom);
-		newTopButton =document.getElementById("downButton"+sectionNum);
-		newBottomButton.addEventListener("click",function(){moveDownSection(sectionNum);});
-		newTopButton.addEventListener("click",function(){moveDownSection(sectionNum-1);});
-		newBottomButton.id = "downButton"+sectionNum;
-		bottom = sectionNum -1;
-		newTopButton.id = "downButton"+bottom;
-
-		
-	}
-	else{
-		alert("This section is already at the top of the page.");
-	}
-}
-
-function moveDownSection(sectionNum){
-	var secParent = document.getElementsByClassName("sectionContainer")[0].children;
-	if(sectionNum !=i){
-		var bottom = sectionNum +1;
-		var newTopSec = document.getElementById('section'+bottom);
-		var newBottomSec = document.getElementById('section'+sectionNum);
-		newTopSec.id = "section"+sectionNum;
-		newBottomSec.id = "section"+bottom;
-
-		var clone = newTopSec.cloneNode(true);
-		var clone1 = newBottomSec.cloneNode(true);
-		var secParent = document.getElementsByClassName("sectionContainer")[0];
-		secParent.insertBefore(clone,newBottomSec);
-		secParent.insertBefore(clone1,newTopSec);
-
-		secParent.removeChild(newTopSec);
-		secParent.removeChild(newBottomSec);
-
-		newTopSec = document.getElementById('section'+sectionNum);
-		newBottomSec.id = "section"+sectionNum;
-
-		var newBottomButton =document.getElementById("upButton"+bottom);
-		var newTopButton =document.getElementById("upButton"+sectionNum);
-		newBottomButton.addEventListener("click",function(){moveUpSection(sectionNum);});
-		newTopButton.addEventListener("click",function(){moveUpSection(sectionNum+1);});
-		newBottomButton.id = "upButton"+sectionNum;
-		bottom = sectionNum +1;
-		newTopButton.id = "upButton"+bottom;
-
-		newBottomButton =document.getElementById("downButton"+bottom);
-		newTopButton =document.getElementById("downButton"+sectionNum);
-		newBottomButton.addEventListener("click",function(){moveDownSection(sectionNum);});
-		newTopButton.addEventListener("click",function(){moveDownSection(sectionNum+1);});
-		newBottomButton.id = "downButton"+sectionNum;
-		bottom = sectionNum +1;
-		newTopButton.id = "downButton"+bottom;
-	}
-	else{
-		alert("This section is already at the bottom of the page.");
-	}
-}
-
-
 function genJson() {
     var submitText = "";
     var sections = document.getElementsByClassName("sectionForm");
@@ -267,16 +175,9 @@ function genJson() {
     submitText += "\t}\n";
     submitText += "}\n";
     console.log(submitText);
-<<<<<<< HEAD
-}
-
-function helloWorld(){
-	alert("Hello World");
-=======
     //todo submit to data base yo
 }
 
 function parseJSON() {
     var file = JSON.parse("example.JSON");
->>>>>>> b90683eb6b67d25069a24a674167dc28b6c8c13f
 }
