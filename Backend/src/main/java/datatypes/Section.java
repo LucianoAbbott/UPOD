@@ -3,19 +3,18 @@ package datatypes;
 /**
  * Data type representing a subsection of a page in the wiki
  * @author luciano abbott
+ * @author Lauren Hepditch
  */
 public class Section {
   
 	private int sectionId;
-	private int pageId;
 	private String title;
 	private String bodyText;
-	private Equation equation;
+	private String equation;
 	private Graphic graphic;
 	
-	public Section(int sectionId, int pageId, String title, String bodyText, Equation equation, Graphic graphic){
+	public Section(int sectionId, String title, String bodyText, String equation, Graphic graphic){
 		this.sectionId = sectionId;
-		this.pageId = pageId;
 		this.title = title;
 		this.bodyText = bodyText;
 		this.equation = equation;
@@ -25,7 +24,6 @@ public class Section {
 	public Section(){
 		
 		this.sectionId = 0;
-		this.pageId = 0;
 		this.title = null;
 		this.bodyText = null;
 		this.equation = null;
@@ -37,24 +35,24 @@ public class Section {
 		return this.sectionId;
 	}
 	
-	public Equation getEquation() {
+	public void setSectionId(int sectionId){
+		this.sectionId= sectionId;
+	}
+	
+	public String getEquation() {
 		return equation;
 	}
 
-	public void setEquation(Equation equation) {
+	public void setEquation(String equation) {
 		this.equation = equation;
 	}
 
 	public Graphic getGraphic() {
 		return graphic;
 	}
-
+	
 	public void setGraphic(Graphic graphic) {
 		this.graphic = graphic;
-	}
-
-	public int getPageId() {
-		return pageId;
 	}
 
 	public String getTitle(){
