@@ -11,26 +11,29 @@ public class Page {
 	
 	private int pageId;
 	private String title; 
-	private String URL; 
+	private String url; 
 	private Boolean editing; 
+	public ArrayList<Section> getSections() {
+		return sections;
+	}
+
 	private ArrayList<Section> sections;
 	
-	public Page(int pId, String pTitle, String pURL, Boolean pEditing){
+	public Page(int pageId, String title, String url, Boolean editing){
 		
-		pageId = pId;
-		title = pTitle;
-		URL = pURL;
-		editing = pEditing;
-		sections = new ArrayList<Section>();
+		this.pageId = pageId;
+		this.title = title;
+		this.url = url;
+		this.editing = editing;
+		this.sections = new ArrayList<Section>();
 	}
 	
 	public Page(){
-		
 		pageId = 0;
 		title = null;
-		URL = null;
+		url = null;
 		editing = false;
-		sections = null;
+		sections = new ArrayList<Section>();
 	}
 	
 	public int getId(){
@@ -42,26 +45,18 @@ public class Page {
 	}
 	
 	public String getURL(){
-		return this.URL;	
+		return this.url;	
 	}
 	
-	public Boolean getEditStatus(){
-		return this.editing;	
-	}
-	
-	public void setId(int id){
-		this.pageId = id;
+	public Boolean isBeingEditted(){
+		return this.editing;
 	}
 	
 	public void setTitle(String title){
 		this.title = title;
 	}
 	
-	public void setURL(String URL){
-		this.URL = URL;
-	}
-	
-	public void setEditStatus(Boolean edit){
+	public void setEditing (Boolean edit){
 		this.editing = edit;
 	}
 }

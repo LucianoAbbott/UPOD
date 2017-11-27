@@ -78,7 +78,7 @@ public class UpodDao {
 	}
 
 	/**
-	 * Create a page object containing all page data.
+	 * Pull a page object containing all page data from the database.
 	 * 
 	 * @return a complete page object.
 	 * @Author Lauren Hepditch
