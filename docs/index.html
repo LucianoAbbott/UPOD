@@ -2,7 +2,24 @@
 	* {
 		text-align: center !important;
 	}	
-		
+	a {
+		text-decoration: none !important;
+	}
+
+	a:hover {
+		color: black !important;
+	}
+
+	#uniqueA:hover {
+		color: black !important;
+		border-bottom: 2px solid #6A6A6A;
+		transition-duration: 0.1s;
+	}	
+
+	#uniqueLink:hover {
+		color: #131313 !important;
+	}
+
 	h1,
 	h2,
 	h3,
@@ -194,9 +211,10 @@
 	<head>
 		<title>Index.html</title>
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 
 		<script> 
 			function localDir() {
@@ -560,8 +578,8 @@
 
 					<div id="navigation">
 					    <ul>
-					        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Project%20Management%20Plans/ManagementDocumentFormatted.html", target = "_blank">Web Link</a></li>
-					        <li><a href="", onclick="openProjDoc()">Index Link</a></li>
+					        <li><a id="uniqueA" href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Project%20Management%20Plans/ManagementDocumentFormatted.html", target = "_blank">Web Link</a></li>
+					        <li><a id="uniqueA" href="", onclick="openProjDoc()">Index Link</a></li>
 					    </ul>
 					</div>
 
@@ -569,8 +587,8 @@
 
 					<div id="navigation">
 					    <ul>
-					        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Requirements%20Document/Final%20HTML%20Format/Requirements.html", target = "_blank">Web Link</a></li>
-					        <li><a href="", onclick="openReqDoc()">Index Link</a></li>				    
+					        <li><a id="uniqueA" href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Requirements%20Document/Final%20HTML%20Format/Requirements.html", target = "_blank">Web Link</a></li>
+					        <li><a id="uniqueA" href="", onclick="openReqDoc()">Index Link</a></li>				    
 					    </ul>
 					</div>
 
@@ -578,8 +596,8 @@
 
 					<div id="navigation">
 					    <ul>
-					        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Analysis%20Document/HTML/AnalysisDocument.html", target = "_blank">Web Link</a></li>
-					        <li><a href="", onclick="openAnalysisDoc()">Index Link</a></li>				    
+					        <li><a id="uniqueA" href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Analysis%20Document/HTML/AnalysisDocument.html", target = "_blank">Web Link</a></li>
+					        <li><a id="uniqueA" href="", onclick="openAnalysisDoc()">Index Link</a></li>				    
 					    </ul>
 					</div>			
 
@@ -587,8 +605,8 @@
 
 					<div id="navigation">
 					    <ul>
-					        <li><a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Design%20Document/design.html", target = "_blank">Web Link</a></li>
-					        <li><a href="", onclick="openDesDoc()">Index Link</a></li>				    
+					        <li><a id="uniqueA" href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Design%20Document/design.html", target = "_blank">Web Link</a></li>
+					        <li><a id="uniqueA" href="", onclick="openDesDoc()">Index Link</a></li>				    
 					    </ul>
 					</div>
 					<hr/>
@@ -604,10 +622,10 @@
 
 							<li>
 							<div class="dropdown">
-								<a href="https://github.com/LucianoAbbott/UPOD/tree/master/Front%20End%20Proposals/HTML/flex", target = "_blank">(Web) flex</a>
+								<a href="https://github.com/LucianoAbbott/UPOD/tree/master/Front%20End%20Proposals/HTML/flex", class="droplink", target = "_blank">(Web) flex</a>
 
 								<div class="dropdown-content">
-									<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Front%20End%20Proposals/HTML/flex/about.html", target = "_blank">about.html</a>
+									<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Front%20End%20Proposals/HTML/flex/about.html", target = "_blank"">about.html</a>
 									<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Front%20End%20Proposals/HTML/flex/adminView.html", target = "_blank">adminView.html</a>
 									<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Front%20End%20Proposals/HTML/flex/Edit.html", target = "_blank">edit.html</a>
 									<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Front%20End%20Proposals/HTML/flex/home.html", target = "_blank">home.html</a>
@@ -641,11 +659,11 @@
 
 					<div id="navigation">
 					    <ul>	
-					        <li><a href="https://github.com/LucianoAbbott/UPOD/tree/master/Backend", target = "_blank">(Web) Backend</a></li>
-					        <li><a href="https://github.com/LucianoAbbott/UPOD/blob/master/Database/UPOD%20Database%20SQL.sql", target = "_blank">(Web) Database</a></li>
+					        <li><a id="uniqueA" href="https://github.com/LucianoAbbott/UPOD/tree/master/Backend", target = "_blank">(Web) Backend</a></li>
+					        <li><a id="uniqueA" href="https://github.com/LucianoAbbott/UPOD/blob/master/Database/UPOD%20Database%20SQL.sql", target = "_blank">(Web) Database</a></li>
 
-							<li><a href="", onclick="openBackend()">(Index) /Backend</a></li>
-							<li><a href="", onclick="openDatabase()">(Index) /Database</a></li>
+							<li><a id="uniqueA" href="", onclick="openBackend()">(Index) /Backend</a></li>
+							<li><a id="uniqueA" href="", onclick="openDatabase()">(Index) /Database</a></li>
 					    </ul>
 					</div>	
 					
@@ -654,10 +672,10 @@
 				<hr style="margin-left: 20%; margin-right: 20%"/>
 
 				<div id="bookmarklet", style="font-size: 15px">
-					<p><i>Drag this bookmarklet to your bookmarks bar or desktop to download UPOD anywhere, anytime!</i>
-					<br/>
-					<a style="font-size: 15px", href="https://github.com/LucianoAbbott/UPOD/archive/master.zip">Download UPOD repository</a>
-					</p>
+					<p><i>Drag this bookmarklet to your bookmarks bar or desktop to download UPOD anywhere, anytime!</i></p>
+
+					<a id="uniqueLink" style="font-size: 16px", href="https://github.com/LucianoAbbott/UPOD/archive/master.zip"><b>Download UPOD repository</b></a>
+					
 				</div>		
 				
 				<hr style="margin-left: 25%; margin-right: 25%"/>
