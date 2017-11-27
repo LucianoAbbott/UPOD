@@ -12,6 +12,7 @@ function addSection() {
     var sectionTC = document.createElement("a");
     sectionTC.href = "#section" + i;
     sectionTC.className = "sideBarLink a";
+    sectionTC.id = "sideSection"+i;
     sectionTC.innerHTML = "new " + i + "\<br>";
     sectionTC.width = "100%";
     table.insertBefore(sectionTC, table.childNodes[table.childNodes.length - 2]);
@@ -180,7 +181,19 @@ function moveUpSection(sectionNum){
 		bottom = sectionNum -1;
 		newTopButton.id = "downButton"+bottom;
 
-		
+		var table = document.getElementsByClassName("sidebarSections")[0].children;
+		//var getSideSection;
+		var saveSwitchValue = table[sectionNum].innerHTML
+		table[sectionNum].innerHTML = table[sectionNum-1].innerHTML;
+		table[sectionNum-1].innerHTML = saveSwitchValue;
+		table[sectionNum].href = "#section" + bottom;
+		table[sectionNum].href ="#section"+ sectionNum;
+		//alert(table.children[sectionNum].innerHTML)
+		/*for(j=1;j!=i+1;j++){
+			getSideSection = document.getElementById("sideSection"+j);
+			table.removeChild(getSideSection);
+		}*/
+
 	}
 	else{
 		alert("This section is already at the top of the page.");
@@ -223,6 +236,14 @@ function moveDownSection(sectionNum){
 		newBottomButton.id = "downButton"+sectionNum;
 		bottom = sectionNum +1;
 		newTopButton.id = "downButton"+bottom;
+
+		var table = document.getElementsByClassName("sidebarSections")[0].children;
+		//var getSideSection;
+		var saveSwitchValue = table[sectionNum].innerHTML
+		table[sectionNum].innerHTML = table[sectionNum+1].innerHTML;
+		table[sectionNum+1].innerHTML = saveSwitchValue;
+		table[sectionNum].href = "#section" + bottom;
+		table[sectionNum].href ="#section"+ sectionNum;
 	}
 	else{
 		alert("This section is already at the bottom of the page.");
@@ -267,16 +288,13 @@ function genJson() {
     submitText += "\t}\n";
     submitText += "}\n";
     console.log(submitText);
-<<<<<<< HEAD
 }
 
 function helloWorld(){
 	alert("Hello World");
-=======
     //todo submit to data base yo
 }
 
 function parseJSON() {
     var file = JSON.parse("example.JSON");
->>>>>>> b90683eb6b67d25069a24a674167dc28b6c8c13f
 }
