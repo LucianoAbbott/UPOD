@@ -269,9 +269,8 @@ function genJson() {
 
     var title = document.getElementById("pageTitle").value;
     submitText = "{\n";
-    submitText += "\t\"Page\":{ \n";
-    submitText += "\t\t\"title\":\"" + title + "\",\n";
-    submitText += "\t\t\"sections\":{ \n"
+    submitText += "\t\"title\":\"" + title + "\",\n";
+    submitText += "\t\"sections\":{ \n"
 
     // go through the sections and get their data
     for (var secNum = 0; secNum < sections.length; secNum++) {
@@ -281,22 +280,21 @@ function genJson() {
         var sectionEquation = document.getElementById("latexArea" + (secNum + 1)).value;
         var sectionImage = "";
 
-        submitText += "\t\t\t\"section" + secNum + "\":{\n";
-        submitText += "\t\t\t\t\"secTitle\":\"" + document.getElementById("sectionTitle" + (secNum + 1)).value + "\",\n";
-        submitText += "\t\t\t\t\"content\":{ \n";
-        submitText += "\t\t\t\t\t\"text\":\"" + sectionText + "\",\n"
-        submitText += "\t\t\t\t\t\"image\":\"" + sectionImage + "\",\n"
-        submitText += "\t\t\t\t\t\"diagram\":\"" + sectionDiagram + "\",\n"
-        submitText += "\t\t\t\t\t\"equation\":\"" + sectionEquation + "\"\n"
-        submitText += "\t\t\t\t}\n";
+        submitText += "\t\t\"section" + secNum + "\":{\n";
+        submitText += "\t\t\t\"secTitle\":\"" + document.getElementById("sectionTitle" + (secNum + 1)).value + "\",\n";
+        submitText += "\t\t\t\"content\":{ \n";
+        submitText += "\t\t\t\t\"text\":\"" + sectionText + "\",\n"
+        submitText += "\t\t\t\t\"image\":\"" + sectionImage + "\",\n"
+        submitText += "\t\t\t\t\"diagram\":\"" + sectionDiagram + "\",\n"
+        submitText += "\t\t\t\t\"equation\":\"" + sectionEquation + "\"\n"
+        submitText += "\t\t\t}\n";
         if (secNum == sections.length - 1) {
-            submitText += "\t\t\t}\n";
+            submitText += "\t\t}\n";
         } else {
-            submitText += "\t\t\t},\n";
+            submitText += "\t\t},\n";
         }
 
     }
-    submitText += "\t\t}\n";
     submitText += "\t}\n";
     submitText += "}\n";
     console.log(submitText);
