@@ -34,8 +34,8 @@ function addSection() {
     form.className = "sideBySide";
     upButton.innerHTML = "&#65514";
     downButton.innerHTML = "&#65516";
-    upButton.className = "solidButton";
-    downButton.className = "solidButton";
+    upButton.className = "blueGhost ghostButton ";
+    downButton.className = "blueGhost ghostButton";
     upButton.id = "upButton" + i;
     downButton.id = "downButton" + i;
     var input = i;
