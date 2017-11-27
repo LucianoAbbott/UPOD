@@ -18,7 +18,7 @@ function addSection() {
     sectionTC.innerHTML = "new " + i + "\<br>";
     sectionTC.innerHTML = "new \<br>";
     sectionTC.width = "100%";
-    table.insertBefore(sectionTC, table.childNodes[table.childNodes.length - 2]);
+    table.insertBefore(sectionTC, table.childNodes[table.childNodes.length - 3]);
 
     var newSection = document.createElement("div");
     newSection.className = "sectionForm";
