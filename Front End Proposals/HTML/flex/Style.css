@@ -15,7 +15,15 @@ body {
     flex-direction: column;
     background-color: #3366FF;
 }
+.greenButton{
+  background-color: #08c544 !important;
+}
+.greenButton:hover{
+  box-shadow: 0px 2px 0px 0px #031 !important ;
+  transform: translateY(-2px);
+  transition: transform 100ms, box-shadow 100ms;
 
+}
 .solidButton {
     margin-left: 1%;
     cursor: pointer;
