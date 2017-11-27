@@ -18,7 +18,7 @@ function addSection() {
     sectionTC.innerHTML = "new " + i + "\<br>";
     sectionTC.innerHTML = "new \<br>";
     sectionTC.width = "100%";
-    table.insertBefore(sectionTC, table.childNodes[table.childNodes.length - 2]);
+    table.insertBefore(sectionTC, table.childNodes[table.childNodes.length - 3]);
 
     var newSection = document.createElement("div");
     newSection.className = "sectionForm";
@@ -324,4 +324,11 @@ function parseJSON() {
     var file = JSON.parse("data");
     console.log(file);
     //todo submit to data base yo
+}
+
+function genSearchSection() {
+    var topDiv = document.createElement("div");
+    var titleDiv = document.createElement("div");
+    var searchDiv = document.createElement("div");
+    var buttonDiv = document.createElement("div");
 }
