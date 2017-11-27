@@ -1,6 +1,7 @@
 package com.teamUPOD.UPOD.UPOD;
 
 import datatypes.Page;
+import datatypes.Table;
 
 /**
  * Perform application logic related to the pages
@@ -19,7 +20,7 @@ public class PageService {
 	 * @return true if page was created successfully
 	 */
 	public boolean createPage(Page page) {
-		return upodDao.updatePage(upodDao.nextAvailableId(UpodDao.PAGE_TABLE_KEY), page);
+		return upodDao.updatePage(upodDao.nextAvailableId(Table.PAGE), page);
 	}
 	
 	/**
