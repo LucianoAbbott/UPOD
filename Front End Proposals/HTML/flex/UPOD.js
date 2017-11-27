@@ -16,12 +16,9 @@ function addSection() {
     var sectionTC = document.createElement("a");
     sectionTC.href = "#section" + i;
     sectionTC.className = "sideBarLink a";
-<<<<<<< HEAD
     sectionTC.id = "sideSection"+i;
     sectionTC.innerHTML = "new " + i + "\<br>";
-=======
     sectionTC.innerHTML = "new \<br>";
->>>>>>> 9f2743532f5c27949b2370dc77bd72d9f2fc7044
     sectionTC.width = "100%";
     table.insertBefore(sectionTC, table.childNodes[table.childNodes.length - 2]);
 
@@ -156,7 +153,6 @@ function addSection() {
 
 }
 
-<<<<<<< HEAD
 function moveUpSection(sectionNum){
 	var secParent = document.getElementsByClassName("sectionContainer")[0].children;
 	if(sectionNum-1>0){
@@ -196,16 +192,12 @@ function moveUpSection(sectionNum){
 
 		var table = document.getElementsByClassName("sidebarSections")[0].children;
 		//var getSideSection;
-		var saveSwitchValue = table[sectionNum].innerHTML
+		var saveSwitchValue = table[sectionNum].innerHTML;
 		table[sectionNum].innerHTML = table[sectionNum-1].innerHTML;
 		table[sectionNum-1].innerHTML = saveSwitchValue;
-		table[sectionNum].href = "#section" + bottom;
+		table[sectionNum-1].href = "#section" + bottom;
 		table[sectionNum].href ="#section"+ sectionNum;
-		//alert(table.children[sectionNum].innerHTML)
-		/*for(j=1;j!=i+1;j++){
-			getSideSection = document.getElementById("sideSection"+j);
-			table.removeChild(getSideSection);
-		}*/
+
 
 	}
 	else{
@@ -251,111 +243,15 @@ function moveDownSection(sectionNum){
 		newTopButton.id = "downButton"+bottom;
 
 		var table = document.getElementsByClassName("sidebarSections")[0].children;
-		//var getSideSection;
-		var saveSwitchValue = table[sectionNum].innerHTML
+		var saveSwitchValue = table[sectionNum].innerHTML;
 		table[sectionNum].innerHTML = table[sectionNum+1].innerHTML;
 		table[sectionNum+1].innerHTML = saveSwitchValue;
-		table[sectionNum].href = "#section" + bottom;
+		table[sectionNum+1].href = "#section" + bottom;
 		table[sectionNum].href ="#section"+ sectionNum;
 	}
 	else{
 		alert("This section is already at the bottom of the page.");
 	}
-=======
-
-
-function moveUpSection(sectionNum) {
-
-    var secParent = document.getElementsByClassName("sectionContainer")[0].children;
-
-    if (sectionNum - 1 > 0) {
-
-        var newTopSec = document.getElementById('section' + sectionNum);
-        var bottom = sectionNum - 1;
-        var newBottomSec = document.getElementById('section' + bottom);
-        newTopSec.id = "section" + bottom;
-        newBottomSec.id = "section" + sectionNum;
-
-        var clone = newTopSec.cloneNode(true);
-        var clone1 = newBottomSec.cloneNode(true);
-        var secParent = document.getElementsByClassName("sectionContainer")[0];
-        secParent.insertBefore(clone, newBottomSec);
-        secParent.insertBefore(clone1, newTopSec);
-
-        secParent.removeChild(newTopSec);
-        secParent.removeChild(newBottomSec);
-
-        newTopSec = document.getElementById('section' + sectionNum);
-        newBottomSec.id = "section" + sectionNum;
-
-        var newBottomButton = document.getElementById("upButton" + bottom);
-        var newTopButton = document.getElementById("upButton" + sectionNum);
-        newBottomButton.addEventListener("click", function() { moveUpSection(sectionNum); });
-        newTopButton.addEventListener("click", function() { moveUpSection(sectionNum - 1); });
-        newBottomButton.id = "upButton" + sectionNum;
-        bottom = sectionNum - 1;
-        newTopButton.id = "upButton" + bottom;
-
-        newBottomButton = document.getElementById("downButton" + bottom);
-        newTopButton = document.getElementById("downButton" + sectionNum);
-        newBottomButton.addEventListener("click", function() { moveDownSection(sectionNum); });
-        newTopButton.addEventListener("click", function() { moveDownSection(sectionNum - 1); });
-        newBottomButton.id = "downButton" + sectionNum;
-        bottom = sectionNum - 1;
-        newTopButton.id = "downButton" + bottom;
-
-
-    } else {
-
-        alert("This section is already at the top of the page.");
-
-    }
-
-}
-
-
-
-function moveDownSection(sectionNum) {
-
-    var secParent = document.getElementsByClassName("sectionContainer")[0].children;
-
-    if (sectionNum != i) {
-        var bottom = sectionNum + 1;
-        var newTopSec = document.getElementById('section' + bottom);
-        var newBottomSec = document.getElementById('section' + sectionNum);
-        newTopSec.id = "section" + sectionNum;
-        newBottomSec.id = "section" + bottom;
-        var clone = newTopSec.cloneNode(true);
-        var clone1 = newBottomSec.cloneNode(true);
-        var secParent = document.getElementsByClassName("sectionContainer")[0];
-        secParent.insertBefore(clone, newBottomSec);
-        secParent.insertBefore(clone1, newTopSec);
-        secParent.removeChild(newTopSec);
-        secParent.removeChild(newBottomSec);
-        newTopSec = document.getElementById('section' + sectionNum);
-        newBottomSec.id = "section" + sectionNum;
-        var newBottomButton = document.getElementById("upButton" + bottom);
-        var newTopButton = document.getElementById("upButton" + sectionNum);
-        newBottomButton.addEventListener("click", function() { moveUpSection(sectionNum); });
-        newTopButton.addEventListener("click", function() { moveUpSection(sectionNum + 1); });
-        newBottomButton.id = "upButton" + sectionNum;
-        bottom = sectionNum + 1;
-        newTopButton.id = "upButton" + bottom;
-        newBottomButton = document.getElementById("downButton" + bottom);
-        newTopButton = document.getElementById("downButton" + sectionNum);
-        newBottomButton.addEventListener("click", function() { moveDownSection(sectionNum); });
-        newTopButton.addEventListener("click", function() { moveDownSection(sectionNum + 1); });
-        newBottomButton.id = "downButton" + sectionNum;
-        bottom = sectionNum + 1;
-        newTopButton.id = "downButton" + bottom;
-
-    } else {
-
-        alert("This section is already at the bottom of the page.");
-
-    }
-
->>>>>>> 9f2743532f5c27949b2370dc77bd72d9f2fc7044
 }
 
 function helloWorld() {
@@ -401,7 +297,6 @@ function genJson() {
     submitText += "\t}\n";
     submitText += "}\n";
     console.log(submitText);
-<<<<<<< HEAD
 }
 
 function helloWorld(){
@@ -411,7 +306,5 @@ function helloWorld(){
 
 function parseJSON() {
     var file = JSON.parse("example.JSON");
-=======
     //todo submit to data base yo
->>>>>>> 9f2743532f5c27949b2370dc77bd72d9f2fc7044
 }
