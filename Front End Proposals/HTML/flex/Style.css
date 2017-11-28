@@ -15,6 +15,10 @@ body {
     flex-direction: column;
     background-color: #3366FF;
 }
+.fClass{
+  background-color: #FFF;
+  width:100%;
+}
 .greenButton{
   background-color: #08c544 !important;
 }
