@@ -86,7 +86,7 @@ public class UpodDao {
 	 * @return a complete page object.
 	 * @Author Lauren Hepditch
 	 */
-	public static Page getPage(int pageId) { //working except for variables, will be added
+	public static Page getPage(int pageId) { //working, needs more testing
 		Page page = null;
 		Variable var = null;
 
@@ -127,9 +127,8 @@ public class UpodDao {
 				   rsV = stmtV.executeQuery("SELECT * FROM VARIABLE WHERE varId="+rsSV.getInt("varId"));
 				   while(rsV.next()){
 				   
-				   var = new Variable(rsV.getString("symbol"),rsV.getString("name"),rsV.getString("description"),rsV.getString("URL"));
-				   
-				   s.getVariables().add(var);
+				   	var = new Variable(rsV.getString("symbol"),rsV.getString("name"),rsV.getString("description"),rsV.getString("URL"));
+				   	s.getVariables().add(var);
 				   }
 			   }
 			   
