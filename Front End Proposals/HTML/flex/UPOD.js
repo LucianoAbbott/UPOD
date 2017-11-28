@@ -43,20 +43,19 @@ function addSection() {
     downButton.innerHTML = "&#65516";
 
     concatButton.innerHTML = "&#9205";
-
-    upButton.classList.add("whiteGhost");
-    upButton.classList.add("ghostButton");
-
-    downButton.classList.add("greyGhost");
-    downButton.classList.add("ghostButton");
-
     concatButton.classList.add("whiteGhost");
     concatButton.classList.add("ghostButton");
     concatButton.classList.add("buttonFlip");
 
     if (i == 1) {
         downButton.className = "greyGhost ghostButton";
+        downButton.disabled = true;
         upButton.className = "greyGhost ghostButton";
+        upButton.disabled = true;
+    } else {
+        upButton.className = "whiteGhost ghostButton";
+        downButton.className = "greyGhost ghostButton";
+        downButton.disabled = true;
     }
 
     upButton.id = "upButton" + i;
