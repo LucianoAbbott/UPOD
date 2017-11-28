@@ -17,7 +17,7 @@
         <div id="titleBar">UPOD</div>
         <div class="barSearch">
             <input type="text" name="searchBar" class="searchBar">
-            <button type="button" class="searchButton">&#10148</button>
+            <button type="button" class="searchButton">&#10148;</button>
         </div>
         <div id="buttonBar" align="right">
             <button type="button" class="ghostButton barButton" id="editButton">Edit</button>
@@ -30,8 +30,10 @@
     <div class="pageEdit">
         <div class="sidebarSections">
             <h2 class="sectionBarTitle keyline">Sections: </h2>
-            <form> <button style="margin-bottom:20px;" type="button" class="solidButton greenButton" type="button" onclick="genJson();">Save Changes</button></form>
-            <a id="newLink" onclick="addSection()" href="javascript:void(0);">+ New Section</a>
+            <form>
+                <button style="margin-bottom:20px;" type="button" class="solidButton greenButton" type="button" onclick="genJson();">Save Changes</button>
+                <button type="button" class="solidButton" type="button" onclick="addSection();">Add Section</button>
+            </form>
 
         </div>
         <div class="sectionContainer">
@@ -40,7 +42,6 @@
                     <h1>Page Name: </h1>
                     <form>
                         <input type="text" name="articleTitle" class="articleTitleBox" placeHolder="Page Name" id="pageTitle">
-                        <button type="button" class="solidButton" type="button" onclick="addSection();">Add Section</button>
                         <button type="button" class="ghostButtonRed">Delete Page</button>
                     </form>
                 </div>

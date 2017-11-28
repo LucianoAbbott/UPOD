@@ -18,7 +18,7 @@ function addSection() {
     sectionTC.innerHTML = "new " + i + "\<br>";
     sectionTC.innerHTML = "new \<br>";
     sectionTC.width = "100%";
-    table.insertBefore(sectionTC, table.childNodes[table.childNodes.length - 3]);
+    table.insertBefore(sectionTC, table.childNodes[table.childNodes.length - 1]);
 
     var newSection = document.createElement("div");
     newSection.className = "sectionForm";
@@ -83,8 +83,11 @@ function addSection() {
 
     //newSection.appendChild(infoInput);
     sectionTitleText.addEventListener("keyup", function(event) {
-
         sectionTC.innerHTML = sectionTitleText.value + "\<br>";
+        sectionTC.innerHTML = sectionTC.innerHTML.trim();
+        if (sectionTC.innerHTML === "\<br>") {
+            sectionTC.innerHTML = "New \<br>";
+        }
 
     });
 
@@ -315,4 +318,10 @@ function genSearchSection() {
     var titleDiv = document.createElement("div");
     var searchDiv = document.createElement("div");
     var buttonDiv = document.createElement("div");
+
+    topDiv.classList.add("");
+    titleDiv.innerHTML = "UPOD";
+
+
+
 }
