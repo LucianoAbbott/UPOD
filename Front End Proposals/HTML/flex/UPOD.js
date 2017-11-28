@@ -1,5 +1,7 @@
+"use strict";
+
 var i = 0;
-import  "example.JSON"
+
 function addSection() {
 
     /*var original = document.getElementById('duplicater' + i);
@@ -15,8 +17,7 @@ function addSection() {
     sectionTC.href = "#section" + i;
     sectionTC.className = "sideBarLink a";
     sectionTC.id = "sideSection" + i;
-    sectionTC.innerHTML = "new " + i + "\<br>";
-    sectionTC.innerHTML = "new \<br>";
+    sectionTC.innerHTML = "new " + i + "\<br>\<br>";
     sectionTC.width = "100%";
     table.insertBefore(sectionTC, table.childNodes[table.childNodes.length - 1]);
 
@@ -26,27 +27,75 @@ function addSection() {
 
     /*newSection.innerHTML = "WE MADE IT";*/
     var rowA = document.createElement("div");
-    rowA.className = "rowAlignLeft";
+    rowA.classList.add("rowAlignLeft");
+    rowA.classList.add("sectionHighlight");
 
     var form = document.createElement("form");
+    var sectionTitle = document.createElement("h3");
+    var concatButton = document.createElement("button");
     var upButton = document.createElement("button");
     var downButton = document.createElement("button");
+
+    sectionTitle.innerHTML = "New Section";
+    sectionTitle.className = "sectionTitle";
     form.className = "sideBySide";
     upButton.innerHTML = "&#65514";
     downButton.innerHTML = "&#65516";
-    upButton.className = "blueGhost ghostButton ";
-    downButton.className = "blueGhost ghostButton";
+
+    concatButton.innerHTML = "&#9205";
+    concatButton.classList.add("whiteGhost");
+    concatButton.classList.add("ghostButton");
+    concatButton.classList.add("buttonFlip");
+
+    if (i == 1) {
+        downButton.className = "greyGhost ghostButton";
+        downButton.disabled = true;
+        upButton.className = "greyGhost ghostButton";
+        upButton.disabled = true;
+    } else {
+        upButton.className = "whiteGhost ghostButton";
+        downButton.className = "greyGhost ghostButton";
+        downButton.disabled = true;
+    }
+
     upButton.id = "upButton" + i;
     downButton.id = "downButton" + i;
+    concatButton.id = "concatButton" + i;
     var input = i;
     upButton.addEventListener("click", function() { moveUpSection(input); })
     downButton.addEventListener("click", function() { moveDownSection(input); })
+    var flip = true;
+    concatButton.addEventListener("click", function() {
+        concatinateSection(input, concatButton, flip);
+        flip = !flip;
+    });
     upButton.type = "button";
     downButton.type = "button";
+    concatButton.type = "button";
 
+    var sectionsList = document.getElementsByClassName("sectionForm");
+
+    for (var j = 1; j <= sectionsList.length; j++) {
+        var ub = document.getElementById("upButton" + j);
+        var db = document.getElementById("downButton" + j);
+        if (j == 1) {
+            ub.className = "greyGhost ghostButton";
+            ub.disabled = true;
+            db.className = "whiteGhost ghostButton";
+        } else {
+            ub.className = "whiteGhost ghostButton ";
+            db.className = "whiteGhost ghostButton";
+        }
+    }
+
+    upButton.addEventListener("click", function() { moveUpSection(input); })
+    downButton.addEventListener("click", function() { moveDownSection(input); })
+
+    form.appendChild(concatButton);
     form.appendChild(upButton);
     form.appendChild(downButton);
     rowA.appendChild(form);
+    rowA.appendChild(sectionTitle);
 
     /*titleform.appendChild(addButton);
     titleform.appendChild(removeButton);
@@ -58,6 +107,7 @@ function addSection() {
     var titleform = document.createElement("form");
     var sectionTitleText = document.createElement("input");
     var sectionDeleteButton = document.createElement("button");
+    titleform.id = "titleSectionForm" + i;
     sectionTitleText.type = "text";
     sectionTitleText.name = "sectionTitle";
     sectionTitleText.id = "sectionTitle" + i;
@@ -83,10 +133,12 @@ function addSection() {
 
     //newSection.appendChild(infoInput);
     sectionTitleText.addEventListener("keyup", function(event) {
-        sectionTC.innerHTML = sectionTitleText.value + "\<br>";
+        sectionTC.innerHTML = sectionTitleText.value + "\<br>\<br>";
+        sectionTitle.innerHTML = sectionTitleText.value;
         sectionTC.innerHTML = sectionTC.innerHTML.trim();
-        if (sectionTC.innerHTML === "\<br>") {
-            sectionTC.innerHTML = "New \<br>";
+        if (sectionTC.innerHTML === "\<br>\<br>") {
+            sectionTC.innerHTML = "New \<br>\<br>";
+            sectionTitle.innerHTML = "New";
         }
 
     });
@@ -114,7 +166,6 @@ function addSection() {
 
     sectionAreaText.id = "textArea" + i;
     sectionLatexText.id = "latexArea" + i;
-    diagramUrl.id = "diagramURL";
 
     sectionLatexText.placeholder = "Latex";
     diagramUrl.className = "articleTitleBox";
@@ -135,6 +186,7 @@ function addSection() {
     var fileIn = document.createElement("input");
     var getImageButton = document.createElement("button");
     sectionImage.className = "sectionImage";
+    sectionImage.id = "sectionImage" + i;
     imageDiv.className = "image";
     imageDiv.id = "disp";
     fileIn.id = "fileInput";
@@ -160,8 +212,44 @@ function addSection() {
 
 }
 
+function concatinateSection(sectionNum, button, flip) {
+
+    var diagram = document.getElementById("diagramURL" + sectionNum);
+    var image = document.getElementById("sectionImage" + sectionNum);
+    var textArea = document.getElementById("textArea" + sectionNum);
+    var latexArea = document.getElementById("latexArea" + sectionNum);
+    var top = document.getElementById("titleSectionForm" + sectionNum);
+    var sec = document.getElementById("section" + sectionNum);
+    if (flip) {
+        button.innerHTML = "&#9660;";
+        var textArea = document.getElementById("textArea" + sectionNum);
+        var latexArea = document.getElementById("latexArea" + sectionNum);
+        textArea.style.height = "0px";
+        latexArea.style.height = "0px";
+        sec.style.height = "30px";
+        image.style.visibility = "hidden";
+        diagram.style.visibility = "hidden";
+        textArea.style.visibility = "hidden";
+        latexArea.style.visibility = "hidden";
+        top.style.visibility = "hidden";
+
+    } else {
+        button.innerHTML = "&#9205";
+        textArea.style.height = "200px";
+        latexArea.style.height = "200px";
+        image.style.visibility = "visible";
+        diagram.style.visibility = "visible";
+        textArea.style.visibility = "visible";
+        latexArea.style.visibility = "visible";
+        top.style.visibility = "visible";
+        sec.style.height = "auto";
+    }
+
+}
+
 function moveUpSection(sectionNum) {
     var secParent = document.getElementsByClassName("sectionContainer")[0].children;
+    alert("MOVE UP:" + sectionNum + " " + " " + i);
     if (sectionNum - 1 > 0) {
         var newTopSec = document.getElementById('section' + sectionNum);
         var bottom = sectionNum - 1;
@@ -200,11 +288,16 @@ function moveUpSection(sectionNum) {
         var table = document.getElementsByClassName("sidebarSections")[0].children;
         //var getSideSection;
         var saveSwitchValue = table[sectionNum].innerHTML;
-        table[sectionNum].innerHTML = table[sectionNum - 1].innerHTML;
-        table[sectionNum - 1].innerHTML = saveSwitchValue;
-        table[sectionNum - 1].href = "#section" + bottom;
+        table[sectionNum].innerHTML = table[sectionNum + 1].innerHTML;
+        table[sectionNum + 1].innerHTML = saveSwitchValue;
+        table[sectionNum + 1].href = "#section" + bottom;
         table[sectionNum].href = "#section" + sectionNum;
 
+        var secParent = document.getElementsByClassName("sectionContainer")[0];
+        var deleteButtons = document.getElementsByClassName("ghostButtonRed");
+        //table = document.getElementsByClassName("sidebarSections")[0];
+        deleteButtons[sectionNum].addEventListener("click", function() { deleteSection(sectionNum); });
+        deleteButtons[bottom].addEventListener("click", function() { deleteSection(sectionNum - 1) });
 
     } else {
         alert("This section is already at the top of the page.");
@@ -212,6 +305,7 @@ function moveUpSection(sectionNum) {
 }
 
 function moveDownSection(sectionNum) {
+    alert("MOVE DOWN:" + sectionNum + " " + " " + i);
     var secParent = document.getElementsByClassName("sectionContainer")[0].children;
     if (sectionNum != i) {
         var bottom = sectionNum + 1;
@@ -248,21 +342,60 @@ function moveDownSection(sectionNum) {
         bottom = sectionNum + 1;
         newTopButton.id = "downButton" + bottom;
 
+
         var table = document.getElementsByClassName("sidebarSections")[0].children;
-        var saveSwitchValue = table[sectionNum].innerHTML;
-        table[sectionNum].innerHTML = table[sectionNum + 1].innerHTML;
-        table[sectionNum + 1].innerHTML = saveSwitchValue;
-        table[sectionNum + 1].href = "#section" + bottom;
-        table[sectionNum].href = "#section" + sectionNum;
+        var saveSwitchValue = table[sectionNum + 1].innerHTML;
+        //table[sectionNum+1].innerHTML = "HERE"
+        table[sectionNum + 1].innerHTML = table[sectionNum + 2].innerHTML;
+        table[sectionNum + 2].innerHTML = saveSwitchValue;
+        table[sectionNum + 2].href = "#section" + bottom;
+        table[sectionNum + 1].href = "#section" + sectionNum;
+
+        var secParent = document.getElementsByClassName("sectionContainer")[0];
+        var deleteButtons = document.getElementsByClassName("ghostButtonRed");
+        //table = document.getElementsByClassName("sidebarSections")[0];
+        deleteButtons[sectionNum].addEventListener("click", function() { deleteSection(sectionNum); });
+        deleteButtons[bottom].addEventListener("click", function() { deleteSection(sectionNum + 1) });
+
+
     } else {
         alert("This section is already at the bottom of the page.");
     }
 }
 
-function helloWorld() {
+function deleteSection(sectionNum) {
+    var table = document.getElementsByClassName("sidebarSections")[0];
+    var secParent = document.getElementsByClassName("sectionContainer")[0];
+    alert(i);
+    if (sectionNum > 1 && i > 1) {
+        var bottom = sectionNum - 1;
+        var deleteButtons = document.getElementsByClassName("ghostButtonRed");
+        var upButton;
+        var downButton;
+        var newNum;
 
-    alert("Hello World");
-
+        for (j = sectionNum + 1; j != i + 1; j++) {
+            newNum = j - 1;
+            alert(newNum);
+            secParent.children[j].id = "section" + newNum;
+            upButton = document.getElementById("upButton" + j);
+            upButton.id = "upButton" + newNum;
+            upButton.removeEventListener("click", function() { moveUpSection(sectionNum) });
+            upButton.addEventListener("click", function() { moveupSection(newNum) });
+            downButton = document.getElementById("downButton" + j);
+            downButton.removeEventListener("click", function() { moveDownSection(sectionNum) });
+            downButton.addEventListener("click", function() { moveDownSection(newNum) });
+            downButton.id = "downButton" + newNum;
+        }
+        table.removeChild(table.children[sectionNum + 1]);
+        secParent.removeChild(secParent.children[sectionNum]);
+        i--;
+        console.log(i);
+    } else {
+        table.removeChild(table.children[sectionNum + 1]);
+        secParent.removeChild(secParent.children[sectionNum]);
+        console.log(i);
+    }
 }
 
 function genJson() {
@@ -309,20 +442,21 @@ function helloWorld() {
 }
 // SORRY FOR THIS GUYS NEED TO BE ABLE TO PARSE SOME SHIT
 // MY BAD
-const data={
-      "title": "Waves",
-      "sections": {
-          "section1": {
-              "secTitle": "Description",
-              "content": {
-                  "text": "The general body of text accompanying a section",
-                  "image": "href to image stored in server",
-                  "diagram": "href to diagram for ifram insert",
-                  "equation": "latex for mathjax"
+const data = {
+    "title": "Waves",
+    "sections": {
+        "section1": {
+            "secTitle": "Description",
+            "content": {
+                "text": "The general body of text accompanying a section",
+                "image": "href to image stored in server",
+                "diagram": "href to diagram for ifram insert",
+                "equation": "latex for mathjax"
             }
         }
     }
 }
+
 function parseJSON() {
     var file = JSON.parse("data");
     console.log(file);

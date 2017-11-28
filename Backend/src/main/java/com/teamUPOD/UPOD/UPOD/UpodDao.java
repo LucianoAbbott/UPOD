@@ -12,7 +12,12 @@ import datatypes.Graphic;
 import datatypes.Page;
 import datatypes.Section;
 import datatypes.Table;
+import datatypes.Variable;
 import utils.TableIdMap;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 
 /**
  * Database Access Object for the backend server Is responsible for all
@@ -32,6 +37,33 @@ public class UpodDao {
 		String username = "";
 		String password = "";
 		String url = "";
+		
+		Properties prop = new Properties();
+		FileInputStream input = null;
+		
+		try {
+
+			input = new FileInputStream("db.properties");
+			prop.load(input);
+			
+			url = prop.getProperty("url");
+			username = prop.getProperty("username");
+			password = prop.getProperty("password");
+			
+		} catch (IOException ex) {
+			ex.printStackTrace();
+			
+		} finally {
+			if (input != null) {
+				try {
+					input.close();
+		
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
 		try {
 			connection = DriverManager.getConnection(url, username, password);
 		} catch (SQLException e) {
@@ -57,27 +89,60 @@ public class UpodDao {
 	 * @return a complete page object.
 	 * @Author Lauren Hepditch
 	 */
-	public Page getPage(int pageId) { // working except for variables, will be added
-		Page page;
-		ArrayList<Section> sections;
-		
-		try {
-			Statement pageStatement = createStatement();
-			ResultSet pageResult;
+	public static Page getPage(int pageId) { //working, needs more testing
+		Page page = null;
+		Variable var = null;
 
-			pageResult = pageStatement.executeQuery("SELECT * FROM PAGE WHERE pageId = " + pageId); // get page																											// infomation
-			pageResult.next();
-			page = new Page(pageResult);
+		try {
+			UpodDao dao = UpodDao.getInstance();
+			Statement stmt = dao.connection.createStatement();
+		    Statement stmtG = dao.connection.createStatement();
+		    Statement stmtV = dao.connection.createStatement();
+		    Statement stmtSV = dao.connection.createStatement();
+			ResultSet rs,rsG,rsV,rsSV;
 			
-			sections = getSections(pageId); // get sections
-			page.setSections(sections);
+			rs = stmt.executeQuery("SELECT * FROM PAGE WHERE pageId = "+pageId); //get page infomation
+		   	rs.next();
+			
+			page = new Page(rs.getInt("pageId"),rs.getString("title"),rs.getString("URL"),false);
+			
+			rs = stmt.executeQuery("SELECT * FROM SECTION WHERE pageId = " + pageId); //get sections
+			
+		   	while(rs.next()){ // fill sections with information and add to page
+			   Section s = new Section();
+			   s.setSectionId(rs.getInt("sectionId"));
+			   s.setTitle(rs.getString("sectionTitle"));
+			   s.setText(rs.getString("sectionText"));
+			   s.setEquations(rs.getString("equations"));
+			   
+			   rsG = stmtG.executeQuery("SELECT * FROM GRAPHIC WHERE graphicId = "+rs.getInt("graphicId"));
+				
+			   if(rsG.next()){   
+			   	s.setGraphic(new Graphic(rsG.getInt("graphicId"),rsG.getString("graphicURL"),rsG.getString("description")));   
+			   }
+			   else{
+				s.setGraphic(null);
+			   }
+			   
+			   rsSV = stmtSV.executeQuery("SELECT varId FROM SECVAR WHERE pageId = "+page.getId()+" AND sectionId = "+s.getSectionId());
+			   
+			   while(rsSV.next()){
+				   rsV = stmtV.executeQuery("SELECT * FROM VARIABLE WHERE varId="+rsSV.getInt("varId"));
+				   while(rsV.next()){
+				   
+				   	var = new Variable(rsV.getString("symbol"),rsV.getString("name"),rsV.getString("description"),rsV.getString("URL"));
+				   	s.getVariables().add(var);
+				   }
+			   }
+			   
+			   page.getSections().add(s);
+		   	   }
 
 			return page;
 
 		} catch (SQLException e) {
 			throw new IllegalStateException("Could not get page from database.", e);
 		}
-
 	}
 
 	private ArrayList<Section> getSections(int pageId) throws SQLException {
@@ -214,63 +279,21 @@ public class UpodDao {
 		return false;
 	}
 
-	// ---------------------------------------------------------------------------------------------------------------------
-	// Equations
-	/**
-	 * Creates Equation if none exists, updates otherwise.
-	 * 
-	 * @param Equation
-	 *            object
-	 * @author Ziyi Zhang
-	 */
-	public void setEquationURL(Equation equation) { // THIS ONE'S NOT DONEEEEEEEE the others are tested and work
-		Statement stmt;
-		try {
-			stmt = this.createStatement();
-			// update equation
-			if (equationExists(equation.getId())) {
-				stmt.executeUpdate("UPDATE EQUATION SET equationURL = '" + equation.getUrl() + "' WHERE equId="
-						+ equation.getId());
-				// update variables
-
-			} else { // create equation
-				stmt.executeUpdate(
-						"INSERT INTO EQUATION VALUES (" + equation.getId() + ",'" + equation.getUrl() + "')");
-				// create variables
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return;
-	}
-
-	public void deleteEquation(Equation equation) {
-		Statement stmt;
-		try {
-			stmt = this.createStatement();
-			stmt.executeQuery("delete from EQUVAR where equId=" + equation.getId() + ";");
-			stmt.executeQuery("delete from EQUATION where equId=" + equation.getId() + ";");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return;
-	}
-
 	/**
 	 * Gets a list of variables that are in the equation.
 	 * 
-	 * @param Equation
+	 * @param Section
 	 *            object
 	 * @return ArrayList<ArrayList<String>> varResult - all values of variables
 	 *         except varId
 	 * @author Ziyi Zhang
 	 */
-	public ArrayList<ArrayList<String>> getVariable(Equation equation) {
+	public ArrayList<ArrayList<String>> getVariable(Section section) {
 		ArrayList<ArrayList<String>> varResult = new ArrayList<ArrayList<String>>();
 		try {
 			ResultSet rs = this.createStatement().executeQuery(
-					"SELECT symbol,name,category,description FROM VARIABLE WHERE varId IN (SELECT varId FROM EQUVAR WHERE equId = "
-							+ equation.getId() + ")");
+					"SELECT symbol,name,description,URL FROM VARIABLE WHERE varId IN (SELECT varId FROM SECVAR WHERE sectionId = "
+							+ section.getSectionId() + ")");
 			// fill varResult
 			while (rs.next()) {
 				ArrayList<String> varInfo = new ArrayList<String>();
@@ -284,42 +307,4 @@ public class UpodDao {
 		}
 		return varResult;
 	}
-
-	/**
-	 * Gets the number of equations in the database.
-	 * 
-	 * @return Integer count
-	 * @author Ziyi Zhang
-	 */
-	public int getEquationCount() {
-		int count = 0;
-		try {
-			// get count
-			ResultSet rs = this.createStatement().executeQuery("SELECT COUNT(*) FROM EQUATION");
-			rs.next();
-			count = rs.getInt(1);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return count;
-	}
-
-	/**
-	 * Returns true if the equation exists, false otherwise.
-	 * 
-	 * @param int
-	 *            eId - equation id
-	 * @return boolean
-	 * @author Ziyi Zhang
-	 */
-	public boolean equationExists(int eId) {
-		try {
-			ResultSet rs = this.createStatement().executeQuery("select * from EQUATION where equId =" + eId);
-			return rs.next();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
-	// ---------------------------------------------------------------------------------------------------------------------
 }

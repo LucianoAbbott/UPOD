@@ -57,24 +57,52 @@ body {
 }
 
 .blueGhost {
-    border-color: #36f !important;
-    color: #36f !important;
-    margin: 0px !important;
-    margin-right: 20px !important;
+    border-color: #36f;
+    color: #36f;
+    margin: 0px;
+    margin-right: 20px;
+}
+
+.greyGhost {
+    background-color: rgba(1, 1, 1, .2);
+    border-color: rgba(1, 1, 1, .2);
+    color: #444;
+    margin-right: 20px;
+}
+
+.greyGhost:hover {
+    background-color: rgba(1, 1, 1, .2);
+    border-color: rgba(1, 1, 1, .2);
+    color: #444;
+    margin-right: 20px;
+}
+
+.whiteGhost {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border-color: white;
+    margin-right: 20px;
+}
+
+.whiteGhost:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: #36f;
+    border-color: white;
+    margin-right: 20px;
+}
+
+.blueGhost:hover {
+    color: white;
 }
 
 .ghostButton {
     cursor: pointer;
-    margin: 20px 20px;
     padding: 5px 10px;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
-    background-color: #fff;
     border-style: solid;
     border-width: 1px;
-    border-color: #888;
     border-radius: 3px;
-    color: #444;
 }
 
 .ghostButtonRed {
@@ -89,12 +117,6 @@ body {
     border-color: #f04;
     border-radius: 3px;
     color: #f04;
-}
-
-.ghostButton:hover {
-    background-color: #3366FF;
-    color: #fff;
-    transition: color 100ms, background-color 300ms;
 }
 
 .ghostButtonRed:hover {
@@ -192,6 +214,12 @@ a {
 
 /* Edit Page CSS*/
 
+.sectionHighlight {
+    background-color: #36f;
+    padding: 10px;
+    width: 90%;
+}
+
 .editHtml {
     background-color: #ffffff;
 }
@@ -216,7 +244,11 @@ a {
 }
 
 .sidebarSections {
-    width: 20%;
+    border-right-style: solid;
+    border-width: 1px;
+    border-color: #AAA;
+    width: 17%;
+    height: 100%;
     padding: 10px;
     margin-top: 76px;
     position: fixed;
@@ -232,9 +264,12 @@ a {
 }
 
 .sectionTitle {
+    color: white;
+    padding: 0px;
     float: left;
+    margin: auto;
+    margin-left: 0px;
     margin-right: 20px;
-    margin-top: 0px;
 }
 
 .pageEdit {
@@ -284,6 +319,19 @@ a {
     padding-bottom: 20px;
 }
 
+.deadButton {
+    margin: 20px 20px;
+    padding: 5px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    background-color: #fff;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #f04;
+    border-radius: 3px;
+    color: #f04;
+}
+
 
 /* About Page CSS */
 
@@ -327,14 +375,12 @@ a {
 }
 
 .rowAlignLeft {
-    margin: auto;
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
 }
 
 .sideBySide {
-    width: 30%;
     float: left;
     margin-top: 0px;
 }
@@ -353,6 +399,27 @@ ul {
 
 
 /*Search Bar CSS*/
+
+.searchTitle {
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Likely future */
+    color: #3366FF;
+    align-self: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    height: 50px;
+    margin: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    cursor: default;
+}
 
 .topBar {
     display: flex;
@@ -459,7 +526,7 @@ ul {
 
 #rightSpace {
     flex: 1;
-    height:
+    height: 10%;
 }
 
 #leftSpace {
@@ -568,4 +635,13 @@ ul {
     background-color: #008000;
     color: #ffffff;
     transition: color 100ms, background-color 300ms;
+}
+
+
+/* Animations */
+
+@keyframes fliper {
+    to {
+        rotate(180deg);
+    }
 }
