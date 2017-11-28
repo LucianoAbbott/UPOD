@@ -86,14 +86,17 @@ public class UpodDao {
 	 * @return a complete page object.
 	 * @Author Lauren Hepditch
 	 */
-	public static Page getPage(int pageId) { //working except for variables, will be added
+	public static Page getPage(int pageId) { //working , needs more testing
 		Page page = null;
+		Variable var = null;
 
 		try {
 			UpodDao dao = UpodDao.getInstance();
 			Statement stmt = dao.connection.createStatement();
-		    	Statement stmtG = dao.connection.createStatement();
-			ResultSet rs,rsG;
+		    Statement stmtG = dao.connection.createStatement();
+		    Statement stmtV = dao.connection.createStatement();
+		    Statement stmtSV = dao.connection.createStatement();
+			ResultSet rs,rsG,rsV,rsSV;
 			
 			rs = stmt.executeQuery("SELECT * FROM PAGE WHERE pageId = "+pageId); //get page infomation
 		   	rs.next();
@@ -117,7 +120,19 @@ public class UpodDao {
 			   else{
 				s.setGraphic(null);
 			   }
-		
+			   
+			   rsSV = stmtSV.executeQuery("SELECT varId FROM SECVAR WHERE pageId = "+page.getId()+" AND sectionId = "+s.getSectionId());
+			   
+			   while(rsSV.next()){
+				   rsV = stmtV.executeQuery("SELECT * FROM VARIABLE WHERE varId="+rsSV.getInt("varId"));
+				   while(rsV.next()){
+				   
+				   var = new Variable(rsV.getString("symbol"),rsV.getString("name"),rsV.getString("description"),rsV.getString("URL"));
+				   
+				   s.getVariables().add(var);
+				   }
+			   }
+			   
 			   page.getSections().add(s);
 		   	   }
 
@@ -126,8 +141,6 @@ public class UpodDao {
 		} catch (SQLException e) {
 			throw new IllegalStateException("Could not get page from database.", e);
 		}
-		
-	}
 
 	/**
 	 * Changes or creates a new page in the database. 
