@@ -33,15 +33,23 @@ function addSection() {
     form.className = "sideBySide";
     upButton.innerHTML = "&#65514";
     downButton.innerHTML = "&#65516";
-    upButton.className = "blueGhost ghostButton ";
-    downButton.className = "blueGhost ghostButton";
     upButton.id = "upButton" + i;
     downButton.id = "downButton" + i;
     var input = i;
-    upButton.addEventListener("click", function() { moveUpSection(input); })
-    downButton.addEventListener("click", function() { moveDownSection(input); })
+    
     upButton.type = "button";
     downButton.type = "button";
+
+    if(i == 1){
+    	upButton.className = "blueGhost deadButton";
+    	downButton.className = "blueGhost"
+    }
+    else{
+    	upButton.className = "blueGhost ghostButton ";
+    	downButton.className = "blueGhost ghostButton";
+    	upButton.addEventListener("click", function() { moveUpSection(input); })
+    	downButton.addEventListener("click", function() { moveDownSection(input); })
+    }
 
     form.appendChild(upButton);
     form.appendChild(downButton);
@@ -210,6 +218,10 @@ function moveUpSection(sectionNum) {
     	//table = document.getElementsByClassName("sidebarSections")[0];
     	deleteButtons[sectionNum].addEventListener("click", function(){deleteSection(sectionNum);});
     	deleteButtons[bottom].addEventListener("click",function(){deleteSection(sectionNum-1)});
+
+
+
+
 
 
     } else {
