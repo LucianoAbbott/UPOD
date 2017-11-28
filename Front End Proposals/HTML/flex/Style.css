@@ -216,7 +216,11 @@ a {
 }
 
 .sidebarSections {
-    width: 20%;
+    border-right-style: solid;
+    border-width: 1px;
+    border-color: #AAA;
+    width: 17%;
+    height: 100%;
     padding: 10px;
     margin-top: 76px;
     position: fixed;
