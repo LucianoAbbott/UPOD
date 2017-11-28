@@ -87,7 +87,7 @@ public class UpodDao {
 	 * @return a complete page object.
 	 * @Author Lauren Hepditch
 	 */
-	public Page getPage(int pageId) { //working except for variables, will be added
+	public static Page getPage(int pageId) { //working except for variables, will be added
 		Page page = null;
 
 		try {
