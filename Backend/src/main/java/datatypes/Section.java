@@ -1,5 +1,8 @@
 package datatypes;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  * Data type representing a subsection of a page in the wiki
  * @author luciano abbott
@@ -20,6 +23,14 @@ public class Section {
 		this.equation = equation;
 		this.graphic = graphic;
 	} 
+	
+	public Section(ResultSet sectionResult) throws SQLException{
+		this(sectionResult.getInt("sectionId"), 
+				sectionResult.getString("sectionTitle"), 
+				sectionResult.getString("sectionText"), 
+				sectionResult.getString("equation"),
+				null);
+	}
 	
 	public Section(){
 		

@@ -1,5 +1,8 @@
 package datatypes;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  * Data type representing a complete page in the wiki
  * @author Nathan Skof
@@ -15,6 +18,12 @@ public class Graphic {
 		this.graphicId = gId;
 		this.graphicURL = gURL;
 		this.description = gDescription;
+	}
+	
+	public Graphic(ResultSet graphicResult) throws SQLException {
+		this(graphicResult.getInt("graphicId"), 
+				graphicResult.getString("graphicURL"),
+				graphicResult.getString("description"));
 	}
 
 	public int getGraphicId() {

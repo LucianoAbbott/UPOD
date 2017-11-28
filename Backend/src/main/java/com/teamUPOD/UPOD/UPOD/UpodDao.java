@@ -8,7 +8,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import datatypes.Equation;
+import datatypes.Graphic;
 import datatypes.Page;
+import datatypes.Section;
 import datatypes.Table;
 import utils.TableIdMap;
 
@@ -26,7 +28,6 @@ public class UpodDao {
 
 	public static final int INVALID_ID = -1;
 
-	
 	private UpodDao() {
 		String username = "";
 		String password = "";
@@ -56,74 +57,75 @@ public class UpodDao {
 	 * @return a complete page object.
 	 * @Author Lauren Hepditch
 	 */
-	public Page getPage(int pageId) { //working except for variables, will be added
-		Page page = null;
-
-		try {
-			UpodDao dao = UpodDao.getInstance();
-			Statement stmt = dao.connection.createStatement();
-		    	Statement stmtG = dao.connection.createStatement();
-			ResultSet rs,rsG;
-			
-			rs = stmt.executeQuery("SELECT * FROM PAGE WHERE pageId = "+pageId); //get page infomation
-		   	rs.next();
-			
-			Page page = new Page(rs.getInt("pageId"),rs.getString("title"),rs.getString("URL"),false);
-			
-			rs = stmt.executeQuery("SELECT * FROM SECTION WHERE pageId = " + pageId); //get sections
-			
-		   	while(rs.next()){
-			   Section s = new Section();
-			   s.setSectionId(rs.getInt("sectionId"));
-			   s.setTitle(rs.getString("sectionTitle"));
-			   s.setText(rs.getString("sectionText"));
-			   s.setEquation(rs.getString("equation"));
-			   
-			   rsG = stmtG.executeQuery("SELECT * FROM GRAPHIC WHERE graphicId = "+rs.getInt("graphicId"));
-				
-			   if(rsG.next()){   
-			   	s.setGraphic(new Graphic(rsG.getInt("graphicId"),rsG.getString("graphicURL"),rsG.getString("description")));   
-			   }
-			   else{
-				s.setGraphic(null);
-			   }
+	public Page getPage(int pageId) { // working except for variables, will be added
+		Page page;
+		ArrayList<Section> sections;
 		
-			   page.getSections().add(s);
-		   	   }
+		try {
+			Statement pageStatement = createStatement();
+			ResultSet pageResult;
+
+			pageResult = pageStatement.executeQuery("SELECT * FROM PAGE WHERE pageId = " + pageId); // get page																											// infomation
+			pageResult.next();
+			page = new Page(pageResult);
+			
+			sections = getSections(pageId); // get sections
+			page.setSections(sections);
 
 			return page;
-			
+
 		} catch (SQLException e) {
 			throw new IllegalStateException("Could not get page from database.", e);
 		}
-		
+
 	}
 
+	private ArrayList<Section> getSections(int pageId) throws SQLException {
+		ArrayList<Section> sections = new ArrayList<Section>();
+		Section currentSection;
+		ResultSet graphicResult;
+		ResultSet sectionResult = createStatement().executeQuery("SELECT * FROM SECTION WHERE pageId = " + pageId); // get sections
+		
+		while (sectionResult.next()) {
+			currentSection = new Section(sectionResult);
+
+			graphicResult = createStatement().executeQuery("SELECT * FROM GRAPHIC WHERE graphicId = " + sectionResult.getInt("graphicId")); // get graphic
+			
+			if (graphicResult.next()) {
+				currentSection.setGraphic(new Graphic(graphicResult));
+			}
+			
+			sections.add(currentSection);
+		}
+		return sections;
+	}
+	
 	/**
-	 * Changes or creates a new page in the database. 
-	 * @return 
+	 * Changes or creates a new page in the database.
+	 * 
+	 * @return
 	 * @Author Lauren Hepditch
 	 */
-	public void setPage(Page page){
-		try{
-			//update page information
+	public void setPage(Page page) {
+		try {
+			// update page information
 			this.createStatement().executeUpdate("");
-			//update section information
-			//update graphic and equation information
-			//update equvar relationships
-			//update variable information
-				
-		}catch(SQLException e){
+			// update section information
+			// update graphic and equation information
+			// update equvar relationships
+			// update variable information
+
+		} catch (SQLException e) {
 			throw new IllegalStateException("Could not perform page update.", e);
 		}
 	}
-		
+
 	private Connection getConnection() {
 		return this.connection;
 	}
 
 	private Statement createStatement() throws SQLException {
-		return this.getConnection().createStatement();
+		return UpodDao.getInstance().getConnection().createStatement();
 	}
 
 	/**
