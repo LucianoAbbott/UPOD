@@ -28,21 +28,43 @@ function addSection() {
     rowA.className = "rowAlignLeft";
 
     var form = document.createElement("form");
+    var concatButton = document.createElement("button");
     var upButton = document.createElement("button");
     var downButton = document.createElement("button");
     form.className = "sideBySide";
     upButton.innerHTML = "&#65514";
     downButton.innerHTML = "&#65516";
+
+    concatButton.innerHTML = "&#9660;";
+
+    upButton.classList.add("ghostButton");
+    upButton.classList.add("blueGhost");
+
+    downButton.classList.add("ghostButton");
+    downButton.classList.add("blueGhost");
+
+    concatButton.classList.add("blueGhost");
+    concatButton.classList.add("ghostButton");
+    concatButton.classList.add("buttonFlip");
+
     upButton.id = "upButton" + i;
     downButton.id = "downButton" + i;
+    concatButton.id = "concatButton" + i;
     var input = i;
-    
+    upButton.addEventListener("click", function() { moveUpSection(input); })
+    downButton.addEventListener("click", function() { moveDownSection(input); })
+    var flip = true;
+    concatButton.addEventListener("click", function() {
+        concatinateSection(input, concatButton, flip);
+        flip = !flip;
+    });
     upButton.type = "button";
     downButton.type = "button";
+    concatButton.type = "button";
 
     if(i == 1){
-    	upButton.className = "blueGhost deadButton";
-    	downButton.className = "blueGhost"
+    	upButton.className = "greyGhost ghostButton";
+    	downButton.className = "greyGhost ghostButton"
     }
     else{
     	upButton.className = "blueGhost ghostButton ";
@@ -51,6 +73,7 @@ function addSection() {
     	downButton.addEventListener("click", function() { moveDownSection(input); })
     }
 
+    form.appendChild(concatButton);
     form.appendChild(upButton);
     form.appendChild(downButton);
     rowA.appendChild(form);
@@ -164,6 +187,23 @@ function addSection() {
     newSection.appendChild(infoInput);
 
     secParent.appendChild(newSection);
+
+}
+
+function concatinateSection(sectionNum, button, flip) {
+    if (flip) {
+        var textArea = document.getElementById("textArea" + sectionNum);
+        var latexArea = document.getElementById("latexArea" + sectionNum);
+        textArea.style.height = "0px"
+        latexArea.style.height = "0px"
+            //button.
+    } else {
+
+    }
+    var textArea = document.getElementById("textArea" + sectionNum);
+    var latexArea = document.getElementById("latexArea" + sectionNum);
+    textArea.style.height = "0px"
+    latexArea.style.height = "0px"
 
 }
 
