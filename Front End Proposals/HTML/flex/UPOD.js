@@ -1,5 +1,5 @@
 var i = 0;
-
+import  "example.JSON"
 function addSection() {
 
     /*var original = document.getElementById('duplicater' + i);
@@ -307,9 +307,25 @@ function helloWorld() {
     alert("Hello World");
     //todo submit to data base yo
 }
-
+// SORRY FOR THIS GUYS NEED TO BE ABLE TO PARSE SOME SHIT
+// MY BAD
+const data={
+      "title": "Waves",
+      "sections": {
+          "section1": {
+              "secTitle": "Description",
+              "content": {
+                  "text": "The general body of text accompanying a section",
+                  "image": "href to image stored in server",
+                  "diagram": "href to diagram for ifram insert",
+                  "equation": "latex for mathjax"
+            }
+        }
+    }
+}
 function parseJSON() {
-    var file = JSON.parse("example.JSON");
+    var file = JSON.parse("data");
+    console.log(file);
     //todo submit to data base yo
 }
 

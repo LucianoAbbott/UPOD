@@ -15,9 +15,18 @@ body {
     flex-direction: column;
     background-color: #3366FF;
 }
+<<<<<<< HEAD
 
 .greenButton {
     background-color: #08c544 !important;
+=======
+.fClass{
+  background-color: #FFF;
+  width:100%;
+}
+.greenButton{
+  background-color: #08c544 !important;
+>>>>>>> origin/master
 }
 
 .greenButton:hover {
