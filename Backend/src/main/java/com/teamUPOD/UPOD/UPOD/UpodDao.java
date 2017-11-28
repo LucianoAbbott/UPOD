@@ -1,23 +1,21 @@
 package com.teamUPOD.UPOD.UPOD;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Properties;
 
-import datatypes.Equation;
 import datatypes.Graphic;
 import datatypes.Page;
 import datatypes.Section;
 import datatypes.Table;
 import datatypes.Variable;
 import utils.TableIdMap;
-
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
 
 /**
  * Database Access Object for the backend server Is responsible for all
@@ -37,33 +35,33 @@ public class UpodDao {
 		String username = "";
 		String password = "";
 		String url = "";
-		
+
 		Properties prop = new Properties();
 		FileInputStream input = null;
-		
+
 		try {
 
 			input = new FileInputStream("db.properties");
 			prop.load(input);
-			
+
 			url = prop.getProperty("url");
 			username = prop.getProperty("username");
 			password = prop.getProperty("password");
-			
+
 		} catch (IOException ex) {
 			ex.printStackTrace();
-			
+
 		} finally {
 			if (input != null) {
 				try {
 					input.close();
-		
+
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
 			}
 		}
-		
+
 		try {
 			connection = DriverManager.getConnection(url, username, password);
 		} catch (SQLException e) {
@@ -89,55 +87,21 @@ public class UpodDao {
 	 * @return a complete page object.
 	 * @Author Lauren Hepditch
 	 */
-	public static Page getPage(int pageId) { //working, needs more testing
+	public Page getPage(int pageId) { // working, needs more testing
 		Page page = null;
-		Variable var = null;
+		ArrayList<Section> sections;
 
 		try {
-			UpodDao dao = UpodDao.getInstance();
-			Statement stmt = dao.connection.createStatement();
-		    Statement stmtG = dao.connection.createStatement();
-		    Statement stmtV = dao.connection.createStatement();
-		    Statement stmtSV = dao.connection.createStatement();
-			ResultSet rs,rsG,rsV,rsSV;
-			
-			rs = stmt.executeQuery("SELECT * FROM PAGE WHERE pageId = "+pageId); //get page infomation
-		   	rs.next();
-			
-			page = new Page(rs.getInt("pageId"),rs.getString("title"),rs.getString("URL"),false);
-			
-			rs = stmt.executeQuery("SELECT * FROM SECTION WHERE pageId = " + pageId); //get sections
-			
-		   	while(rs.next()){ // fill sections with information and add to page
-			   Section s = new Section();
-			   s.setSectionId(rs.getInt("sectionId"));
-			   s.setTitle(rs.getString("sectionTitle"));
-			   s.setText(rs.getString("sectionText"));
-			   s.setEquations(rs.getString("equations"));
-			   
-			   rsG = stmtG.executeQuery("SELECT * FROM GRAPHIC WHERE graphicId = "+rs.getInt("graphicId"));
-				
-			   if(rsG.next()){   
-			   	s.setGraphic(new Graphic(rsG.getInt("graphicId"),rsG.getString("graphicURL"),rsG.getString("description")));   
-			   }
-			   else{
-				s.setGraphic(null);
-			   }
-			   
-			   rsSV = stmtSV.executeQuery("SELECT varId FROM SECVAR WHERE pageId = "+page.getId()+" AND sectionId = "+s.getSectionId());
-			   
-			   while(rsSV.next()){
-				   rsV = stmtV.executeQuery("SELECT * FROM VARIABLE WHERE varId="+rsSV.getInt("varId"));
-				   while(rsV.next()){
-				   
-				   	var = new Variable(rsV.getString("symbol"),rsV.getString("name"),rsV.getString("description"),rsV.getString("URL"));
-				   	s.getVariables().add(var);
-				   }
-			   }
-			   
-			   page.getSections().add(s);
-		   	   }
+			Statement pageStatement = createStatement();
+			ResultSet pageResult;
 
+			pageResult = pageStatement.executeQuery("SELECT * FROM PAGE WHERE pageId = " + pageId); // get page
+			pageResult.next();
+			page = new Page(pageResult);
+			sections = getSections(pageId);
+			page.setSections(sections);
+
+			pageStatement.close();
 			return page;
 
 		} catch (SQLException e) {
@@ -148,23 +112,59 @@ public class UpodDao {
 	private ArrayList<Section> getSections(int pageId) throws SQLException {
 		ArrayList<Section> sections = new ArrayList<Section>();
 		Section currentSection;
-		ResultSet graphicResult;
-		ResultSet sectionResult = createStatement().executeQuery("SELECT * FROM SECTION WHERE pageId = " + pageId); // get sections
-		
+		Statement statement = createStatement();
+		ResultSet sectionResult = statement.executeQuery("SELECT * FROM SECTION WHERE pageId = " + pageId); // get
+																													// sections
 		while (sectionResult.next()) {
 			currentSection = new Section(sectionResult);
 
-			graphicResult = createStatement().executeQuery("SELECT * FROM GRAPHIC WHERE graphicId = " + sectionResult.getInt("graphicId")); // get graphic
-			
-			if (graphicResult.next()) {
-				currentSection.setGraphic(new Graphic(graphicResult));
-			}
-			
+			currentSection.setGraphic(getGraphic(sectionResult.getInt("graphicId")));
+			currentSection.addVariables(getVariables(pageId, currentSection.getSectionId()));
+
 			sections.add(currentSection);
 		}
+		statement.close();
 		return sections;
 	}
-	
+
+	private ArrayList<Variable> getVariables(int pageId, int sectionId) throws SQLException {
+		ArrayList<Variable> variables = new ArrayList<Variable>();
+		Statement variableStatement, varIdListStatement;
+		ResultSet variableResult, varIdListResult;
+
+		varIdListStatement = createStatement();
+		variableStatement = createStatement();
+
+		varIdListResult = varIdListStatement.executeQuery("SELECT varId FROM SECVAR WHERE pageId = " + pageId + " AND sectionId = " + sectionId);
+
+		while (varIdListResult.next()) {
+			variableResult = variableStatement.executeQuery("SELECT * FROM VARIABLE WHERE varId=" + varIdListResult.getInt("varId"));
+			while (variableResult.next()) {
+				variables.add(new Variable(variableResult));
+			}
+		}
+
+		varIdListStatement.close();
+		variableStatement.close();
+		return variables;
+	}
+
+	private Graphic getGraphic(int graphicId) throws SQLException {
+		Statement statement;
+		ResultSet result;
+		Graphic graphic = null;
+
+		statement = createStatement();
+		result = statement.executeQuery("SELECT * FROM GRAPHIC WHERE graphicId = " + graphicId); // get graphic
+
+		if (result.next()) {
+			graphic = new Graphic(result);
+		}
+
+		statement.close();
+		return graphic;
+	}
+
 	/**
 	 * Changes or creates a new page in the database.
 	 * 

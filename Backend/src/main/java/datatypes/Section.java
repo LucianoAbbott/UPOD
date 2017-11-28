@@ -2,6 +2,7 @@ package datatypes;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Data type representing a subsection of a page in the wiki
@@ -9,39 +10,30 @@ import java.sql.SQLException;
  * @author Lauren Hepditch
  */
 public class Section {
-  
 	private int sectionId;
 	private String title;
 	private String bodyText;
-	private String equation;
+	private String equations;
 	private Graphic graphic;
+	private ArrayList<Variable> variables;
 	
-	public Section(int sectionId, String title, String bodyText, String equation, Graphic graphic){
+	public Section(int sectionId, String title, String bodyText, String equations, Graphic graphic){
 		this.sectionId = sectionId;
 		this.title = title;
 		this.bodyText = bodyText;
-		this.equation = equation;
+		this.equations = equations;
 		this.graphic = graphic;
+		this.variables = new ArrayList<Variable>();
 	} 
 	
 	public Section(ResultSet sectionResult) throws SQLException{
 		this(sectionResult.getInt("sectionId"), 
 				sectionResult.getString("sectionTitle"), 
 				sectionResult.getString("sectionText"), 
-				sectionResult.getString("equation"),
+				sectionResult.getString("equations"),
 				null);
 	}
-	
-	public Section(){
-		
-		this.sectionId = 0;
-		this.title = null;
-		this.bodyText = null;
-		this.equation = null;
-		this.graphic = null;
-		
-	} 
-  
+
 	public int getSectionId(){
 		return this.sectionId;
 	}
@@ -50,12 +42,12 @@ public class Section {
 		this.sectionId= sectionId;
 	}
 	
-	public String getEquation() {
-		return equation;
+	public String getEquations() {
+		return equations;
 	}
 
-	public void setEquation(String equation) {
-		this.equation = equation;
+	public void setEquations(String equation) {
+		this.equations = equation;
 	}
 
 	public Graphic getGraphic() {
@@ -80,6 +72,12 @@ public class Section {
 	
 	public void setText(String sText){
 		this.bodyText = sText;
+	}
+	
+	public void addVariables(ArrayList<Variable> variables) {
+		for (Variable v : variables) {
+			this.variables.add(v);
+		}
 	}
   
 }
