@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import datatypes.Equation;
 import datatypes.Page;
 import datatypes.Table;
 import utils.TableIdMap;
@@ -243,63 +242,21 @@ public class UpodDao {
 		return false;
 	}
 
-	// ---------------------------------------------------------------------------------------------------------------------
-	// Equations
-	/**
-	 * Creates Equation if none exists, updates otherwise.
-	 * 
-	 * @param Equation
-	 *            object
-	 * @author Ziyi Zhang
-	 */
-	public void setEquationURL(Equation equation) { // THIS ONE'S NOT DONEEEEEEEE the others are tested and work
-		Statement stmt;
-		try {
-			stmt = this.createStatement();
-			// update equation
-			if (equationExists(equation.getId())) {
-				stmt.executeUpdate("UPDATE EQUATION SET equationURL = '" + equation.getUrl() + "' WHERE equId="
-						+ equation.getId());
-				// update variables
-
-			} else { // create equation
-				stmt.executeUpdate(
-						"INSERT INTO EQUATION VALUES (" + equation.getId() + ",'" + equation.getUrl() + "')");
-				// create variables
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return;
-	}
-
-	public void deleteEquation(Equation equation) {
-		Statement stmt;
-		try {
-			stmt = this.createStatement();
-			stmt.executeQuery("delete from EQUVAR where equId=" + equation.getId() + ";");
-			stmt.executeQuery("delete from EQUATION where equId=" + equation.getId() + ";");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return;
-	}
-
 	/**
 	 * Gets a list of variables that are in the equation.
 	 * 
-	 * @param Equation
+	 * @param Section
 	 *            object
 	 * @return ArrayList<ArrayList<String>> varResult - all values of variables
 	 *         except varId
 	 * @author Ziyi Zhang
 	 */
-	public ArrayList<ArrayList<String>> getVariable(Equation equation) {
+	public ArrayList<ArrayList<String>> getVariable(Section section) {
 		ArrayList<ArrayList<String>> varResult = new ArrayList<ArrayList<String>>();
 		try {
 			ResultSet rs = this.createStatement().executeQuery(
-					"SELECT symbol,name,category,description FROM VARIABLE WHERE varId IN (SELECT varId FROM EQUVAR WHERE equId = "
-							+ equation.getId() + ")");
+					"SELECT symbol,name,description,URL FROM VARIABLE WHERE varId IN (SELECT varId FROM SECVAR WHERE sectionId = "
+							+ section.getSectionId() + ")");
 			// fill varResult
 			while (rs.next()) {
 				ArrayList<String> varInfo = new ArrayList<String>();
@@ -313,42 +270,4 @@ public class UpodDao {
 		}
 		return varResult;
 	}
-
-	/**
-	 * Gets the number of equations in the database.
-	 * 
-	 * @return Integer count
-	 * @author Ziyi Zhang
-	 */
-	public int getEquationCount() {
-		int count = 0;
-		try {
-			// get count
-			ResultSet rs = this.createStatement().executeQuery("SELECT COUNT(*) FROM EQUATION");
-			rs.next();
-			count = rs.getInt(1);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return count;
-	}
-
-	/**
-	 * Returns true if the equation exists, false otherwise.
-	 * 
-	 * @param int
-	 *            eId - equation id
-	 * @return boolean
-	 * @author Ziyi Zhang
-	 */
-	public boolean equationExists(int eId) {
-		try {
-			ResultSet rs = this.createStatement().executeQuery("select * from EQUATION where equId =" + eId);
-			return rs.next();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
-	// ---------------------------------------------------------------------------------------------------------------------
 }
