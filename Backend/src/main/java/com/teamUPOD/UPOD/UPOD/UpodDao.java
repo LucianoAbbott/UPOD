@@ -12,6 +12,10 @@ import datatypes.Page;
 import datatypes.Table;
 import utils.TableIdMap;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
 /**
  * Database Access Object for the backend server Is responsible for all
  * interactions with the database Should be completely localised
@@ -31,6 +35,33 @@ public class UpodDao {
 		String username = "";
 		String password = "";
 		String url = "";
+		
+		Properties prop = new Properties();
+		FileInputStream input = null;
+		
+		try {
+
+			input = new FileInputStream("db.properties");
+			prop.load(input);
+			
+			url = prop.getProperty("url");
+			username = prop.getProperty("username");
+			password = prop.getProperty("password");
+			
+		} catch (IOException ex) {
+			ex.printStackTrace();
+			
+		} finally {
+			if (input != null) {
+				try {
+					input.close();
+		
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
 		try {
 			connection = DriverManager.getConnection(url, username, password);
 		} catch (SQLException e) {
@@ -68,11 +99,11 @@ public class UpodDao {
 			rs = stmt.executeQuery("SELECT * FROM PAGE WHERE pageId = "+pageId); //get page infomation
 		   	rs.next();
 			
-			Page page = new Page(rs.getInt("pageId"),rs.getString("title"),rs.getString("URL"),false);
+			page = new Page(rs.getInt("pageId"),rs.getString("title"),rs.getString("URL"),false);
 			
 			rs = stmt.executeQuery("SELECT * FROM SECTION WHERE pageId = " + pageId); //get sections
 			
-		   	while(rs.next()){
+		   	while(rs.next()){ // fill sections with information and add to page
 			   Section s = new Section();
 			   s.setSectionId(rs.getInt("sectionId"));
 			   s.setTitle(rs.getString("sectionTitle"));
