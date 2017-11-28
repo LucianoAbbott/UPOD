@@ -107,7 +107,7 @@ public class UpodDao {
 			   s.setSectionId(rs.getInt("sectionId"));
 			   s.setTitle(rs.getString("sectionTitle"));
 			   s.setText(rs.getString("sectionText"));
-			   s.setEquation(rs.getString("equations"));
+			   s.setEquations(rs.getString("equations"));
 			   
 			   rsG = stmtG.executeQuery("SELECT * FROM GRAPHIC WHERE graphicId = "+rs.getInt("graphicId"));
 				
