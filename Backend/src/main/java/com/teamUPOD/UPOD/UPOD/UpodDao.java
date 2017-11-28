@@ -86,7 +86,7 @@ public class UpodDao {
 	 * @return a complete page object.
 	 * @Author Lauren Hepditch
 	 */
-	public static Page getPage(int pageId) { //working , needs more testing
+	public static Page getPage(int pageId) { //working except for variables, will be added
 		Page page = null;
 		Variable var = null;
 
@@ -141,6 +141,7 @@ public class UpodDao {
 		} catch (SQLException e) {
 			throw new IllegalStateException("Could not get page from database.", e);
 		}
+	}
 
 	/**
 	 * Changes or creates a new page in the database. 
