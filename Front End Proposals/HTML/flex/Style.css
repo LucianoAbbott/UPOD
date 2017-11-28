@@ -64,9 +64,31 @@ body {
 }
 
 .greyGhost {
-    border-color: #888;
-    margin: 20px 20px;
+    background-color: rgba(1, 1, 1, .2);
+    border-color: rgba(1, 1, 1, .2);
     color: #444;
+    margin-right: 20px;
+}
+
+.greyGhost:hover {
+    background-color: rgba(1, 1, 1, .2);
+    border-color: rgba(1, 1, 1, .2);
+    color: #444;
+    margin-right: 20px;
+}
+
+.whiteGhost {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border-color: white;
+    margin-right: 20px;
+}
+
+.whiteGhost:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: #36f;
+    border-color: white;
+    margin-right: 20px;
 }
 
 .blueGhost:hover {
@@ -78,7 +100,6 @@ body {
     padding: 5px 10px;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
-    background-color: #fff;
     border-style: solid;
     border-width: 1px;
     border-radius: 3px;
@@ -96,12 +117,6 @@ body {
     border-color: #f04;
     border-radius: 3px;
     color: #f04;
-}
-
-.ghostButton:hover {
-    background-color: #3366FF;
-    color: #fff;
-    transition: color 100ms, background-color 300ms;
 }
 
 .ghostButtonRed:hover {
@@ -199,11 +214,11 @@ a {
 
 /* Edit Page CSS*/
 
-.buttonFlip:active {
-    transform: rotate(180deg);
+.sectionHighlight {
+    background-color: #36f;
+    padding: 10px;
+    width: 90%;
 }
-
-.buttonFlip {}
 
 .editHtml {
     background-color: #ffffff;
@@ -249,9 +264,12 @@ a {
 }
 
 .sectionTitle {
+    color: white;
+    padding: 0px;
     float: left;
+    margin: auto;
+    margin-left: 0px;
     margin-right: 20px;
-    margin-top: 0px;
 }
 
 .pageEdit {
@@ -301,7 +319,7 @@ a {
     padding-bottom: 20px;
 }
 
-.deadButton{
+.deadButton {
     margin: 20px 20px;
     padding: 5px 10px;
     font-family: 'Montserrat', sans-serif;
@@ -357,14 +375,12 @@ a {
 }
 
 .rowAlignLeft {
-    margin: auto;
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
 }
 
 .sideBySide {
-    width: 30%;
     float: left;
     margin-top: 0px;
 }
@@ -603,7 +619,7 @@ ul {
 
 /* Animations */
 
-@keyframes {
+@keyframes fliper {
     to {
         rotate(180deg);
     }
