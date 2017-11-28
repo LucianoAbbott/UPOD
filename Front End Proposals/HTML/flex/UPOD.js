@@ -161,6 +161,7 @@ function addSection() {
 
 function moveUpSection(sectionNum) {
     var secParent = document.getElementsByClassName("sectionContainer")[0].children;
+    alert("MOVE UP:"+sectionNum + " " + " " + i);
     if (sectionNum - 1 > 0) {
         var newTopSec = document.getElementById('section' + sectionNum);
         var bottom = sectionNum - 1;
@@ -199,10 +200,16 @@ function moveUpSection(sectionNum) {
         var table = document.getElementsByClassName("sidebarSections")[0].children;
         //var getSideSection;
         var saveSwitchValue = table[sectionNum].innerHTML;
-        table[sectionNum].innerHTML = table[sectionNum - 1].innerHTML;
-        table[sectionNum - 1].innerHTML = saveSwitchValue;
-        table[sectionNum - 1].href = "#section" + bottom;
+        table[sectionNum].innerHTML = table[sectionNum+1].innerHTML;
+        table[sectionNum+1].innerHTML = saveSwitchValue;
+        table[sectionNum+1].href = "#section" + bottom;
         table[sectionNum].href = "#section" + sectionNum;
+
+    	var secParent = document.getElementsByClassName("sectionContainer")[0];
+    	var deleteButtons = document.getElementsByClassName("ghostButtonRed");
+    	//table = document.getElementsByClassName("sidebarSections")[0];
+    	deleteButtons[sectionNum].addEventListener("click", function(){deleteSection(sectionNum);});
+    	deleteButtons[bottom].addEventListener("click",function(){deleteSection(sectionNum-1)});
 
 
     } else {
@@ -211,6 +218,7 @@ function moveUpSection(sectionNum) {
 }
 
 function moveDownSection(sectionNum) {
+	alert("MOVE DOWN:"+sectionNum + " " + " " + i);
     var secParent = document.getElementsByClassName("sectionContainer")[0].children;
     if (sectionNum != i) {
         var bottom = sectionNum + 1;
@@ -247,21 +255,61 @@ function moveDownSection(sectionNum) {
         bottom = sectionNum + 1;
         newTopButton.id = "downButton" + bottom;
 
+
         var table = document.getElementsByClassName("sidebarSections")[0].children;
-        var saveSwitchValue = table[sectionNum].innerHTML;
-        table[sectionNum].innerHTML = table[sectionNum + 1].innerHTML;
-        table[sectionNum + 1].innerHTML = saveSwitchValue;
-        table[sectionNum + 1].href = "#section" + bottom;
-        table[sectionNum].href = "#section" + sectionNum;
+        var saveSwitchValue = table[sectionNum+1].innerHTML;
+        //table[sectionNum+1].innerHTML = "HERE"
+        table[sectionNum+1].innerHTML = table[sectionNum + 2].innerHTML;
+        table[sectionNum + 2].innerHTML = saveSwitchValue;
+        table[sectionNum + 2].href = "#section" + bottom;
+        table[sectionNum+1].href = "#section" + sectionNum;
+
+        var secParent = document.getElementsByClassName("sectionContainer")[0];
+    	var deleteButtons = document.getElementsByClassName("ghostButtonRed");
+    	//table = document.getElementsByClassName("sidebarSections")[0];
+    	deleteButtons[sectionNum].addEventListener("click", function(){deleteSection(sectionNum);});
+    	deleteButtons[bottom].addEventListener("click",function(){deleteSection(sectionNum+1)});
+
+
     } else {
         alert("This section is already at the bottom of the page.");
     }
 }
 
-function helloWorld() {
-
-    alert("Hello World");
-
+function deleteSection(sectionNum){
+	var table = document.getElementsByClassName("sidebarSections")[0];
+	var secParent = document.getElementsByClassName("sectionContainer")[0];
+	alert(i);
+	if(sectionNum >1 && i > 1){
+		var bottom = sectionNum -1;
+	    var deleteButtons = document.getElementsByClassName("ghostButtonRed");
+	    var upButton;
+		var downButton;
+		var newNum;
+		
+	    for(j=sectionNum+1;j!=i+1;j++){
+	    	newNum = j-1;
+	    	alert(newNum);
+	    	secParent.children[j].id = "section"+newNum;
+	    	upButton = document.getElementById("upButton"+j);
+	    	upButton.id = "upButton" +newNum;
+	    	upButton.removeEventListener("click", function(){moveUpSection(sectionNum)});
+	    	upButton.addEventListener("click",function(){moveupSection(newNum)});
+	    	downButton = document.getElementById("downButton"+j);
+	    	downButton.removeEventListener("click",function(){moveDownSection(sectionNum)});
+	    	downButton.addEventListener("click",function(){moveDownSection(newNum)});
+	    	downButton.id = "downButton"+newNum;
+	    }
+	    table.removeChild(table.children[sectionNum+1]);
+	    secParent.removeChild(secParent.children[sectionNum]);
+	    i--;
+	    console.log(i);
+	}
+	else{
+		table.removeChild(table.children[sectionNum+1]);
+        secParent.removeChild(secParent.children[sectionNum]);
+        console.log(i);
+	}
 }
 
 function genJson() {
