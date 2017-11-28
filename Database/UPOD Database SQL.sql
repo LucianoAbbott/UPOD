@@ -7,25 +7,20 @@ URL VARCHAR(200) NOT NULL,
 editing BOOLEAN NOT NULL,
 PRIMARY KEY (PageId));
 
-CREATE TABLE EQUATION(
-equId INT,
-equationURL VARCHAR(200),
-PRIMARY KEY (equId) );
-
 CREATE TABLE VARIABLE (
 varId INT,
 symbol CHAR(3),
 name VARCHAR(20),
-category VARCHAR(20),
 description VARCHAR(400),
-PRIMARY KEY (varId) );
+URL VARCHAR(200),
+PRIMARY KEY (varId));
 
-CREATE TABLE EQUVAR(
-equId INT,
-varId INT,
-PRIMARY KEY (equId,varId),
-FOREIGN KEY (equId) REFERENCES EQUATION(equId), 
-FOREIGN KEY (varId) REFERENCES VARIABLE(varId) );
+CREATE TABLE SECVAR (
+pageId INT,
+sectionId INT,
+varId INT NOT NULL,
+PRIMARY KEY (pageId,sectionId)
+);
 
 CREATE TABLE GRAPHIC(
 graphicId INT,
@@ -38,9 +33,8 @@ sectionId INT,
 pageId INT,
 sectionTitle VARCHAR(100) NOT NULL,
 sectionText VARCHAR (4000),
-equId INT,
+equations VARCHAR(1000),
 graphicId INT,
 PRIMARY KEY(pageId,sectionId),
 FOREIGN KEY(pageId) REFERENCES PAGE(pageId),
-FOREIGN KEY(equId) REFERENCES EQUATION(equId),
 FOREIGN KEY(graphicId) REFERENCES GRAPHIC(graphicId));
