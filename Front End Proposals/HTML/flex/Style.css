@@ -57,24 +57,31 @@ body {
 }
 
 .blueGhost {
-    border-color: #36f !important;
-    color: #36f !important;
-    margin: 0px !important;
-    margin-right: 20px !important;
+    border-color: #36f;
+    color: #36f;
+    margin: 0px;
+    margin-right: 20px;
+}
+
+.greyGhost {
+    border-color: #888;
+    margin: 20px 20px;
+    color: #444;
+}
+
+.blueGhost:hover {
+    color: white;
 }
 
 .ghostButton {
     cursor: pointer;
-    margin: 20px 20px;
     padding: 5px 10px;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     background-color: #fff;
     border-style: solid;
     border-width: 1px;
-    border-color: #888;
     border-radius: 3px;
-    color: #444;
 }
 
 .ghostButtonRed {
@@ -191,6 +198,12 @@ a {
 
 
 /* Edit Page CSS*/
+
+.buttonFlip:active {
+    transform: rotate(180deg);
+}
+
+.buttonFlip {}
 
 .editHtml {
     background-color: #ffffff;
@@ -572,4 +585,13 @@ ul {
     background-color: #008000;
     color: #ffffff;
     transition: color 100ms, background-color 300ms;
+}
+
+
+/* Animations */
+
+@keyframes {
+    to {
+        rotate(180deg);
+    }
 }
