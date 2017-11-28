@@ -400,6 +400,27 @@ ul {
 
 /*Search Bar CSS*/
 
+.searchTitle {
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Likely future */
+    color: #3366FF;
+    align-self: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    height: 50px;
+    margin: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    cursor: default;
+}
+
 .topBar {
     display: flex;
     align-items: center;
@@ -505,7 +526,7 @@ ul {
 
 #rightSpace {
     flex: 1;
-    height:
+    height: 10%;
 }
 
 #leftSpace {
