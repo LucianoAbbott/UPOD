@@ -464,23 +464,12 @@ function helloWorld() {
 }
 // SORRY FOR THIS GUYS NEED TO BE ABLE TO PARSE SOME SHIT
 // MY BAD
-const data = {
-    "title": "Waves",
-    "sections": {
-        "section1": {
-            "secTitle": "Description",
-            "content": {
-                "text": "The general body of text accompanying a section",
-                "image": "href to image stored in server",
-                "diagram": "href to diagram for ifram insert",
-                "equation": "latex for mathjax"
-            }
-        }
-    }
-}
+var data = '{"title": "Waves","sections": {"section1": {"secTitle": "Description","content": {"text": "The general body of text accompanying a section","image": "href to image stored in server","diagram": "href to diagram for ifram insert","equation": "latex for mathjax"}}}}'
 
 function parseJSON() {
-    var file = JSON.parse("data");
-    console.log(file);
+    // CALL JSON FROM DB
+    var test= document.getElementById("article");
+    window.sessionStorage.setItem("article",test);
+    alert(sessionStorage.getItem("Article"));
     //todo submit to data base yo
 }
