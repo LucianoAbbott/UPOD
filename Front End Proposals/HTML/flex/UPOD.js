@@ -17,7 +17,7 @@ function addSection() {
     sectionTC.href = "#section" + i;
     sectionTC.className = "sideBarLink a";
     sectionTC.id = "sideSection" + i;
-    sectionTC.innerHTML = "new " + i + "\<br>\<br>";
+    sectionTC.innerHTML = "New " + i + "\<br>\<br>";
     sectionTC.width = "100%";
     table.insertBefore(sectionTC, table.childNodes[table.childNodes.length - 1]);
 
@@ -36,7 +36,7 @@ function addSection() {
     var upButton = document.createElement("button");
     var downButton = document.createElement("button");
 
-    sectionTitle.innerHTML = "New Section";
+    sectionTitle.innerHTML = "New Section " + i;
     sectionTitle.className = "sectionTitle";
     form.className = "sideBySide";
     upButton.innerHTML = "&#65514";
@@ -46,50 +46,29 @@ function addSection() {
     concatButton.classList.add("whiteGhost");
     concatButton.classList.add("ghostButton");
     concatButton.classList.add("buttonFlip");
-
-    if (i == 1) {
-        downButton.className = "greyGhost ghostButton";
-        downButton.disabled = true;
-        upButton.className = "greyGhost ghostButton";
-        upButton.disabled = true;
-    } else {
-        upButton.className = "whiteGhost ghostButton";
-        downButton.className = "greyGhost ghostButton";
-        downButton.disabled = true;
-    }
+    concatButton.classList.add("noBorder");
 
     upButton.id = "upButton" + i;
     downButton.id = "downButton" + i;
     concatButton.id = "concatButton" + i;
     var input = i;
-    upButton.addEventListener("click", function() { moveUpSection(input); })
-    downButton.addEventListener("click", function() { moveDownSection(input); })
+
+    upButton.type = "button";
+    downButton.type = "button";
+    concatButton.type = "button";
+
+    upButton.addEventListener("click", function() {
+        moveUpSection(input);
+    });
+    downButton.addEventListener("click", function() {
+        moveDownSection(input);
+    });
+
     var flip = true;
     concatButton.addEventListener("click", function() {
         concatinateSection(input, concatButton, flip);
         flip = !flip;
     });
-    upButton.type = "button";
-    downButton.type = "button";
-    concatButton.type = "button";
-
-    var sectionsList = document.getElementsByClassName("sectionForm");
-
-    for (var j = 1; j <= sectionsList.length; j++) {
-        var ub = document.getElementById("upButton" + j);
-        var db = document.getElementById("downButton" + j);
-        if (j == 1) {
-            ub.className = "greyGhost ghostButton";
-            ub.disabled = true;
-            db.className = "whiteGhost ghostButton";
-        } else {
-            ub.className = "whiteGhost ghostButton ";
-            db.className = "whiteGhost ghostButton";
-        }
-    }
-
-    upButton.addEventListener("click", function() { moveUpSection(input); })
-    downButton.addEventListener("click", function() { moveDownSection(input); })
 
     form.appendChild(concatButton);
     form.appendChild(upButton);
@@ -132,13 +111,14 @@ function addSection() {
     infoInput.appendChild(titleform);
 
     //newSection.appendChild(infoInput);
+    var which = i;
     sectionTitleText.addEventListener("keyup", function(event) {
         sectionTC.innerHTML = sectionTitleText.value + "\<br>\<br>";
         sectionTitle.innerHTML = sectionTitleText.value;
         sectionTC.innerHTML = sectionTC.innerHTML.trim();
         if (sectionTC.innerHTML === "\<br>\<br>") {
-            sectionTC.innerHTML = "New \<br>\<br>";
-            sectionTitle.innerHTML = "New";
+            sectionTC.innerHTML = "New " + which + "\<br>\<br> ";
+            sectionTitle.innerHTML = "New Section " + which;
         }
 
     });
@@ -209,7 +189,39 @@ function addSection() {
     newSection.appendChild(infoInput);
 
     secParent.appendChild(newSection);
+    setReorderButtonType();
+}
 
+function setReorderButtonType() {
+    var sectionsList = document.getElementsByClassName("sectionForm");
+    console.log(sectionsList.length);
+    if (sectionsList.length === 1) {
+        var ubut = document.getElementById("upButton1");
+        var dbut = document.getElementById("downButton1");
+        ubut.className = "ghostButton noBorder greyGhost";
+        dbut.className = "ghostButton noBorder greyGhost";
+        ubut.disabled = "true";
+        dbut.disabled = "true";
+    } else {
+        for (var j = 1; j <= sectionsList.length; j++) {
+            var ub = document.getElementById("upButton" + j);
+            var db = document.getElementById("downButton" + j);
+            if (j == 1) {
+                ub.className = "ghostButton noBorder greyGhost";
+                ub.disabled = true;
+                db.className = "whiteGhost ghostButton noBorder";
+                db.disabled = false;
+            } else if (j == sectionsList.length) {
+                db.className = "ghostButton noBorder greyGhost";
+                db.disabled = true;
+                ub.className = "whiteGhost ghostButton noBorder";
+                ub.disabled = false;
+            } else {
+                ub.className = "whiteGhost ghostButton noBorder";
+                db.className = "whiteGhost ghostButton noBorder";
+            }
+        }
+    }
 }
 
 function concatinateSection(sectionNum, button, flip) {
@@ -221,7 +233,8 @@ function concatinateSection(sectionNum, button, flip) {
     var top = document.getElementById("titleSectionForm" + sectionNum);
     var sec = document.getElementById("section" + sectionNum);
     if (flip) {
-        button.innerHTML = "&#9660;";
+        button.innerHTML = "&#9207;";
+        button.style.fontSize = "20px";
         var textArea = document.getElementById("textArea" + sectionNum);
         var latexArea = document.getElementById("latexArea" + sectionNum);
         textArea.style.height = "0px";
@@ -249,7 +262,6 @@ function concatinateSection(sectionNum, button, flip) {
 
 function moveUpSection(sectionNum) {
     var secParent = document.getElementsByClassName("sectionContainer")[0].children;
-    alert("MOVE UP:" + sectionNum + " " + " " + i);
     if (sectionNum - 1 > 0) {
         var newTopSec = document.getElementById('section' + sectionNum);
         var bottom = sectionNum - 1;
@@ -299,13 +311,27 @@ function moveUpSection(sectionNum) {
         deleteButtons[sectionNum].addEventListener("click", function() { deleteSection(sectionNum); });
         deleteButtons[bottom].addEventListener("click", function() { deleteSection(sectionNum - 1) });
 
+        var concatTop = document.getElementById("concatButton" + sectionNum);
+        var concatBottom = document.getElementById("concatButton" + bottom);
+        console.log("concatButton" + sectionNum);
+        var flip = true;
+        concatTop.addEventListener("click", function() {
+            console.log("top??");
+            concatinateSection(sectionNum, concatTop, flip);
+            flip = !flip;
+        });
+        concatBottom.addEventListener("click", function() {
+            console.log("bottom??");
+            concatinateSection(sectionNum - 1, concatBottom, flip);
+            flip = !flip;
+        });
     } else {
-        alert("This section is already at the top of the page.");
+
     }
+    setReorderButtonType();
 }
 
 function moveDownSection(sectionNum) {
-    alert("MOVE DOWN:" + sectionNum + " " + " " + i);
     var secParent = document.getElementsByClassName("sectionContainer")[0].children;
     if (sectionNum != i) {
         var bottom = sectionNum + 1;
@@ -359,8 +385,9 @@ function moveDownSection(sectionNum) {
 
 
     } else {
-        alert("This section is already at the bottom of the page.");
+
     }
+    setReorderButtonType();
 }
 
 function deleteSection(sectionNum) {
@@ -461,17 +488,4 @@ function parseJSON() {
     var file = JSON.parse("data");
     console.log(file);
     //todo submit to data base yo
-}
-
-function genSearchSection() {
-    var topDiv = document.createElement("div");
-    var titleDiv = document.createElement("div");
-    var searchDiv = document.createElement("div");
-    var buttonDiv = document.createElement("div");
-
-    topDiv.classList.add("");
-    titleDiv.innerHTML = "UPOD";
-
-
-
 }

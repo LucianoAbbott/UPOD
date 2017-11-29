@@ -19,6 +19,12 @@ public class Graphic {
 		this.graphicURL = gURL;
 		this.description = gDescription;
 	}
+	public Graphic(){
+		this.graphicId = 0;
+		this.graphicURL = "";
+		this.description = "";
+	}
+			 
 	
 	public Graphic(ResultSet graphicResult) throws SQLException {
 		this(graphicResult.getInt("graphicId"), 
@@ -40,6 +46,9 @@ public class Graphic {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public void setGraphicURL(String gGraphicURL){
+		this.graphicURL = gGraphicURL;	
 	}
 	
 //	public static void  setGraphicURL(Graphic graphic,String GraphicURL){
