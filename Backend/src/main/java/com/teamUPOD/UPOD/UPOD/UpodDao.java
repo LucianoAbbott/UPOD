@@ -193,10 +193,26 @@ public class UpodDao {
 		return UpodDao.getInstance().getConnection().createStatement();
 	}
 
-	/**
+	/** Checks for existance of page in database
 	 * 
+	 * @param 
+	 * @return  
+	 * @author Travis Leyenaar-Misson
 	 */
 	public boolean pageExists(int pageId) {
+		
+		Statement stmt = null;
+		try {
+			stmt = this.createStatement();
+			stmt.executeQuery("Select * FROM Page where PageId = " + pageId);
+			ResultSet rs1 = stmt.getResultSet();
+			
+			return rs1.next();
+			
+		} catch (SQLException e) {
+			System.out.println("No connection");
+		}
+		
 		return false;
 	}
 
