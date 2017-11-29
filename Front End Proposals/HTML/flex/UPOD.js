@@ -302,8 +302,6 @@ function moveUpSection(sectionNum) {
         var saveSwitchValue = table[sectionNum].innerHTML;
         table[sectionNum].innerHTML = table[sectionNum + 1].innerHTML;
         table[sectionNum + 1].innerHTML = saveSwitchValue;
-        table[sectionNum + 1].href = "#section" + bottom;
-        table[sectionNum].href = "#section" + sectionNum;
 
         var secParent = document.getElementsByClassName("sectionContainer")[0];
         var deleteButtons = document.getElementsByClassName("ghostButtonRed");
@@ -393,19 +391,22 @@ function moveDownSection(sectionNum) {
 function deleteSection(sectionNum) {
     var table = document.getElementsByClassName("sidebarSections")[0];
     var secParent = document.getElementsByClassName("sectionContainer")[0];
-    alert(i);
-    if (sectionNum > 1 && i > 1) {
+    //alert(sectionNum);
+    //alert(i);
+    if (i > 1) {
+        alert("A");
         var bottom = sectionNum - 1;
         var deleteButtons = document.getElementsByClassName("ghostButtonRed");
         var upButton;
         var downButton;
         var newNum;
-
+        var j;
         for (j = sectionNum + 1; j != i + 1; j++) {
             newNum = j - 1;
-            alert(newNum);
+            
             secParent.children[j].id = "section" + newNum;
             upButton = document.getElementById("upButton" + j);
+            alert(newNum);
             upButton.id = "upButton" + newNum;
             upButton.removeEventListener("click", function() { moveUpSection(sectionNum) });
             upButton.addEventListener("click", function() { moveupSection(newNum) });
@@ -418,9 +419,12 @@ function deleteSection(sectionNum) {
         secParent.removeChild(secParent.children[sectionNum]);
         i--;
         console.log(i);
+        setReorderButtonType();
     } else {
-        table.removeChild(table.children[sectionNum + 1]);
-        secParent.removeChild(secParent.children[sectionNum]);
+        alert("B");
+        table.removeChild(table.children[2]);
+        secParent.removeChild(secParent.children[1]);
+        i--;
         console.log(i);
     }
 }
