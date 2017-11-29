@@ -48,40 +48,27 @@ function addSection() {
     concatButton.classList.add("buttonFlip");
     concatButton.classList.add("noBorder");
 
-    if (i == 1) {
-        downButton.className = "greyGhost ghostButton noBorder";
-        downButton.disabled = true;
-        upButton.className = "greyGhost ghostButton noBorder";
-        upButton.disabled = true;
-    } else {
-        upButton.className = "whiteGhost ghostButton noBorder";
-        downButton.className = "greyGhost ghostButton noBorder";
-        downButton.disabled = true;
-    }
-
     upButton.id = "upButton" + i;
     downButton.id = "downButton" + i;
     concatButton.id = "concatButton" + i;
     var input = i;
-    upButton.addEventListener("click", function() { moveUpSection(input); })
-    downButton.addEventListener("click", function() { moveDownSection(input); })
-    var flip = true;
-    concatButton.addEventListener("click", function() {
-        concatinateSection(input, concatButton, flip);
-        flip = !flip;
-    });
+
     upButton.type = "button";
     downButton.type = "button";
     concatButton.type = "button";
 
     upButton.addEventListener("click", function() {
         moveUpSection(input);
-        setReorderButtonType();
-    })
+    });
     downButton.addEventListener("click", function() {
         moveDownSection(input);
-        setReorderButtonType();
-    })
+    });
+
+    var flip = true;
+    concatButton.addEventListener("click", function() {
+        concatinateSection(input, concatButton, flip);
+        flip = !flip;
+    });
 
     form.appendChild(concatButton);
     form.appendChild(upButton);
@@ -207,6 +194,7 @@ function addSection() {
 
 function setReorderButtonType() {
     var sectionsList = document.getElementsByClassName("sectionForm");
+    console.log(sectionsList.length);
     if (sectionsList.length === 1) {
         var ubut = document.getElementById("upButton1");
         var dbut = document.getElementById("downButton1");
@@ -214,21 +202,24 @@ function setReorderButtonType() {
         dbut.className = "ghostButton noBorder greyGhost";
         ubut.disabled = "true";
         dbut.disabled = "true";
-    }
-    for (var j = 1; j <= sectionsList.length; j++) {
-        var ub = document.getElementById("upButton" + j);
-        var db = document.getElementById("downButton" + j);
-        if (j == 1) {
-            ub.className = "ghostButton noBorder greyGhost";
-            ub.disabled = true;
-            db.className = "whiteGhost ghostButton noBorder";
-        } else if (j == sectionsList.length) {
-            db.className = "ghostButton noBorder greyGhost";
-            db.disabled = true;
-            ub.className = "whiteGhost ghostButton noBorder";
-        } else {
-            ub.className = "whiteGhost ghostButton noBorder";
-            db.className = "whiteGhost ghostButton noBorder";
+    } else {
+        for (var j = 1; j <= sectionsList.length; j++) {
+            var ub = document.getElementById("upButton" + j);
+            var db = document.getElementById("downButton" + j);
+            if (j == 1) {
+                ub.className = "ghostButton noBorder greyGhost";
+                ub.disabled = true;
+                db.className = "whiteGhost ghostButton noBorder";
+                db.disabled = false;
+            } else if (j == sectionsList.length) {
+                db.className = "ghostButton noBorder greyGhost";
+                db.disabled = true;
+                ub.className = "whiteGhost ghostButton noBorder";
+                ub.disabled = false;
+            } else {
+                ub.className = "whiteGhost ghostButton noBorder";
+                db.className = "whiteGhost ghostButton noBorder";
+            }
         }
     }
 }
@@ -271,7 +262,6 @@ function concatinateSection(sectionNum, button, flip) {
 
 function moveUpSection(sectionNum) {
     var secParent = document.getElementsByClassName("sectionContainer")[0].children;
-    alert("MOVE UP:" + sectionNum + " " + " " + i);
     if (sectionNum - 1 > 0) {
         var newTopSec = document.getElementById('section' + sectionNum);
         var bottom = sectionNum - 1;
@@ -321,13 +311,27 @@ function moveUpSection(sectionNum) {
         deleteButtons[sectionNum].addEventListener("click", function() { deleteSection(sectionNum); });
         deleteButtons[bottom].addEventListener("click", function() { deleteSection(sectionNum - 1) });
 
+        var concatTop = document.getElementById("concatButton" + sectionNum);
+        var concatBottom = document.getElementById("concatButton" + bottom);
+        console.log("concatButton" + sectionNum);
+        var flip = true;
+        concatTop.addEventListener("click", function() {
+            console.log("top??");
+            concatinateSection(sectionNum, concatTop, flip);
+            flip = !flip;
+        });
+        concatBottom.addEventListener("click", function() {
+            console.log("bottom??");
+            concatinateSection(sectionNum - 1, concatBottom, flip);
+            flip = !flip;
+        });
     } else {
-        alert("This section is already at the top of the page.");
+
     }
+    setReorderButtonType();
 }
 
 function moveDownSection(sectionNum) {
-    alert("MOVE DOWN:" + sectionNum + " " + " " + i);
     var secParent = document.getElementsByClassName("sectionContainer")[0].children;
     if (sectionNum != i) {
         var bottom = sectionNum + 1;
@@ -381,8 +385,9 @@ function moveDownSection(sectionNum) {
 
 
     } else {
-        alert("This section is already at the bottom of the page.");
+
     }
+    setReorderButtonType();
 }
 
 function deleteSection(sectionNum) {
