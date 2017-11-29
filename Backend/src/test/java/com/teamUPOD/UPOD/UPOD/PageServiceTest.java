@@ -12,7 +12,7 @@ public class PageServiceTest {
 	
 	@Test
 	public void updatePageTest() {
-		Assert.assertFalse(fixture.updatePage(0, new Page()));
+		Assert.assertFalse(fixture.setPage(0, new Page()));
 	}
 
 	@Test

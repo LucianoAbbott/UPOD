@@ -55,7 +55,6 @@ public class UpodDao {
 			if (input != null) {
 				try {
 					input.close();
-
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -87,26 +86,21 @@ public class UpodDao {
 	 * @return a complete page object.
 	 * @Author Lauren Hepditch
 	 */
-	public Page getPage(int pageId) { // working, needs more testing
+	public Page getPage(int pageId) throws SQLException { // working, needs more testing
 		Page page = null;
 		ArrayList<Section> sections;
+		
+		Statement pageStatement = createStatement();
+		ResultSet pageResult;
 
-		try {
-			Statement pageStatement = createStatement();
-			ResultSet pageResult;
+		pageResult = pageStatement.executeQuery("SELECT * FROM PAGE WHERE pageId = " + pageId); // get page
+		pageResult.next();
+		page = new Page(pageResult);
+		sections = getSections(pageId);
+		page.setSections(sections);
 
-			pageResult = pageStatement.executeQuery("SELECT * FROM PAGE WHERE pageId = " + pageId); // get page
-			pageResult.next();
-			page = new Page(pageResult);
-			sections = getSections(pageId);
-			page.setSections(sections);
-
-			pageStatement.close();
-			return page;
-
-		} catch (SQLException e) {
-			throw new IllegalStateException("Could not get page from database.", e);
-		}
+		pageStatement.close();
+		return page;
 	}
 
 	private ArrayList<Section> getSections(int pageId) throws SQLException {
@@ -171,18 +165,13 @@ public class UpodDao {
 	 * @return
 	 * @Author Lauren Hepditch
 	 */
-	public void setPage(Page page) {
-		try {
-			// update page information
-			this.createStatement().executeUpdate("");
-			// update section information
-			// update graphic and equation information
-			// update equvar relationships
-			// update variable information
-
-		} catch (SQLException e) {
-			throw new IllegalStateException("Could not perform page update.", e);
-		}
+	public void setPage(Page page) throws SQLException {
+		// update page information
+		this.createStatement().executeUpdate("");
+		// update section information
+		// update graphic and equation information
+		// update equvar relationships
+		// update variable information
 	}
 
 	private Connection getConnection() {
@@ -194,9 +183,12 @@ public class UpodDao {
 	}
 
 	/**
-	 * 
+	 * Return true if there is already a page with the id pageId in the database
+	 * @param pageId
+	 * @return
+	 * @throws SQLException
 	 */
-	public boolean pageExists(int pageId) {
+	public boolean pageExists(int pageId) throws SQLException {
 		return false;
 	}
 
@@ -249,19 +241,6 @@ public class UpodDao {
 
 	}
 
-	// TODO: updatePage
-	// TODO: When we update page, we will receive a list of variables
-	/**
-	 * Post a page to the database with the given page Id
-	 * 
-	 * @param pageId
-	 * @param page
-	 * @return success or fail
-	 */
-	public boolean updatePage(int pageId, Page page) {
-		return false;
-	}
-
 	// TODO: deletePage
 	/**
 	 * Delete the page with the given id from the database
@@ -269,9 +248,12 @@ public class UpodDao {
 	 * @param pageId
 	 * @return success/fail
 	 */
-	public boolean deletePage(int pageId) {
+	public boolean deletePage(int pageId) throws SQLException {
+		Statement statement;
 		try {
-			this.createStatement().execute("DELETE FROM Page WHERE PageId = " + pageId);
+			statement = createStatement();
+			statement.execute("DELETE FROM Page WHERE PageId = " + pageId);
+			statement.close();
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
