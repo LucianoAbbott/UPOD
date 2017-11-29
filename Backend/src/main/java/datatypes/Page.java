@@ -14,23 +14,20 @@ public class Page {
 	private int pageId;
 	private String title; 
 	private String url; 
-	private Boolean editing; 
 	private ArrayList<Section> sections;
 	
-	public Page(int pageId, String title, String url, Boolean editing){
+	public Page(int pageId, String title, String url){
 		
 		this.pageId = pageId;
 		this.title = title;
 		this.url = url;
-		this.editing = editing;
 		this.sections = new ArrayList<Section>();
 	}
 
 	public Page(ResultSet pageResult) throws SQLException {
 		this(pageResult.getInt("pageId"), 
 				pageResult.getString("title"), 
-				pageResult.getString("URL"), 
-				false);
+				pageResult.getString("URL"));
 	}
 
 	
@@ -38,10 +35,12 @@ public class Page {
 		pageId = 0;
 		title = null;
 		url = null;
-		editing = false;
 		sections = new ArrayList<Section>();
 	}
 	
+	public void setId(int pageId) {
+		this.pageId = pageId;
+	}
 	public int getId(){
 		return this.pageId;	
 	}
@@ -50,20 +49,12 @@ public class Page {
  		return this.title;	
 	}
 	
-	public String getURL(){
+	public String getUrl(){
 		return this.url;	
-	}
-	
-	public Boolean isBeingEditted(){
-		return this.editing;
 	}
 	
 	public void setTitle(String title){
 		this.title = title;
-	}
-	
-	public void setEditing (Boolean edit){
-		this.editing = edit;
 	}
 	
 	public void setSections (ArrayList<Section> sections) {

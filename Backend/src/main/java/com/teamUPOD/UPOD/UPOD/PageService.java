@@ -1,5 +1,7 @@
 package com.teamUPOD.UPOD.UPOD;
 
+import java.sql.SQLException;
+
 import datatypes.Page;
 import datatypes.Table;
 
@@ -15,25 +17,16 @@ public class PageService {
 	}
 
 	/**
-	 * Find an available Id and create a page at that id
-	 * @param page
-	 * @return true if page was created successfully
-	 */
-	public boolean createPage(Page page) {
-		return upodDao.updatePage(upodDao.nextAvailableId(Table.PAGE), page);
-	}
-	
-	/**
 	 * Update the page with the given id
-	 * @param pageId
 	 * @param page
 	 * @return true if page was updated
+	 * @throws SQLException 
 	 */
-	public boolean updatePage(int pageId, Page page) {
-		if (upodDao.pageExists(pageId)) {
-			return upodDao.updatePage(pageId, page);
+	public void setPage(Page page) throws SQLException {
+		if (page.getId() == -1) {
+			page.setId(upodDao.nextAvailableId(Table.PAGE));
 		}
-		return false;
+		upodDao.setPage(page);
 	}
 
 	/**
@@ -41,7 +34,7 @@ public class PageService {
 	 * @param pageId
 	 * @return true if the page was deleted
 	 */
-	public boolean deletePage(int pageId) {
+	public boolean deletePage(int pageId) throws SQLException {
 		if (upodDao.pageExists(pageId)) {
 			return upodDao.deletePage(pageId);
 		}
@@ -53,7 +46,7 @@ public class PageService {
 	 * @param pageId
 	 * @return the page, null if page not found
 	 */
-	public Page getPage(int pageId) {
+	public Page getPage(int pageId) throws SQLException {
 		if (upodDao.pageExists(pageId)) {
 			return upodDao.getPage(pageId);
 		}
