@@ -17,7 +17,7 @@ function addSection() {
     sectionTC.href = "#section" + i;
     sectionTC.className = "sideBarLink a";
     sectionTC.id = "sideSection" + i;
-    sectionTC.innerHTML = "new " + i + "\<br>\<br>";
+    sectionTC.innerHTML = "New " + i + "\<br>\<br>";
     sectionTC.width = "100%";
     table.insertBefore(sectionTC, table.childNodes[table.childNodes.length - 1]);
 
@@ -36,7 +36,7 @@ function addSection() {
     var upButton = document.createElement("button");
     var downButton = document.createElement("button");
 
-    sectionTitle.innerHTML = "New Section";
+    sectionTitle.innerHTML = "New Section " + i;
     sectionTitle.className = "sectionTitle";
     form.className = "sideBySide";
     upButton.innerHTML = "&#65514";
@@ -46,15 +46,16 @@ function addSection() {
     concatButton.classList.add("whiteGhost");
     concatButton.classList.add("ghostButton");
     concatButton.classList.add("buttonFlip");
+    concatButton.classList.add("noBorder");
 
     if (i == 1) {
-        downButton.className = "greyGhost ghostButton";
+        downButton.className = "greyGhost ghostButton noBorder";
         downButton.disabled = true;
-        upButton.className = "greyGhost ghostButton";
+        upButton.className = "greyGhost ghostButton noBorder";
         upButton.disabled = true;
     } else {
-        upButton.className = "whiteGhost ghostButton";
-        downButton.className = "greyGhost ghostButton";
+        upButton.className = "whiteGhost ghostButton noBorder";
+        downButton.className = "greyGhost ghostButton noBorder";
         downButton.disabled = true;
     }
 
@@ -73,23 +74,14 @@ function addSection() {
     downButton.type = "button";
     concatButton.type = "button";
 
-    var sectionsList = document.getElementsByClassName("sectionForm");
-
-    for (var j = 1; j <= sectionsList.length; j++) {
-        var ub = document.getElementById("upButton" + j);
-        var db = document.getElementById("downButton" + j);
-        if (j == 1) {
-            ub.className = "greyGhost ghostButton";
-            ub.disabled = true;
-            db.className = "whiteGhost ghostButton";
-        } else {
-            ub.className = "whiteGhost ghostButton ";
-            db.className = "whiteGhost ghostButton";
-        }
-    }
-
-    upButton.addEventListener("click", function() { moveUpSection(input); })
-    downButton.addEventListener("click", function() { moveDownSection(input); })
+    upButton.addEventListener("click", function() {
+        moveUpSection(input);
+        setReorderButtonType();
+    })
+    downButton.addEventListener("click", function() {
+        moveDownSection(input);
+        setReorderButtonType();
+    })
 
     form.appendChild(concatButton);
     form.appendChild(upButton);
@@ -132,13 +124,14 @@ function addSection() {
     infoInput.appendChild(titleform);
 
     //newSection.appendChild(infoInput);
+    var which = i;
     sectionTitleText.addEventListener("keyup", function(event) {
         sectionTC.innerHTML = sectionTitleText.value + "\<br>\<br>";
         sectionTitle.innerHTML = sectionTitleText.value;
         sectionTC.innerHTML = sectionTC.innerHTML.trim();
         if (sectionTC.innerHTML === "\<br>\<br>") {
-            sectionTC.innerHTML = "New \<br>\<br>";
-            sectionTitle.innerHTML = "New";
+            sectionTC.innerHTML = "New " + which + "\<br>\<br> ";
+            sectionTitle.innerHTML = "New Section " + which;
         }
 
     });
@@ -209,7 +202,35 @@ function addSection() {
     newSection.appendChild(infoInput);
 
     secParent.appendChild(newSection);
+    setReorderButtonType();
+}
 
+function setReorderButtonType() {
+    var sectionsList = document.getElementsByClassName("sectionForm");
+    if (sectionsList.length === 1) {
+        var ubut = document.getElementById("upButton1");
+        var dbut = document.getElementById("downButton1");
+        ubut.className = "ghostButton noBorder greyGhost";
+        dbut.className = "ghostButton noBorder greyGhost";
+        ubut.disabled = "true";
+        dbut.disabled = "true";
+    }
+    for (var j = 1; j <= sectionsList.length; j++) {
+        var ub = document.getElementById("upButton" + j);
+        var db = document.getElementById("downButton" + j);
+        if (j == 1) {
+            ub.className = "ghostButton noBorder greyGhost";
+            ub.disabled = true;
+            db.className = "whiteGhost ghostButton noBorder";
+        } else if (j == sectionsList.length) {
+            db.className = "ghostButton noBorder greyGhost";
+            db.disabled = true;
+            ub.className = "whiteGhost ghostButton noBorder";
+        } else {
+            ub.className = "whiteGhost ghostButton noBorder";
+            db.className = "whiteGhost ghostButton noBorder";
+        }
+    }
 }
 
 function concatinateSection(sectionNum, button, flip) {
@@ -221,7 +242,8 @@ function concatinateSection(sectionNum, button, flip) {
     var top = document.getElementById("titleSectionForm" + sectionNum);
     var sec = document.getElementById("section" + sectionNum);
     if (flip) {
-        button.innerHTML = "&#9660;";
+        button.innerHTML = "&#9207;";
+        button.style.fontSize = "20px";
         var textArea = document.getElementById("textArea" + sectionNum);
         var latexArea = document.getElementById("latexArea" + sectionNum);
         textArea.style.height = "0px";
@@ -461,17 +483,4 @@ function parseJSON() {
     var file = JSON.parse("data");
     console.log(file);
     //todo submit to data base yo
-}
-
-function genSearchSection() {
-    var topDiv = document.createElement("div");
-    var titleDiv = document.createElement("div");
-    var searchDiv = document.createElement("div");
-    var buttonDiv = document.createElement("div");
-
-    topDiv.classList.add("");
-    titleDiv.innerHTML = "UPOD";
-
-
-
 }
