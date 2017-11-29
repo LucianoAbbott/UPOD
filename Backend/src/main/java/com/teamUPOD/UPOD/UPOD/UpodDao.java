@@ -287,6 +287,7 @@ public class UpodDao {
 	public boolean deletePage(int pageId) {
 		try {
 			this.createStatement().execute("DELETE FROM Page WHERE PageId = " + pageId);
+			this.createStatement().execute("DELETE FROM Section WHERE PageID = " + pageId);
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
