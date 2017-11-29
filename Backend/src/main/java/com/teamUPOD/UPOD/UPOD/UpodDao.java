@@ -87,7 +87,7 @@ public class UpodDao {
 	 * @return a complete page object.
 	 * @Author Lauren Hepditch
 	 */
-	public Page getPage(int pageId) { // working, needs more testing
+	public static Page getPage(int pageId) { // working, needs more testing
 		Page page = null;
 		ArrayList<Section> sections;
 
@@ -109,7 +109,7 @@ public class UpodDao {
 		}
 	}
 
-	private ArrayList<Section> getSections(int pageId) throws SQLException {
+	private static ArrayList<Section> getSections(int pageId) throws SQLException {
 		ArrayList<Section> sections = new ArrayList<Section>();
 		Section currentSection;
 		Statement statement = createStatement();
@@ -127,7 +127,7 @@ public class UpodDao {
 		return sections;
 	}
 
-	private ArrayList<Variable> getVariables(int pageId, int sectionId) throws SQLException {
+	private static ArrayList<Variable> getVariables(int pageId, int sectionId) throws SQLException {
 		ArrayList<Variable> variables = new ArrayList<Variable>();
 		Statement variableStatement, varIdListStatement;
 		ResultSet variableResult, varIdListResult;
@@ -149,7 +149,7 @@ public class UpodDao {
 		return variables;
 	}
 
-	private Graphic getGraphic(int graphicId) throws SQLException {
+	private static Graphic getGraphic(int graphicId) throws SQLException {
 		Statement statement;
 		ResultSet result;
 		Graphic graphic = null;
