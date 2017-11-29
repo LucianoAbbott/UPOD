@@ -161,8 +161,7 @@ public class UpodDao {
 
 	/**
 	 * Changes or creates a new page in the database. 
-	 * @return 
-	 * @Author Lauren Hepditch
+	 * @return
 	 * @author Ziyi Zhang
 	 */
 	public void setPage(Page page){ //STILL HASN'T BEEN TESTED........ JUST WANTED THIS OUT THERE SO I CAN UPDATE W/O HAVING TO COPY/PASTA BITS AND PIECES
@@ -215,6 +214,35 @@ public class UpodDao {
 		}
 		stmt.close();
 		return false;
+	}
+	
+	
+	/**
+	 * Get the edit status of a page.
+	 * 
+	 * @author Lauren Hepditch
+	 * @return true if page is currently being edited, false if not.
+	 * 
+	 */
+	public static Boolean getEditStatus(int pageId){
+		
+		Boolean status = false;
+		
+		try {
+			
+			Statement stmt = createStatement();
+			ResultSet rs;
+			
+			rs = stmt.executeQuery("SELECT editing FROM PAGE WHERE pageId="+pageId);
+			rs.next();
+			
+			status = rs.getBoolean("editing");
+			
+			return status;
+			
+		} catch (SQLException e) {
+			throw new IllegalStateException("Could not get edit status.", e);
+		}	
 	}
 
 	/**
