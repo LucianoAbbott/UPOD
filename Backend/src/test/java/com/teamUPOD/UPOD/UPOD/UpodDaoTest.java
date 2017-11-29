@@ -15,7 +15,7 @@ public class UpodDaoTest{
 	}
 	
 	@Test
-	public void pageExistsTest() {
+	public void pageExistsTest() throws Exception {
 		construct();
 		Assert.assertFalse(fixture.pageExists(0));
 	}
@@ -23,11 +23,11 @@ public class UpodDaoTest{
 	@Test
 	public void addPageTest() {
 		construct();
-		Assert.assertFalse(fixture.updatePage(0, new Page()));
+		fixture.setPage(new Page());
 	}
 	
 	@Test
-	public void deletePageTest() {
+	public void deletePageTest() throws Exception {
 		construct();
 		Assert.assertFalse(fixture.deletePage(0));
 	}

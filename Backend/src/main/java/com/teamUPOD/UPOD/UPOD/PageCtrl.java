@@ -1,18 +1,16 @@
 package com.teamUPOD.UPOD.UPOD;
 
-import org.springframework.web.bind.annotation.RestController;
-
-import datatypes.Page;
-
 import java.sql.SQLException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import datatypes.Page;
 
 /**
  * Home of the api endpoints for page operations
@@ -61,15 +59,5 @@ public class PageCtrl {
     public ResponseEntity<Page> getPage(@PathVariable("pageid") int pageId) throws SQLException {
     		Page page = pageService.getPage(pageId);
 		return new ResponseEntity<Page>(page, HttpStatus.OK);
-    }
-    
-    /**
-     * Handle SQLException error case for all endpoints
-     * @param sqlException
-     * @return
-     */
-    @ExceptionHandler({SQLException.class})
-    public ResponseEntity<String> handleException (SQLException sqlException){
-    		return new ResponseEntity<String>("Database error: " + sqlException.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
