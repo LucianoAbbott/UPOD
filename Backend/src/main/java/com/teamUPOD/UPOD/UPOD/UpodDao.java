@@ -224,7 +224,7 @@ public class UpodDao {
 	 * @return true if page is currently being edited, false if not.
 	 * 
 	 */
-	public static Boolean getEditStatus(int pageId){
+	public Boolean getEditStatus(int pageId){
 		
 		Boolean status = false;
 		
@@ -243,6 +243,24 @@ public class UpodDao {
 		} catch (SQLException e) {
 			throw new IllegalStateException("Could not get edit status.", e);
 		}	
+	}
+	
+	/**
+	 * Set the edit status of a page, true if page is currently
+	 * being edited, false otherwise.
+	 * 
+	 * @author Lauren Hepditch
+	 */
+	public void setEditStatus(int pageId, Boolean status){
+		
+		try {
+			Statement stmt = createStatement();
+			stmt.executeUpdate("UPDATE PAGE SET editing = "+status+" WHERE pageId = "+ status);
+			
+		} catch (SQLException e) {
+			throw new IllegalStateException("Could not set edit status.", e);
+		}
+		
 	}
 
 	/**
