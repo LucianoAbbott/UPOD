@@ -211,7 +211,7 @@ public class UpodDao {
 		} catch (SQLException e) {
 			System.out.println("No connection");
 		}
-		
+		stmt.close();
 		return false;
 	}
 
