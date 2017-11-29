@@ -346,7 +346,7 @@ public class UpodDao {
 			 	}
 		 }
 		 catch (SQLException e) {
-				System.out.println("No connection");
+				e.printStackTrace();
 			}
 		return false;
 		
