@@ -42,6 +42,9 @@ public class Page {
 		sections = new ArrayList<Section>();
 	}
 	
+	public void setId(int pageId) {
+		this.pageId = pageId;
+	}
 	public int getId(){
 		return this.pageId;	
 	}
@@ -50,7 +53,7 @@ public class Page {
  		return this.title;	
 	}
 	
-	public String getURL(){
+	public String getUrl(){
 		return this.url;	
 	}
 	

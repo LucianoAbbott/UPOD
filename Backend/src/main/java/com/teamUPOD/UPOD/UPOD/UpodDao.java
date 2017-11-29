@@ -55,7 +55,6 @@ public class UpodDao {
 			if (input != null) {
 				try {
 					input.close();
-
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -87,26 +86,21 @@ public class UpodDao {
 	 * @return a complete page object.
 	 * @Author Lauren Hepditch
 	 */
-	public Page getPage(int pageId) { // working, needs more testing
+	public Page getPage(int pageId) throws SQLException { // working, needs more testing
 		Page page = null;
 		ArrayList<Section> sections;
+		
+		Statement pageStatement = createStatement();
+		ResultSet pageResult;
 
-		try {
-			Statement pageStatement = createStatement();
-			ResultSet pageResult;
+		pageResult = pageStatement.executeQuery("SELECT * FROM PAGE WHERE pageId = " + pageId); // get page
+		pageResult.next();
+		page = new Page(pageResult);
+		sections = getSections(pageId);
+		page.setSections(sections);
 
-			pageResult = pageStatement.executeQuery("SELECT * FROM PAGE WHERE pageId = " + pageId); // get page
-			pageResult.next();
-			page = new Page(pageResult);
-			sections = getSections(pageId);
-			page.setSections(sections);
-
-			pageStatement.close();
-			return page;
-
-		} catch (SQLException e) {
-			throw new IllegalStateException("Could not get page from database.", e);
-		}
+		pageStatement.close();
+		return page;
 	}
 
 	private ArrayList<Section> getSections(int pageId) throws SQLException {
@@ -166,21 +160,28 @@ public class UpodDao {
 	}
 
 	/**
-	 * Changes or creates a new page in the database.
-	 * 
-	 * @return
+	 * Changes or creates a new page in the database. 
+	 * @return 
 	 * @Author Lauren Hepditch
+	 * @author Ziyi Zhang
 	 */
-	public void setPage(Page page) {
-		try {
-			// update page information
-			this.createStatement().executeUpdate("");
-			// update section information
-			// update graphic and equation information
-			// update equvar relationships
-			// update variable information
-
-		} catch (SQLException e) {
+	public void setPage(Page page){ //STILL HASN'T BEEN TESTED........ JUST WANTED THIS OUT THERE SO I CAN UPDATE W/O HAVING TO COPY/PASTA BITS AND PIECES
+		try{
+			//update page information
+			this.createStatement().executeUpdate("INSERT INTO PAGE (pageId, title, URL, editing) VALUES("+page.getId()+","+page.getTitle()+","+page.getUrl()+",0) ON DUPLICATE KEY UPDATE title="+page.getTitle()+", URL="+page.getUrl()+",editing=0;");
+			//update section information
+			ArrayList<Section> sections_list=page.getSections();
+			for(int i=0;i<sections_list.size();i++){
+				this.createStatement().executeUpdate("INSERT INTO SECTION (sectionId, pageId, sectionTitle, sectionText, equations, graphicId) VALUES("+sections_list.get(i).getSectionId()+","+page.getId()+",'"+sections_list.get(i).getTitle()+"','"+sections_list.get(i).getText()+"', '"+sections_list.get(i).getEquations()+"',"+sections_list.get(i).getGraphic().getGraphicId()+") ON DUPLICATE KEY UPDATE pageId="+page.getId()+",sectionTitle='"+sections_list.get(i).getTitle()+"',sectionText='"+sections_list.get(i).getText()+"',equations='"+sections_list.get(i).getEquations()+"',graphicId="+sections_list.get(i).getGraphic().getGraphicId()+";");
+				//update graphic informations
+				this.createStatement().executeUpdate("INSERT INTO GRAPHIC (graphicId, graphicURL, description) VALUES("+sections_list.get(i).getGraphic().getGraphicId()+",'"+sections_list.get(i).getGraphic().getGraphicURL()+"','"+sections_list.get(i).getGraphic().getDescription()+"') ON DUPLICATE KEY UPDATE graphicURL='"+sections_list.get(i).getGraphic().getGraphicURL()+"',description='"+sections_list.get(i).getGraphic().getDescription()+"';");
+				//update variable information
+				ArrayList<Variable> variables_list=getVariables(page.getId(), sections_list.get(i).getSectionId());
+				for (int j = 0; i < variables_list.size(); j++){
+					this.createStatement().executeUpdate("INSERT INTO VARIABLE (varId, symbol, name, description, URL) VALUES("+variables_list.get(i).getId()+",'"+variables_list.get(i).getSymbol()+"','"+variables_list.get(i).getName()+"','"+variables_list.get(i).getDescription()+"','"+variables_list.get(i).getURL()+"') ON DUPLICATE KEY UPDATE symbol='"+variables_list.get(i).getSymbol()+"', name='"+variables_list.get(i).getName()+"', description='"+variables_list.get(i).getDescription()+"', URL='"+variables_list.get(i).getURL()+"';");
+				}
+			}
+		}catch(SQLException e){
 			throw new IllegalStateException("Could not perform page update.", e);
 		}
 	}
@@ -194,9 +195,25 @@ public class UpodDao {
 	}
 
 	/**
-	 * 
+	 * Return true if there is already a page with the id pageId in the database
+	 * @param pageId
+	 * @return
+	 * @throws SQLException
+	 * @author Travis Leyenaar-Misson
 	 */
-	public boolean pageExists(int pageId) {
+	public boolean pageExists(int pageId) throws SQLException {		
+		Statement stmt = null;
+		try {
+			stmt = this.createStatement();
+			stmt.executeQuery("Select * FROM Page where PageId = " + pageId);
+			ResultSet rs1 = stmt.getResultSet();
+			
+			return rs1.next();
+			
+		} catch (SQLException e) {
+			System.out.println("No connection");
+		}
+		stmt.close();
 		return false;
 	}
 
@@ -249,19 +266,6 @@ public class UpodDao {
 
 	}
 
-	// TODO: updatePage
-	// TODO: When we update page, we will receive a list of variables
-	/**
-	 * Post a page to the database with the given page Id
-	 * 
-	 * @param pageId
-	 * @param page
-	 * @return success or fail
-	 */
-	public boolean updatePage(int pageId, Page page) {
-		return false;
-	}
-
 	// TODO: deletePage
 	/**
 	 * Delete the page with the given id from the database
@@ -269,9 +273,11 @@ public class UpodDao {
 	 * @param pageId
 	 * @return success/fail
 	 */
-	public boolean deletePage(int pageId) {
+	public boolean deletePage(int pageId) throws SQLException {
+		Statement statement;
 		try {
-			this.createStatement().execute("DELETE FROM Page WHERE PageId = " + pageId);
+			createStatement().execute("DELETE FROM Page WHERE PageId = " + pageId);
+			createStatement().execute("DELETE FROM Section WHERE PageID = " + pageId);
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -306,5 +312,26 @@ public class UpodDao {
 			e.printStackTrace();
 		}
 		return varResult;
+	}
+	/*
+	* Gets a varId that will be deleted from the database
+	* Deletes variable
+	* @returns true if varId exist and returns false if the Id does not exist and therefore not deleted
+	* @author Nathan Skof
+	*/
+	public boolean deleteVariable(int varId){
+		Statement stmt = null;
+		 try {
+			 	stmt = this.createStatement();
+			 	if(idExists("VARIABLE", "varId", varId)){
+			 		stmt.executeUpdate("DELETE FROM VARIABLE WHERE varId ="+varId);
+			 		return true;
+			 	}
+		 }
+		 catch (SQLException e) {
+				e.printStackTrace();
+			}
+		return false;
+		
 	}
 }
