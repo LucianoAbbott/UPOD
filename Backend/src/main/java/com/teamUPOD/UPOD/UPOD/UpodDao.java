@@ -330,4 +330,25 @@ public class UpodDao {
 		}
 		return varResult;
 	}
+	/*
+	* Gets a varId that will be deleted from the database
+	* Deletes variable
+	* @returns true if varId exist and returns false if the Id does not exist and therefore not deleted
+	* @author Nathan Skof
+	*/
+	public static boolean deleteVariable(int varId){
+		Statement stmt = null;
+		 try {
+			 	stmt = this.createStatement();
+			 	if(idExists("VARIABLE", "varId", varId)){
+			 		stmt.executeUpdate("DELETE FROM VARIABLE WHERE varId ="+varId);
+			 		return true;
+			 	}
+		 }
+		 catch (SQLException e) {
+				System.out.println("No connection");
+			}
+		return false;
+		
+	}
 }
