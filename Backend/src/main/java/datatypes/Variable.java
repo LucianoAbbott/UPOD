@@ -48,10 +48,10 @@ public class Variable {
 		this.name = newName;	
 	}
 	public void setDescription(String newDescription){
-		this.description = newDescriptionl 	
+		this.description = newDescription;
 	}
 	public void setUrl(String newUrl){
-		this.url = newURL;	
+		this.url = newUrl;	
 	}
 	public void setSymbol(String newSymbol){
 		this.symbol = newSymbol;	
