@@ -27,8 +27,7 @@ public class Page {
 	public Page(ResultSet pageResult) throws SQLException {
 		this(pageResult.getInt("pageId"), 
 				pageResult.getString("title"), 
-				pageResult.getString("URL"), 
-				false);
+				pageResult.getString("URL"));
 	}
 
 	
