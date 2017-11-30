@@ -218,7 +218,9 @@ function setReorderButtonType() {
                 ub.disabled = false;
             } else {
                 ub.className = "whiteGhost ghostButton noBorder";
+                ub.disabled = false;
                 db.className = "whiteGhost ghostButton noBorder";
+                db.disabled = false;
             }
         }
     }
