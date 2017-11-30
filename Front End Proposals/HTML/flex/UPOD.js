@@ -316,12 +316,11 @@ function moveUpSection(sectionNum) {
         console.log("concatButton" + sectionNum);
         var flip = true;
         concatTop.addEventListener("click", function() {
-            console.log("top??");
             concatinateSection(sectionNum, concatTop, flip);
             flip = !flip;
         });
         concatBottom.addEventListener("click", function() {
-            console.log("bottom??");
+            console.log((sectionNum - 1) + "moved up");
             concatinateSection(sectionNum - 1, concatBottom, flip);
             flip = !flip;
         });
@@ -383,6 +382,19 @@ function moveDownSection(sectionNum) {
         deleteButtons[sectionNum].addEventListener("click", function() { deleteSection(sectionNum); });
         deleteButtons[bottom].addEventListener("click", function() { deleteSection(sectionNum + 1) });
 
+        var concatTop = document.getElementById("concatButton" + sectionNum);
+        var concatBottom = document.getElementById("concatButton" + bottom);
+        console.log("concatButton" + sectionNum);
+        var flip = true;
+        concatTop.addEventListener("click", function() {
+            console.log((sectionNum) + "moved down");
+            concatinateSection(sectionNum, concatTop, flip);
+            flip = !flip;
+        });
+        concatBottom.addEventListener("click", function() {
+            concatinateSection(sectionNum + 1, concatBottom, flip);
+            flip = !flip;
+        });
 
     } else {
 
