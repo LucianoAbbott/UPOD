@@ -79,5 +79,8 @@ public class Section {
 			this.variables.add(v);
 		}
 	}
-  
+	
+	public ArrayList<Variable> getVariables () {
+		return this.variables;
+	}
 }
