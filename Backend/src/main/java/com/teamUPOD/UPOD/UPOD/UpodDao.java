@@ -164,25 +164,27 @@ public class UpodDao {
 	 * @return
 	 * @author Ziyi Zhang
 	 */
-	public void setPage(Page page){ //STILL HASN'T BEEN TESTED........ JUST WANTED THIS OUT THERE SO I CAN UPDATE W/O HAVING TO COPY/PASTA BITS AND PIECES
+	public void setPage(Page page){
 		try{
 			//update page information
-			this.createStatement().executeUpdate("INSERT INTO PAGE (pageId, title, URL, editing) VALUES("+page.getId()+","+page.getTitle()+","+page.getUrl()+",0) ON DUPLICATE KEY UPDATE title="+page.getTitle()+", URL="+page.getUrl()+",editing=0;");
+			createStatement().executeUpdate("INSERT INTO PAGE (pageId, title, URL,editing) VALUES("+page.getId()+",'"+page.getTitle()+"','"+page.getUrl()+"',0) ON DUPLICATE KEY UPDATE title='"+page.getTitle()+"', URL='"+page.getUrl()+"',editing=0;");
 			//update section information
 			ArrayList<Section> sections_list=page.getSections();
 			for(int i=0;i<sections_list.size();i++){
-				this.createStatement().executeUpdate("INSERT INTO SECTION (sectionId, pageId, sectionTitle, sectionText, equations, graphicId) VALUES("+sections_list.get(i).getSectionId()+","+page.getId()+",'"+sections_list.get(i).getTitle()+"','"+sections_list.get(i).getText()+"', '"+sections_list.get(i).getEquations()+"',"+sections_list.get(i).getGraphic().getGraphicId()+") ON DUPLICATE KEY UPDATE pageId="+page.getId()+",sectionTitle='"+sections_list.get(i).getTitle()+"',sectionText='"+sections_list.get(i).getText()+"',equations='"+sections_list.get(i).getEquations()+"',graphicId="+sections_list.get(i).getGraphic().getGraphicId()+";");
+				createStatement().executeUpdate("INSERT INTO SECTION (sectionId, pageId, sectionTitle, sectionText, equations, graphicId) VALUES("+sections_list.get(i).getSectionId()+","+page.getId()+",'"+sections_list.get(i).getTitle()+"','"+sections_list.get(i).getText()+"', '"+sections_list.get(i).getEquations()+"',"+sections_list.get(i).getGraphic().getGraphicId()+") ON DUPLICATE KEY UPDATE pageId="+page.getId()+",sectionTitle='"+sections_list.get(i).getTitle()+"',sectionText='"+sections_list.get(i).getText()+"',equations='"+sections_list.get(i).getEquations()+"',graphicId="+sections_list.get(i).getGraphic().getGraphicId()+";");
 				//update graphic informations
-				this.createStatement().executeUpdate("INSERT INTO GRAPHIC (graphicId, graphicURL, description) VALUES("+sections_list.get(i).getGraphic().getGraphicId()+",'"+sections_list.get(i).getGraphic().getGraphicURL()+"','"+sections_list.get(i).getGraphic().getDescription()+"') ON DUPLICATE KEY UPDATE graphicURL='"+sections_list.get(i).getGraphic().getGraphicURL()+"',description='"+sections_list.get(i).getGraphic().getDescription()+"';");
+				createStatement().executeUpdate("INSERT INTO GRAPHIC (graphicId, graphicURL, description) VALUES("+sections_list.get(i).getGraphic().getGraphicId()+",'"+sections_list.get(i).getGraphic().getGraphicURL()+"','"+sections_list.get(i).getGraphic().getDescription()+"') ON DUPLICATE KEY UPDATE graphicURL='"+sections_list.get(i).getGraphic().getGraphicURL()+"',description='"+sections_list.get(i).getGraphic().getDescription()+"';");
 				//update variable information
 				ArrayList<Variable> variables_list=getVariables(page.getId(), sections_list.get(i).getSectionId());
-				for (int j = 0; i < variables_list.size(); j++){
-					this.createStatement().executeUpdate("INSERT INTO VARIABLE (varId, symbol, name, description, URL) VALUES("+variables_list.get(i).getId()+",'"+variables_list.get(i).getSymbol()+"','"+variables_list.get(i).getName()+"','"+variables_list.get(i).getDescription()+"','"+variables_list.get(i).getURL()+"') ON DUPLICATE KEY UPDATE symbol='"+variables_list.get(i).getSymbol()+"', name='"+variables_list.get(i).getName()+"', description='"+variables_list.get(i).getDescription()+"', URL='"+variables_list.get(i).getURL()+"';");
+				for (int j = 0; j < variables_list.size(); j++){
+					createStatement().executeUpdate("INSERT INTO VARIABLE (varId, symbol, name, description, URL) VALUES("+variables_list.get(j).getId()+",'"+variables_list.get(j).getSymbol()+"','"+variables_list.get(j).getName()+"','"+variables_list.get(j).getDescription()+"','"+variables_list.get(j).getURL()+"') ON DUPLICATE KEY UPDATE symbol='"+variables_list.get(j).getSymbol()+"', name='"+variables_list.get(j).getName()+"', description='"+variables_list.get(j).getDescription()+"', URL='"+variables_list.get(j).getURL()+"';");
+					createStatement().executeUpdate("INSERT INTO SECVAR (pageId, sectionId, varId) VALUES("+page.getId()+","+sections_list.get(i).getSectionId()+","+variables_list.get(j).getId()+") ON DUPLICATE KEY UPDATE varId="+variables_list.get(j).getId()+";");
 				}
 			}
 		}catch(SQLException e){
 			throw new IllegalStateException("Could not perform page update.", e);
 		}
+		return;
 	}
 
 	private Connection getConnection() {
