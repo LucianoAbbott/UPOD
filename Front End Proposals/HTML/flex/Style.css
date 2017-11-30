@@ -16,10 +16,15 @@ body {
     background-color: #3366FF;
 }
 
-.fClass {
-    background-color: #FFF;
+/*.fClass {
     width: 100%;
+    text-align: center;
+    padding:5px 0px;
 }
+
+.fClass a p{
+    color: white;
+}*/
 
 .greenButton {
     background-color: #08c544 !important;
@@ -222,6 +227,37 @@ a {
     background-color: #3366FF;
 }
 
+.bottom{
+    float:left;
+    width:50%;
+}
+
+.leftF{
+    color: #fff;
+    padding-left: 38%;
+    padding-right: 10px;
+    align-items: right;
+    border-right: thin solid #fff;
+}
+
+.rightF{
+    color: #fff;
+    padding-right: 25%;
+    padding-left: 10px;
+    align-items: right;
+}
+
+/*.vertLine{
+    border-left: thin solid #888;
+    display: inline-block;
+
+    vertical-align: middle;
+}
+
+.footerLinks{
+    margin:0px 3px 0px 3px;
+    vertical-align: middle;
+}*/
 
 /* Edit Page CSS*/
 
@@ -342,6 +378,8 @@ a {
     border-radius: 3px;
     color: #f04;
 }
+
+
 
 
 /* About Page CSS */

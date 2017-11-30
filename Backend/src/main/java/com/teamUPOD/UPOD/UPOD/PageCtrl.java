@@ -1,8 +1,6 @@
 package com.teamUPOD.UPOD.UPOD;
 
-import org.springframework.web.bind.annotation.RestController;
-
-import datatypes.Page;
+import java.sql.SQLException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import datatypes.Page;
 
 /**
  * Home of the api endpoints for page operations
@@ -26,15 +27,12 @@ public class PageCtrl {
 	 * @param pageId 	id of the page to update - if INVALID_ID creates a new page with the next available id
 	 * @param page   	the page object to put in the database
 	 * @return Success or failure http code
+	 * @throws SQLException 
 	 */
-	@RequestMapping(method = RequestMethod.POST, value = "update/{pageid}")
-    public ResponseEntity<Boolean> updatePage(@PathVariable("pageid") int pageId, @RequestBody Page page) {
-		if (pageId == UpodDao.INVALID_ID) {
-			pageService.createPage(page);
-		} else if (pageService.updatePage(pageId, page)) {
-    			return new ResponseEntity<Boolean>(HttpStatus.OK);
-    		}
-        return new ResponseEntity<Boolean>(HttpStatus.INTERNAL_SERVER_ERROR);
+	@RequestMapping(method = RequestMethod.POST, value = "update")
+    public ResponseEntity<String> updatePage(@RequestBody Page page) throws SQLException {
+		pageService.setPage(page);
+		return new ResponseEntity<String>(page.getTitle() + " successfully created at " + page.getUrl(), HttpStatus.OK);
     }
     
 	/**
@@ -42,13 +40,12 @@ public class PageCtrl {
 	 * 
 	 * @param pageId 	id of the page to update - if unused creates new page at that id
 	 * @return Success or failure http code
+	 * @throws SQLException 
 	 */
     @RequestMapping(method = RequestMethod.DELETE, value = "delete/{pageid}")
-    public ResponseEntity<Boolean> deletePage(@PathVariable("pageid") int pageId) {
-		if (pageService.deletePage(pageId)) {
-			return new ResponseEntity<Boolean>(HttpStatus.OK);
-		}
-		return new ResponseEntity<Boolean>(HttpStatus.INTERNAL_SERVER_ERROR);
+    public ResponseEntity<String> deletePage(@PathVariable("pageid") int pageId) throws SQLException {
+    		pageService.deletePage(pageId);
+		return new ResponseEntity<String>("Page successfully deleted", HttpStatus.OK);
     }
 
 	/**
@@ -56,13 +53,11 @@ public class PageCtrl {
 	 * 
 	 * @param pageId 	id of the page to update - if unused creates new page at that id
 	 * @return Success code & page object or failure http code 
+	 * @throws SQLException 
 	 */
     @RequestMapping(method = RequestMethod.GET, value = "get/{pageid}")
-    public ResponseEntity<Page> getPage(@PathVariable("pageid") int pageId) {
+    public ResponseEntity<Page> getPage(@PathVariable("pageid") int pageId) throws SQLException {
     		Page page = pageService.getPage(pageId);
-    		if (page != null) {
-    			return new ResponseEntity<Page>(page, HttpStatus.OK);
-    		}
-		return new ResponseEntity<Page>(HttpStatus.INTERNAL_SERVER_ERROR);
+		return new ResponseEntity<Page>(page, HttpStatus.OK);
     }
 }
