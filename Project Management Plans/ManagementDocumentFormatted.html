@@ -216,6 +216,28 @@
 </style>
 
 <html>
+	<head>
+		<title>UPOD - Project Management Plan</title>
+
+		<script>
+			function goToUPODIndex() {
+				var url = document.URL; 
+				if (url.startsWith("file")==false) { //If not a file
+					window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html");				
+				} else { //If a file
+					if (url.includes("UPOD-master")) { //If a file and in repository
+						var indexURL = url.substring(0, url.lastIndexOf('/')); 
+						indexURL = indexURL.substring(0, indexURL.lastIndexOf('/')); 
+						indexURL += "/docs/index.html"
+						window.open(indexURL);
+					} else { //If a file and not in repository				
+						window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html");
+					}
+				}
+			}
+		</script>
+
+	</head>
 
 <body>
 	
@@ -236,7 +258,7 @@
 	</div>
 	
     <header>
-	<h1>UPOD - Project Management Plan</h1>
+	<h1>Project Management Plan for UPOD</h1>
 	<p class="version">Authors: Richard Bouda, Abel Worku, Peter Smerchinski, Nathan Wickham</p>
 	<p class="version", align="right">Version 2.7.5</p> 
 	<p class="version", id="date", align="right"></p>
@@ -450,6 +472,11 @@
 		<tr>
 			<th>2.7.5</th>
 			<td>Reduced table border widths</td>
+		</tr>
+
+		<tr>
+			<th>2.8</th>
+			<td>Added a footer "Go to UPOD Index" button</td>
 		</tr>
 			
 	    </table>
@@ -950,7 +977,7 @@
 		<br/>
 		<div align="right">
 			<button onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButtonLeft", style="vertical-align:middle; margin-top: 20px"><span>Back to Repository</span></button>
-			<button onclick="window.location='http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html';", class="hoverButtonRight", style="vertical-align:middle; margin-top: 20px; float: left"><span>Go to UPOD Index</span></button>		
+			<button onclick = "goToUPODIndex()", class="hoverButtonRight", style="vertical-align:middle; margin-top: 20px; float: left"><span>Go to UPOD Index</span></button>		
 		</div>
 	</div>
 
