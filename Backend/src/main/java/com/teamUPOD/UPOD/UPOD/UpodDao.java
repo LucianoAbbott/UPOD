@@ -142,6 +142,53 @@ public class UpodDao {
 		variableStatement.close();
 		return variables;
 	}
+	/**
+	 * Pull all pages with page title, section title, or section text
+	 * containing str.
+	 * 
+	 * @return an arraylist of relevant page objects.
+	 * @Author Lauren Hepditch
+	 */
+	public static ArrayList<Page> searchPages(String str){
+		ArrayList<Page> pages = new ArrayList<Page>();
+		int id,size,i;
+		Boolean inList=false;
+		try {
+			Statement stmt = createStatement();
+			ResultSet rs;
+			
+			rs = stmt.executeQuery("SELECT PageId from PAGE WHERE title LIKE '%"+str+"%';");
+			
+			while(rs.next()){
+				id = rs.getInt("pageId");
+				pages.add(getPage(id));
+			}
+			
+			rs = stmt.executeQuery("SELECT DISTINCT PageId from SECTION WHERE sectionTitle LIKE '%"+str+"%' or sectionText LIKE '%"+str+"%';");
+			
+			while(rs.next()){
+				
+				id = rs.getInt("pageId");
+				size = pages.size();//number of items is the arraylist
+				
+				for(i=0;i<size;i++){
+					
+					if(pages.get(i).getId()==id){ //if id already in list do not add again
+						inList = true;
+						break;
+					}
+				}
+				if(inList == false){
+					pages.add(getPage(id));
+				}
+			}
+			
+			return pages;
+		
+		} catch (SQLException e) {
+			throw new IllegalStateException("Could not retrieve pages.", e);
+		}
+	}
 
 	private Graphic getGraphic(int graphicId) throws SQLException {
 		Statement statement;
