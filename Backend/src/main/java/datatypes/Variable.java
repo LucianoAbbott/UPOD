@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 /**
  * Variable object of symbol/name pair
+ * 
  * @author luciano and Nathan
  *
  */
@@ -14,8 +15,8 @@ public class Variable {
 	private String description;
 	private String url;
 	private int id;
-	
-	public Variable (String symbol, String name,String description, String url, int id) {
+
+	public Variable(String symbol, String name, String description, String url, int id) {
 		this.symbol = symbol;
 		this.name = name;
 		this.description = description;
@@ -23,45 +24,58 @@ public class Variable {
 		this.id = id;
 	}
 
-	public Variable(){
+	public Variable() {
 		this.symbol = "";
 		this.name = "";
 		this.description = "";
 		this.url = "";
 		this.id = 0;
 	}
-	
-	public Variable (ResultSet variableResult) throws SQLException {
-		this(variableResult.getString("symbol"),variableResult.getString("name"),variableResult.getString("description"),variableResult.getString("URL"),variableResult.getInt("varId"));
+
+	public Variable(ResultSet variableResult) throws SQLException {
+		this(variableResult.getString("symbol"), variableResult.getString("name"),
+				variableResult.getString("description"), variableResult.getString("URL"),
+				variableResult.getInt("varId"));
 	}
 
 	public String getSymbol() {
-		return symbol;
+		return this.symbol;
 	}
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
-	public String getDescription(){
-		return description;	
-	}	
-	public String getURL(){
-		return url;	
+
+	public String getDescription() {
+		return this.description;
 	}
-	public int getId(){
-		return id;	
+
+	public String getURL() {
+		return this.url;
 	}
-	public void setName(String newName){
-		this.name = newName;	
+
+	public int getId() {
+		return this.id;
 	}
-	public void setDescription(String newDescription){
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setName(String newName) {
+		this.name = newName;
+	}
+
+	public void setDescription(String newDescription) {
 		this.description = newDescription;
 	}
-	public void setUrl(String newUrl){
-		this.url = newUrl;	
+
+	public void setURL(String newUrl) {
+		this.url = newUrl;
 	}
-	public void setSymbol(String newSymbol){
-		this.symbol = newSymbol;	
+
+	public void setSymbol(String newSymbol) {
+		this.symbol = newSymbol;
 	}
-		
+
 }

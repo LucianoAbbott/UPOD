@@ -1,4 +1,4 @@
-﻿<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 <style>
     html {
@@ -191,6 +191,30 @@
 </style>
 
 <html>
+
+    <head>
+        <title>UPOD - Analysis</title>
+
+        <script>
+            function goToUPODIndex() {
+                var url = document.URL; 
+                if (url.startsWith("file")==false) { //If not a file
+                    window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html");             
+                } else { //If a file
+                    if (url.includes("UPOD-master")) { //If a file and in repository
+                        var indexURL = url.substring(0, url.lastIndexOf('/')); 
+                        indexURL = indexURL.substring(0, indexURL.lastIndexOf('/')); 
+                        indexURL = indexURL.substring(0, indexURL.lastIndexOf('/'));                         
+                        indexURL += "/docs/index.html"
+                        window.open(indexURL);
+                    } else { //If a file and not in repository              
+                        window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html");
+                    }
+                }
+            }
+        </script>
+
+    </head>
 
 <body>
 
@@ -502,7 +526,7 @@ in conjunction with object-oriented design to establish a starting point for pro
         <br/>
         <div align="right">
             <button onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButtonLeft", style="vertical-align:middle; margin-top: 20px"><span>Back to Repository</span></button>
-            <button onclick="window.location='http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html';", class="hoverButtonRight", style="vertical-align:middle; margin-top: 20px; float: left"><span>Go to UPOD Index</span></button>
+            <button onclick = "goToUPODIndex()", class="hoverButtonRight", style="vertical-align:middle; margin-top: 20px; float: left"><span>Go to UPOD Index</span></button> 
         </div>
     </div>
 		
