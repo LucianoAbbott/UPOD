@@ -149,7 +149,7 @@ public class UpodDao {
 	 * @return an arraylist of relevant page objects.
 	 * @Author Lauren Hepditch
 	 */
-	public static ArrayList<Page> searchPages(String str){
+	public ArrayList<Page> searchPages(String str){
 		ArrayList<Page> pages = new ArrayList<Page>();
 		int id,size,i;
 		Boolean inList=false;
