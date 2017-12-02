@@ -13,14 +13,14 @@ public class Variable {
 	private String name;
 	private String description;
 	private String url;
-	private int id;
+	private int variableId;
 	
 	public Variable (String symbol, String name,String description, String url, int id) {
 		this.symbol = symbol;
 		this.name = name;
 		this.description = description;
 		this.url = url;
-		this.id = id;
+		this.variableId = id;
 	}
 
 	public Variable(){
@@ -28,7 +28,7 @@ public class Variable {
 		this.name = "";
 		this.description = "";
 		this.url = "";
-		this.id = 0;
+		this.variableId = 0;
 	}
 	
 	public Variable (ResultSet variableResult) throws SQLException {
@@ -51,13 +51,16 @@ public class Variable {
 	public int getId(){
 		return id;	
 	}
+	public void setId(int id){
+		this.variableId=id;
+	}
 	public void setName(String newName){
 		this.name = newName;	
 	}
 	public void setDescription(String newDescription){
 		this.description = newDescription;
 	}
-	public void setUrl(String newUrl){
+	public void setURL(String newUrl){
 		this.url = newUrl;	
 	}
 	public void setSymbol(String newSymbol){
