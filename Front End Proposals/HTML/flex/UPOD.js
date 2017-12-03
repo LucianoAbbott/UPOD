@@ -299,6 +299,9 @@ function moveUpSection(sectionNum) {
         bottom = sectionNum - 1;
         newTopButton.id = "downButton" + bottom;
 
+        var sec = document.getElementById("section" + sectionNum);
+        var secbottom = document.getElementById("section" + bottom);
+
         var table = document.getElementsByClassName("sidebarSections")[0].children;
         //var getSideSection;
         var saveSwitchValue = table[sectionNum].innerHTML;
