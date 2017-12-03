@@ -35,7 +35,7 @@ public class PageCtrl {
 	 */
 	@RequestMapping(method = RequestMethod.POST, value = UPDATE_ENDPOINT)
     public ResponseEntity<String> updatePage(@RequestBody Page page) throws SQLException {
-		pageService.setPage(page);
+//		pageService.setPage(page);
 		return new ResponseEntity<String>(page.getTitle() + " successfully created at " + page.getUrl(), HttpStatus.OK);
     }
     
@@ -48,7 +48,7 @@ public class PageCtrl {
 	 */
     @RequestMapping(method = RequestMethod.DELETE, value = DELETE_ENDPOINT)
     public ResponseEntity<String> deletePage(@PathVariable("pageid") int pageId) throws SQLException {
-    		pageService.deletePage(pageId);
+//    		pageService.deletePage(pageId);
 		return new ResponseEntity<String>("Page successfully deleted", HttpStatus.OK);
     }
 
