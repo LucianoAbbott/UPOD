@@ -420,7 +420,7 @@ function deleteSection(sectionNum) {
         var j;
         for (j = sectionNum + 1; j != i + 1; j++) {
             newNum = j - 1;
-            
+
             secParent.children[j].id = "section" + newNum;
             upButton = document.getElementById("upButton" + j);
             alert(newNum);
@@ -495,7 +495,9 @@ var data = '{"title": "Waves","sections": {"section1": {"secTitle": "Description
 function parseJSON() {
     // CALL JSON FROM DB
     var test= document.getElementById("article");
-    window.sessionStorage.setItem("article",test);
-    alert(sessionStorage.getItem("Article"));
+    window.sessionStorage.setItem("data",data);
+    if(sessionStorage.data){alert("fuck")};
+    window.location.href="Edit.html";
+
     //todo submit to data base yo
 }
