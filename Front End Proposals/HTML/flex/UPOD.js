@@ -482,6 +482,7 @@ function genJson() {
     submitText += "\t}\n";
     submitText += "}\n";
     console.log(submitText);
+    return submitText;
 }
 
 function helloWorld() {
@@ -490,14 +491,13 @@ function helloWorld() {
 }
 // SORRY FOR THIS GUYS NEED TO BE ABLE TO PARSE SOME SHIT
 // MY BAD
-var data = '{"title": "Waves","sections": {"section1": {"secTitle": "Description","content": {"text": "The general body of text accompanying a section","image": "href to image stored in server","diagram": "href to diagram for ifram insert","equation": "latex for mathjax"}}}}'
 
 function parseJSON() {
     // CALL JSON FROM DB
-    var test= document.getElementById("article");
-    window.sessionStorage.setItem("data",data);
-    if(sessionStorage.data){alert("fuck")};
-    window.location.href="Edit.html";
+    let data = '{"title": "Waves","sections": {"section1": {"secTitle": "Description","content": {"text": "The general body of text accompanying a section","image": "href to image stored in server","diagram": "href to diagram for ifram insert","equation": "latex for mathjax"}},"section2": {"secTitle": "General"content": "text": "The general body of text accompanying a section"image": "href to image stored in server  "diagram": "href to diagram for ifram insert"equation": "latex for mathjax"section3": "secTitle": "Properties"content": "text": "The general body of text accompanying a section","image": "href to image stored in server" diagram": "href to diagram for ifram insert" equation": "latex for mathjax}}}}'
 
+    window.sessionStorage.data=JSON.stringify(data);
+    if(window.sessionStorage){alert(JSON.parse(sessionStorage.data))};
+    
     //todo submit to data base yo
 }
