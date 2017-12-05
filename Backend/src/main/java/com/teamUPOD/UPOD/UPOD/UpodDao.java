@@ -233,7 +233,26 @@ public class UpodDao {
 		}
 		return;
 	}
-
+	
+	/**
+	 * Gets all variables & their data and returns an arraylist of these variable objects. 
+	 * @return ArrayList<Variable> var_list
+	 * @author Ziyi Zhang
+	 */
+	public ArrayList<Variable> getAllVariables(){
+		ArrayList<Variable> var_list = new ArrayList<Variable>();
+		try{
+			ResultSet rs = createStatement().executeQuery("SELECT * FROM VARIABLE");
+			while (rs.next()){
+				Variable temp_var = new Variable(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getInt(1));
+				var_list.add(temp_var);
+			}
+		}catch(SQLException e){
+			throw new IllegalStateException("Could not perform page update.", e);
+		}
+		return var_list;
+	}
+	
 	private Connection getConnection() {
 		return this.connection;
 	}
