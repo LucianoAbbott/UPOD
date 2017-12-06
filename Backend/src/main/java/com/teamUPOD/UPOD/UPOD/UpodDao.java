@@ -388,10 +388,15 @@ public class UpodDao {
 	 * @return success/fail
 	 */
 	public boolean deletePage(int pageId) throws SQLException {
-		Statement statement;
 		try {
-			createStatement().execute("DELETE FROM Page WHERE PageId = " + pageId);
-			createStatement().execute("DELETE FROM Section WHERE PageID = " + pageId);
+			Statement pageStatement = createStatement();
+			Statement sectionStatement = createStatement();
+			
+			pageStatement.execute("DELETE FROM Page WHERE PageId = " + pageId);
+			sectionStatement.execute("DELETE FROM Section WHERE PageID = " + pageId);
+
+			pageStatement.close();
+			sectionStatement.close();
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
