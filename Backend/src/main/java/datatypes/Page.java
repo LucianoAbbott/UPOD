@@ -19,13 +19,13 @@ public class Page {
 	/**
 	 * Constructor for class "Page"
 	 * Preconditions:
-	 *		(int) pageId - 
-	 *		(String) title - 
-	 *		(String) url - 
+	 *		(int) pageId - unique id number for the given page
+	 *		(String) title - the page title
+	 *		(String) url - the page url
 	 * Postconditions:
 	 * Exceptions: None.
 	 * Date last changed: 12/01/2017
-	 * @author 
+	 * @author Lauren Hepditch
 	 */
 	public Page(int pageId, String title, String url){
 		
@@ -38,7 +38,7 @@ public class Page {
 	/**
 	 * Constructor for class "Page"
 	 * Preconditions:
-	 *		(ResultSet) pageResult -
+	 *		(ResultSet) pageResult - the result of an query to the page table in the database
 	 * Postconditions:
 	 * Exceptions: SQLException.
 	 * Date last changed: 12/01/2017
@@ -52,11 +52,11 @@ public class Page {
 
 	/**
 	 * Constructor for class "Page"
-	 * Preconditions:
-	 * Postconditions:
+	 * Preconditions: None.
+	 * Postconditions: returns an empty page object
 	 * Exceptions: None.
 	 * Date last changed: 12/01/2017
-	 * @author 
+	 * @author Lauren Hepditch
 	 */
 	public Page(){
 		pageId = 0;
@@ -72,7 +72,7 @@ public class Page {
 	 * Postconditions: A new (int) pageId of the Page is set.
 	 * Exceptions: None.
 	 * Date last changed: 12/01/2017
-	 * @author 
+	 * @author Lauren Hepditch
 	 */
 	public void setId(int pageId) {
 		this.pageId = pageId;
@@ -80,12 +80,12 @@ public class Page {
 	
 	/**
 	 * Method for getting pageId of a page.
-	 * Preconditions:
+	 * Preconditions: None.
 	 * Postconditions: 
 	 *		returns the (int) pageId of the Page.
 	 * Exceptions: None.
 	 * Date last changed: 12/01/2017
-	 * @author 
+	 * @author Lauren Hepditch
 	 */
 	public int getId(){
 		return this.pageId;	
@@ -93,12 +93,12 @@ public class Page {
 	
 	/**
 	 * Method for getting title of a page.
-	 * Preconditions:
+	 * Preconditions: None.
 	 * Postconditions: 
 	 *		returns the title of the Page.
 	 * Exceptions: None.
 	 * Date last changed: 12/01/2017
-	 * @author 
+	 * @author Lauren Hepditch
 	 */
 	public String getTitle(){
  		return this.title;	
@@ -111,7 +111,7 @@ public class Page {
 	 * Postconditions: A new (int) pageId of the Page is set
 	 * Exceptions: None.
 	 * Date last changed: 12/01/2017
-	 * @author 
+	 * @author Lauren Hepditch
 	 */
 	public String getUrl(){
 		return this.url;	
@@ -124,7 +124,7 @@ public class Page {
 	 * Postconditions: A new (String) title is set for the Page.
 	 * Exceptions: None.
 	 * Date last changed: 12/01/2017
-	 * @author 
+	 * @author Lauren Hepditch
 	 */
 	public void setTitle(String title){
 		this.title = title;
@@ -145,7 +145,7 @@ public class Page {
 
 	/**
 	 * Method for getting the sections of a page.
-	 * Preconditions:
+	 * Preconditions: None.
 	 * Postconditions:
 	 *		returns (ArrayList<Section>) sections of the Page.
 	 * Exceptions: None.
