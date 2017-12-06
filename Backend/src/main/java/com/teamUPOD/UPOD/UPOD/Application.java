@@ -10,7 +10,7 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
  * @author luciano abbott
  */
 @SpringBootApplication
-public class Application extends SpringBootServletInitializer {
+public class Application {
 	/**
 	 * Main method for the backend, starts the spring application
 	 * @param args
