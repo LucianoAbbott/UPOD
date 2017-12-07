@@ -21,12 +21,12 @@ public class Section {
 	/**
 	 * Constructor for class "Section"
 	 * Preconditions:
-	 *	sectionId - unique id of section with respect to its page
-	 *	title - title of the section
-	 *	bodyText - text contained within the section
-	 *	equations - formatted equations related to the section's content
-	 *	graphic - a Graphic object related to the section's content
-	 * Postconditions: returns a complete Section object
+	 *		(int) sectionId - unique id of section with respect to its page
+	 *		(String) title - title of the section
+	 *		(String) bodyText - text contained within the section
+	 *		(String) equations - formatted equations related to the section's content
+	 *		(Graphic) graphic - a Graphic object related to the section's content
+	 * Postconditions: creates a complete Section object
 	 * Exceptions: None.
 	 * Date last changed:
 	 * @author Lauren Hepditch, Luciano Abbott
@@ -41,12 +41,13 @@ public class Section {
 	} 
 	
 	/**
-	 * <description here>
+	 * Constructor for class "Section"
 	 * Preconditions:
+	 *		(Result) sectionResult - the result of an query to the section table in the database
 	 * Postconditions:
-	 * Exceptions: None.
+	 * Exceptions: SQLException
 	 * Date last changed:
-	 * @author
+	 * @author Lauren Hepditch, Luciano Abbott
 	 */
 	public Section(ResultSet sectionResult) throws SQLException{
 		this(sectionResult.getInt("sectionId"), 
@@ -57,120 +58,130 @@ public class Section {
 	}
 
 	/**
-	 * <description here>
+	 * Function to return sectionId attribute of Section
 	 * Preconditions:
 	 * Postconditions:
+	 * 		returns (int) sectionId.
 	 * Exceptions: None.
 	 * Date last changed:
-	 * @author
+	 * @author Lauren Hepditch, Luciano Abbott
 	 */
 	public int getSectionId(){
 		return this.sectionId;
 	}
 	
 	/**
-	 * <description here>
+	 * Method for setting sectionId of a section.
 	 * Preconditions:
-	 * Postconditions:
+	 *		(int) sectionId - an integer to be used to be the unique Id of the section.
+	 * Postconditions: A new sectionId of the section is set.
 	 * Exceptions: None.
 	 * Date last changed:
-	 * @author
+	 * @author Lauren Hepditch, Luciano Abbott
 	 */
 	public void setSectionId(int sectionId){
 		this.sectionId= sectionId;
 	}
 	
 	/**
-	 * <description here>
-	 * Preconditions:
+	 * Function to get equations attribute of Sections
+	 * Preconditions: None.
 	 * Postconditions:
+	 *		returns (String) equations attribute of Sections.
 	 * Exceptions: None.
 	 * Date last changed:
-	 * @author
+	 * @author Lauren Hepditch, Luciano Abbott
 	 */
 	public String getEquations() {
 		return equations;
 	}
 
 	/**
-	 * <description here>
+	 * Function to set equations attribute of Sections
 	 * Preconditions:
-	 * Postconditions:
+	 *		(String) equation - string to be used to set the equations attribute of Sections.
+	 * Postconditions: A new (string) equations attribute is set.
 	 * Exceptions: None.
 	 * Date last changed:
-	 * @author
+	 * @author Lauren Hepditch, Luciano Abbott
 	 */
 	public void setEquations(String equation) {
 		this.equations = equation;
 	}
 
 	/**
-	 * <description here>
-	 * Preconditions:
+	 * Function to get the attribute graphic from Sections
+	 * Preconditions: None.
 	 * Postconditions:
+	 *		returns (Graphic) graphic attribute of Sections
 	 * Exceptions: None.
 	 * Date last changed:
-	 * @author
+	 * @author Lauren Hepditch, Luciano Abbott
 	 */
 	public Graphic getGraphic() {
 		return graphic;
 	}
 	
 	/**
-	 * <description here>
+	 * Function to set a new graphic attribute to Section
 	 * Preconditions:
-	 * Postconditions:
+	 *		(Graphic) graphic - graphic object to be set as the Sections graphic.
+	 * Postconditions: A new graphic attribute for Section is set.
 	 * Exceptions: None.
 	 * Date last changed:
-	 * @author
+	 * @author Lauren Hepditch, Luciano Abbott
 	 */
 	public void setGraphic(Graphic graphic) {
 		this.graphic = graphic;
 	}
 
 	/**
-	 * <description here>
-	 * Preconditions:
+	 * Function to get the title attribute of Section
+	 * Preconditions: None.
 	 * Postconditions:
+	 *		returns the title attribute of Section.
 	 * Exceptions: None.
 	 * Date last changed:
-	 * @author
+	 * @author Lauren Hepditch, Luciano Abbott
 	 */
 	public String getTitle(){
 		return this.title;
 	}
 	
 	/**
-	 * <description here>
-	 * Preconditions:
-	 * Postconditions:
+	 * Function to get the bodyText attribute of Section
+	 * Preconditions: None.
+	 * Postconditions: 
+	 *		Returns the (String) bodyText attribute of Section.
 	 * Exceptions: None.
 	 * Date last changed:
-	 * @author
+	 * @author Lauren Hepditch, Luciano Abbott
 	 */
 	public String getText(){
 		return this.bodyText;
 	}
 	
 	/**
-	 * <description here>
+	 * Funciton to set a new title attribute for the Section
 	 * Preconditions:
-	 * Postconditions:
+	 *		(String) sTitle - string that represents the new title.
+	 * Postconditions: A new (String) title attribute of Section is set.
 	 * Exceptions: None.
 	 * Date last changed:
-	 * @author
+	 * @author Lauren Hepditch, Luciano Abbott
 	 */
 	public void setTitle(String sTitle){
 		this.title = sTitle;
 	}
 	
 	/**
-	 * <description here>
+	 * Function to set a new bodyText attribute for Section
 	 * Preconditions:
-	 * Postconditions:
+	 *		(String) sText - String to be set as bodyText attribute.
+	 * Postconditions: A new (String) bodyText attribute of Section is set.
 	 * Exceptions: None.
 	 * Date last changed:
-	 * @author
+	 * @author Lauren Hepditch, Luciano Abbott
 	 */
 	public void setText(String sText){
 		this.bodyText = sText;
@@ -182,7 +193,7 @@ public class Section {
 	 * Postconditions:
 	 * Exceptions: None.
 	 * Date last changed:
-	 * @author
+	 * @author Lauren Hepditch, Luciano Abbott
 	 */
 	public void addVariables(ArrayList<Variable> variables) {
 		for (Variable v : variables) {
@@ -191,12 +202,13 @@ public class Section {
 	}
 	
 	/**
-	 * <description here>
-	 * Preconditions:
+	 * Function to get variables attribute of Section
+	 * Preconditions: None.
 	 * Postconditions:
+	 *		returns the (ArrayList<Variable>) variables attribute of Section.
 	 * Exceptions: None.
 	 * Date last changed:
-	 * @author
+	 * @author Lauren Hepditch, Luciano Abbott
 	 */
 	public ArrayList<Variable> getVariables () {
 		return this.variables;

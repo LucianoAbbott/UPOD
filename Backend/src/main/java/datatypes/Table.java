@@ -2,7 +2,7 @@ package datatypes;
 
 /**
  * Enum of tables and their names
- * @author luciano
+ * @author Luciano Abbott
  *
  */
 public enum Table {

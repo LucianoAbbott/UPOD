@@ -22,7 +22,7 @@ public class Page {
 	 *		(int) pageId - unique id number for the given page
 	 *		(String) title - the page title
 	 *		(String) url - the page url
-	 * Postconditions:
+	 * Postconditions: creates a new Page object.
 	 * Exceptions: None.
 	 * Date last changed: 12/01/2017
 	 * @author Lauren Hepditch
@@ -39,7 +39,7 @@ public class Page {
 	 * Constructor for class "Page"
 	 * Preconditions:
 	 *		(ResultSet) pageResult - the result of an query to the page table in the database
-	 * Postconditions:
+	 * Postconditions: creates a new Page object.
 	 * Exceptions: SQLException.
 	 * Date last changed: 12/01/2017
 	 * @author 
@@ -95,7 +95,7 @@ public class Page {
 	 * Method for getting title of a page.
 	 * Preconditions: None.
 	 * Postconditions: 
-	 *		returns the title of the Page.
+	 *		returns the (String) title of the Page.
 	 * Exceptions: None.
 	 * Date last changed: 12/01/2017
 	 * @author Lauren Hepditch
