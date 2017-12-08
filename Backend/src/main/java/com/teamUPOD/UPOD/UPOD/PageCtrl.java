@@ -1,6 +1,7 @@
 package com.teamUPOD.UPOD.UPOD;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,8 +24,9 @@ public class PageCtrl {
 	private PageService pageService = new PageService();
 	private final String ENDPOINT_PREFIX = "/page";
 	private final String UPDATE_ENDPOINT = ENDPOINT_PREFIX + "/update";
-	private final String GET_ENDPOINT = ENDPOINT_PREFIX + "/get/{pageid}";
 	private final String DELETE_ENDPOINT = ENDPOINT_PREFIX + "/delete/{pageid}";
+	private final String GET_ENDPOINT = ENDPOINT_PREFIX + "/get/{pageid}";
+	private final String SEARCH_ENDPOINT = ENDPOINT_PREFIX + "/search/{pageid}";
 	
 	/**
 	 * Endpoint to post a page to the database with a given id
@@ -67,5 +69,19 @@ public class PageCtrl {
     		Page page = pageService.getPage(pageId);
     		Logger.logGet(page);
 		return new ResponseEntity<Page>(page, HttpStatus.OK);
+    }
+    
+	/**
+	 * Endpoint to get a page from the database 
+	 * 
+	 * @param pageId 	id of the page to update - if unused creates new page at that id
+	 * @return Success code & page object or failure http code 
+	 * @throws SQLException 
+	 */
+    @RequestMapping(method = RequestMethod.POST, value = SEARCH_ENDPOINT)
+    public ResponseEntity<ArrayList<Page>> query(@RequestBody String query) throws SQLException {
+    		Logger.logSearch(query);
+    		ArrayList<Page> pages = pageService.searchPages(query);
+		return new ResponseEntity<ArrayList<Page>>(pages, HttpStatus.OK);
     }
 }

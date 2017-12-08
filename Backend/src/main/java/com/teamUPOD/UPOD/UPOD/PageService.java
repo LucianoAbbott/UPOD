@@ -71,9 +71,13 @@ public class PageService {
 	 * @param query
 	 * @return 
 	 */
-	public ArrayList<Page> queryPages(String query) {
+	public ArrayList<Page> searchPages(String query) {
 		SearchUtils.cleanQuery(query);
-		ArrayList<Page> pages = upodDao.queryPages(query);
+		
+		ArrayList<Page> pages = new ArrayList<Page>();
+		for (String term : query.split(" ")) {
+			pages.addAll(upodDao.searchPages(term));
+		}
 		return sortPagesByRelevance(query, pages);
 	}
 	

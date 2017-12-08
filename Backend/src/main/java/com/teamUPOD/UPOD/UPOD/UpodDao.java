@@ -476,9 +476,4 @@ public class UpodDao {
 		return false;
 		
 	}
-
-	//TODO given a search string return a list of pages that match that string
-	public ArrayList<Page> queryPages(String query) {
-		return null;
-	}
 }
