@@ -19,7 +19,7 @@ public class Graphic {
 	 *		(int) gId - integer number to be used to represent graphicID
 	 *		(String) gURL - String in URL format to represent graphicURL
 	 *		(String) gDescription - String to be used as the description
-	 * Postconditions:
+	 * Postconditions: creates a new Graphic object.
 	 * Exceptions: None.
 	 * Date last changed: 11/29/2017
 	 * @author Nathan Skof
@@ -33,8 +33,8 @@ public class Graphic {
 	
 	/**
 	 * Constructor for class "Graphic"
-	 * Preconditions:
-	 * Postconditions:
+	 * Preconditions: None.
+	 * Postconditions: creates a new Graphic object.
 	 * Exceptions: None.
 	 * Date last changed: 11/29/2017
 	 * @author Nathan Skof
@@ -48,7 +48,8 @@ public class Graphic {
 	/**
 	 * Constructor for class "Graphic"
 	 * Preconditions:
-	 * Postconditions:
+	 *		(ResultSet) - the result of an query to the Graphic table in the database
+	 * Postconditions: creates a new Graphic object.
 	 * Exceptions: SQLException
 	 * Date last changed: 11/29/2017
 	 * @author Nathan Skof
@@ -74,7 +75,7 @@ public class Graphic {
 
 	/**
 	 * Method to get the graphicURL of a graphic
-	 * Preconditions:
+	 * Preconditions: None.
 	 * Postconditions:
 	 * 		returns the (String) graphicURL
 	 * Exceptions: None
@@ -87,7 +88,7 @@ public class Graphic {
 	
 	/**
 	 * Method to get the description of a graphic
-	 * Preconditions:
+	 * Preconditions: None.
 	 * Postconditions:
 	 * 		returns the (String) description
 	 * Exceptions: None
@@ -101,7 +102,7 @@ public class Graphic {
 	/**
 	 * Method to set the description of a graphic
 	 * Preconditions:
-	 * 		description:
+	 * 		(String) description - String with a description of the graphic.
 	 * Postconditions: A new (String) description is set for the graphic.
 	 * Exceptions: None
 	 * Date last changed: 11/29/2017
@@ -112,8 +113,9 @@ public class Graphic {
 	}
 	
 	/**
-	 * Method to get the graphicURL of a graphic
+	 * Method to set the graphicURL of a graphic
 	 * Preconditions:
+	 *		(String) gGraphicURL - String containing URL of the graphic.
 	 * Postconditions: A new (string) graphicURL is set for the graphic.
 	 * Exceptions: None
 	 * Date last changed: 11/29/2017

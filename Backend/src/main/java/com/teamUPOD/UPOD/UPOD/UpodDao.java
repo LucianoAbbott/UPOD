@@ -262,6 +262,29 @@ public class UpodDao {
 	}
 
 	/**
+	 * Gets all graphics stored in the database.
+	 * @return ArrayList<Graphic> 
+	 * @author Lauren Hepditch
+	 */
+	public ArrayList<Graphic> getAllGraphics(){
+		try {
+		ArrayList<Graphic> graphics = new ArrayList<Graphic>();
+		Statement stmt = createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT * FROM GRAPHIC"); //get all graphics from the database
+		
+		while(rs.next()){ //add all graphics to the graphics arraylist
+			graphics.add(new Graphic(rs.getInt("graphicId"),rs.getString("graphicURL"),rs.getString("description")));
+		}
+		
+		return graphics;
+		
+		}catch(SQLException e) {
+			throw new IllegalStateException("Could not get graphics.", e);
+		}
+		
+	}
+	
+	/**
 	 * Return true if there is already a page with the id pageId in the database
 	 * @param pageId
 	 * @return
