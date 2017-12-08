@@ -21,7 +21,8 @@ public class FrequencyMap {
 	}
 
 	public int get(String key) {
-		return frequencyMap.get(key);
+		if (frequencyMap.containsKey(key)) return frequencyMap.get(key);
+		return 0;
 	}
 
 	public int getWordCount() {

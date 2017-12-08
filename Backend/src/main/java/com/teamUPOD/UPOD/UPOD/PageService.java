@@ -22,6 +22,14 @@ public class PageService {
 	}
 
 	/**
+	 * Constructor for testing purposes
+	 * @param upodDao
+	 */
+	PageService(UpodDao upodDao) {
+		
+	}
+	
+	/**
 	 * Update the page with the given id
 	 * @param page
 	 * @return true if page was updated

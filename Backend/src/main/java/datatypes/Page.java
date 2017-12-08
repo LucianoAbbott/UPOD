@@ -190,12 +190,13 @@ public class Page implements Comparable<Page>{
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(this.title + "\n");
+		sb.append(this.title);
+		sb.append(" ");
 		for (Section s : this.getSections()) {
 			sb.append(s.getTitle());
-			sb.append('\n');
+			sb.append(" ");
 			sb.append(s.getText());
-			sb.append('\n');
+			sb.append(" ");
 		}
 		return sb.toString();
 	}
