@@ -9,12 +9,14 @@ import java.util.ArrayList;
  * @author luciano abbott
  * @author Lauren Hepditch
  */
-public class Page {
+public class Page implements Comparable<Page>{
 	
 	private int pageId;
 	private String title; 
 	private String url; 
 	private ArrayList<Section> sections;
+	
+	private double relevance; // the relevance a page has to a query string, used to sort the pages before returning them
 	
 	/**
 	 * Constructor for class "Page"
@@ -154,5 +156,57 @@ public class Page {
 	 */	
 	public ArrayList<Section> getSections () {
 		return this.sections;
+	}
+	
+	/**
+	 * Method for getting the relevance of a page.
+	 * Preconditions:
+	 * Postconditions:
+	 *		returns (ArrayList<Section>) sections of the Page.
+	 * Exceptions: None.
+	 * Date last changed: 12/01/2017
+	 * @author 
+	 */	
+	public double getRelevance() {
+		return relevance;
+	}
+
+	/**
+	 * Method for setting the relevance of a page.
+	 * Preconditions:
+	 * Postconditions:
+	 *		returns (ArrayList<Section>) sections of the Page.
+	 * Exceptions: None.
+	 * Date last changed: 12/01/2017
+	 * @author 
+	 */	
+	public void setRelevance(double relevance) {
+		this.relevance = relevance;
+	}
+
+	/** 
+	 * Returns a string that contains all of the text in a page
+	 */
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.title + "\n");
+		for (Section s : this.getSections()) {
+			sb.append(s.getTitle());
+			sb.append('\n');
+			sb.append(s.getText());
+			sb.append('\n');
+		}
+		return sb.toString();
+	}
+
+	/**
+	 * Sort pages by relevance largest to smallest
+	 */
+	@Override
+	public int compareTo(Page that) {
+		if (this.relevance > that.relevance) return -1;
+		if (this.relevance < that.relevance) return 1;
+		return 0;
 	}
 }
