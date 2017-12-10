@@ -15,6 +15,10 @@
 //
 //	private UpodDao fixture;
 //
+//  @Before
+//	public void construct(){
+//		fixture = UpodDao.getInstance();
+//	}
 //	
 //	//TODO: construct should have the @Before annotation
 //	public void connection() throws SQLException {
@@ -49,4 +53,15 @@
 //		Assert.assertFalse(fixture.deletePage(0));
 //	}
 //
+//	@Test
+//	public void searchPagesTest(){
+//		ArrayList<Page> pagesList = new ArrayList<Page>();
+//		Page page;
+//		String term = "measuring";
+//		construct();
+//		pagesList = fixture.searchPages(term);
+//		page = pagesList.get(0);
+//		
+//		Assert.assertEquals(page.getId(),1);
+//	}
 //}
