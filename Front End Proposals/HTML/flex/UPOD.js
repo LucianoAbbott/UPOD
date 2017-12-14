@@ -447,14 +447,13 @@ function deleteSection(sectionNum) {
 }
 
 function genJson() {
-    console.log(i);
     var submitText = "";
     var sections = document.getElementsByClassName("sectionForm");
 
     var title = document.getElementById("pageTitle").value;
     submitText = "{\n";
     submitText += "\t\"title\":\"" + title + "\",\n";
-    submitText += "\t\"sections\":{ \n"
+    submitText += "\t\"sections\":[ \n"
 
     // go through the sections and get their data
     for (var secNum = 0; secNum < sections.length; secNum++) {
@@ -479,10 +478,21 @@ function genJson() {
         }
 
     }
-    submitText += "\t}\n";
+    submitText += "\t]\n";
     submitText += "}\n";
+
+    var xmlh = new XMLHttpRequest();
+    xmlh.open('POST', "http://rshopper.wlu.ca:8080/page/update", true);
+    xmlh.setRequestHeader("Content-type", "application/json");
+    xmlh.send(submitText);
     console.log(submitText);
+    console.log("Sent??");
     return submitText;
+}
+
+function searchTerms(event){
+  console.log("Search sent");
+  htp = new XMLHttpRequest;
 }
 
 function helloWorld() {
