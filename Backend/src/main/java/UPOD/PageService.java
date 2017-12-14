@@ -1,4 +1,4 @@
-package com.teamUPOD.UPOD.UPOD;
+package UPOD;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.teamUPOD.UPOD.UPOD;
+package UPOD;
 
 import java.io.FileInputStream;
 import java.io.IOException;
