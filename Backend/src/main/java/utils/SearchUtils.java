@@ -8,12 +8,15 @@ import datatypes.FrequencyMap;
  *
  */
 public class SearchUtils {
-
+	
 	/**
-	 * Remove all non alpha characters, then make the string lower case
-	 * 
-	 * @param s
-	 * @return
+	 * Removes all non alpha characters, then makes the string lower case
+	 * Preconditions:
+	 * 		(string) s - a string of words to operate on.
+	 * Postconditions:
+	 *		returns (string) result - a clean string.
+	 * Date last changed: 12/12/2017?
+	 * @author Luciano Abbott
 	 */
 	// TODO Remove unhelpful search terms such as 'it' 'the' 'a' 'an'
 	public static String cleanQuery(String s) {
@@ -23,11 +26,14 @@ public class SearchUtils {
 	}
 
 	/**
-	 * Calculate the frequency of words in the string storing the total number of
+	 * Calculates the frequency of words in the string storing the total number of
 	 * words under
-	 * 
-	 * @param s
-	 * @return
+	 * Preconditions:
+	 * 		(string) s - a string to calculate the word frequency of
+	 * Postconditions:
+	 * 		returns (FrequencyMap) frequencyMap - FrequencyMap object relating to the input string s.
+	 * Date last changed: 12/12/2017?
+	 * @author Luciano Abbott
 	 */
 	public static FrequencyMap countWords(String s) {
 		FrequencyMap frequencyMap = new FrequencyMap();

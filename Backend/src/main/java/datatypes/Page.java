@@ -160,7 +160,7 @@ public class Page implements Comparable<Page>{
 	
 	/**
 	 * Method for getting the relevance of a page.
-	 * Preconditions:
+	 * Preconditions: None.
 	 * Postconditions:
 	 *		returns (ArrayList<Section>) sections of the Page.
 	 * Exceptions: None.
@@ -183,7 +183,16 @@ public class Page implements Comparable<Page>{
 	public void setRelevance(double relevance) {
 		this.relevance = relevance;
 	}
-
+	
+	/**
+	 * Method for getting all the text in a Page.
+	 * Preconditions: None.
+	 * Postconditions:
+			Returns (String) sb.toString() - a string containing all the text in the Page.
+	 * Exceptions: None.
+	 * Date last changed: 
+	 * @author 
+	 */
 	/** 
 	 * Returns a string that contains all of the text in a page
 	 */
@@ -200,9 +209,15 @@ public class Page implements Comparable<Page>{
 		}
 		return sb.toString();
 	}
-
+	
 	/**
 	 * Sort pages by relevance largest to smallest
+	 * Preconditions:
+	 *		(Page) that - A page to compare the current page to.
+	 * Postconditions: Page are sorted relative to eachothers relevance.
+	 * Exceptions: None.
+	 * Date last changed: 
+	 * @author 
 	 */
 	@Override
 	public int compareTo(Page that) {

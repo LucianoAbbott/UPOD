@@ -1,4 +1,4 @@
-package com.teamUPOD.UPOD.UPOD;
+package UPOD;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

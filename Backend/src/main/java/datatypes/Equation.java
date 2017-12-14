@@ -17,7 +17,7 @@ public class Equation {
 	 * Postconditions:
 	 *		An equation is created.
 	 * Exceptions: None
-	 * Date last changed: 11/29/2017
+	 * Date last changed: 11/24/2017
 	 * @author Ziyi Zhang
 	 */
 	public Equation(int equationId, String equationURL) {
@@ -32,7 +32,7 @@ public class Equation {
 	 * Postconditions:
 	 *		returns the (int) equationId of the equation
 	 * Exceptions: None
-	 * Date last changed: 11/29/2017
+	 * Date last changed: 11/24/2017
 	 * @author Ziyi Zhang
 	 */
 	public int getId(){
@@ -45,7 +45,7 @@ public class Equation {
 	 * Postconditions:
 	 * 		returns the (String) equationURL of the equation
 	 * Exceptions: None
-	 * Date last changed: 
+	 * Date last changed: 11/24/2017
 	 * @author Ziyi Zhang
 	 */
 	public String getUrl() {
