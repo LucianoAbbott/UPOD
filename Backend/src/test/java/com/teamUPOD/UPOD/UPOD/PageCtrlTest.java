@@ -3,6 +3,7 @@ package com.teamUPOD.UPOD.UPOD;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -32,6 +33,7 @@ public class PageCtrlTest {
     }
     
     @Test
+    @Ignore
     public void updateSuccessTest() throws Exception {
     		mvc.perform(MockMvcRequestBuilders.post("/update/" + testId)
         		.accept(MediaType.APPLICATION_JSON)
@@ -41,6 +43,7 @@ public class PageCtrlTest {
     }
 
     @Test
+    @Ignore
     public void updateFailTest() throws Exception {
         mvc.perform(MockMvcRequestBuilders.post("/update/" + testId)
         		.accept(MediaType.APPLICATION_JSON))
@@ -48,6 +51,7 @@ public class PageCtrlTest {
     }
 
     @Test
+    @Ignore
     public void getTest() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/get/" + testId)
         		.accept(MediaType.APPLICATION_JSON))
@@ -55,6 +59,7 @@ public class PageCtrlTest {
     }
     
     @Test
+    @Ignore
     public void deleteTest() throws Exception {
         mvc.perform(MockMvcRequestBuilders.delete("/delete/" + testId)
         		.accept(MediaType.APPLICATION_JSON))

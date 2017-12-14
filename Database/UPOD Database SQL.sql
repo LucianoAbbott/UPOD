@@ -19,7 +19,7 @@ CREATE TABLE SECVAR (
 pageId INT,
 sectionId INT,
 varId INT NOT NULL,
-PRIMARY KEY (pageId,sectionId)
+PRIMARY KEY (pageId,sectionId,varId)
 );
 
 CREATE TABLE GRAPHIC(

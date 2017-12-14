@@ -9,23 +9,25 @@ import java.util.ArrayList;
  * @author luciano abbott
  * @author Lauren Hepditch
  */
-public class Page {
+public class Page implements Comparable<Page>{
 	
 	private int pageId;
 	private String title; 
 	private String url; 
 	private ArrayList<Section> sections;
 	
+	private double relevance; // the relevance a page has to a query string, used to sort the pages before returning them
+	
 	/**
 	 * Constructor for class "Page"
 	 * Preconditions:
-	 *		(int) pageId - 
-	 *		(String) title - 
-	 *		(String) url - 
-	 * Postconditions:
+	 *		(int) pageId - unique id number for the given page
+	 *		(String) title - the page title
+	 *		(String) url - the page url
+	 * Postconditions: creates a new Page object.
 	 * Exceptions: None.
 	 * Date last changed: 12/01/2017
-	 * @author 
+	 * @author Lauren Hepditch
 	 */
 	public Page(int pageId, String title, String url){
 		
@@ -38,8 +40,8 @@ public class Page {
 	/**
 	 * Constructor for class "Page"
 	 * Preconditions:
-	 *		(ResultSet) pageResult -
-	 * Postconditions:
+	 *		(ResultSet) pageResult - the result of an query to the page table in the database
+	 * Postconditions: creates a new Page object.
 	 * Exceptions: SQLException.
 	 * Date last changed: 12/01/2017
 	 * @author 
@@ -52,11 +54,11 @@ public class Page {
 
 	/**
 	 * Constructor for class "Page"
-	 * Preconditions:
-	 * Postconditions:
+	 * Preconditions: None.
+	 * Postconditions: returns an empty page object
 	 * Exceptions: None.
 	 * Date last changed: 12/01/2017
-	 * @author 
+	 * @author Lauren Hepditch
 	 */
 	public Page(){
 		pageId = 0;
@@ -72,7 +74,7 @@ public class Page {
 	 * Postconditions: A new (int) pageId of the Page is set.
 	 * Exceptions: None.
 	 * Date last changed: 12/01/2017
-	 * @author 
+	 * @author Lauren Hepditch
 	 */
 	public void setId(int pageId) {
 		this.pageId = pageId;
@@ -80,12 +82,12 @@ public class Page {
 	
 	/**
 	 * Method for getting pageId of a page.
-	 * Preconditions:
+	 * Preconditions: None.
 	 * Postconditions: 
 	 *		returns the (int) pageId of the Page.
 	 * Exceptions: None.
 	 * Date last changed: 12/01/2017
-	 * @author 
+	 * @author Lauren Hepditch
 	 */
 	public int getId(){
 		return this.pageId;	
@@ -93,12 +95,12 @@ public class Page {
 	
 	/**
 	 * Method for getting title of a page.
-	 * Preconditions:
+	 * Preconditions: None.
 	 * Postconditions: 
-	 *		returns the title of the Page.
+	 *		returns the (String) title of the Page.
 	 * Exceptions: None.
 	 * Date last changed: 12/01/2017
-	 * @author 
+	 * @author Lauren Hepditch
 	 */
 	public String getTitle(){
  		return this.title;	
@@ -111,7 +113,7 @@ public class Page {
 	 * Postconditions: A new (int) pageId of the Page is set
 	 * Exceptions: None.
 	 * Date last changed: 12/01/2017
-	 * @author 
+	 * @author Lauren Hepditch
 	 */
 	public String getUrl(){
 		return this.url;	
@@ -124,7 +126,7 @@ public class Page {
 	 * Postconditions: A new (String) title is set for the Page.
 	 * Exceptions: None.
 	 * Date last changed: 12/01/2017
-	 * @author 
+	 * @author Lauren Hepditch
 	 */
 	public void setTitle(String title){
 		this.title = title;
@@ -145,7 +147,7 @@ public class Page {
 
 	/**
 	 * Method for getting the sections of a page.
-	 * Preconditions:
+	 * Preconditions: None.
 	 * Postconditions:
 	 *		returns (ArrayList<Section>) sections of the Page.
 	 * Exceptions: None.
@@ -154,5 +156,73 @@ public class Page {
 	 */	
 	public ArrayList<Section> getSections () {
 		return this.sections;
+	}
+	
+	/**
+	 * Method for getting the relevance of a page.
+	 * Preconditions: None.
+	 * Postconditions:
+	 *		returns (ArrayList<Section>) sections of the Page.
+	 * Exceptions: None.
+	 * Date last changed: 12/01/2017
+	 * @author 
+	 */	
+	public double getRelevance() {
+		return relevance;
+	}
+
+	/**
+	 * Method for setting the relevance of a page.
+	 * Preconditions:
+	 * Postconditions:
+	 *		returns (ArrayList<Section>) sections of the Page.
+	 * Exceptions: None.
+	 * Date last changed: 12/01/2017
+	 * @author 
+	 */	
+	public void setRelevance(double relevance) {
+		this.relevance = relevance;
+	}
+	
+	/**
+	 * Method for getting all the text in a Page.
+	 * Preconditions: None.
+	 * Postconditions:
+			Returns (String) sb.toString() - a string containing all the text in the Page.
+	 * Exceptions: None.
+	 * Date last changed: 
+	 * @author 
+	 */
+	/** 
+	 * Returns a string that contains all of the text in a page
+	 */
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.title);
+		sb.append(" ");
+		for (Section s : this.getSections()) {
+			sb.append(s.getTitle());
+			sb.append(" ");
+			sb.append(s.getText());
+			sb.append(" ");
+		}
+		return sb.toString();
+	}
+	
+	/**
+	 * Sort pages by relevance largest to smallest
+	 * Preconditions:
+	 *		(Page) that - A page to compare the current page to.
+	 * Postconditions: Page are sorted relative to eachothers relevance.
+	 * Exceptions: None.
+	 * Date last changed: 
+	 * @author 
+	 */
+	@Override
+	public int compareTo(Page that) {
+		if (this.relevance > that.relevance) return -1;
+		if (this.relevance < that.relevance) return 1;
+		return 0;
 	}
 }
