@@ -1,77 +1,487 @@
-<a name="top"></a>
-
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 <style>
     html {
-        background-color: #78909C;
+	background-color: #78909C;
     }
-    
+
     body {
-        background-color: #ffffff;
-        min-width: 480px;
-        max-width: 1000px;
-        margin: 0% auto;
-        padding: 3% 3% 3% 3%;
-        box-shadow: 0px 0px 10px #313131;
+	background-color: #ffffff;
+	min-width: 480px;
+	max-width: 1000px;
+	margin: 0% auto;
+	padding: 3% 3% 3% 3%;
+	box-shadow: 0px 0px 10px #313131;
     }
-    
+
     h1,
     h2,
     h3,
     h4,
     p,
     dd,
+    div,
     dt,
     li,
     ul {
-        font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', sans-serif;
     }
-    
+
     .version {
-        font-size: 12;
+	font-size: 12;
     }
-    
+
     div {
-        border: 1px solid #313131;
-        border-width: 1px 0px 0px 0px;
+	border: 1px solid #313131;
+	border-width: 1px 0px 0px 0px;
     }
-    
+
     .errors {
-        color: #FF0055;
+	color: #FF0055;
     }
+
+    .button {
+	background-color: #e7e7e7; 
+	border: none;
+	border-radius: 10px;
+	color: white;
+	padding: 10px 28px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 6px 0px;
+	transition-duration:0.2s;
+	cursor: pointer;
+    }
+
+
+    .showTableButton {
+       	background-color: white;
+    	color: black;
+    	border: 2px solid #3D3D3D;
+    	box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
+    }
+
+    .showTableButton:hover {
+    	background-color: #3D3D3D;
+    	color: white;
+    }
+
+    .hoverButtonLeft {
+	display: inline-block;
+	border-radius: 10px;
+	background-color: white;
+	border: none;
+	border-width:2px;  
+	border-style:double;
+	border-color:#2A2A2A;
+	color: #2A2A2A;
+	text-align: center;
+	font-size: 16px;
+	padding: 10px;
+	width: 200px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+    }
+
+    .hoverButtonRight {
+	display: inline-block;
+	border-radius: 10px;
+	background-color: white;
+	border: none;
+	border-width:2px;  
+	border-style:double;
+	border-color:#2A2A2A;
+	color: #2A2A2A;
+	text-align: center;
+	font-size: 16px;
+	padding: 10px;
+	width: 200px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+    }
+
+    .hoverButtonLeft span {
+	cursor:pointer;
+    	display: inline-block;
+    	position: relative;
+    	transition: 0.5s;
+    }
+
+    .hoverButtonRight span {
+    	cursor:pointer;
+    	display: inline-block;
+    	position: relative;
+    	transition: 0.5s;
+    }
+
+    .hoverButtonLeft span:after {
+    	content: '\00bb';
+    	position: absolute;
+    	opacity: 0;
+    	top: 0;
+    	right: -20px;
+    	transition: 0.5s;
+    }
+
+    .hoverButtonRight span:after {
+	content: '\00ab';
+    	position: absolute;
+    	opacity: 0;
+    	top: 0;
+    	left: -20px;
+    	transition: 0.5s;
+    }
+
+    .hoverButtonLeft:hover span {
+    	padding-right: 25px;
+    }
+
+    .hoverButtonRight:hover span {
+    	padding-left: 25px;
+    }
+
+    .hoverButtonLeft:hover span:after {
+    	opacity: 1;
+    	right: 0;
+    }
+
+    .hoverButtonRight:hover span:after {
+    	opacity: 1;
+    	left: 0;
+    }
+	
+    .navbar {
+	overflow: hidden;
+	background-color: #333;
+	position: fixed;
+	bottom: 0;
+	width: 1000px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	text-align: center;
+    }
+
+    .navbar a {
+	display: inline-block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 6px 12px;
+	text-decoration: none;
+	font-size: 14px;
+	font-family: sans-serif;
+     }	
+	
+    .navbar a:hover {
+    	background-color: #F9F9F9;
+    	color: #0C0C0C;    
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+    }
+	
+    #backToTopButton {
+	background-color: white;
+	border: none;	
+	border-radius: 5px;
+	color: black;
+	padding: 11px;
+	text-align: center;
+	text-decoration-none;
+	display: inline-block;
+	font-size: 16px;
+	transition-duration:0.2s;
+	cursor:pointer;
+	position: fixed;
+	top: 5px;
+	right: 5px;
+	z-index: 99;
+	outline: none;
+	opacity: 0.7;
+
+    }
+
+    #backToTopButton:hover {
+	opacity: 0.9;
+	background-color: #3d3d3d;
+	color: white;
+    }
+	
 </style>
 
 <html>
+	<head>
+		<title>UPOD - Project Management Plan</title>
+
+		<script>
+			function goToUPODIndex() {
+				var url = document.URL; 
+				if (url.startsWith("file")==false) { //If not a file
+					window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html");				
+				} else { //If a file
+					if (url.includes("UPOD-master")) { //If a file and in repository
+						var indexURL = url.substring(0, url.lastIndexOf('/')); 
+						indexURL = indexURL.substring(0, indexURL.lastIndexOf('/')); 
+						indexURL += "/docs/index.html"
+						window.open(indexURL);
+					} else { //If a file and not in repository				
+						window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html");
+					}
+				}
+			}
+		</script>
+
+	</head>
 
 <body>
+	
+	<div class="navbar">
+		<a href="#overview">Overview </a>
+
+		<a href = "#references">References</a>
+
+		<a href = "#definitions">Definitions</a>
+
+		<a href = "#projectOrganization">Project Organization</a>
+
+		<a href = "#managerialPlan">Managerial Process Plans</a> 
+
+		<a href = "#technicalProcessPlan">Technical Process Plans</a> 
+
+		<a href = "#supportingProcessPlan">Supporting Process Plans</a> 
+	</div>
+	
     <header>
-	<h1>UPOD - Project Management Plan</h1>
+	<h1>Project Management Plan for UPOD</h1>
+	<p class="version">Authors: Richard Bouda, Abel Worku, Peter Smerchinski, Nathan Wickham</p>
+	<p class="version", align="right">Version 2.7.5</p> 
+	<p class="version", id="date", align="right"></p>
+	<script>
+		var currentDate = new Date();
+		document.getElementById("date").innerHTML = currentDate;
+	</script>
 
-	<h2 id="changeHistory">Change History:</h2>
- 	<p class="version">Version                     Description</p>
- 	<p class="version">0.1-0.2                     Template added, sections 1.1.1-1.1.3 added</p>
- 	<p class="version">0.3                         Section 1.1.4 added</p>
- 	<p class="version">0.4                         Sections 1.2, 2, 3, 4 added</p>
- 	<p class="version">0.5                         Misc. changes to sections 1.1.4, 3</p>
- 	<p class="version">0.6                         Section 6 added</p>
- 	<p class="version">0.7                         Section 5 added</p>
- 	<p class="version">0.8                         Section 7 (rough)</p>
- 	<p class="version">0.9                         Section 7 finished, overall doc close to completion</p>
-	<p class="version">1.0                         First finished version</p>
-	<p class="version">1.1                         Document formatted using HTML formatting, this document made primary</p>
-	<p class="version">1.2                         First batch of SQA issues fixed</p>
-	<p class="version">1.3                         More SQA fixes, added sub-group section</p>
-	<p class="version">1.3.5		       Updated subgroups section under sections 4.1 and 4.2</p> 
-	<p class="version">1.4			       Grammatical improvements made to sections 5 and 7 to incorporate active voice</p>
-	<p class="version">1.5			       New dates</p>
-	<p class="version">1.6		       	       Minor phrasing modifications made to section 5</p>
-	<p class="version">1.7			       Table of contents links added for referencing parts of the document</p>
-	<p class="version">1.8		               Clickable footer hyperlinks added to the document</p>
-
+	<h2 id="changeHistory"></h2>
 	    
-	<div>
+	<button class = "button showTableButton", onclick="showTable()">Show/Hide Change History</button>
+	<script>
+		function showTable() {
+			var table = document.getElementById("myTable");
+			if (table.style.display == "none") {
+				table.style.display = "block";
+			} else {
+				table.style.display = "none";
+			}
+			
+		}
+	</script>
+	    
+	<button onclick="topFunction()" id="backToTopButton" title="Scroll to top">Top</button>
+	<script>
+		window.onscroll = function() {scrollFunction()};
 
+		function scrollFunction() {
+		    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+		        document.getElementById("backToTopButton").style.display = "block";
+
+		    } else {
+		        document.getElementById("backToTopButton").style.display = "none";
+		    }
+		}
+
+		function topFunction() {
+		    document.body.scrollTop = 0;
+		    document.documentElement.scrollTop = 0;
+		}
+	</script>
+
+    <ul id="myTable", style="display:none">
+	    
+		<table style = "width:100%", border = "0">
+
+		<tr>
+			<th>Version Number</th>
+			<th>Description</th>
+		</tr>
+
+		<tr>
+			<th>0.1-0.2</th>
+			<td>Template added, sections 1.1.1-1.1.3 added</td>
+		</tr>
+
+		<tr>
+			<th>0.3</th>
+			<td>Section 1.1.4 added</td>
+		</tr>
+
+		<tr>	
+			<th>0.4</th>
+			<td>Sections 1.2,2,3,4 added </td>
+		</tr>
+
+		<tr>
+			<th>0.5</th>
+			<td>Misc. changes to sections 1.1.4,3</td>
+		</tr>
+
+		<tr>
+			<th>0.6</th>
+			<td>Section 6 added</td>
+		</tr>
+
+		<tr>
+			<th>0.7</th>
+			<td>Section 5 added</td>
+		</tr>
+
+		<tr>
+			<th>0.8</th>
+			<td>Section 7 (rough)</td>
+		</tr>
+
+		<tr>
+			<th>0.9</th>
+			<td>Section 7 finished, overall doc close to completion</td>
+		</tr>
+
+		<tr>
+			<th>1.0</th>
+			<td>First finished version</td>
+		</tr>
+
+		<tr>
+			<th>1.1</th>
+			<td>Document formatted using HTML formatting, primary document changes to this HTML version</td>
+		</tr>
+
+		<tr>
+			<th>1.2</th>
+			<td>First batch of SQA issues fixed</td>
+		</tr>
+
+		<tr>
+			<th>1.3</th>
+			<td>More SQA fixes, added sub-group section</td>
+		</tr>
+
+		<tr>
+			<th>1.3.5</th>
+			<td>Updated subgroups section under sections 4.1 and 4.2</td>
+
+		<tr>
+			<th>1.4</th>
+			<td>Grammatical improvements made to sections 5 and 7 to incorporate active voice</td>
+		</tr>
+
+		<tr>
+			<th>1.5</th>
+			<td>New dates</td>
+		</tr>
+
+		<tr>
+			<th>1.6</th>
+			<td>Minor phrasing modifications made to section 5</td>
+		</tr>
+
+		<tr>
+			<th>1.7</th>
+			<td>Table of contents links added for referencing parts of the document</td>
+		</tr>
+
+		<tr>
+			<th>1.8</th>
+			<td>Clickable footer hyperlinks added to the document</td>
+		</tr>
+
+		<tr>
+			<th>1.9</th>
+			<td>Reformatted Change History into an organized table by version number and description of changes made</td>
+		</tr>
+
+		<tr>
+			<th>1.9.5</th>
+			<td>Reformatted Schedule Summary and Roles and Responsibilities data into organized tables</td>
+		</tr>
+
+		<tr>
+			<th>2.0</th>
+			<td>Reformatted Process Model data into an organized table</td> 
+		</tr>
+
+		<tr>
+			<th>2.0.5</th>
+			<td>Stylistic changes</td>
+		</tr>
+
+		<tr>
+			<th>2.1</th>
+			<td>Footer hyperlinks to Requirements, Analysis, and Design Documents added</td>
+		</tr>
+
+		<tr>
+			<th>2.2</th>
+			<td>Project Documents teams added as new subsection 4.2.1, and SQA teams added as new subsection 4.2.2</td>
+		</tr>
+
+		<tr>
+			<th>2.3</th>
+			<td>General fixes and additions, increased uniformity with other documents</td>
+		</tr>
+
+		<tr>
+			<th>2.4</th>
+			<td>Added "Back to Repository" footer hyperlink</td>
+		</tr>
+
+		<tr>
+			<th>2.4.5</th>
+			<td>Added self-updating date and time to document header</td>
+		</tr>
+
+		<tr>
+			<th>2.5</th>
+			<td>Added show/hide button for the visibility of the Change History table</td>
+		</tr>
+
+		<tr>
+			<th>2.5.5</th>
+			<td>Restyled show/hide button into a dynamic button, restyled "Back to Repository" hyperlink into a dynamic button, and removed border lines from Change History table.</td>
+		</tr>
+		
+		<tr>
+			<th>2.6</th>
+			<td>Added horizontal navbar</td>
+		</tr>
+			
+		<tr>
+			<th>2.6.5</th>
+			<td>Added hoverable background colour change for navbar buttons</td>
+		</tr>
+		
+		<tr>
+			<th>2.7</th>
+			<td>Added a floating "Top" button to increase navigation speed across the document</td>
+		</tr>
+			
+		<tr>
+			<th>2.7.5</th>
+			<td>Reduced table border widths</td>
+		</tr>
+
+		<tr>
+			<th>2.8</th>
+			<td>Added a footer "Go to UPOD Index" button</td>
+		</tr>
+			
+	    </table>
+	</ul>
+			
 	<h2 id="tableOfContents">Table of Contents</h2>
 	<ul>
 		<li><a href="#overview">1. Overview </a></li>
@@ -95,11 +505,15 @@
 		<ul>
  			<li><a href = "#structure">4.1 Structure</a></li>
  			<li><a href = "#rolesAndResponsibilities">4.2 Roles and Responsibilities</a></li>
+			<ul>
+				<li><a href = "#projectDocumentTeams">4.2.1 Project Document Teams</a></li>
+				<li><a href = "#sqaTeams">4.2.2 SQA Teams</a></li>
+			</ul>
 		</ul>
  
 		<li><a href = "#managerialPlan">5. Managerial Process Plans</a> </li>
 		<ul>
-			<li><a href = "#startupPlan">5.1 Startup plans</a> </li>
+			<li><a href = "#startupPlan">5.1 Start-Up plans</a> </li>
 			<ul>
   				<li><a href = "#estimationPlan">5.1.1 Estimation Plan</a></li>
   				<li><a href = "#staffingPlan">5.1.2 Staffing Plan</a></li>	
@@ -121,7 +535,6 @@
   				<li><a href = "#qualityControlPlan">5.3.4 Quality Control Plan</a></li>
   				<li><a href = "#reportingPlan">5.3.5 Reporting Plan</a></li>
 			</ul>
-			
 			
 		</ul>
 		
@@ -147,22 +560,22 @@
 		</ul>
 		
 	</ul>
-	</div>
 	</header>
 
 <div>
 	<h2 id="contributors">Contributors:</h2>
 
 	<ul>
-	<li>Project Management Document
+		<li><strong>Project Management Document</strong>
 	<ul>   
 		<li>Nathan Wickham (head)</li>          
 		<li>Richard Bouda</li>                  
-		<li>Abel Worku</li>                     
+		<li>Abel Worku</li>
+		<li>Peter Smerchinski</li>
 	</ul>
 	</li>
 
-	<li>SQA
+		<li><strong>SQA</strong>
 	<ul>
 		<li>Luciano Abbott</li>
 		<li>Stephen Maloney</li>
@@ -178,26 +591,62 @@
 	<h2 id = "overview">1. Overview</h2>
  		<h3 id = "projectSummary">1.1 Project Summary</h3>
   			<h4 id="purpose">1.1.1 Purpose, Scope, and Objectives</h4>
-  			<p>UPOD (University Online Physics Database) is software designed for students to access physics information, equations and diagrams as well as for professors to add, edit and remove those components. The scope is Wilfrid Laurier University and the objective is to create software that is easy to use for both students and professors alike. The finished version of UPOD will be delivered to David Brown who will also monitor and critique each stage of the development process. A more detailed overview can be found on the project's Requirements document.</p>
+  			<p>UPOD (Undergraduate Online Physics Database) is software designed for students to access physics information, equations and diagrams as well as for professors to add, edit and remove those components. The scope is Wilfrid Laurier University and the objective is to create software that is easy to use for both students and professors alike. The finished version of UPOD will be delivered to David Brown who will also monitor and critique each stage of the development process. A more detailed overview can be found on this project's Requirements document <a href="#bottomPage">(linked at the bottom)</a>.</p>
   
   			<h4 id="assumptions">1.1.2 Assumptions and Constraints</h4> 
-  			<p>The project is to be completed by December 4th, 2017. The constraints include working around various group members' schedules to communicate effectively and fulfil tasks on time. It is assumed that all work will be completed by each deadline, and to further ensure such goals, deadlines will be set earlier than their official posting to facilitate time for necessary modifications and SQA testing. Budget is not a factor in this project.</p>
+  			<p>The project is to be completed by December 4th, 2017. The constraints include working around various group members' schedules to communicate effectively and fulfil tasks on time. It is assumed that all work will be completed by each deadline, and to further ensure such goals, deadlines will be set earlier than their official posting to facilitate time for necessary modifications and SQA testing. Coding is expected to follow Laurier's standards as well as our own documentation template found on the repository. Budget is not a factor in this project.</p>
   
   			<h4 id="projectDeliverables">1.1.3 Project Deliverables</h4> 
-  			<p>The project (UPOD) will be delivered to the acquirer (David Brown). The project will consist of a requirements document, a project management document, designs, specifications, a user manual, documentation, work logs, source code, and all other documents and work that went into the project.</p>
+  			<p>The project (UPOD) will be delivered to the client (David Brown). The project will consist of a requirements document, a project management document, designs, specifications, a user manual, documentation, GitHub submission history, source code, and all other documents and work that went into the project.</p>
   
-  			<h4 id="scheduleSummary">1.1.4 Schedule Summary (subject to change)</h4>
+  			<h4 id="scheduleSummary">1.1.4 Schedule Summary (Provisional)</h4>
 			<ul>
-  			<li>Monday, September 11th-	Official start of project</li>
-  			<li>Friday, September 22nd-	Rough draft of management and requirements documents</li>
-  			<li>Monday, September 25th-	SQA completed on management and requirements documents</li>
-  			<li>Wednesday, September 27th- 	Client request date for management and requirements documents</li>
-			<li>Week of October 2nd-	Front-End design finalized</li>
-			<li>Monday, October 22nd-	Analysis document due</li>	
-  			<li>Wednesday, October 25-      UML design completion</li>
-			<li>Wednesday, November 1-      Design document due</li>
-  			<li>Monday, December 4th-      	Self-imposed finish date (subject to change)</li>
-  			<li>Monday, December 18th-  	Client due date</li>
+				<table style = "width:100%", border = 0>
+					<tr>
+	  					<th style="border-bottom:1px solid black">Date</th>
+	  					<th style="border-bottom:1px solid black">Description</th>
+	  				</tr>
+
+	  				<tr>
+	  					<td align="center">September 11th</td>
+	  					<td>Rough draft of management and requirements documents</td>
+	  				</tr>
+
+	  				<tr>
+	  					<td align="center">September 25th</td>
+	  					<td>SQA completed on management and requirements documents</td>
+	  				</tr>
+
+	  				<tr>
+	  					<td align="center">September 27th</td>
+	  					<td>Client request date for management and requirements documents</td>
+	  				</tr>
+
+	  				<tr>
+	  					<td align="center">October 2nd</td>
+	  					<td>Front-End design finalized</td>
+	  				</tr>
+
+	  				<tr>
+	  					<td align="center">October 25th</td>
+	  					<td>UML design completion</td>
+	  				</tr>
+
+	  				<tr>
+	  					<td align="center">November 1st</td>
+	  					<td>Design document due</td>
+	  				</tr>
+
+	  				<tr>
+	  					<td align="center">December 4th</td>
+	  					<td>Self-imposed finish date</td>
+	  				</tr>
+
+	  				<tr>
+	  					<td align="center", style="border-bottom:1px solid black">December 18th</td>
+	  					<td style="border-bottom:1px solid black">Client due date</td>
+	  				</tr>
+	  			</table>
 			</ul>
   
  			<h4 id="planEvolution">1.2 Evolution of the Plan</h4>
@@ -212,25 +661,25 @@
 <div>
 	<h2 id="definitions">3. Definitions</h2>
 	<dl>
-		<dt>Client:</dt>
-	      	<dd>The individual who commissioned us to work on the project and will receive the final version.</dd>
-		<dt>Deliverable:</dt>
+		<dt><strong>Client:</strong></dt>
+	      	<dd>The individual who commissioned us to work on the project. Will receive the final version at the requested due date.</dd>
+		<dt><strong>Deliverable:</strong></dt>
 		<dd>The final product to be delivered to the client.</dd>
-		<dt>SQA:</dt> 
-        	<dd>Software Quality Assurance</dd>
-		<dt>UPOD:</dt>   
-     		<dd>University Physics Online Database</dd>
-		<dt>UML:</dt>
-         	<dd>Unified Modelling Language</dd>
+		<dt><strong>SQA:</strong></dt> 
+        	<dd>Software Quality Assurance consists of teams who did not work on a specific element of the project but examined it, and reported any flaws. </dd>
+		<dt><strong>UPOD:</strong></dt>   
+     		<dd>Undergraduate Physics Online Database</dd>
+		<dt><strong>UML:</strong></dt>
+         	<dd>Unified Modelling Language consists of a series of diagrams to illustrate how the program works in various ways.</dd>
 	</dl>
 </div>
 
 <div>
-	<h2 id="projectOrganization">4. Project Organization (subject to change)</h2>
+	<h2 id="projectOrganization">4. Project Organization (Provisional)</h2>
  		<h3 id="structure">4.1 Structure</h3>
  		<p>The project will be broadly split into front-end and back-end, generally the user interface and database coding respectively. This list is subject to change.</p>
  		<ul>
- 		<li>Front-End
+			<li><strong>Front-End</strong>
 		<ul>                  
  			<li>Nicholas Hallman</li>                         
  			<li>Rachel Choi</li>                 
@@ -247,9 +696,7 @@
 		</ul>
 		</li>
 			
-			
-
-		<li>Back-End
+			<li><strong>Back-End</strong>
 		<ul>
 			<li>Nathan Wickham</li>
 			<li>Luciano Abbott</li>
@@ -267,28 +714,135 @@
 		
 		</ul>
 
- 		<h3 id="rolesAndResponsibilities">4.2 Roles and Responsibilities (subject to change)</h3>
+ 		<h3 id="rolesAndResponsibilities">4.2 Roles and Responsibilities (Provisional)</h3>
 		<ul>
- 		<li>Client Contact- 			Lauren Hepditch</li>
- 		<li>Repository Owner- 			Luciano Abbott</li>
- 		<li>Requirements Document Head- 	Stephanie Pitman</li>
-		<li>Management Document Head- 		Nathan Wickham</li>
-		<li>Analysis Document Head-             Travis Leyenaar-Misson</li>
-		<li>UI/UX-				Yinhao Zheng, Stephanie Pitman, Rachel Choi</li>
-		<li>Diagrams-				Nathan Kohler, Connor Watson</li>
-		<li>Graphics-				Ziyi Zhang</li>
-		<li>Interaction-			Joseph Shannon, Abel Worku, Richard Bouda</li>
-		<li>Page Creation- 			Nathan Kohler, Nicholas Hallman</li>	
+			<table style = "width:100%", border = 0>
+				<tr>
+					<th style="border-bottom:1px solid black">Sub-Group Roles</th>
+					<th style="border-bottom:1px solid black">Members</th>
+				</tr>
+
+				<tr>
+					<th>Client Contact</th>
+					<td>Lauren Hepditch</td>
+				</tr>
+
+				<tr>
+					<th>Repository Owner</th>
+					<td>Luciano Abbott</td>
+				</tr>
+
+				<tr>
+					<th>Requirements Document Head</th>
+					<td>Stephanie Pitman</td>
+				</tr>
+
+				<tr>
+					<th>Management Document Head</th>
+					<td>Nathan Wickham</td>
+				</tr>
+
+				<tr>
+					<th>Analysis Document Head</th>
+					<td>Travis Leyenaar-Misson</td>
+				</tr>
+
+				<tr>
+					<th>UI/UX</th>
+					<td>Yinhao Zheng, Stephanie Pitman, Rachel Choi</td>
+				</tr>
+
+				<tr>
+					<th>Diagrams</th>
+					<td>Nathan Kohler, Connor Watson</td>
+				</tr>
+
+				<tr>
+					<th>Graphics</th>
+					<td>Ziyi Zhang</td>
+				</tr>
+
+				<tr>
+					<th>Interaction</th>
+					<td>Joseph Shannon, Abel Worku, Richard Bouda</td>
+				</tr>
+
+				<tr>
+					<th style="border-bottom:1px solid black">Page Creation</th>
+					<td style="border-bottom:1px solid black">Nathan Kohler, Nicholas Hallman</td>
+				</tr>
+			</table>
 		</ul>
+		
+			<h4 id="projectDocumentTeams">4.2.1 Project Document Teams</h4>
+			<ul>
+				<table style = "width:100%", border = 0>
+					<tr>
+						<th style="border-bottom:1px solid black">Project Document Teams</th>
+						<th style="border-bottom:1px solid black">Members</th>
+					</tr>
+
+					<tr>
+						<th>Project Management Document</th>
+						<td>Richard Bouda, Abel Worku, Peter Smerchinski, Nathan Wickham</td>
+					</tr>
+
+					<tr>
+						<th>Requirements Document</th>
+						<td>Stephanie Pitman, Nicholas Hallman, Lauren Hepditch, Joseph Shannon, Nathan Skof</td>
+					</tr>
+
+					<tr>
+						<th>Analysis Document</th>
+						<td>Travis Leyenaar-Misson, Ziyi Zhang, Peter Smerchinski, Abel Worku, Joseph Shannon, Richard Bouda</td>
+					</tr>
+
+					<tr>
+						<th style="border-bottom:1px solid black">Design Document</th>
+						<td style="border-bottom:1px solid black">Luciano Abbott, Luke Turnbull, Nicholas Hallman, Nathan Kohler</td>
+					</tr>
+				</table>
+			</ul>
+	
+			<h4 id="sqaTeams">4.2.2 SQA Teams</h4>
+			<ul>
+				<table style = "width:100%", border = 0>
+					<tr>
+						<th style="border-bottom:1px solid black">SQA Roles</th>
+						<th style="border-bottom:1px solid black">Members</th>
+					</tr>
+
+					<tr>
+						<th>Project Management Document</th>
+						<td>Ziyi Zhang, Luciano Abbott, Stephen Maloney</td>
+					</tr>
+
+					<tr>
+						<th>Requirements Document</th>
+						<td>Travis Leyenaar-Mission, Connor Watson, Rachel Choi, Nathan Skof</td>
+					</tr>
+
+					<tr>
+						<th>Analysis Document</th>
+						<td>Lauren Hepditch, Rachel Choi, Nathan Skof, Stephen Maloney</td>
+					</tr>
+
+					<tr>
+						<th style="border-bottom:1px solid black">Design Document</th>
+						<td style="border-bottom:1px solid black">Joseph Shannon, Abel Worku, Akkshay Karthikeyan, Xavier Kuttamparambil</td>
+					</tr>
+				</table>
+			</ul>
+			<br></br>
 </div>
 
 <div> 
 	<h2 id="managerialPlan">5. Managerial Process Plans</h2>
 
- 		<h3 id="startupPlan">5.1 Startup Plans</h3>
+ 		<h3 id="startupPlan">5.1 Start-Up Plans</h3>
  
  	 		<h4 id="estimationPlan">5.1.1 Estimation Plan</h4>
-  	 		<p>The client determines the final project deadline along with several major milestones. However, the methods and work required to meet a given deadline are estimated using prior experience as a reference for time consumption. It is therefore expected that dates and deadlines will be moderately tentative.</p>
+  	 		<p>The client determines the final project deadline along with due dates for preliminary elements. However, the methods and work required to meet a given deadline are estimated using prior experience as a reference for time consumption. It is therefore expected that dates and deadlines will be tentative.</p>
    
    			<h4 id="staffingPlan">5.1.2 Staffing Plan</h4>
     			<p>All members of the project are students from the Fall 2017 class CP317. No additional staff will be required or considered.</p>
@@ -327,18 +881,45 @@
     		<p>Development of the product from its beginning to final stages is divided into an incrementally contiguous series of phases, each succeeding the other in their relative aspects, converging steadily over time towards the completion of the product and the fulfilment of the due date.</p>
 		
 		<ul>
-    		<li>Phase 1: [Introductory Phase] Delineation of group tasks and forming central repository for all project-related files.</li>
-	    	<li>Phase 2: [Requirements Phase] Completion of Project Management Plan and Requirements Plan.</li>
-    		<li>Phase 3: [Design Phase] Initiation of group tasks and prospecting project's front-end and back-end features.</li>
-    		<li>Phase 4: [Implementation Phase] Development of project's front-end and back-end.</li>
-    		<li>Phase 5: [Integration Phase] Consolidation of all of project faculties into one singular cohesive product.</li>
+			<table style = "width:100%", border = 0>
+				<tr>
+					<th style="border-bottom:1px solid black">Phase</th>
+					<th style="border-bottom:1px solid black">Description</th>
+				</tr>
+				
+				<tr>
+					<th>Phase 1 [Introductory Phase]</th>
+					<td>Delineation of group tasks and forming central repository for all project-related files.</td>
+				</tr>
+
+				<tr>
+					<th>Phase 2 [Requirements Phase]</th>
+					<td>Completion of Project Management Plan and Requirements Plan.</td>
+				</tr>
+
+				<tr>
+					<th>Phase 3 [Design Phase]</th>
+					<td>Initiation of group tasks and prospecting project's front-end and back-end features.</td>
+				</tr>
+
+				<tr>
+					<th>Phase 4 [Implementation Phase]</th>
+					<td>Development of project's front-end and back-end.</td>
+				</tr>
+
+				<tr>
+					<th style="border-bottom:1px solid black">Phase 5 [Maintenance Phase]</th>
+					<td style="border-bottom:1px solid black">Continued support of software until it is no longer supported.</td>
+				</tr>
+			
+	  		</table>
 		</ul>
 
   		<h3 id="methods">6.2 Methods, Tools, and Techniques</h3>
-    		<p>At this stage in the product's development, it is yet to be anticipated in great detail precisely what development techniques will be used. However, the clearest approximation that can be made now are those languages that are best suited to the needs of the implementation teams, catering to the requirements of both the product's front-end and back-end. Enacting a final decision on which languages will be used while still in the preliminary stages of the product's development [namely its design stage] may negatively affect implementation.</p>
+    		<p>The front end uses HTML for the web pages, CSS for style, JSON and JavaScript for functions while the backend uses Java and JDBC for the database. </p>
 
   		<h3 id="infrastructurePlan">6.3 Infrastructure Plan</h3>
-    		<p>Each member of the project team has access to personal computers, as well as access to computers in the campus of Wilfrid Laurier University. For the centralization of all project-related data, files, and code, the project team will collectively contribute to a singular GitHub repository. In addition, a collaborative workspace on the website "slack.com" has been created to streamline communication between members of the project team.</p>
+    		<p>Each member of the project team has access to personal computers, as well as access to computers in the campus of Wilfrid Laurier University. For the centralization of all project-related data, files, and code, the project team will collectively contribute to a singular GitHub repository. In addition, a collaborative workspace on the collaboration website "Slack" has been created to streamline communication between members of the project team.</p>
 
   		<h3 id="productAcceptancePlan">6.4 Product Acceptance Plan</h3>
     		<p>To ensure the quality of all stages of the product's development, from design to implementation to integration, the project team will include formations of SQA to review, refine, advise, debug, and document the product's components. Software Quality Assurance groups will play a significant role in the improvements of each successive version of the project.</p>
@@ -350,35 +931,56 @@
  	<p>This project management plan will discuss the following supporting process plans: the configuration management plan, verification and validation plan, documentation plan, quality assurance plan, reviews and audits plan, problem resolution plan, and the process improvement plan.</p>
  
  		<h3 id="configurationPlan">7.1 Configuration Management Plan</h3>
-		<p>The configuration of the project UPOD will be systematized through its own stages of development and the documents that guide them, to be realized through the required components to successively build them. For example, use of the "Requirements" document contributes to how project organization can be tabulated [among each team member] and thus operationalized [among the team as a whole], in which adhering chiefly to the objectives of the project helps to eliminate any misunderstandings of its implementation.</p>
+		<p>The configuration of the project UPOD will be systematized through its own stages of development and the documents that guide them, to be realized through the required components to successively build them. For example, use of the "Requirements" document contributes to how project organization can be tabulated (among each team member) and thus operationalized (among the team as a whole), in which adhering chiefly to the objectives of the project helps to eliminate any misunderstandings of its implementation.</p>
 	
  		<h3 id="verificationPlan">7.2 Verification and Validation Plan</h3>
  		<p>All verification and validation is done using the GIT version control system. The repository hosted on GitHub keeps track of the changes and contributions each member makes towards their respective tasks.</p>
  
  		<h3 id="documentationPlan">7.3 Documentation Plan</h3>
- 		<p>All phases of the project must be documented. GitHub itself will assist in this by recording who did what, while the rest will be documented in a variety of means. Such means may involve a group-led tracking catalogue to monitor each member's contributions, if applicable, to procure a system of healthy engagement to the project's documentation [and to the project as a whole].</p>
+ 		<p>All phases of the project must be documented. GitHub itself will assist in this by recording who did what, while the rest will be documented in a variety of means. Such means may involve a group-led tracking catalogue to monitor each member's contributions, if applicable, to procure a system of engagement to the project's documentation (and to the project as a whole).</p>
  
  		<h3 id="qualityAssurancePlan">7.4 Quality Assurance Plan</h3>
- 		<p>SQA teams will review and report on all phases of development, highlighting areas of improvement that the team working on the actual component will fix. Proposals of revised content are encouraged for all aspects of the project and concerns shared among authors of such components.</p>
+ 		<p>SQA teams review and report on all phases of development, highlighting areas of improvement that the team working on the actual component will fix. Proposals of revised content are encouraged for all aspects of the project and concerns shared among authors of such components.</p>
  
  		<h3 id="reviewsAndAudits">7.5 Reviews and Audits</h3>
- 		<p>SQA groups will review and audit their assigned sections.</p>
+ 		<p>SQA groups review and audit their assigned sections.</p>
  
  		<h3 id="problemResolutionPlan">7.6 Problem Resolution Plan</h3>
  		<p>Any problems that may arise are settled democratically by ways of polling and surveying the most supported outcome. For instance, time conflicts and meetings will be decided by a vote, and the time with the highest number of votes will be selected as representative of the group majority.</p>
  
 	 	<h3 id="processImprovementPlan">7.7 Process Improvement Plan</h3>
- 		<p>Formulation of the process improvement plan should occur post-integration phase, when the team and its members have a more comprehensive understanding and experience of how the project UPOD has moved through the various processes of project development.</p>
+ 		<p>Formulation of the process improvement plan should occur in the maintenance phase (post-implementation), when the team and its members have a more comprehensive understanding and experience of how the project UPOD has moved through the various processes of project development.</p>
 </div>
+
+	<br/>
+	<div style="text-align:center; border: 0px">
+
+			<a href="#top">Back to Top</a>
+			&nbsp;
+			<a href="#tableOfContents">Table of Contents</a>
+			&nbsp;
+			<a href="#contributors">Contributors</a>
+			&nbsp;
+			<a href="#changeHistory", onclick="showTable()">Change History</a>
+			&nbsp;
+
+		<br></br>
+
+		<div>
+			<a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Requirements%20Document/Final%20HTML%20Format/Requirements.html", id="bottomPage", target="_blank"><br>Requirements Document</br></a>
+
+			<a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Analysis%20Document/HTML/AnalysisDocument.html", target="_blank"><br>Analysis Document</br></a>
+
+			<a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Design%20Document/design.html", target="_blank"><br>Design Document</br></a>
+		</div>
+
+		<br/>
+		<div align="right">
+			<button onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButtonLeft", style="vertical-align:middle; margin-top: 20px"><span>Back to Repository</span></button>
+			<button onclick = "goToUPODIndex()", class="hoverButtonRight", style="vertical-align:middle; margin-top: 20px; float: left"><span>Go to UPOD Index</span></button>		
+		</div>
+	</div>
 
 </body>
 
 </html>
-
-<a href="#top"> Back to Top</a>
-&nbsp;
-<a href="#tableOfContents"> Table of Contents </a>
-&nbsp;
-<a href="#contributors"> Contributors </a>
-&nbsp;
-<a href="#changeHistory"> Change History </a>

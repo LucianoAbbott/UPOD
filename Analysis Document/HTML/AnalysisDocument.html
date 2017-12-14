@@ -1,6 +1,4 @@
-﻿<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
-<a name="top"></a>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 <style>
     html {
@@ -22,9 +20,16 @@
     h4,
     p,
     dd,
+    div,
     dt,
     li,
-    ul {
+    table#t01,
+    table#t02,
+    table#t03,
+    table#t04,
+    table#t05,
+    ul
+    {
         font-family: 'Open Sans', sans-serif;
     }
     
@@ -40,15 +45,220 @@
     .errors {
         color: #FF0055;
     }
+	
+    .hoverButtonLeft {
+        display: inline-block;
+        border-radius: 10px;
+        background-color: white;
+        border: none;
+        border-width:2px;  
+        border-style:double;
+        border-color:#2A2A2A;
+        color: #2A2A2A;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    .hoverButtonRight {
+        display: inline-block;
+        border-radius: 10px;
+        background-color: white;
+        border: none;
+        border-width:2px;  
+        border-style:double;
+        border-color:#2A2A2A;
+        color: #2A2A2A;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    .hoverButtonLeft span {
+        cursor:pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .hoverButtonRight span {
+        cursor:pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .hoverButtonLeft span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .hoverButtonRight span:after {
+        content: '\00ab';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: -20px;
+        transition: 0.5s;
+    }
+
+    .hoverButtonLeft:hover span {
+        padding-right: 25px;
+    }
+
+    .hoverButtonRight:hover span {
+        padding-left: 25px;
+    }
+
+    .hoverButtonLeft:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    .hoverButtonRight:hover span:after {
+        opacity: 1;
+        left: 0;
+    }
+	
+	
+    .navbar {
+	overflow: hidden;
+	background-color: #333;
+	position: fixed;
+	bottom: 0;
+	width: 1000px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	text-align: center;
+    }
+    .navbar a {
+	display: inline-block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 6px 12px;
+	text-decoration: none;
+	font-size: 14px;
+	font-family: sans-serif;
+     }	
+	
+    .navbar a:hover {
+    	background-color: #F9F9F9;
+    	color: #0C0C0C;    
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+    }
+	
+    #backToTopButton {
+        background-color: white;
+        border: none;   
+        border-radius: 5px;
+        color: black;
+        padding: 11px;
+        text-align: center;
+        text-decoration-none;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration:0.2s;
+        cursor:pointer;
+        position: fixed;
+        top: 5px;
+        right: 5px;
+        z-index: 99;
+        outline: none;
+        opacity: 0.7;
+    }
+    #backToTopButton:hover {
+        opacity: 0.9;
+        background-color: #3d3d3d;
+        color: white;
+    }
 </style>
 
 <html>
 
+    <head>
+        <title>UPOD - Analysis</title>
+
+        <script>
+            function goToUPODIndex() {
+                var url = document.URL; 
+                if (url.startsWith("file")==false) { //If not a file
+                    window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html");             
+                } else { //If a file
+                    if (url.includes("UPOD-master")) { //If a file and in repository
+                        var indexURL = url.substring(0, url.lastIndexOf('/')); 
+                        indexURL = indexURL.substring(0, indexURL.lastIndexOf('/')); 
+                        indexURL = indexURL.substring(0, indexURL.lastIndexOf('/'));                         
+                        indexURL += "/docs/index.html"
+                        window.open(indexURL);
+                    } else { //If a file and not in repository              
+                        window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html");
+                    }
+                }
+            }
+        </script>
+
+    </head>
+
 <body>
+
+    <div class="navbar">
+        <a href="#introduction">Introduction </a>
+
+        <a href="#purposes_and_uses">Purposes and Uses </a>
+
+        <a href="#definitions">Definitions </a>
+
+        <a href="#object_classification">Object Classification</a>
+
+        <a href="#diagrams">Diagrams</a>
+
+        <a href="#user_overview">Administrator/Moderator/General User Overview</a>
+    </div>
+	
     <header>
         <h1>Analysis Document for UPOD</h1>
         <p class="version">Authors: Travis Leyenaar-Misson, Ziyi Zhang, Peter Smerchinski, Abel Worku, Joseph Shannon, Richard Bouda, Stephen Maloney </p>
-	<p class="version"> Version 1.3 November 1st, 2017</p>
+	<p class="version", align="right"> Version 2.0 </p> 
+    	<p class="version", id="date", align="right"></p>
+	<script>
+		var currentDate = new Date();
+		document.getElementById("date").innerHTML = currentDate;
+	</script>
+
+        <button onclick="topFunction()" id="backToTopButton" title="Scroll to top">Top</button>
+        <script>
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    document.getElementById("backToTopButton").style.display = "block";
+                } else {
+                    document.getElementById("backToTopButton").style.display = "none";
+                }
+            }
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+	    
+	    
         <div>
             <h2 id="tableOfContents"> Table of Contents </h2>
             <ul>
@@ -78,67 +288,174 @@
     </header>
     <div>
         <h2 id="introduction">1. Introduction</h2>
-        <p> UPOD (University Physics Online Database) is a comprehensive online database designed to organize information pertaining to fundamental physics concepts, and present them in a straightforward, efficient manner for user retrieval. UPOD reduces the need to search through multiple sites and provides users a central location for reliable data. 
-This analysis document formalizes the parameters determined for the project in its requirements plan, and refines in greater detail and scope the objectives of UPOD. In addition to the project's objectives, project specifications are articulated with clarity and concision to better remove uncertainty concerning any of the project's faculties during the design and implementation phases. 
+        <p> UPOD (Undergraduate Physics Online Database) is a comprehensive online database designed to organize information pertaining to fundamental physics concepts, and present them in a straightforward, efficient manner for user retrieval. UPOD eliminates the need to search through multiple sites and provides users a single location for accurate data. 
+This analysis document formalizes the parameters determined for the project in its requirements plan, and refines in greater detail and scope the objectives of UPOD. In addition to the project's objectives, project specifications are articulated with clarity and concision to better remove uncertainty concerning any of the project's elements during the design and implementation phases. 
 It is presented in HTML format with UML diagrams. </p>
     </div>
 
     <div>
         <h2 id="purposes_and_uses">2. Purposes and Uses</h2>
         <p> The purpose of this document is to provide an in-depth analysis of the project beyond the initial requirements phase, as it is a basis for the design document as well as for the project. The class, use case, and sequence diagrams are used 
-in conjunction with object-oriented design to create a starting point for project implementation. </p>
+in conjunction with object-oriented design to establish a starting point for project implementation. </p>
     </div>
 	   
     <div>
         <h2 id="definitions">3. Definitions </h2>
-        <ul>
-			<li><b>Actor</b> - Any user (such as general users, administrators, moderators). </li>
-			<li><b>Boundary Object</b> - Represents the system with actors which interact with other actors. Forms, windows, notices and messages are included. </li>
-			<li><b>Behaviour Diagram</b> - A type of diagram that models a system's operations through the functions of its components. </li>
-			<li><b>Class Diagram</b> - A structure diagram that outlines all classes, methods and attributes used in the project as well as their relationships. </li>
-			<li><b>Control Object</b> - Coordinates boundary and entity objects. Created at the beginning of a use case, and ceases to exist afterwards. </li>
-			<li><b>Entity Object</b> - Represents persistent, immutable information which form the core of the model. Often identified by nouns. </li>
-			<li><b>Interaction Diagram</b> - A type of diagram that models how system elements affect and influence each other. </li>
-			<li><b>Sequence Diagram</b> - An interaction diagram that shows how objects interact with each other in the temporal context of events. </li>
-			<li><b>Structural Diagram</b> - A type of diagram that models the anatomy and architecture of a program. </li>
-			<li><b>UML</b> - Unified Modeling Language. The basis for all diagrams used in this document. </li>
-			<li><b>Use Case</b> - A method or action between two actors, connected through a communication (which is represented by a straight line). </li>
-			<li><b>Use Case Diagram</b> - A behaviour diagram illustrated with actors and use cases, with communications between them to display their relationships. </li>
-	</ul>
+        
+        <table id="t01" style="table-layout: fixed;">
+        <col width="1500">
+  		<col width="10000">
+  			<tr>
+    			<td valign="top"><b>Actor: </b></td>
+        		<td> Any type of user (such as general users, administrators, and moderators) of the program.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Boundary Object: </b></td>
+        		<td> Represents the system with actors which interact with other actors. Forms, windows, notices, and messages are included.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Behaviour Diagram: </b></td>
+        		<td> A type of diagram that models a system's operations through the functions of its components.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Class Diagram: </b></td>
+        		<td> A structure diagram that outlines all classes, methods, and attributes used in the project as well as their relationships.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Control Object: </b></td>
+        		<td> Coordinates boundary and entity objects. Created at the beginning of a use case, and ceases to exist afterwards.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Entity Object: </b></td>
+        		<td> Represents persistent, immutable information which form the core of the model. Often identified by nouns.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Interaction Diagram: </b></td>
+        		<td> A type of diagram that models how system elements affect and influence each other.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Sequence Diagram: </b></td>
+        		<td> An interaction diagram that shows how objects interact with each other in the temporal context of events.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Structural Diagram: </b></td>
+        		<td> A type of diagram that models the anatomy and architecture of a program.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>UML: </b></td>
+        		<td> Unified Modeling Language. The basis for all diagrams used in this document.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Use Case: </b></td>
+        		<td> A method or action between two actors, connected through a communication (which is represented by a straight line).</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Use Case Diagram: </b></td>
+        		<td> A behaviour diagram illustrated with actors and use cases, with communications between them to display their relationships.</td>
+        	</tr>
+        </table>
     </div>
 
     <div>
         <h2 id="object_classification">4. Object Classification </h2>
 		<h3 id="entity_objects">4.1 Entity Objects</h3>
-		<ul>
-			<li><b>Administrator</b> - A user who can create, read, update, and delete pages. Also has the ability to add and remove moderators and administrators. </li>
-			<li><b>Formula</b> - Created, read, updated, and deleted. Stored in the database. </li>
-			<li><b>Graphic</b> - Created, read, updated, and deleted. Stored in the database. </li>
-	    		<li><b>Moderator</b> - A user who can create, read, update, and delete pages. </li>
-			<li><b>Page</b> - Created, read, updated, and deleted. Stored in the database. </li>
-	    	</ul>
+        
+        <table id="t02" style="table-layout: fixed;">
+        <col width="1000">
+  		<col width="10000">
+  			<tr>
+    			<td valign="top"><b>Administrator: </b></td>
+        		<td> A user who can create, read, update, and delete pages. Also has the ability to add and remove moderators and administrators.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Formula: </b></td>
+        		<td> A mathematical diagram that can be created, read, updated, and deleted. It is stored in the database.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Graphic: </b></td>
+        		<td> A computer generated image that can be created, read, updated, and deleted. It is stored in the database.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Moderator: </b></td>
+        		<td> A user who can create, read, update, and delete pages.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Page: </b></td>
+        		<td> A single element that belongs to a section. It can be created, read, updated, and deleted. It is stored in the database.</td>
+        	</tr>
+        </table>
+
 		<h3 id="boundary_objects">4.2 Boundary Objects</h3>
-		<ul>
-			<li><b>FormulaEdit</b> - Creates, updates, and deletes formulas. </li>
-			<li><b>GraphicsEdit</b> - Adds and deletes graphics. </li>
-			<li><b>Login</b> - Where a moderator or administrator logs into UPOD to create, update, and delete pages. </li>
-			<li><b>PageEdit</b> - Creates, updates, and deletes pages. </li>
-			<li><b>PageView</b> - When a user views the physics information on a page. </li>
-			<li><b>Search</b> - Where a user searches for pages.  </li>
-			<li><b>Search Bar</b> - Where a user types in keywords to be searched. </li>
-			<li><b>SearchResult</b> - Where a user views the results of a search. </li>
-			
-	    </ul>
+        
+        <table id="t03" style="table-layout: fixed;">
+        <col width="1000">
+  		<col width="10000">
+  			<tr>
+    			<td valign="top"><b>FormulaEdit: </b></td>
+        		<td> Creates, updates, and deletes formulas.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>GraphicsEdit: </b></td>
+        		<td> Adds and deletes graphics.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Login: </b></td>
+        		<td> Where a moderator or administrator logs into UPOD to create, update, and delete pages.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>PageEdit: </b></td>
+        		<td> Creates, updates, and deletes pages.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>PageView: </b></td>
+        		<td> When a user views the physics information on a page.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Search: </b></td>
+        		<td> Where a user searches for pages.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Search Bar: </b></td>
+        		<td> Where a user types in keywords to be searched.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>SearchResult: </b></td>
+        		<td> Where a user views the results of a search.</td>
+        	</tr>
+        </table>
+        
 		<h3 id="control_objects">4.3 Control Objects</h3>
-		<ul>
-			<li><b>FormulaEditController</b> - Coordinates the creating, updating, and deleting of formulas. </li>
-			<li><b>GraphicsEditController</b> - Coordinates the adding and deleting of graphics. </li>
-			<li><b>LoginController</b> - Coordinates the logins of moderators and administrators. </li>
-			<li><b>PageEditController</b> - Coordinates the creating, updating, and deleting of pages. </li>
-			<li><b>PageViewController</b> - Coordinates which page to show. </li>
-			<li><b>SearchController</b> - Coordinates the search function. </li>
-			
-	    </ul>
+        
+        <table id="t04" style="table-layout: fixed;">
+        <col width="1000">
+  		<col width="10000">
+  			<tr>
+    			<td valign="top"><b>FormulaEditController: </b></td>
+        		<td> Coordinates the creating, updating, and deleting of formulas.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>GraphicsEditController: </b></td>
+        		<td> Coordinates the adding and deleting of graphics.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>LoginController: </b></td>
+        		<td> Coordinates the logins of moderators and administrators.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>PageEditController: </b></td>
+        		<td> Coordinates the creating, updating, and deleting of pages.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>PageViewController: </b></td>
+        		<td> Coordinates which page to show.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>SearchController: </b></td>
+        		<td> Coordinates the search function.</td>
+            </tr>
+        
+        </table>
+
     </div>
 
     <div>
@@ -165,18 +482,54 @@ in conjunction with object-oriented design to create a starting point for projec
 	</div>
     <div>    
 	 <h2 id="user_overview">6. Administrator/Moderator/General User Overview </h2>
-	 <ul>
-	    <li><b>Manage Permissions</b> - The user's ability to give administrator and moderator privileges. </li>
-	    <li><b>Manage Comments</b> - The user's ability to delete or otherwise manage submitted comments. </li>
-	    <li><b>Manage Content</b> - The user's ability to delete or otherwise manage page content, such as diagrams, text, and images. </li>
-	    <li><b>Search UPOD</b> - The action taken by the user to search the database for specific information. </li>
-	    <li><b>View Page</b> - The action taken by the user to view a specific page on the database. </li>
-	 </ul>
-    </div>    
+     
+     <table id="t04" style="table-layout: fixed;">
+        <col width="1000">
+  		<col width="10000">
+  			<tr>
+    			<td valign="top"><b>Manage Permissions: </b></td>
+        		<td> Allocates administrator and moderator privileges.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Manage Content: </b></td>
+        		<td> Deletes or otherwise manages page content, such as diagrams, text, and images.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>Search UPOD: </b></td>
+        		<td> Searches the database for specific information.</td>
+        	</tr>
+            <tr>
+    			<td valign="top"><b>View Page: </b></td>
+        		<td> Views a specific page on the database.</td>
+        	</tr>
+        
+        </table>
+    </div>
+		
+    <br></br>
+    <div style="text-align:center; border: 0px">
+
+            <a href="#top">Back to Top</a>
+            &nbsp;
+            <a href="#tableOfContents">Table of Contents</a>
+
+        <br></br>
+
+        <div>
+            <a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Project%20Management%20Plans/ManagementDocumentFormatted.html", target="_blank"><br>Project Management Document</br></a>
+
+            <a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Requirements%20Document/Final%20HTML%20Format/Requirements.html", target="_blank"><br>Requirements Document</br></a>
+
+            <a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Design%20Document/design.html", target="_blank"><br>Design Document</br></a>
+        </div>
+
+        <br/>
+        <div align="right">
+            <button onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButtonLeft", style="vertical-align:middle; margin-top: 20px"><span>Back to Repository</span></button>
+            <button onclick = "goToUPODIndex()", class="hoverButtonRight", style="vertical-align:middle; margin-top: 20px; float: left"><span>Go to UPOD Index</span></button> 
+        </div>
+    </div>
+		
 </body> 
 
 </html>
-	
-<a href="#top"> Back to Top</a>
-&nbsp;
-<a href="#tableOfContents"> Table of Contents </a>

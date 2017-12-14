@@ -1,6 +1,4 @@
-﻿<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
-<a name="top"></a>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 <style>
     html {
@@ -41,6 +39,7 @@
     h4,
     p,
     dd,
+    div,
     dt,
     li,
     ul {
@@ -60,15 +59,225 @@
     .errors {
         color: #FF0055;
     }
+	
+    .hoverButtonLeft {
+        display: inline-block;
+        border-radius: 10px;
+        background-color: white;
+        border: none;
+        border-width:2px;  
+        border-style:double;
+        border-color:#2A2A2A;
+        color: #2A2A2A;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    .hoverButtonRight {
+        display: inline-block;
+        border-radius: 10px;
+        background-color: white;
+        border: none;
+        border-width:2px;  
+        border-style:double;
+        border-color:#2A2A2A;
+        color: #2A2A2A;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    .hoverButtonLeft span {
+        cursor:pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .hoverButtonRight span {
+        cursor:pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .hoverButtonLeft span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .hoverButtonRight span:after {
+        content: '\00ab';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: -20px;
+        transition: 0.5s;
+    }
+
+    .hoverButtonLeft:hover span {
+        padding-right: 25px;
+    }
+
+    .hoverButtonRight:hover span {
+        padding-left: 25px;
+    }
+
+    .hoverButtonLeft:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    .hoverButtonRight:hover span:after {
+        opacity: 1;
+        left: 0;
+    }
+	
+    .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        bottom: 0;
+        width: 1100px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        text-align: center;
+        height: 18px;
+    }
+
+    .navbar a {
+        display: inline-block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 6px 12px;
+        text-decoration: none;
+        font-size: 14px;
+        font-family: sans-serif;
+     }  
+    
+    .navbar a:hover {
+        background-color: #F9F9F9;
+        color: #0C0C0C;    
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    #backToTopButton {
+        background-color: white;
+        border: none;   
+        border-radius: 5px;
+        color: black;
+        padding: 11px;
+        text-align: center;
+        text-decoration-none;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration:0.2s;
+        cursor:pointer;
+        position: fixed;
+        top: 5px;
+        right: 5px;
+        z-index: 99;
+        outline: none;
+        opacity: 0.7;
+    }
+
+    #backToTopButton:hover {
+        opacity: 0.9;
+        background-color: #3d3d3d;
+        color: white;
+    }
+    
 </style>
 
 <html>
 
+    <head>
+        <title>UPOD - Design</title>
+
+        <script>
+            function goToUPODIndex() {
+                var url = document.URL; 
+                if (url.startsWith("file")==false) { //If not a file
+                    window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html");             
+                } else { //If a file
+                    if (url.includes("UPOD-master")) { //If a file and in repository
+                        var indexURL = url.substring(0, url.lastIndexOf('/')); 
+                        indexURL = indexURL.substring(0, indexURL.lastIndexOf('/')); 
+                        indexURL += "/docs/index.html"
+                        window.open(indexURL);
+                    } else { //If a file and not in repository              
+                        window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html");
+                    }
+                }
+            }
+        </script>
+
+    </head>
+
 <body>
+	
+    <div class="navbar">
+        <a href="#introduction">Introduction </a>
+
+        <a href="#usecase">Use Cases</a>
+
+        <a href="#diagrams">Diagrams</a>
+
+        <a href="#object_classification">Object Classification</a>
+
+        <a href="#interfaceDescription">Interface Description</a>
+
+        <a href="#methodDetailedDesign">Method Detailed Design</a>
+    </div>
+	
     <header>
         <h1>Design Document for UPOD</h1>
-        <p class="version"> Version 1.0 October 24, 2017</p>
+        
         <p>Authors: Luciano Abbott, Luke Turnbull, Nicholas Hallman, Nathan Kohler</p>
+	<p class="version", align="right">Version 1.1</p> 
+        <p class="version", id="date", align="right"></p>
+        <script>
+            var currentDate = new Date();
+            document.getElementById("date").innerHTML = currentDate;
+        </script>	    
+	    
+        <button onclick="topFunction()" id="backToTopButton" title="Scroll to top">Top</button>
+        <script>
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    document.getElementById("backToTopButton").style.display = "block";
+
+                } else {
+                    document.getElementById("backToTopButton").style.display = "none";
+                }
+            }
+
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+	    
         <div>
             <h2 id = "tableOfContents"> Table of Contents </h2>
             <ul>
@@ -110,7 +319,10 @@
 
                 <li><a href="#diagrams">3. Diagrams</a>
                     <ul>
-                        <li><a href="#back_end">3.1 Back End Diagram</a></li>
+                        <li><a href="#back_end">3.1 Back End UML</a></li>
+			<li><a href = #back_end">3.2 Database Class Diagram</a></li>
+		        <li><a href = #back_end">3.3 Front End UML</a></li>
+			
                     </ul>
                 </li>
 
@@ -134,6 +346,7 @@
                     <li>5.3 UpodDao</li>
                     <li>5.4 Application</li>
                     <li>5.5 Data Objects</li>
+		    
                 </ul>
             </ul>
         </div>
@@ -169,14 +382,19 @@
     <div>
 
         <h2 id="diagrams">3. Diagrams</h2>
-        <h3 id="back_end">Back end UML</h3>
+        <h3 id="back_end">3.1 Back End UML</h3>
         <a href="https://raw.githubusercontent.com/LucianoAbbott/UPOD/tree/master/Design%20Document/UPOD%20UML.png">
             <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/UPOD%20UML.png" style="max-width:1000px;">
         </a>
-        <img src="assets/class.jpg" style="max-width:1000px;">
+        <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/assets/class.jpg" style="max-width:1000px;">
+	    
+	<h3 id="back_end">3.2 Database Class Diagram</h3>
+	<img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/Database%20Diagrams/DatabaseClassDiagram.JPG" style="max-width:1000px;">
 
-        <h3 id="front_end">Front End UML</h3>
-        <img src="assets/use.png" style="max-width:1000px;">
+        <h3 id="front_end">3.3 Front End UML</h3>
+        <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/assets/use.png" style="max-width:1000px;">
+				
+	
 
     </div>
 
@@ -184,7 +402,7 @@
         <h2 id="interface">4. Interface Description</h2>
         <h3>4.1. Module Interface</h3>
         <h4>4.1.1 HomeView</h4>
-        <img src="assets/1.png">
+        <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/screenshots/home.PNG">
         <table>
             <tr>
                 <th>Field</th>
@@ -219,7 +437,7 @@
         </table>
 
         <h4>4.1.2 SearchResultView</h4>
-        <img src="assets/2.gif">
+        <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/screenshots/searchresult.PNG">
         <table>
             <tr>
                 <th>Field</th>
@@ -258,7 +476,8 @@
             </tr>
         </table>
         <h4>4.1.3 ArticleView</h4>
-        <img src="assets/3.png">
+        <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/screenshots/page.PNG">
+	
         <table>
             <tr>
                 <th>Field</th>
@@ -293,7 +512,7 @@
         </table>
 
         <h4>4.1.4 PageEditView</h4>
-        <img src="assets/4.png">
+        <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/screenshots/edit.PNG">
         <table>
             <tr>
                 <th>Field</th>
@@ -378,7 +597,7 @@
         </table>
 
         <h4>4.1.5 LoginView</h4>
-        <img src="assets/5.png">
+        <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/assets/5.png">
         <table>
             <tr>
                 <th>Field</th>
@@ -408,7 +627,7 @@
         </table>
 
         <h4>4.1.6 AdminView</h4>
-        <img src="assets/6.png">
+        <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/assets/6.png">
         <table>
             <tr>
                 <th>Field</th>
@@ -549,11 +768,31 @@
         <h4>5.5.2 Section</h4>
         <p>Represents a subsection of a page, can contain a title, text and an image with description.</p>
     </div>
+
+    <br></br>
+    <div style="text-align:center; border: 0px">
+
+            <a href="#top">Back to Top</a>
+            &nbsp;
+            <a href="#tableOfContents">Table of Contents</a>
+
+        <br></br>
+
+        <div>
+            <a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Project%20Management%20Plans/ManagementDocumentFormatted.html", target="_blank"><br>Project Management Document</br></a>
+
+            <a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Requirements%20Document/Final%20HTML%20Format/Requirements.html", target="_blank"><br>Requirements Document</br></a>
+
+            <a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Analysis%20Document/HTML/AnalysisDocument.html", target="_blank"><br>Analysis Document</br></a>
+        </div>
+
+        <br/>
+        <div align="right">
+            <button onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButtonLeft", style="vertical-align:middle; margin-top: 20px"><span>Back to Repository</span></button>
+            <button onclick = "goToUPODIndex()", class="hoverButtonRight", style="vertical-align:middle; margin-top: 20px; float: left"><span>Go to UPOD Index</span></button> 
+        </div>
+    </div>	
+	
 </body>
-
-
+	
 </html>
-
-<a href="#top"> Back to Top</a>
-&nbsp;
-<a href="#tableOfContents"> Table of Contents </a>

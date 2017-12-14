@@ -1,0 +1,40 @@
+CREATE DATABASE UPOD;
+
+CREATE TABLE PAGE(
+PageId INT,
+title VARCHAR(50) NOT NULL,
+URL VARCHAR(200) NOT NULL,
+editing BOOLEAN NOT NULL,
+PRIMARY KEY (PageId));
+
+CREATE TABLE VARIABLE (
+varId INT,
+symbol CHAR(3),
+name VARCHAR(20),
+description VARCHAR(400),
+URL VARCHAR(200),
+PRIMARY KEY (varId));
+
+CREATE TABLE SECVAR (
+pageId INT,
+sectionId INT,
+varId INT NOT NULL,
+PRIMARY KEY (pageId,sectionId)
+);
+
+CREATE TABLE GRAPHIC(
+graphicId INT,
+graphicURL VARCHAR (200),
+description VARCHAR (400),
+PRIMARY KEY(graphicId));
+
+CREATE TABLE SECTION(
+sectionId INT,
+pageId INT,
+sectionTitle VARCHAR(100) NOT NULL,
+sectionText VARCHAR (4000),
+equations VARCHAR(1000),
+graphicId INT,
+PRIMARY KEY(pageId,sectionId),
+FOREIGN KEY(pageId) REFERENCES PAGE(pageId),
+FOREIGN KEY(graphicId) REFERENCES GRAPHIC(graphicId));

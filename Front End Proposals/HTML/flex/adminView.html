@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+
+<link rel="stylesheet" type="text/css" href="Style.css">
+
+<html class="adminHtml">
+    
+<body>
+
+<div class="topBar">
+		<div id="titleBar">UPOD</div>
+		    <div class="barSearch">
+		  	    <input type="text" name="searchBar" class="searchBar">
+	            <button type="button" class="searchButton">&#10148;</button>
+		    </div>
+		    <div id="buttonBar" align="right">
+		  	    <button type="button" class="ghostButton barButton" id="logButton">Logout</button>
+		  	    <button type = "button" class="ghostButton barButton"  id="aboutButton">About</button>
+		    </div>
+		</div>
+        <hr id="headerLine">
+
+    <div class="adminPage" style="width:1050px; margin:0 auto;">
+
+        <div class="rowAlign">
+
+            <div class="sideBySide"  style="float:left;">
+
+                    <form>
+                      <h1 class = "modListTitle" style="width:110%; margin-left:100px;">Moderator List</h1>
+                     <textarea class = "modList" rows="30" cols="109" style="width:100%; margin-bottom:0px; margin-left:100px;" placeHolder="List of Moderator Emails"></textArea>
+                    <div class="adminButton">
+                        <input type="text" style= "width:10000px; margin-left:100px;">
+                            <button class="editButtonGreen">+</button>
+                            <button class="editButtonRed">-</button>
+                            
+			</div>
+                    
+                    
+                    
+                    </form>
+
+            </div>
+
+
+
+            <div class="sideBySide">
+
+                    <form>
+                      <h1 class = "adminListTitle" style="width:110%; margin-left:200px;">Administrator List</h1>
+                     <textarea class = "adminList" rows="30" cols="109" style="width:100%; margin-bottom:0px; margin-left:200px;" placeHolder="List of Administrator Emails"> </textArea>
+                     <div class="adminButton">
+                        <input type="text" style = " width:10000px;margin-left:200px;">
+
+                            <button class="editButtonGreen">+</button>
+                            <button class="editButtonRed">-</button>
+			</div>
+                    </form>
+
+            </div>
+
+        </div>
+        
+    </div>
+
+</body>
+
+</html>

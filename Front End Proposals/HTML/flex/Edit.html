@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html class="editHtml">
+
+<head>
+
+    <meta charset="ISO-8859-1">
+    <script src="UPOD.js"></script>
+    <script src="Header.js"></script>
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+</head>
+
+<body class="editBody">
+
+    <div class="pageEdit">
+        <div class="sidebarSections">
+            <h2 class="sectionBarTitle keyline">Sections: </h2>
+            <form>
+                <button style="margin-bottom:20px;" type="button" class="solidButton greenButton" type="button" onclick="genJson();">Save Changes</button>
+                <button type="button" class="solidButton" type="button" onclick="addSection();">Add Section</button>
+            </form>
+        </div>
+        <div class="sectionContainer">
+            <div class="sectionEdit">
+                <div class="articleForm keyline">
+                    <h1>Page Name: </h1>
+                    <form>
+                        <input type="text" name="articleTitle" class="articleTitleBox" placeHolder="Page Name" id="pageTitle">
+                        <button type="button" class="ghostButtonRed">Delete Page</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        genSearchSection();
+    </script>
+</body>
+
+</html>
