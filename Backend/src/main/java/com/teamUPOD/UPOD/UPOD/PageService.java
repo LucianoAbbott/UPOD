@@ -3,6 +3,8 @@ package com.teamUPOD.UPOD.UPOD;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import org.springframework.context.annotation.DependsOn;
+
 import datatypes.FrequencyMap;
 import datatypes.Page;
 import datatypes.Table;
@@ -12,6 +14,7 @@ import utils.SearchUtils;
  * Perform application logic related to the pages
  * @author luciano abbott
  */
+@DependsOn("UpodDao")
 public class PageService {
 	private UpodDao upodDao;
 	private static final int MAX_QUERY_RESULT_COUNT = 7;
@@ -26,7 +29,6 @@ public class PageService {
 	 * @param upodDao
 	 */
 	PageService(UpodDao upodDao) {
-		
 	}
 	
 	/**
