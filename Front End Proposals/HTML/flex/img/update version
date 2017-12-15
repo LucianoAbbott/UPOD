@@ -1,4 +1,4 @@
-Motio.  In physics, motion is a description of the position of an object over time. Motion may be described in terms of displacement, distance, velocity, acceleration, time and speed. Motion of a body is observed by attaching a frame of reference to an observer and measuring the change in position of the body relative to that frame. 
+Motion.  In physics, motion is a description of the position of an object over time. Motion may be described in terms of displacement, distance, velocity, acceleration, time and speed. Motion of a body is observed by attaching a frame of reference to an observer and measuring the change in position of the body relative to that frame. 
 Laws of motion:  
 First law: In an inertial reference frame, an object either remains at rest or continues to move at a constant velocity, unless acted upon by a net force.
 Second law: In an inertial reference frame, the vector sum of the forces F on an object is equal to the mass m of that object multiplied by the acceleration a of the object: F = ma.
@@ -11,11 +11,11 @@ Since the position, velocity, and acceleration are collinear (parallel, and lie 
 The object’s final velocity is described as below:                                                                      
             v= u + a*t
 The object’s final position is:
-	         s=u*t+ 1/2*a*t^2
+	    s=u*t + 1/2*a*t^2
 The relationship between initial velocity and final velocity is 
-	        v^2-u^2=2*a*s
+	    v^2-u^2=2*a*s
 The distance the object traveled can also be computed by average velocity times time:
-           s= 1/2(u+v)*t
+            s= 1/2(u+v)*t
            
 Uniform Circular Motion is a movement of an object along the circumference of a circle or rotation along a circular path. We talk about uniform here, with constant angular rate of rotation and constant speed.The rotation around a fixed axis of a three-dimensional body involves circular motion of its parts. The equations of motion describe the movement of the center of a mass of a body.  
 Examples: an artificial satellite orbiting the Earth at a constant height, a stone which is tied to a rope and is being swung in circles, a car turning through a curve in a race track and so on.
