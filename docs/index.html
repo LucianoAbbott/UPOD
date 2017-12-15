@@ -32,7 +32,7 @@
 	ul {
 	    font-family: 'Open Sans', sans-serif;
 	}
-
+	
 	a {
 		font-size: 17;
 		padding: 15px;
@@ -73,6 +73,11 @@
 		color: white;
 	}
 
+	.showDocsButton:active {
+		box-shadow: 0 0px #666;
+		transform: translateY(4px);
+	}
+
 	/*CSS for horizontally contiguous hyperlinks*/
 	#navigation ul {
 		margin: 0;
@@ -95,6 +100,11 @@
 	    border: none;
 	    padding: 10px;
 	    outline: none;
+	}
+	.infoButton:active {
+		box-shadow: 0 0px #666;
+		transform: translateY(4px);
+		transition-duration: 0.2s;
 	}
 
 	/*CSS for Back to Repository button*/
@@ -174,6 +184,12 @@
 	    opacity: 0;
 	    transition: all 0.8s	
 	}	
+
+	.downloadButton:active {
+		box-shadow: 0 0px #666;
+		transform: translateY(4px);
+		transition-duration: 0.2s;
+	}
 
 	.downloadButton:active:after {
 	    padding: 0;
@@ -534,26 +550,16 @@
 			</div> 	
 
 			<div class="w3-dropdown-hover" style="margin-top:0px">
-				<button style="transition-duration: 0.2s" class="w3-button"><big>(main) teamUPOD &emsp;</big><i class="fa fa-caret-down"></i></button>
+				<button style="transition-duration: 0.2s" class="w3-button"><big>(main) UPOD &emsp;</big><i class="fa fa-caret-down"></i></button>
 
 				<div class="w3-dropdown-content w3-bar-block" style="position: initial; background-color: #EDEDED">
-					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/com/teamUPOD/UPOD/UPOD/Application.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">Application.java</a>
-					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/com/teamUPOD/UPOD/UPOD/ControllerExceptionHandler.java" target="_blank" class="w3-bar-item w3-button" style="width: 85%; margin-left: 7.5%; transition-duration: 0.2s">ControllerExceptionHandler.java</a>
-					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/com/teamUPOD/UPOD/UPOD/PageCtrl.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">PageCtrl.java</a>
-					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/com/teamUPOD/UPOD/UPOD/PageService.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">PageService.java</a>
-					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/com/teamUPOD/UPOD/UPOD/UpodDao.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">UpodDao.java</a>
-					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/com/teamUPOD/UPOD/UPOD/VariableCtrl.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">VariableCtrl.java</a>
-					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/com/teamUPOD/UPOD/UPOD/VariableService.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">VariableService.java</a>
-				</div>
-			</div> 	
-
-			<div class="w3-dropdown-hover" style="margin-top:0px">
-				<button style="transition-duration: 0.2s" class="w3-button"><big>(test) teamUPOD &emsp;</big><i class="fa fa-caret-down"></i></button>
-
-				<div class="w3-dropdown-content w3-bar-block" style="position: initial; background-color: #EDEDED">
-					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/test/java/com/teamUPOD/UPOD/UPOD/PageCtrlTest.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">PageCtrlTest.java</a>
-					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/test/java/com/teamUPOD/UPOD/UPOD/PageServiceTest.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">PageServiceTest.java</a>
-					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/test/java/com/teamUPOD/UPOD/UPOD/UpodDaoTest.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">UpodDaoTest.java</a>
+					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/UPOD/Application.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">Application.java</a>
+					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/UPOD/ControllerExceptionHandler.java" target="_blank" class="w3-bar-item w3-button" style="width: 85%; margin-left: 7.5%; transition-duration: 0.2s">ControllerExceptionHandler.java</a>
+					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/UPOD/PageCtrl.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">PageCtrl.java</a>
+					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/UPOD/PageService.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">PageService.java</a>
+					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/UPOD/UpodDao.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">UpodDao.java</a>
+					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/UPOD/VariableCtrl.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">VariableCtrl.java</a>
+					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/UPOD/VariableService.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">VariableService.java</a>
 				</div>
 			</div> 	
 
@@ -585,7 +591,24 @@
 					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/utils/TableIdMap.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">TableIdMap.java</a>
 				</div>
 
-			</div> 				 	
+			</div> 			
+
+			<div class="w3-dropdown-hover" style="margin-top:0px">
+				<button style="transition-duration: 0.2s" class="w3-button"><big>(test) teamUPOD &emsp;</big><i class="fa fa-caret-down"></i></button>
+
+				<div class="w3-dropdown-content w3-bar-block" style="position: initial; background-color: #EDEDED">
+					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/test/java/com/teamUPOD/UPOD/UPOD/PageCtrlTest.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">PageCtrlTest.java</a>
+					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/test/java/com/teamUPOD/UPOD/UPOD/PageServiceTest.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">PageServiceTest.java</a>
+					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/test/java/com/teamUPOD/UPOD/UPOD/UpodDaoTest.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">UpodDaoTest.java</a>
+				</div>
+			</div> 				
+
+			<div class="w3-dropdown-hover" style="margin-top:0px">
+				<button style="transition-duration: 0.2s" class="w3-button"><big>(test) utils &emsp;</big><i class="fa fa-caret-down"></i></button>
+				<div class="w3-dropdown-content w3-bar-block" style="position: initial; background-color: #EDEDED">
+					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/test/java/utils/SearchUtilsTest.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">SearchUtilsTest.java</a>
+				</div>
+			</div> 							 	
 
 			<hr/>
 
@@ -723,7 +746,7 @@
 
 					<div id="navigation">
 					    <ul>	
-					        <li><a id="uniqueA" href="https://github.com/LucianoAbbott/UPOD/tree/master/Backend", target = "_blank">(Web) Backend</a></li>
+					        <li><a id="uniqueA" href="https://github.com/LucianoAbbott/UPOD/tree/master/Backend", target = "_blank", style="padding-left: 8.5px;">&emsp;(Web) Backend</a></li>
 					        <li><a id="uniqueA" href="https://github.com/LucianoAbbott/UPOD/blob/master/Database/UPOD%20Database%20SQL.sql", target = "_blank">(Web) Database</a></li>
 
 							<li><a id="uniqueA" href="", onclick="openBackend()">(Index) /Backend</a></li>
