@@ -8,7 +8,7 @@ The zeroth law of thermodynamics, or the thermodynamic equilibrium.
 
 The first law of thermodynamics, or the law of conservation of energy. 
 
-	The change in a system�s internal energy is equal to the difference between heat added to the system from its surroundings and work done by the system on its 		surroundings.
+	The change in a system’s internal energy is equal to the difference between heat added to the system from its surroundings and work done by the system on its 		surroundings.
 
 The second law of thermodynamics. 
 
@@ -38,8 +38,10 @@ Equilibrium thermodynamics is the study of transformations of matter and energy 
 
 Non-equilibrium thermodynamics is a branch of thermodynamics that deals with systems that are not in thermodynamic equilibrium. Most systems found in nature are not in thermodynamic equilibrium because they are not in stationary states, and are continuously and discontinuously subject to change in matter and energy which may or may not flow to and from other systems. The thermodynamic study of non-equilibrium systems requires more general concepts than are dealt with by equilibrium thermodynamics. Many natural systems still today remain beyond the scope of currently known macroscopic thermodynamic methods.
 
-Source
+Sources
 
-Wikipedia
-Encyclopedia Britannica
-NASA.gov 
+“Thermodynamics.” Wikipedia, Wikimedia Foundation, 15 Dec. 2017, en.wikipedia.org/wiki/Thermodynamics.
+
+Drake, Gordon W.F. “Thermodynamics.” Encyclopædia Britannica, Encyclopædia Britannica, Inc., 20 Oct. 2017, www.britannica.com/science/thermodynamics.
+
+NASA, NASA, www.grc.nasa.gov/www/k-12/airplane/thermo.html.
