@@ -300,6 +300,7 @@ a {
     padding: 10px;
     margin-top: 76px;
     position: fixed;
+    overflow-y: auto;
 }
 
 .sideBarlink a {
@@ -514,6 +515,10 @@ ul {
     border-width: 0px;
     color: #fff;
     background-color: #3366FF;
+}
+
+.searchButton:hover, .searchButton:active {
+    background-color: SlateBlue;
 }
 
 #buttonBar {
