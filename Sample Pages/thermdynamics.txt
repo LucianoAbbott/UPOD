@@ -1,0 +1,45 @@
+Thermodynamics
+
+	Thermodynamics is science of that displays the relationship between heat, work, temperature, and energy. Simplified, thermodynamics is the transfer of energy from one 		place to another and from one form to another. The key concept is that heat is a form of energy corresponding to the amount of mechanical work. The laws of 	thermodynamics, that are the principles upon which the scince is based, are as follows:
+
+The zeroth law of thermodynamics, or the thermodynamic equilibrium. 
+
+	When two systems are equal in thermal energy to a third system, the first two systems are in are equal with each other. 
+
+The first law of thermodynamics, or the law of conservation of energy. 
+
+	The change in a system’s internal energy is equal to the difference between heat added to the system from its surroundings and work done by the system on its 		surroundings.
+
+The second law of thermodynamics. 
+
+	The transfer of heat energy cannot spontaneously flow from a colder location to a hotter location.
+ 
+The third law of thermodynamics. 
+
+	Tt is impossible to reach the absolute zero of temperature by any finite number of processes.
+
+The study of thermodynamical systems has developed into multiple related branches, each using a different fundamental model as a theoretical or experimental basis. These branches are stated below.
+
+Classical Thermodynamics
+
+Classical thermodynamics is the description of the states of thermodynamic systems which can be seen by the naked eye and therefore have measurable properties. It is used to model exchanges of energy, work and heat based on the laws of thermodynamics. This classical branch reflects the first level of understanding of the subject as it developed in the 19th century and describes the changes of a system in terms of measurable parameters. A microscopic interpretation of these concepts was later provided by the development of statistical mechanics.
+
+Statistical Mechanics
+
+Statistical mechanics, also called statistical thermodynamics, emerged with the development of atomic and molecular theories in the late 19th century and early 20th century. This supplemented classical thermodynamics with an interpretation of the microscopic interactions between individual particles and atoms. This field relates the microscopic properties of individual atoms and molecules to visible, measurable quantities of the human eye, thereby explaining classical thermodynamics as a natural result of statistics, at the microscopic level.
+
+Chemical Thermodynamics
+
+Chemical thermodynamics is the study of the interrelation of energy with chemical reactions or with a physical change of state within the laws of thermodynamics.
+
+Treatment of Equilibrium
+
+Equilibrium thermodynamics is the study of transformations of matter and energy in systems as they approach equal temperature and contained energy. The word equilibrium implies a state of balance, whether it be force, heat or energy. In an equilibrium state there are no unbalanced energies, or driving forces, within the state.
+
+Non-equilibrium thermodynamics is a branch of thermodynamics that deals with systems that are not in thermodynamic equilibrium. Most systems found in nature are not in thermodynamic equilibrium because they are not in stationary states, and are continuously and discontinuously subject to change in matter and energy which may or may not flow to and from other systems. The thermodynamic study of non-equilibrium systems requires more general concepts than are dealt with by equilibrium thermodynamics. Many natural systems still today remain beyond the scope of currently known macroscopic thermodynamic methods.
+
+Source
+
+Wikipedia
+Encyclopedia Britannica
+NASA.gov 
