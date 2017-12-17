@@ -527,7 +527,7 @@
 		</script>
 
 		<!-- Content for Sidebar -->
-		<div class="w3-sidebar w3-bar-block w3-animate-left" style="display:none; z-index:5; width: 350px; overflow: hidden;" id="mySidebar">
+		<div class="w3-sidebar w3-bar-block w3-animate-left" style="display:none; z-index:5; width: 350px; overflow: auto;" id="mySidebar">
 
 			<button style="transition-duration: 0.2s" class="w3-bar-item w3-button w3-large" onclick="w3_close()"><span style="font-size: 30px">&times;</span></button>
 
@@ -538,9 +538,8 @@
 
 			<p style="font-size: 18px;"><b>(Web) Backend</b></p>
 
-
 			<div class="w3-dropdown-hover" style="margin-top:0px">
-				<button style="transition-duration: 0.2s" class="w3-button"><big>Diagrams &emsp;</big><i class="fa fa-caret-down"></i></button>
+				<button style="transition-duration: 0.2s" class="w3-button"><big>Diagrams&emsp;</big><i class="fa fa-caret-down"></i></button>
 
 				<div class="w3-dropdown-content w3-bar-block" style="position: initial; background-color: #EDEDED">
 					<a href="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/UPOD%20UML.png" class="w3-bar-item w3-button" target="_blank" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">Backend UML 1</a>
@@ -549,8 +548,14 @@
 				</div>
 			</div> 	
 
+			<hr style="margin-left: 20%; margin-right: 20%; margin-top: 8.2px;"/>
+
+			<p style="font-size: 16.5px; margin-bottom: 10px;  margin-top: -7px;"><b>Functions</b></p>			
+
+			<hr style="margin-left: 20%; margin-right: 20%; margin-top: 5px; margin-bottom: 8.2px;"/>			
+
 			<div class="w3-dropdown-hover" style="margin-top:0px">
-				<button style="transition-duration: 0.2s" class="w3-button"><big>(main) UPOD &emsp;</big><i class="fa fa-caret-down"></i></button>
+				<button style="transition-duration: 0.2s" class="w3-button"><big>(main) UPOD&emsp;</big><i class="fa fa-caret-down"></i></button>
 
 				<div class="w3-dropdown-content w3-bar-block" style="position: initial; background-color: #EDEDED">
 					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/UPOD/Application.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">Application.java</a>
@@ -564,10 +569,11 @@
 			</div> 	
 
 			<div class="w3-dropdown-hover" style="margin-top:0px">
-				<button style="transition-duration: 0.2s" class="w3-button"><big>(main) datatypes &emsp;</big><i class="fa fa-caret-down"></i></button>
+				<button style="transition-duration: 0.2s" class="w3-button"><big>(main) datatypes&emsp;</big><i class="fa fa-caret-down"></i></button>
 
 				<div class="w3-dropdown-content w3-bar-block" style="position: initial; background-color: #EDEDED">
 					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/datatypes/Equation.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">Equation.java</a>
+					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/datatypes/FrequencyMap.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">FrequencyMap.java</a>
 					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/datatypes/Graphic.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">Graphic.java</a>
 					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/datatypes/Page.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">Page.java</a>
 					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/datatypes/Section.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">Section.java</a>
@@ -577,7 +583,7 @@
 			</div>
 
 			<div class="w3-dropdown-hover" style="margin-top:0px">
-				<button style="transition-duration: 0.2s" class="w3-button"><big>(main) utils &emsp;</big><i class="fa fa-caret-down"></i></button>
+				<button style="transition-duration: 0.2s" class="w3-button"><big>(main) utils&emsp;</big><i class="fa fa-caret-down"></i></button>
 
 				<div class="w3-dropdown-content w3-bar-block" style="position: initial; background-color: #EDEDED">
 					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/main/java/utils/Logger.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">Logger.java</a>
@@ -594,7 +600,7 @@
 			</div> 			
 
 			<div class="w3-dropdown-hover" style="margin-top:0px">
-				<button style="transition-duration: 0.2s" class="w3-button"><big>(test) teamUPOD &emsp;</big><i class="fa fa-caret-down"></i></button>
+				<button style="transition-duration: 0.2s" class="w3-button"><big>(test) teamUPOD&emsp;</big><i class="fa fa-caret-down"></i></button>
 
 				<div class="w3-dropdown-content w3-bar-block" style="position: initial; background-color: #EDEDED">
 					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/test/java/com/teamUPOD/UPOD/UPOD/PageCtrlTest.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">PageCtrlTest.java</a>
@@ -604,7 +610,7 @@
 			</div> 				
 
 			<div class="w3-dropdown-hover" style="margin-top:0px">
-				<button style="transition-duration: 0.2s" class="w3-button"><big>(test) utils &emsp;</big><i class="fa fa-caret-down"></i></button>
+				<button style="transition-duration: 0.2s" class="w3-button"><big>(test) utils&emsp;</big><i class="fa fa-caret-down"></i></button>
 				<div class="w3-dropdown-content w3-bar-block" style="position: initial; background-color: #EDEDED">
 					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Backend/src/test/java/utils/SearchUtilsTest.java" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">SearchUtilsTest.java</a>
 				</div>
@@ -615,12 +621,31 @@
 			<p style="font-size: 18px;"><b>(Web) Frontend</b></p>
 
 			<div class="w3-dropdown-hover" style="margin-top:0px">
-				<button style="transition-duration: 0.2s" class="w3-button"><big>Diagrams &emsp;</big><i class="fa fa-caret-down"></i></button>
+				<button style="transition-duration: 0.2s" class="w3-button"><big>Diagrams&emsp;</big><i class="fa fa-caret-down"></i></button>
 
 				<div class="w3-dropdown-content w3-bar-block" style="position: initial; background-color: #EDEDED"">
 					<a href="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/assets/use.png" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">Use-Case Diagram</a>
 				</div>
 			</div> 			
+
+			<hr style="margin-left: 20%; margin-right: 20%; margin-top: 8.2px;"/>
+
+			<p style="font-size: 16.5px; margin-bottom: 10px;  margin-top: -7px;"><b>Functions</b></p>			
+
+			<hr style="margin-left: 20%; margin-right: 20%; margin-top: 5px; margin-bottom: 8.2px;"/>						
+
+			<div class="w3-dropdown-hover" style="margin-top:0px; margin-bottom: 10px">
+				<button style="transition-duration: 0.2s" class="w3-button"><big>flex&emsp;</big><i class="fa fa-caret-down"></i></button>
+
+				<div class="w3-dropdown-content w3-bar-block" style="position: initial; background-color: #EDEDED"">
+					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Front%20End%20Proposals/HTML/flex/ambigJS.js" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">ambigJS.js</a>
+					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Front%20End%20Proposals/HTML/flex/example.JSON" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">example.JSON</a>
+					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Front%20End%20Proposals/HTML/flex/Header.js" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">Header.js</a>
+					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Front%20End%20Proposals/HTML/flex/fileUp.js" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">fileUp.js</a>
+					<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Front%20End%20Proposals/HTML/flex/UPOD.js" target="_blank" class="w3-bar-item w3-button" style="width: 75%; margin-left: 12.5%; transition-duration: 0.2s">UPOD.js</a>
+
+				</div>
+			</div> 	
 
 		</div>
 		
@@ -696,7 +721,7 @@
 					        <li><a id="uniqueA" href="", onclick="openDesDoc()">Index Link</a></li>				    
 					    </ul>
 					</div>
-					<hr/>
+					<hr style="margin-left: 31%; margin-right: 31%"/>
 					
 				</div>
 
@@ -744,9 +769,9 @@
 
 					<h3>Back-End Components:</h3>
 
-					<div id="navigation">
+					<div id="navigation", style="padding-left: 10px">
 					    <ul>	
-					        <li><a id="uniqueA" href="https://github.com/LucianoAbbott/UPOD/tree/master/Backend", target = "_blank", style="padding-left: 8.5px;">&emsp;(Web) Backend</a></li>
+					        <li><a id="uniqueA" href="https://github.com/LucianoAbbott/UPOD/tree/master/Backend", target = "_blank">(Web) Backend</a></li>
 					        <li><a id="uniqueA" href="https://github.com/LucianoAbbott/UPOD/blob/master/Database/UPOD%20Database%20SQL.sql", target = "_blank">(Web) Database</a></li>
 
 							<li><a id="uniqueA" href="", onclick="openBackend()">(Index) /Backend</a></li>
@@ -770,7 +795,7 @@
 				<div>
 					<button title = "Download the UPOD repository", onclick="window.location='https://github.com/LucianoAbbott/UPOD/archive/master.zip';", class="button downloadButton", style="vertical-align:middle; margin-top: 3px; width: 261px;"><span>Download UPOD-master.zip</span></button>
 					<br/>
-					<button title = "Back to the UPOD repository on github", onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButton", style="vertical-align:middle; margin-top: 14px;"><span>Back to Repository</span></button>
+					<button title = "Back to the UPOD repository on github", onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButton", style="vertical-align:middle; margin-top: 14px; margin-bottom: 20px"><span>Back to Repository</span></button>
 				</div>	
 			</div>
 		</div>
