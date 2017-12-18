@@ -325,32 +325,32 @@
                 <li><a href="#diagrams">3. Diagrams</a>
                     <ul>
                         <li><a href="#back_end">3.1 Back End UML</a></li>
-			<li><a href = #back_end">3.2 Database Class Diagram</a></li>
-		        <li><a href = #back_end">3.3 Front End UML</a></li>
+			<li><a href = #data_class_diagram">3.2 Database Class Diagram</a></li>
+		        <li><a href = #front_end">3.3 Front End UML</a></li>
 			
                     </ul>
                 </li>
 
                 <li><a href="#interface">4. Description </a></li>
                 <ul>
-                    <li>4.1 Module Interface</li>
+                    <li><a href="#mod_interface">4.1 Module Interface</a></li>
                     <ul>
-                        <li>4.1.1 HomeView</li>
-                        <li>4.1.2 SearchResultView</li>
-                        <li>4.1.3 ArticleView</li>
-                        <li>4.1.4 PageEditView</li>
-                        <li>4.1.5 LoginView</li>
-                        <li>4.1.5 AdminView</li>
+                        <li><a href="#home_view">4.1.1 HomeView</a></li>
+                        <li><a href="#search_result_view">4.1.2 SearchResultView</a></li>
+                        <li><a href="#article_view">4.1.3 ArticleView</a></li>
+                        <li><a href="#page_edit_view">4.1.4 PageEditView</a></li>
+                        <li><a href="#login_view">4.1.5 LoginView</a></li>
+                        <li><a href="#admin_view">4.1.5 AdminView</a></li>
                     </ul>
                 </ul>
 
-                <li>5. Method Detailed Design </li>
+                <li><a href="#method_detailed_design">5. Method Detailed Design </a></li>
                 <ul>
-                    <li>5.1 Controllers</li>
-                    <li>5.2 Services</li>
-                    <li>5.3 UpodDao</li>
-                    <li>5.4 Application</li>
-                    <li>5.5 Data Objects</li>
+                    <li><a href="#controllers">5.1 Controllers</a></li>
+                    <li><a href="#services">5.2 Services</a></li>
+                    <li><a href="#upoddao">5.3 UpodDao</a></li>
+                    <li><a href="#application">5.4 Application</a></li>
+                    <li><a href="#data_objects">5.5 Data Objects</a></li>
 		    
                 </ul>
             </ul>
@@ -367,7 +367,7 @@
         <h3 id="scope"> 1.2 Scope</h3>
         <p>This document is written to simplify the implementation of the modules for the front and back end devolpers.</p>
 
-        <h3 id="References"> 1.3 References</h3>
+        <h3 id="references"> 1.3 References</h3>
         <p>IEEE. IEEE Std 1016-1998 IEEE Recommended Practice for Software Design Descriptions. IEEE Computer Society, 1998</p>
 
     </div>
@@ -393,7 +393,7 @@
         </a>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/assets/class.jpg" style="max-width:1000px;">
 	    
-	<h3 id="back_end">3.2 Database Class Diagram</h3>
+	<h3 id="data_class_diagram">3.2 Database Class Diagram</h3>
 	<img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/Database%20Diagrams/DatabaseClassDiagram.JPG" style="max-width:1000px;">
 
         <h3 id="front_end">3.3 Front End UML</h3>
@@ -405,8 +405,8 @@
 
     <div>
         <h2 id="interface">4. Interface Description</h2>
-        <h3>4.1. Module Interface</h3>
-        <h4>4.1.1 HomeView</h4>
+        <h3 id="mod_interface">4.1. Module Interface</h3>
+        <h4 id="home_view">4.1.1 HomeView</h4>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/screenshots/home.PNG">
         <table>
             <tr>
@@ -441,7 +441,7 @@
             </tr>
         </table>
 
-        <h4>4.1.2 SearchResultView</h4>
+        <h4 id="search_result_view">4.1.2 SearchResultView</h4>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/screenshots/searchresult.PNG">
         <table>
             <tr>
@@ -480,7 +480,7 @@
                 <td>Redirects user to ArticleView.</td>
             </tr>
         </table>
-        <h4>4.1.3 ArticleView</h4>
+        <h4 id="article_view">4.1.3 ArticleView</h4>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/screenshots/page.PNG">
 	
         <table>
@@ -516,7 +516,7 @@
             </tr>
         </table>
 
-        <h4>4.1.4 PageEditView</h4>
+        <h4 id="page_edit_view">4.1.4 PageEditView</h4>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/screenshots/edit.PNG">
         <table>
             <tr>
@@ -601,7 +601,7 @@
             </tr>
         </table>
 
-        <h4>4.1.5 LoginView</h4>
+        <h4 id="login_view">4.1.5 LoginView</h4>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/assets/5.png">
         <table>
             <tr>
@@ -631,7 +631,7 @@
             </tr>
         </table>
 
-        <h4>4.1.6 AdminView</h4>
+        <h4 id="admin_view">4.1.6 AdminView</h4>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/assets/6.png">
         <table>
             <tr>
@@ -698,9 +698,9 @@
     </div>
 
     <div>
-        <h2>5. Method Detailed Design</h2>
+        <h2 id="method_detailed_design">5. Method Detailed Design</h2>
         <p>This section describes the specific objects used in the back end package. It details the specific requirements of each method.</p>
-        <h3>5.1 Controllers</h3>
+        <h3 id="controllers">5.1 Controllers</h3>
         <p>These objects are responsible for receiving api calls, triggering the correct actions and preparing a well formed response.</p>
         <h4>5.1.1 PageCtrl</h4>
         <p>This controller handles the page modification endpoints.</p>
@@ -718,7 +718,7 @@
         <p>Request type: DELETE<br> 1. Call PermissionService.removeMod(String currentUser, String userToRemove)<br> 2. Return ResponseEntity with success or error message</p>
         <h4>5.1.2.4 removeAdmin(String currentUser, String userToRemove)</h4>
         <p>Request type: PUT<br> 1. Call PermissionService.addAdmin(String currentUser, String userToAdmin)<br> 2. Return ResponseEntity with success or error message</p>
-        <h3>5.2 Services</h3>
+        <h3 id="admin_view">5.2 Services</h3>
         <h4>PageService</h4>
         <p>This service handles the page modification operations.</p>
         <h4>5.2.1.1 createPage(String currentUser, Page page)</h4>
@@ -739,7 +739,7 @@
         </p>
         <h4>5.2.2.4 removeAdmin (String currentUser, String userToRemove)</h4>
         <p>1. Check that currentUser is an admin<br> 2. Call UpodDao removeAdmin with userToRemove<br> 3. Return success or failure</p>
-        <h3>5.3 UpodDao</h3>
+        <h3 id="upoddao">5.3 UpodDao</h3>
         <p>This object encapsulates all of the database's interactions with the system. All methods are simple operations. The database stores page urls, moderators and administrators. There will be one instance of the UpodDao created at application startup
             and accessable through the static Application getUpodDaoInstance method</p>
         <h4>5.3.1 pageExists(String url)</h4>
@@ -760,11 +760,11 @@
         <p>1. Add user to administrator table<br> 2. Return success or failure</p>
         <h4>5.3.9 removeAdmin(String user)</h4>
         <p>1. Remove user from administrator table<br> 2. Return success or failure</p>
-        <h3>5.4 Application</h3>
+        <h3 id="application">5.4 Application</h3>
         <p>This object contains the main method and hosts the single static instance of UpodDao.</p>
         <h4>5.4.1 getUpodDaoInstance()</h4>
         <p>1. Return the UpodDao</p>
-        <h3>5.5 Data Objects</h3>
+        <h3 id="data_objects">5.5 Data Objects</h3>
         <p>These objects represent data that will be passed from the front end.</p>
         <h4>5.5.1 Page</h4>
         <p>Represents a single entry in the database</p>
