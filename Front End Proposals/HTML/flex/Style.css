@@ -300,6 +300,7 @@ a {
     padding: 10px;
     margin-top: 76px;
     position: fixed;
+    overflow-y: auto;
 }
 
 .sideBarlink a {
@@ -516,6 +517,10 @@ ul {
     background-color: #3366FF;
 }
 
+.searchButton:hover, .searchButton:active {
+    background-color: SlateBlue;
+}
+
 #buttonBar {
     flex: 2;
     margin-right: 1vw;
@@ -686,5 +691,36 @@ ul {
     transition: color 100ms, background-color 300ms;
 }
 
+/* Ambig Page */
 
-/* Animations */
+.bodyWhite{
+  background-color:#fff !important;
+}
+.spacer{
+  height:100px;
+}
+.linkContainer{
+  background-color: #fff;
+  width:40%;
+  margin-left:-40%;
+  padding:0px;
+  box-shadow: 0px 3px 5px #aaa;
+  margin-bottom: 20px;
+}
+.linkTop{
+  border-radius:5px 5px 0px 0px;
+  padding:10px 0px 2px 10px;
+  margin-top:0px;
+  background-color: #3366FF;
+  color:#fff;
+}
+
+.linkTop p{
+  margin-top:0px;
+  background-color: #3366FF;
+  color:#fff;
+}
+
+.linkPreview {
+  padding:5px 20px;
+}

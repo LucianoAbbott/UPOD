@@ -61,11 +61,18 @@
     	color: black;
     	border: 2px solid #3D3D3D;
     	box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
+	outline: none;
     }
 
     .showTableButton:hover {
     	background-color: #3D3D3D;
     	color: white;
+    }
+
+	
+    .showTableButton:active {
+	box-shadow: 0 0px #666;
+	transform: translateY(4px);
     }
 
     .hoverButtonLeft {
@@ -213,6 +220,11 @@
 	color: white;
     }
 	
+    #backToTopButton:active {
+	box-shadow: 0 0px #666;
+	transform: translateY(4px);
+    }
+	
 </style>
 
 <html>
@@ -260,7 +272,7 @@
     <header>
 	<h1>Project Management Plan for UPOD</h1>
 	<p class="version">Authors: Richard Bouda, Abel Worku, Peter Smerchinski, Nathan Wickham</p>
-	<p class="version", align="right">Version 2.7.5</p> 
+	<p class="version", align="right">Version 2.9</p> 
 	<p class="version", id="date", align="right"></p>
 	<script>
 		var currentDate = new Date();
@@ -477,6 +489,11 @@
 		<tr>
 			<th>2.8</th>
 			<td>Added a footer "Go to UPOD Index" button</td>
+		</tr>
+			
+		<tr>
+			<th>2.9</th>
+			<td>Removed section 1.2 due to conceptual obsolescence</td>
 		</tr>
 			
 	    </table>

@@ -1,0 +1,44 @@
+Motion. In physics, motion is a description of the position of an object over time. Motion may be described in terms of displacement, distance, velocity, acceleration, time and speed. Motion of a body is observed by attaching a frame of reference to an observer and measuring the change in position of the body relative to that frame. 
+Laws of motion:  
+First law: In an inertial reference frame, an object either remains at rest or continues to move at a constant velocity, unless acted upon by a net force.
+Second law: In an inertial reference frame, the vector sum of the forces F on an object is equal to the mass m of that object multiplied by the acceleration a of the object: F = ma.
+Third law:  When one body exerts a force on a second body, the second body simultaneously exerts a force equal in magnitude and opposite in direction on the first body.  
+
+Two common types of motion below:
+
+Translational Motion is motion that involves the sliding of an object in one or more of the three dimensions: x, y or z. Example: the motion of a bullet fired from a gun. Here we talk about constant translational acceleration in a straight line.
+Since the position, velocity, and acceleration are collinear (parallel, and lie on the same line) – only the magnitudes of these vectors are necessary, and because the motion is along a straight line, the problem effectively reduces from three dimensions to one.
+ u: the initial velocity;  v: the final velocity;  a: acceleration;  t:time;  s: final position
+The object’s final velocity is described as below:                                                                      
+            v= u + a*t
+The object’s final position is:
+	          s=u*t+ 1/2*a*t^2
+The relationship between initial velocity and final velocity is 
+	          v^2-u^2=2*a*s
+The distance the object traveled can also be computed by average velocity times time:
+            s= 1/2(u+v)*t
+            
+            
+Uniform Circular Motion is a movement of an object along the circumference of a circle or rotation along a circular path. We talk about uniform here, with constant angular rate of rotation and constant speed.The rotation around a fixed axis of a three-dimensional body involves circular motion of its parts. The equations of motion describe the movement of the center of a mass of a body.  
+Examples: an artificial satellite orbiting the Earth at a constant height, a stone which is tied to a rope and is being swung in circles, a car turning through a curve in a race track and so on.
+
+There are some basic formulas of uniform circular motion
+ r: a circle of radius; T: period for one rotation;  v: speed of the object traveling the circle;  ω: the angular rate of rotation, also known as angular velocity. a: acceleration
+For motion in a circle of radius r, the circumference of the circle C can be computed as below
+            C=2*π*r ( C: circumference of the circle)
+If the period for one rotation is T, the angular rate of rotation, also known as angular velocity, ω is:
+            ω= 2*π/T  (units are radians/second)
+The speed of the object traveling the circle is:
+            v=2*π*r/T= ω*r
+The angle θ swept out in a time t is:
+            θ=2*π*t/T= ω*t 
+The acceleration due to change in the direction is:
+            a= v^2/r = ω^2*r
+
+
+references：
+Wikipedia: Motion(physics).  https://en.wikipedia.org/wiki/Motion_(physics)
+Wikipedia: Circular motion. https://en.wikipedia.org/wiki/Circular_motion
+Wikipedia: Equations of motion. https://en.wikipedia.org/wiki/
+           Equations_of_motion#Uniform_acceleration
+Gold Standard MCAT Physics Equations Sheet.  https://www.mcat-prep.com/mcat-physics-equations-sheet/
