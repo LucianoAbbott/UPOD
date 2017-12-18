@@ -10,13 +10,18 @@ import java.util.ArrayList;
  * @author Lauren Hepditch
  */
 public class Section {
+	public static final int MAX_VARIABLE_COUNT = 100;
+	
 	private int sectionId;
 	private String title;
 	private String bodyText;
 	private String equations;
 	private Graphic graphic;
-	private ArrayList<Variable> variables;
+	private Variable[] variables;
 	
+	public Section() {
+		this(-1, null, null, null, null);
+	}
 	
 	/**
 	 * Constructor for class "Section"
@@ -37,7 +42,7 @@ public class Section {
 		this.bodyText = bodyText;
 		this.equations = equations;
 		this.graphic = graphic;
-		this.variables = new ArrayList<Variable>();
+		this.variables = new Variable[100];
 	} 
 	
 	/**
@@ -196,8 +201,12 @@ public class Section {
 	 * @author Lauren Hepditch, Luciano Abbott
 	 */
 	public void addVariables(ArrayList<Variable> variables) {
+		int index = 0;
+		while (this.variables[index] != null) {
+			index++;
+		}
 		for (Variable v : variables) {
-			this.variables.add(v);
+			this.variables[index] = v;
 		}
 	}
 	
@@ -210,7 +219,7 @@ public class Section {
 	 * Date last changed:
 	 * @author Lauren Hepditch, Luciano Abbott
 	 */
-	public ArrayList<Variable> getVariables () {
+	public Variable[] getVariables () {
 		return this.variables;
 	}
 }

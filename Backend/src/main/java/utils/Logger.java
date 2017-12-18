@@ -17,6 +17,7 @@ public class Logger {
 	 * @author
 	 */
 	public static void logUpdate(Page page) {
+		System.out.println("ALARM BELLS:###################");
 		if (page == null) {
 			System.out.println("Error: update page with null page");
 		} else {
@@ -46,12 +47,8 @@ public class Logger {
 	 * Date last changed:
 	 * @author
 	 */
-	public static void logGet(Page page) {
-		if (page == null) {
-			System.out.println("Error: get page returned null");
-		} else {
-			System.out.println("Getting page #" + page.getId() + ", at URL:" + page.getUrl() + ", Title: " + page.getTitle());
-		}
+	public static void logGet(int pageId) {
+		System.out.println("Getting page #" + pageId);
 	}
 
 	/**

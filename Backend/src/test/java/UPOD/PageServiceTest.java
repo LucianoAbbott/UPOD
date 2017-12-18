@@ -1,7 +1,5 @@
-package com.teamUPOD.UPOD.UPOD;
+package UPOD;
 
-
-import java.util.ArrayList;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -63,12 +61,12 @@ public class PageServiceTest {
 		return page;
 	}
 
-	private ArrayList<Section> buildSections() {
-		ArrayList<Section> result = new ArrayList<Section>();
+	private Section[] buildSections() {
+		Section[] result = new Section[Page.MAX_SECTION_COUNT];
 		Section s;
 		for (int i = 0; i < 10; i++) {
 			s = new Section(i, "title", "the five words per section", null, null);
-			result.add(s);
+			result[i] = s;
 		}
 		return result;
 	}

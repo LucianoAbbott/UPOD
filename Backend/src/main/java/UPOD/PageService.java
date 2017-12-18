@@ -20,7 +20,7 @@ public class PageService {
 	private static final int MAX_QUERY_RESULT_COUNT = 7;
 	
 	
-	PageService() {
+	public PageService() {
 		upodDao = UpodDao.getInstance();
 	}
 
@@ -28,8 +28,7 @@ public class PageService {
 	 * Constructor for testing purposes
 	 * @param upodDao
 	 */
-	PageService(UpodDao upodDao) {
-	}
+	PageService(UpodDao upodDao) {}
 	
 	/**
 	 * Update the page with the given id
@@ -73,7 +72,7 @@ public class PageService {
 	 * @param query
 	 * @return 
 	 */
-	public ArrayList<Page> searchPages(String query) {
+	public Page[] searchPages(String query) {
 		SearchUtils.cleanQuery(query);
 		
 		ArrayList<Page> pages = new ArrayList<Page>();
@@ -89,12 +88,18 @@ public class PageService {
 	 * @param pages
 	 * @return
 	 */
-	public ArrayList<Page> sortPagesByRelevance(String query, ArrayList<Page> pages) {
+	public Page[] sortPagesByRelevance(String query, ArrayList<Page> pages) {
+		int index = 0;
+		Page[] result = new Page[MAX_QUERY_RESULT_COUNT];
 		for (Page page : pages) {
 			page.setRelevance(calculatePageRelevance(query, page));
 		}
 		pages.sort(null);
-		return (ArrayList<Page>) pages.subList(0, MAX_QUERY_RESULT_COUNT);
+		for (Page page : pages) {
+			result[index] = page;
+			index++;
+		}
+		return result;
 	}
 	
 	/**
