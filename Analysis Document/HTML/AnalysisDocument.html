@@ -204,16 +204,16 @@
             function goToUPODIndex() {
                 var url = document.URL; 
                 if (url.startsWith("file")==false) { //If not a file
-                    window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html");             
+                    window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html");             
                 } else { //If a file
                     if (url.includes("UPOD-master")) { //If a file and in repository
                         var indexURL = url.substring(0, url.lastIndexOf('/')); 
                         indexURL = indexURL.substring(0, indexURL.lastIndexOf('/')); 
                         indexURL = indexURL.substring(0, indexURL.lastIndexOf('/'));                         
-                        indexURL += "/docs/index.html"
+                        indexURL += "/Library of UPOD.html"
                         window.open(indexURL);
                     } else { //If a file and not in repository              
-                        window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html");
+                        window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html");
                     }
                 }
             }
