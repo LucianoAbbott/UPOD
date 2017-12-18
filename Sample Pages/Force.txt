@@ -33,5 +33,5 @@ Spring Force
 A force exterted on an object by a spring. When an object is attached to a spring, the spring will exert a force on it until the spring reaches an equilibrium. The strength of a spring force is proportional to the amount the spring is stretched or compressed.
 
 References (for sample page only)
-http://www.physicsclassroom.com/class/newtlaws/Lesson-2/Types-of-Forces
-https://en.wikipedia.org/wiki/Gravity
+"Types of Forces.",The Physics Classroom, http://www.physicsclassroom.com/class/newtlaws/Lesson-2/Types-of-Forces. Accessed December 2017.
+"Gravity.",Wikipedia,https://en.wikipedia.org/wiki/Gravity. Accessed December 2017.
