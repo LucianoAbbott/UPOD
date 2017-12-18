@@ -14,15 +14,24 @@ would do things, rather than the laissez-faire style employed in the early stage
 
 Locations of key elements:
 
-Index page- master/Library of UPOD.html
+Index page - master/Library of UPOD.html
 
-Front-end pages- master/Front End Proposals/HTML/flex
-Back-end- /master/Backend
+Front-end pages - master/Front End Proposals/HTML/flex
 
-Project management document- /master/Project Management Plans/ManagementDocumentFormatted.html
-Requirement document - master/Requirements Document/Final HTML Format/Requirements.html
+Back-end - /master/Backend
+Back-end SQA - master/Backend SQA
+
+Project management document - /master/Project Management Plans/ManagementDocumentFormatted.html
+Project management SQA - master/Project Management Plans/Management SQA Sheet.xls
+
+Requirements document - master/Requirements Document/Final HTML Format/Requirements.html
+Requirements SQA -master/Requirements Document/Requirements SQA Sheet.xls
+
 Analysis document - master/Analysis Document/HTML/AnalysisDocument.html
+Analysis SQA - master/Analysis Document/Analysis SQA Sheet.xls
+
 Design document - master/Design Document/design.html
+Design SQA - master/Design Document/Design SQA Sheet.xls
 
 Physics info pages - master/Sample Pages
 User identities - master/github account map
