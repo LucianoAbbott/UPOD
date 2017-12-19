@@ -45,12 +45,12 @@ elements were added, edited or removed entirely.
 Implementation
 
 The actual implementation of the project was divided into two sections- front and back end with about half of the group 
-belonging to each. The front-end was resposible for the design and programming of the user interface using HTML, CSS and JavaScript.
+belonging to each. The front-end was responsible for the design and programming of the user interface using HTML, CSS and JavaScript.
 The back-end involved storing data in a database using JDBC, and manipulating data using Java.
 
 
 Completion
-The project was not completed as orignally intended, however we did get many things working and working quite well. The front-end
+The project was not completed as originally intended, however we did get many things working and working quite well. The front-end
 HTML pages are complete, while the underlying JavaScript used to make these pages interactive was close to completion (as seen
 on the edit page). The JSON was also close to working. The back-end managed to get a lot of their stuff complete (such as the 
 search, page storage, retrieval and deletion) but not enough to fully interact with the front end. Essentially there are lots of 
