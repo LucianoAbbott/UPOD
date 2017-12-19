@@ -1,3 +1,5 @@
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
 <style>
     html {
         background-color: #78909C;
@@ -173,7 +175,7 @@
         color: black;
         padding: 11px;
         text-align: center;
-        text-decoration-none;
+        text-decoration: none;
         display: inline-block;
         font-size: 16px;
         transition-duration:0.2s;
@@ -228,9 +230,11 @@
 <header>
         <h1>UPOD Progress Report for UPOD</h1>
         
-        <p>Authors: Richard Bouda, Joseph Shannon</p>
-	<p class="version", align="right">Version 1.1</p> 
+        <p>Authors: Richard Bouda, Joseph Shannon, Abel Worku</p>
+
+        <p class="version", align="right">Version 1.1</p> 
         <p class="version", id="date", align="right"></p>
+
         <script>
             var currentDate = new Date();
             document.getElementById("date").innerHTML = currentDate;
@@ -251,6 +255,7 @@
                 document.documentElement.scrollTop = 0;
             }
         </script>
+
         <div>
             <h2 id = "tableOfContents"> Table of Contents </h2>
             <ul>
@@ -271,80 +276,67 @@
 	<div>
         <h3 id="Overview">Overview</h3>
 
-        <p>The Undergraduate Online Physics Database is an online repository of data designed for students to access physics information, 
-equations and diagrams to help aid them in furthering their educations in their university careers. 
-The information on UPOD added, edited and removed by moderators and administrators that are approved to do so. 
-This is given with the assumption that moderator are Teaching Assistants and administrators are Professors.  
-This report will give a short summary of what was complete, when it was completed and what still needs to be finished.</p>
+        <p>The Undergraduate Online Physics Database [UPOD] is an online repository of data designed for students to access physics information, equations, and diagrams to help them in furthering their educations in their university careers. The information on UPOD is added, edited, and removed by moderators and administrators that are approved to do so, where moderator are assumed to be teaching assistants and administrators are assumed to be professors. This report will give a short summary of what was completed, when it was completed, and what remains uncompleted. </p>
 
     </div>
     
     <div>
         <h3 id="SPMP">Software Project Management Plan (SPMP)</h3>
 
-        <p>The software project management plan is document which outlines, at its core, budget, staffing and the project schedule. 
-It outlines what the project it to accomplish, each sections of the project, and budget, staffing and the schedule for each project section. 
-The SPMP, and its corresponding SQA, was completed on time, on September 27th, 
-with minor changes done through the project development as certain, elements were added, edited or removed entirely.</p>
+        <p>The software project management plan outlines the scheduling, budget, and staffing of the project, as well as what it aims to accomplish. The SPMP, and its corresponding SQA, was completed on time, on September 27th, with modifications as necessary to reflect any changes in the project as a whole, or to improve the document's functionality [such as hyperlinking with other documents, or a navigation bar to readily access any section of the document; elements were added, edited or removed entirely.</p>
 
     </div>
     
     <div>
         <h3 id="Requirements">Requirements Document</h3>
 
-        <p>The requirements document is a document which outlines what the UPOD is capable of doing, in terms of functionality and design. 
-How it functions, how methods function and other such information that outlines the structure of UPOD. 
-The requirements document, and its corresponding SQA, was completed on time, with minor changes done through the project development as certain, elements were added, edited or removed entirely.</p>
+        <p>The requirements document outlines the broad structures and capabilities of UPOD, in terms of functionality and design. The requirements document and its corresponding SQA analysis was completed on time with minor changes done throughout the project's development as necessitated; elements were added, edited or removed entirely.</p>
 
     </div>
     
     <div>
         <h3 id="Analysis">Analysis Document</h3>
 
-        <p>The analysis document is a document that provides an in-depth analysis of the project beyond the initial requirements phase. 
-It acts as a basis for the design document as well as for the project. 
-The class, use case, and sequence diagrams are used in conjunction with object-oriented design to establish a starting point for project implementation. This document and its corresponding SQA, was completed on time, on September 27th, with minor changes done through the project development as certain, elements were added, edited or removed entirely.</p>
+        <p>The analysis document provides a more in-depth interpretation of the project beyond the initial requirements phase, and acts as a basis for the design document as well as for the project. The class diagram, use case diagram, and sequence diagrams were used in conjunction with object-oriented design to establish a starting point for project implementation. This document and its corresponding SQA analysis was completed on time, on September 27th, with minor changes done throughout the project's development as necessitated; elements were added, edited or removed entirely.</p>
 
     </div>
     
     <div>
         <h3 id="Design">Design Document</h3>
 
-        <p>The design document is a document that explains the projects design and setup of the UPOD application. 
-This document and its corresponding SQA, was completed on time, with minor changes done through the project development as certain, elements were added, edited or removed entirely.</p>
+        <p>The design document provides a comprehensive illustration of the design and setup of the UPOD application. This document and its corresponding SQA analysis was completed on time, with minor changes done through the project development as certain; elements were added, edited or removed entirely.</p>
 
     </div>
     
     <div>
         <h3 id="Implementation">Implementation</h3>
 
-        <p>The actual implementation of the project was divided into two sections- front and back end with about half of the group belonging to each. The front-end was responsible for the design and programming of the user interface using HTML, CSS and JavaScript.
-The back-end involved storing data in a database using JDBC, and manipulating data using Java.</p>
+        <p>The implementation of the project was divided into two sections, front-end and back-end, with about half of the members of the group belonging to each. The front-end team was responsible for the design and programming of the user interface using HTML, CSS and JavaScript. The back-end team was involved with storing data in a database using JDBC, and manipulating data using Java.</p>
 
     </div>
     
     <div>
         <h3 id="Completion">Completion</h3>
 
-        <p>The project was not completed as originally intended, however we did get many things working and working quite well. The front-end HTML pages are complete, while the underlying JavaScript used to make these pages interactive was close to completion (as seen on the edit page). The JSON was also close to working. The back-end managed to get a lot of their stuff complete (such as the search, page storage, retrieval and deletion) but not enough to fully interact with the front end. Essentially there are lots of working or almost working parts, we just weren't quite able to put it all together.</p>
+        <p>The project was not completed as originally intended, although many features were found to be working and functional to the degree that they were specified. The front-end HTML pages are complete, while the underlying JavaScript used to make these pages interactive was close to completion [as seen on the edit page]. The JSON was also close to demonstrative functionality. The back-end were able to build and complete a majority of their components (such as the search, page storage, retrieval and deletion) but not enough to fully interact with the front end. Essentially a large number of working or almost working parts, although we were unable to thoroughly consolidate these parts into one.</p>
 
     </div>
     
     <div>
         <h3 id="Challenges">Challenges We Faced</h3>
 
-        <p>We had trouble getting all the group members together with our varying schedules. There were also issues with getting the JSON to communicate with the data in the back-end. There were also issues with getting the front-end HTML working with all browsers, for example, it seemed like FireFox rendered the top search bar beside the body rather than above it, on every page that had it inthe header.</p>
+        <p>We had trouble getting all the group members together with our varying schedules. There were also issues with getting the JSON to communicate with the data in the back-end. There were also issues with getting the front-end HTML working with all browsers, for example, it seemed like FireFox rendered the top search bar beside the body rather than above it, on every page that had it in the header.</p>
 
     </div>
     
     <div>
         <h3 id="Improve">Future Improvement</h3>
 
-        <p>As the project went on certain individuals emerged as being more experienced with certain aspects (such as HTML and JavaScript). It might have been helpful to assign these people as leaders earlier on in the cycle so they could better dictate just exactly how we would do things, rather than the laissez-faire style employed in the early stages.</p>
+        <p>As the project went on, certain individuals emerged as being more experienced with certain aspects [such as HTML and JavaScript]. It might have been helpful to assign these people as leaders earlier on in the development processes so they could better express just exactly how we would do things, as opposed than the laissez-faire style employed in the early stages.</p>
 
     </div>
     
-<br></br>
+    <br></br>
     <div style="text-align:center; border: 0px">
 
             <a href="#top">Back to Top</a>
@@ -360,8 +352,8 @@ The back-end involved storing data in a database using JDBC, and manipulating da
 
             <a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Analysis%20Document/HTML/AnalysisDocument.html", target="_blank"><br>Analysis Document</br></a>
 
-	    <a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Analysis%20Document/HTML/AnalysisDocument.html", target="_blank"><br>Analysis Document</br></a>
-	</div>
+            <a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Design%20Document/design.html", target="_blank"><br>Design Document</br></a>            
+        </div>
 
         <br/>
         <div align="right">
