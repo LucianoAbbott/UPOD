@@ -39,6 +39,26 @@ elements were added, edited or removed entirely.
 
 Implementation
 
+The actual implementation of the project was divided into two sections- front and back end with about half of the group 
+belonging to each. The front-end was resposible for the design and programming of the user interface using HTML, CSS and JavaScript.
+The back-end involved storing data in a database using JDBC and Java.
 
+Completion
+The project was not completed as orignally intended, however we did get many things working and working quite well. The front-end
+HTML pages are complete, while the underlying JavaScript used to make these pages interactive was close to completion (as seen
+on the edit page). The JSON was also close to working. The back-end managed to get a lot of their stuff complete (such as the search)
+but not enough to fully interact with the front end. Essentially there are lots of working or almost working parts, we just 
+weren't quite able to put it all together.
 
+Challenges we faced
+
+We had trouble getting all the group members together with our varying schedules. There were also issues with getting the JSON to
+communicate with the data in the back-end. There were also issues with getting the front-end HTML working with all browsers, as 
+it seems like FireFox rendered the top bar beside the body rather than above it.
+
+How we could improve
+
+As the project went on certain individuals emerged as being more experienced with certain aspects (such as HTML and JavaScript). It
+might have been helpful to assign these people as leaders earlier on in the cycle so they could better dictate just exactly how 
+we would do things, rather than the laissez-faire style employed in the early stages.
 
