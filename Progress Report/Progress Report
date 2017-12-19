@@ -1,0 +1,44 @@
+UPOD Progress Report
+
+Overview
+
+The Undergraduate Online Physics Database is an online repository of data designed for students to access physics information, 
+equations and diagrams to help aid them in furthering their educations in their university careers. 
+The information on UPOD added, edited and removed by moderators and administrators that are approved to do so. 
+This is given with the assumption that moderator are Teaching Assistants and administrators are Professors.  
+This report will give a short summary of what was complete, when it was completed and what still needs to be finished.
+
+
+Software Project Management Plan (SPMP)
+
+The software project management plan is document which outlines, at its core, budget, staffing and the project schedule. 
+It outlines what the project it to accomplish, each sections of the project, and budget, staffing and the schedule for each project section. 
+The SPMP, and its corresponding SQA, was completed on time, on September 27th, 
+with minor changes done through the project development as certain, elements were added, edited or removed entirely.
+
+Requirements Document
+
+The requirements document is a document which outlines what the UPOD is capable of doing, in terms of functionality and design. 
+How it functions, how methods function and other such information that outlines the structure of UPOD. 
+The requirements document, and its corresponding SQA, was completed on time, 
+with minor changes done through the project development as certain, elements were added, edited or removed entirely.
+
+Analysis Document
+
+The analysis document is a document that provides an in-depth analysis of the project beyond the initial requirements phase. 
+It acts as a basis for the design document as well as for the project. 
+The class, use case, and sequence diagrams are used in conjunction with object-oriented design to establish a starting point 
+for project implementation. This document and its corresponding SQA, was completed on time, on September 27th, 
+with minor changes done through the project development as certain, elements were added, edited or removed entirely.
+
+Design Document
+
+The design document is a document that explains the projects design and setup of the UPOD application. 
+This document and its corresponding SQA, was completed on time, with minor changes done through the project development as certain, 
+elements were added, edited or removed entirely.
+
+Implementation
+
+
+
+
