@@ -473,10 +473,72 @@
 				}	
 			}					
 
+			function openProjectManagementSQA() {
+				var url = document.URL;
+				if (url.startsWith("file")==false) { //If not a file
+					window.open("https://github.com/LucianoAbbott/UPOD/raw/master/Project%20Management%20Plans/Management%20SQA%20Sheet.xls")
+				} else { //If a file
+					if (url.includes("UPOD-master")) { //If a file and in repository
+						var spmpSQAUrl = url.substring(0, url.lastIndexOf('/'));
+						spmpSQAUrl += "/Project%20Management%20Plans/Management%20SQA%20Sheet.xls"
+						window.open(spmpSQAUrl);						
+					} else { //If a file and not in repository
+						window.open("https://github.com/LucianoAbbott/UPOD/raw/master/Project%20Management%20Plans/Management%20SQA%20Sheet.xls")
+					} 
+				}
+			}
+
+			function openRequirementsSQA() {
+				var url = document.URL;
+				if (url.startsWith("file")==false) { //If not a file
+					window.open("https://github.com/LucianoAbbott/UPOD/raw/master/Requirements%20Document/Requirements%20SQA%20Sheet.xls")
+				} else { //If a file
+					if (url.includes("UPOD-master")) { //If a file and in repository
+						var reqSQAUrl = url.substring(0, url.lastIndexOf('/'));
+						reqSQAUrl += "/Requirements%20Document/Requirements%20SQA%20Sheet.xls"
+						window.open(reqSQAUrl);						
+					} else { //If a file and not in repository
+						window.open("https://github.com/LucianoAbbott/UPOD/raw/master/Requirements%20Document/Requirements%20SQA%20Sheet.xls")
+					} 
+				}
+
+			}
+
+			function openAnalysisSQA() {
+				var url = document.URL;
+				if (url.startsWith("file")==false) { //If not a file
+					window.open("https://github.com/LucianoAbbott/UPOD/raw/master/Analysis%20Document/Analysis%20SQA%20Sheet.xls")
+				} else { //If a file
+					if (url.includes("UPOD-master")) { //If a file and in repository
+						var analysisSQAUrl = url.substring(0, url.lastIndexOf('/'));
+						analysisSQAUrl += "/Analysis%20Document/Analysis%20SQA%20Sheet.xls"
+						window.open(analysisSQAUrl);				
+					} else { //If a file and not in repository
+						window.open("https://github.com/LucianoAbbott/UPOD/raw/master/Analysis%20Document/Analysis%20SQA%20Sheet.xls")
+					} 
+				}
+
+			}						
+
+			function openDesignSQA() {
+				var url = document.URL;
+				if (url.startsWith("file")==false) { //If not a file
+					window.open("https://github.com/LucianoAbbott/UPOD/raw/master/Design%20Document/Design%20SQA%20Sheet.xls")
+				} else { //If a file
+					if (url.includes("UPOD-master")) { //If a file and in repository
+						var designSQAUrl = url.substring(0, url.lastIndexOf('/'));
+						designSQAUrl += "/Design%20Document/Design%20SQA%20Sheet.xls"
+						window.open(designSQAUrl);					
+					} else { //If a file and not in repository
+						window.open("https://github.com/LucianoAbbott/UPOD/raw/master/Design%20Document/Design%20SQA%20Sheet.xls")
+					} 
+				}
+			}
+
 			window.onload = function showOrHideInfoButton() {
 				var url = document.URL;
 				if (url.startsWith("file")==false) { //If not a file
-					document.getElementById("infoButton").style.display = "none"; //Then do not show the info button					
+					document.getElementById("infoButton").style.display = "none"; //Then do not show the info button
 				} else { //If a file
 					if (url.includes("UPOD-master")) { //If a file and in repository
 						document.getElementById("infoButton").style.display = "block"; //Then show the info button					
@@ -675,6 +737,7 @@
 					    <ul>
 					        <li><a id="uniqueA" href="https://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Project%20Management%20Plans/ManagementDocumentFormatted.html", target = "_blank">Web Link</a></li>
 					        <li><a id="uniqueA" href="", onclick="openProjDoc()">Index Link</a></li>
+					        <li><a id="uniqueA" href="", onclick="openProjectManagementSQA()">SQA Sheet</a></li>
 					    </ul>
 					</div>
 
@@ -683,7 +746,8 @@
 					<div id="navigation">
 					    <ul>
 					        <li><a id="uniqueA" href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Requirements%20Document/Final%20HTML%20Format/Requirements.html", target = "_blank">Web Link</a></li>
-					        <li><a id="uniqueA" href="", onclick="openReqDoc()">Index Link</a></li>				    
+					        <li><a id="uniqueA" href="", onclick="openReqDoc()">Index Link</a></li>		
+					        <li><a id="uniqueA" href="", onclick="openRequirementsSQA()">SQA Sheet</a></li>					        		    
 					    </ul>
 					</div>
 
@@ -692,7 +756,8 @@
 					<div id="navigation">
 					    <ul>
 					        <li><a id="uniqueA" href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Analysis%20Document/HTML/AnalysisDocument.html", target = "_blank">Web Link</a></li>
-					        <li><a id="uniqueA" href="", onclick="openAnalysisDoc()">Index Link</a></li>				    
+					        <li><a id="uniqueA" href="", onclick="openAnalysisDoc()">Index Link</a></li>
+					        <li><a id="uniqueA" href="", onclick="openAnalysisSQA()">SQA Sheet</a></li>						    
 					    </ul>
 					</div>			
 
@@ -701,7 +766,8 @@
 					<div id="navigation">
 					    <ul>
 					        <li><a id="uniqueA" href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Design%20Document/design.html", target = "_blank">Web Link</a></li>
-					        <li><a id="uniqueA" href="", onclick="openDesDoc()">Index Link</a></li>				    
+					        <li><a id="uniqueA" href="", onclick="openDesDoc()">Index Link</a></li>	
+					        <li><a id="uniqueA" href="", onclick="openDesignSQA()">SQA Sheet</a></li>					    
 					    </ul>
 					</div>
 					<hr style="margin-left: 31%; margin-right: 31%"/>
