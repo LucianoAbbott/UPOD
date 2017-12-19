@@ -50,6 +50,7 @@ The back-end involved storing data in a database using JDBC, and manipulating da
 
 
 Completion
+
 The project was not completed as originally intended, however we did get many things working and working quite well. The front-end
 HTML pages are complete, while the underlying JavaScript used to make these pages interactive was close to completion (as seen
 on the edit page). The JSON was also close to working. The back-end managed to get a lot of their stuff complete (such as the 
