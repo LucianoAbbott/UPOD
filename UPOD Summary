@@ -1,0 +1,42 @@
+Challenges we faced:
+
+We had trouble getting all the group members together with our varying schedules. There were also issues with getting the JSON to
+communicate with the data in the back-end.   //I don't know if this is even accurate, someone from back-end confirm
+There were also issues with getting the front-end HTML working with all browsers, as it seems like FireFox rendered the top bar 
+beside the body rather than above it.
+
+How we could improve:
+
+As the project went on certain individuals emerged as being more experienced with certain aspects (such as HTML and JavaScript). It
+might have been helpful to assign these people as leaders earlier on in the cycle so they could better dictate just exactly how 
+we would do things, rather than the laissez-faire style employed in the early stages.
+
+
+Locations of key elements:
+(Note: "master" refers to the root folder of this repository, also known as "UPOD" when you download the entire ZIP)
+
+Index page - master/Library of UPOD.html
+
+Front-end HTML pages - master/Front End Proposals/HTML/flex
+
+Back-end - master/Backend
+Back-end SQA - master/Backend SQA
+
+Database - master/Database
+
+Project management document - master/Project Management Plans/ManagementDocumentFormatted.html
+Project management SQA - master/Project Management Plans/Management SQA Sheet.xls
+
+Requirements document - master/Requirements Document/Final HTML Format/Requirements.html
+Requirements SQA -master/Requirements Document/Requirements SQA Sheet.xls
+
+Analysis document - master/Analysis Document/HTML/AnalysisDocument.html
+Analysis SQA - master/Analysis Document/Analysis SQA Sheet.xls
+
+Design document - master/Design Document/design.html
+Design SQA - master/Design Document/Design SQA Sheet.xls
+
+Progress report - master/Progress Report
+Physics info pages - master/Sample Pages
+Documentation standard - master/Method Documentation
+User identities - master/github account map

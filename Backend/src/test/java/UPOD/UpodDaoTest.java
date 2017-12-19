@@ -59,7 +59,7 @@ package UPOD;
 //	public void searchPagesTest(){
 //		ArrayList<Page> pagesList = new ArrayList<Page>();
 //		Page page;
-//		String term = "measuring";
+//		String term = "Measuring Voltage, Resistance, and Current";
 //		construct();
 //		pagesList = fixture.searchPages(term);
 //		page = pagesList.get(0);
