@@ -1,5 +1,6 @@
 UPOD Progress Report
 
+
 Overview
 
 The Undergraduate Online Physics Database is an online repository of data designed for students to access physics information, 
@@ -16,12 +17,14 @@ It outlines what the project it to accomplish, each sections of the project, and
 The SPMP, and its corresponding SQA, was completed on time, on September 27th, 
 with minor changes done through the project development as certain, elements were added, edited or removed entirely.
 
+
 Requirements Document
 
 The requirements document is a document which outlines what the UPOD is capable of doing, in terms of functionality and design. 
 How it functions, how methods function and other such information that outlines the structure of UPOD. 
 The requirements document, and its corresponding SQA, was completed on time, 
 with minor changes done through the project development as certain, elements were added, edited or removed entirely.
+
 
 Analysis Document
 
@@ -31,17 +34,20 @@ The class, use case, and sequence diagrams are used in conjunction with object-o
 for project implementation. This document and its corresponding SQA, was completed on time, on September 27th, 
 with minor changes done through the project development as certain, elements were added, edited or removed entirely.
 
+
 Design Document
 
 The design document is a document that explains the projects design and setup of the UPOD application. 
 This document and its corresponding SQA, was completed on time, with minor changes done through the project development as certain, 
 elements were added, edited or removed entirely.
 
+
 Implementation
 
 The actual implementation of the project was divided into two sections- front and back end with about half of the group 
 belonging to each. The front-end was resposible for the design and programming of the user interface using HTML, CSS and JavaScript.
 The back-end involved storing data in a database using JDBC, and manipulating data using Java.
+
 
 Completion
 The project was not completed as orignally intended, however we did get many things working and working quite well. The front-end
@@ -50,11 +56,14 @@ on the edit page). The JSON was also close to working. The back-end managed to g
 search, page storage, retrieval and deletion) but not enough to fully interact with the front end. Essentially there are lots of 
 working or almost working parts, we just weren't quite able to put it all together.
 
+
 Challenges we faced
 
 We had trouble getting all the group members together with our varying schedules. There were also issues with getting the JSON to
-communicate with the data in the back-end. There were also issues with getting the front-end HTML working with all browsers, as 
-it seems like FireFox rendered the top bar beside the body rather than above it.
+communicate with the data in the back-end. There were also issues with getting the front-end HTML working with all browsers, for
+example, it seemed like FireFox rendered the top search bar beside the body rather than above it, on every page that had it in
+the header.
+
 
 How we could improve
 
