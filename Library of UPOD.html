@@ -471,7 +471,23 @@
 						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")						
 					}
 				}	
-			}					
+			}		
+
+			function openAmbiguousHTML() {
+				var url = document.URL; 
+				if (url.startsWith("file")==false) {
+					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")					
+				} else {
+					if (url.includes("UPOD-master")) {
+						var adminURL = url.substring(0, url.lastIndexOf('/')); 
+						adminURL += "/Front%20End%20Proposals/HTML/flex/Ambiguouse.html"
+						window.open(adminURL);	
+					} else {
+						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")						
+					}
+				}	
+			}		
+
 
 			function openProjectManagementSQA() {
 				var url = document.URL;
@@ -539,6 +555,7 @@
 				var url = document.URL;
 				if (url.startsWith("file")==false) { //If not a file
 					document.getElementById("infoButton").style.display = "none"; //Then do not show the info button
+
 				} else { //If a file
 					if (url.includes("UPOD-master")) { //If a file and in repository
 						document.getElementById("infoButton").style.display = "block"; //Then show the info button					
@@ -787,6 +804,7 @@
 
 								<div class="dropdown-content">
 									<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Front%20End%20Proposals/HTML/flex/about.html", target = "_blank"">about.html</a>
+									<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Front%20End%20Proposals/HTML/flex/Ambiguouse.html", target = "_blank"">ambiguouse.html</a>
 									<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Front%20End%20Proposals/HTML/flex/adminView.html", target = "_blank">adminView.html</a>
 									<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Front%20End%20Proposals/HTML/flex/Edit.html", target = "_blank">edit.html</a>
 									<a href="https://github.com/LucianoAbbott/UPOD/blob/master/Front%20End%20Proposals/HTML/flex/home.html", target = "_blank">home.html</a>
@@ -803,7 +821,8 @@
 
 								<div class="dropdown-content">
 									<a href="", onclick="openAboutHTML()">about.html</a>
-									<a href="", onclick="openAdminHTML()">adminView.html</a>						
+									<a href="", onclick="openAdminHTML()">adminView.html</a>	
+									<a href="", onclick="openAmbiguousHTML()">ambiguouse.html</a>					
 									<a href="", onclick="openEditHTML()">edit.html</a>								
 									<a href="", onclick="openHomeHTML()">home.html</a>
 									<a href="", onclick="openPageHTML()">page.html</a>
