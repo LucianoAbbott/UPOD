@@ -1,15 +1,15 @@
 Challenges we faced:
 
-We had trouble getting all the group members together with our varying schedules. There were also issues with getting the JSON to communicate
-with the data in the back-end.   //I don't know if this is even accurate, someone from back-end confirm
-There were also issues with getting the front-end HTML working with all browsers, as it seems like FireFox rendered the top bar beside
-the body rather than above it.
+We had trouble getting all the group members together with our varying schedules. There were also issues with getting the JSON to
+communicate with the data in the back-end.   //I don't know if this is even accurate, someone from back-end confirm
+There were also issues with getting the front-end HTML working with all browsers, as it seems like FireFox rendered the top bar 
+beside the body rather than above it.
 
 How we could improve:
 
 As the project went on certain individuals emerged as being more experienced with certain aspects (such as HTML and JavaScript). It
-might have been helpful to assign these people as leaders earlier on in the cycle so they could better dictate just exactly how we
-would do things, rather than the laissez-faire style employed in the early stages.
+might have been helpful to assign these people as leaders earlier on in the cycle so they could better dictate just exactly how 
+we would do things, rather than the laissez-faire style employed in the early stages.
 
 
 Locations of key elements:
