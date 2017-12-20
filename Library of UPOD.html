@@ -488,7 +488,7 @@
 				}	
 			}		
 
-			//Function that shows or hides the top-right corner info button, shown only in the event that the Library of UPOD has been opened as a local file from within the downloaded UPOD repository
+			//Function that shows or hides the top-right corner info button, shown only in the event that the Library of UPOD has been opened as a local file from within the downloaded UPOD repository, and hidden visibility otherwise 
 			window.onload = function showOrHideInfoButton() {
 				var url = document.URL;
 				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
@@ -503,7 +503,7 @@
 				}
 			}
 
-			//Function that appends the special section of the url needed to the base url for the repository to link to the UPOD About page
+			//Function that appends the special section of the url needed to access the UPOD about.html page, to the base url for the local UPOD repository
 			function goToAboutPage() {
 				var url = document.URL; 
 				var aboutURL = url.substring(0, url.lastIndexOf('/')); 
