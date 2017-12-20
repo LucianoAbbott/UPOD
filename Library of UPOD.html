@@ -248,260 +248,262 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 		<script> 
+			/* This function (and the functions following it) grabs the base url (without the specific document identifier, just the base url for the main repository) from the address. Before it does that, it will perform a check on the document's url it is operating on to see if it is 1) a file, and 2) a file that contains the identifier "UPOD-master" in its url. The 2nd condition is especially important as it provides a unique distinction for the file being in the repository itself, and not as a stray html file that can pass the first "is a file" condition. If the url does not meet any of the 2 conditions, an alert will pop up prompting the user to download the repository first, and open the index.html file from there, so that its associated operations of taking the base URL can be made. The functions below this one essentially perform the same steps with varying degrees; while they make the same condition checks, they follow by appending the specific document identifiers desired for their target url, which can only be done if index.html is sitting in the downloaded (and extracted) UPOD-master.zip. The reason for adding this function (and the functions below it) is to avoid the user seeing a page redirect to a page that doesn't exist, after clicking a faulty index link. */			
 			function localDir() {
-				/*This function grabs the base url (without the specific document identifier) from the address.
-				  Before it does that, it will perform a check on the document's url it is operating on to see 
-				  if it is 1) a file, and 2) a file that contains the identifier "UPOD-master" in its url. The 
-				  2nd condition is especially important as it provides a unique distinction for the file being 
-				  in the repository itself, and not as a stray html file that can pass the first "is a file" 
-				  condition. If the url does not meet any of the 2 conditions, an alert will pop up prompting the
-				  user to download the repository first, and open the index.html file from there, so that its
-				  associated operations of taking the base URL can be made. The functions below this one 
-				  essentially perform the same steps with varying degrees; while they make the same condition
-				  checks, they follow by appending the specific document identifiers desired for their target url, which 
-				  can only be done if index.html is sitting in the downloaded (and extracted) UPOD-master.zip. The 
-				  reason for adding this function (and the functions below it) is to avoid the user seeing a page redirect to
-				  a page that doesn't exist, after clicking a faulty index link. 
-				*/
 				var url = document.URL; 
 				
-				if (url.startsWith("file")==false) { //If not a file
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
 					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")					
-				} else { //If a file
-					if (url.includes("UPOD-master")) { //If a file and in repository
+				} else { //If the current URL of Library of UPOD, is a file
+					if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is a file and in repository
 						var baseURL = url.substring(0, url.lastIndexOf('/')); 
 						window.open(baseURL);		
-					} else { //If a file and not in repository
+					} else { //If the current URL of Library of UPOD, is a file and not in repository
 						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")											
 					}
 				}
 			}
-
-			function openProjDoc() {
+			
+			//Function that opens the local Project Management Plan only in the event that it is opened from the local UPOD Library from within the repository, for all other cases, an alert prompt is shown indicating the latter before opening the index link. 
+			function openProjDoc() { 
 				var url = document.URL; 
-				if (url.startsWith("file")==false) {
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
 					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")					
-				} else {
-					if (url.includes("UPOD-master")) {
+				} else { //If the current URL of Library of UPOD, is a file 
+					if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is a file and in repository
 						var spmpURL = url.substring(0, url.lastIndexOf('/')); 
 						spmpURL += "/Project%20Management%20Plans/ManagementDocumentFormatted.html"
 						window.open(spmpURL);
-					} else {
+					} else { //If the current URL of Library of UPOD, is a file and not in repository
 						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")						
 					}
 				}
 			}
 
+			//Function that opens the local Requirements Document only in the event that it is opened from the local UPOD Library from within the repository, for all other cases, an alert prompt is shown indicating the latter before opening the index link. 
 			function openReqDoc() {
 				var url = document.URL; 
 				
-				if (url.startsWith("file")==false) {
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
 					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")					
-				} else { 
-					if (url.includes("UPOD-master")) {
+				} else { //If the current URL of Library of UPOD, is a file 
+					if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is a file and in repository
 						var reqURL = url.substring(0, url.lastIndexOf('/')); 
 						reqURL += "/Requirements%20Document/Final%20HTML%20Format/Requirements.html"
 						window.open(reqURL);
-					} else {
+					} else { //If the current URL of Library of UPOD, is a file and not in repository
 						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")										
 					}
 				}
 			}
 
+			//Function that opens the local Analysis Document only in the event that it is opened from the local UPOD Library from within the repository, for all other cases, an alert prompt is shown indicating the latter before opening the index link. 
 			function openAnalysisDoc() {
 				var url = document.URL; 
-				if (url.startsWith("file")==false) {
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
 					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")					
-				} else {
-					if (url.includes("UPOD-master")) {
+				} else { //If the current URL of Library of UPOD, is a file
+					if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is a file and in repository
 						var analysisURL = url.substring(0, url.lastIndexOf('/')); 
 						analysisURL += "/Analysis%20Document/HTML/AnalysisDocument.html"
 						window.open(analysisURL);						
-					} else {
+					} else { //If the current URL of Library of UPOD, is a file and not in repository
 						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")						
 					}
 				}
 			}
-
+			//Function that opens the local Design Document only in the event that it is opened from the local UPOD Library from within the repository, for all other cases, an alert prompt is shown indicating the latter before opening the index link. 
 			function openDesDoc() {
 				var url = document.URL; 
-				if (url.startsWith("file")==false) {
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
 					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")					
-				} else {
-					if (url.includes("UPOD-master")) {
+				} else { //If the current URL of Library of UPOD, is a file
+					if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is a file and in repository
 						var desURL = url.substring(0, url.lastIndexOf('/')); 
 						desURL += "/Design%20Document/design.html"
 						window.open(desURL);
-					} else {
+					} else { //If the current URL of Library of UPOD, is a file and not in repository
 						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")												
 					}
 				}
 			}
-
+			
+			//Function that opens the local front-end /flex folder only in the event that it is opened from the local UPOD Library from within the repository, for all other cases, an alert prompt is shown indicating the latter before opening the index link. 
 			function openFrontEnd() {
 				var url = document.URL; 
-				if (url.startsWith("file")==false) {
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
 					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")					
-				} else {
-					if (url.includes("UPOD-master")) {
+				} else { //If the current URL of Library of UPOD, is a file
+					if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is a file and in repository
 						var frontEndURL = url.substring(0, url.lastIndexOf('/')); 
 						frontEndURL += "/Front End Proposals/HTML/flex"
 						window.open(frontEndURL);						
-					} else {
+					} else { //If the current URL of Library of UPOD, is a file and not in repository
 						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")						
 					}
 				}
 			}
-
+			
+			//Function that opens the local back-end /Backend folder only in the event that it is opened from the local UPOD Library from within the repository, for all other cases, an alert prompt is shown indicating the latter before opening the index link. 
 			function openBackend() {
 				var url = document.URL; 
-				if (url.startsWith("file")==false) {
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
 					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")					
-				} else {
-					if (url.includes("UPOD-master")) {
+				} else { //If the current URL of Library of UPOD, is a file
+					if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is a file and in repository
 						var backEndURL = url.substring(0, url.lastIndexOf('/')); 
 						backEndURL += "/Backend"
 						window.open(backEndURL);	
-					} else {
+					} else { //If the current URL of Library of UPOD, is a file and not in repository
 						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")						
 					}
 				}
 			}			
-
+			
+			//Function that opens the local Analysis Document only in the event that it is opened from the local UPOD Library from within the repository, for all other cases, an alert prompt is shown indicating the latter before opening the index link. 
 			function openDatabase() {
 				var url = document.URL; 
-				if (url.startsWith("file")==false) {
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
 					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")					
-				} else {
-					if (url.includes("UPOD-master")) {
+				} else { //If the current URL of Library of UPOD, is a file
+					if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is a file and in repository
 						var dbURL = url.substring(0, url.lastIndexOf('/')); 
 						dbURL += "/Database"
 						window.open(dbURL);	
-					} else {
+					} else { //If the current URL of Library of UPOD, is a file and not in repository
 						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")						
 					}
 				}
 			}
-
+			
+			//Function that opens the local home.html file only in the event that it is opened from the local UPOD Library from within the repository, for all other cases, an alert prompt is shown indicating the latter before opening the index link. 
 			function openHomeHTML() {
 				var url = document.URL; 
-				if (url.startsWith("file")==false) {
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
 					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")					
-				} else {
-					if (url.includes("UPOD-master")) {
+				} else { //If the current URL of Library of UPOD, is a file
+					if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is a file and in repository
 						var homeURL = url.substring(0, url.lastIndexOf('/')); 
 						homeURL += "/Front%20End%20Proposals/HTML/flex/home.html"
 						window.open(homeURL);	
-					} else {
+					} else { //If the current URL of Library of UPOD, is a file and not in repository
 						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")						
 					}
 				}	
 			}		
-
+			
+			//Function that opens the local about.html file only in the event that it is opened from the local UPOD Library from within the repository, for all other cases, an alert prompt is shown indicating the latter before opening the index link. 
 			function openAboutHTML() {
 				var url = document.URL; 
-				if (url.startsWith("file")==false) {
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is a file
 					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")					
-				} else {
+				} else { //If the current URL of Library of UPOD, is a file and in repository
 					if (url.includes("UPOD-master")) {
 						var aboutURL = url.substring(0, url.lastIndexOf('/')); 
 						aboutURL += "/Front%20End%20Proposals/HTML/flex/about.html"
 						window.open(aboutURL);	
-					} else {
+					} else {  //If the current URL of Library of UPOD, is a file and not in repository
 						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")						
 					}
 				}
 			}		
-
+			
+			//Function that opens the local edit.html file only in the event that it is opened from the local UPOD Library from within the repository, for all other cases, an alert prompt is shown indicating the latter before opening the index link. 
 			function openEditHTML() {
 				var url = document.URL; 
-				if (url.startsWith("file")==false) {
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file 
 					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")					
-				} else {
-					if (url.includes("UPOD-master")) {
+				} else { //If the current URL of Library of UPOD, is a file
+					if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is a file and in repository 
 						var editURL = url.substring(0, url.lastIndexOf('/')); 
 						editURL += "/Front%20End%20Proposals/HTML/flex/Edit.html"
 						window.open(editURL);	
-					} else {
+					} else { //If the current URL of Library of UPOD, is a file and not in repository
 						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")						
 					}
 				}	
 			}		
-
+			
+			//Function that opens the local page.html file only in the event that it is opened from the local UPOD Library from within the repository, for all other cases, an alert prompt is shown indicating the latter before opening the index link. 
 			function openPageHTML() {
 				var url = document.URL; 
-				if (url.startsWith("file")==false) {
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
 					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")					
-				} else {
-					if (url.includes("UPOD-master")) {
+				} else { //If the current URL of Library of UPOD, is a file
+					if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is a file and in repository 
 						var pageURL = url.substring(0, url.lastIndexOf('/')); 
 						pageURL += "/Front%20End%20Proposals/HTML/flex/page.html"
 						window.open(pageURL);	
-					} else {
+					} else { //If the current URL of Library of UPOD, is a file and not in repository
 						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")						
 					}
 				}	
 			}	
-
+			
+			//Function that opens the local SearchResultView.html file only in the event that it is opened from the local UPOD Library from within the repository, for all other cases, an alert prompt is shown indicating the latter before opening the index link. 
 			function openSearchHTML() {
 				var url = document.URL; 
-				if (url.startsWith("file")==false) {
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
 					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")					
-				} else {
-					if (url.includes("UPOD-master")) {
+				} else { //If the current URL of Library of UPOD, is a file 
+					if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is a file and in repository
 						var searchURL = url.substring(0, url.lastIndexOf('/')); 
 						searchURL += "/Front%20End%20Proposals/HTML/flex/SearchResultView.html"
 						window.open(searchURL);	
-					} else {
+					} else { //If the current URL of Library of UPOD, is a file and not in repository
 						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")						
 					}
 				}	
 			}
-
+			
+			//Function that opens the local adminView.html file only in the event that it is opened from the local UPOD Library from within the repository, for all other cases, an alert prompt is shown indicating the latter before opening the index link. 
 			function openAdminHTML() {
 				var url = document.URL; 
-				if (url.startsWith("file")==false) {
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
 					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")					
-				} else {
-					if (url.includes("UPOD-master")) {
+				} else { //If the current URL of Library of UPOD, is a file
+					if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is a file and in repository
 						var adminURL = url.substring(0, url.lastIndexOf('/')); 
 						adminURL += "/Front%20End%20Proposals/HTML/flex/adminView.html"
 						window.open(adminURL);	
-					} else {
+					} else { //If the current URL of Library of UPOD, is a file and not in repository
 						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")						
 					}
 				}	
 			}		
-
+			
+			//Function that opens the local Ambiguouse.html file only in the event that it is opened from the local UPOD Library from within the repository, for all other cases, an alert prompt is shown indicating the latter before opening the index link. 
 			function openAmbiguousHTML() {
 				var url = document.URL; 
-				if (url.startsWith("file")==false) {
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
 					alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")					
-				} else {
-					if (url.includes("UPOD-master")) {
+				} else { //If the current URL of Library of UPOD, is a file
+					if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is a file and in repository
 						var adminURL = url.substring(0, url.lastIndexOf('/')); 
 						adminURL += "/Front%20End%20Proposals/HTML/flex/Ambiguouse.html"
 						window.open(adminURL);	
-					} else {
+					} else { //If the current URL of Library of UPOD, is a file and not in repository
 						alert("Local directory files can only be retrieved when this page is opened from within the downloaded UPOD repository.\n\nIf you'd like to use this feature, please download UPOD-master.zip onto your computer, and navigate back to the local version of this page.\n\nFilePath: UPOD-master/Library of UPOD.html")						
 					}
 				}	
 			}		
 
+			//Function that shows or hides the top-right corner info button, shown only in the event that the Library of UPOD has been opened as a local file from within the downloaded UPOD repository
 			window.onload = function showOrHideInfoButton() {
 				var url = document.URL;
-				if (url.startsWith("file")==false) { //If not a file
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
 					document.getElementById("infoButton").style.display = "none"; //Then do not show the info button
 
-				} else { //If a file
-					if (url.includes("UPOD-master")) { //If a file and in repository
+				} else { //If the current URL of Library of UPOD, is a file
+					if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is a file and in repository
 						document.getElementById("infoButton").style.display = "block"; //Then show the info button					
-					} else { //If a file and not in repository				
+					} else { //If the current URL of Library of UPOD, is a file and not in repository				
 						document.getElementById("infoButton").style.display = "none"; //Then do not show the info button					
 					}
 				}
 			}
 
+			//Function that appends the special section of the url needed to the base url for the repository to link to the UPOD About page
 			function goToAboutPage() {
 				var url = document.URL; 
 				var aboutURL = url.substring(0, url.lastIndexOf('/')); 
