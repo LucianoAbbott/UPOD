@@ -184,23 +184,48 @@
         <title>Progress Report</title>
 
         <script>
-			//Function that opens the local Library of UPOD.html file only in the event that it is opened from the local Project Management Plan from within the repository, and for all other cases, the user is redirected to the online web version of Library of UPOD. 
-            function goToUPODIndex() {
-                var url = document.URL; 
-                if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
-                    window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html");  //Then go to the online Library of UPOD 			             
-                } else { //If the current URL of Library of UPOD, is file and in repository
-                    if (url.includes("UPOD-master")) {
-                    	//Then go to the local Library of UPOD
-                        var indexURL = url.substring(0, url.lastIndexOf('/')); 
-                        indexURL = indexURL.substring(0, indexURL.lastIndexOf('/')); 
-                        indexURL += "/Library of UPOD.html"
-                        window.open(indexURL);
-                    } else { //If the current URL of Library of UPOD, is a file and not in repository              
-                        window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html"); //Then go to the online Library of UPOD
-                    }
-                }
-            }
+	//Function that opens the local Library of UPOD.html file only in the event that it is opened from the local Project Management Plan from within the repository, and for all other cases, the user is redirected to the online web version of Library of UPOD. 
+	function goToUPODIndex() {
+		var url = document.URL; 
+		if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
+		    window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html");  //Then go to the online Library of UPOD 			             
+		} else { //If the current URL of Library of UPOD, is file and in repository
+			if (url.includes("UPOD-master")) {
+			//Then go to the local Library of UPOD
+			var indexURL = url.substring(0, url.lastIndexOf('/')); 
+			indexURL = indexURL.substring(0, indexURL.lastIndexOf('/')); 
+			indexURL += "/Library of UPOD.html"
+			window.open(indexURL);
+			} else { //If the current URL of Library of UPOD, is a file and not in repository              
+			window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html"); //Then go to the online Library of UPOD
+			}
+		}
+	}
+
+	//Function that shows or hides the top-right corner info button, shown only in the event that the Library of UPOD has been opened as a local file from within the downloaded UPOD repository, and hidden visibility otherwise 
+	window.onload = function showOrHideEditHref() {
+		var url = document.URL;
+		if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
+			document.getElementById("editHref").style.display = "none"; //Then do not show the info button
+
+		} else { //If the current URL of Library of UPOD, is a file
+			if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is a file and in repository
+				document.getElementById("editHref").style.display = "inline"; //Then show the info button					
+			} else { //If the current URL of Library of UPOD, is a file and not in repository				
+				document.getElementById("editHref").style.display = "none"; //Then do not show the info button					
+			}
+		}
+	}
+
+	//Function that accesses the local edit.html file
+	function goToEditHTML() {
+		var url = document.URL;
+		var editURL = url.substring(0, url.lastIndexOf('/'));
+		editURL = editURL.substring(0, editURL.lastIndexOf('/'));
+		editURL += "/Front%20End%20Proposals/HTML/flex/Edit.html"
+		window.open(editURL);
+	}
+
         </script>
 
     </head>
@@ -256,14 +281,14 @@
 	<div>
         <h3 id="Overview">Overview</h3>
 
-        <p>The Undergraduate Online Physics Database [UPOD] is an online repository of data designed for students to access physics information, equations, and diagrams to help them in furthering their educations in their university careers. The information on UPOD is added, edited, and removed by moderators and administrators that are approved to do so, where moderator are assumed to be teaching assistants and administrators are assumed to be professors. This report will give a short summary of what was completed, when it was completed, and what remains uncompleted. </p>
+        <p>The Undergraduate Online Physics Database (UPOD) is an online repository of data designed for students to access physics information, equations, and diagrams to help them in furthering their educations in their university careers. The information on UPOD is added, edited, and removed by moderators and administrators that are approved to do so, where moderators are assumed to be teaching assistants and administrators are assumed to be professors. This report will give a short summary of what was completed, when it was completed, and what remains uncompleted. </p>
 
     </div>
     
     <div>
         <h3 id="SPMP">Software Project Management Plan (SPMP)</h3>
 
-        <p>The <a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Project%20Management%20Plans/ManagementDocumentFormatted.html", target="_blank">software project management plan</a> outlines the scheduling, budget, and staffing of the project, as well as what it aims to accomplish. The SPMP, and its corresponding SQA, was completed on time, on September 27th, 2017, with modifications as necessary to reflect any changes in the project as a whole, or to improve the document's functionality [such as hyper-linking with other documents, or a navigation bar to readily access any section of the document]; elements were added, edited, or removed entirely.</p> 
+        <p>The <a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Project%20Management%20Plans/ManagementDocumentFormatted.html", target="_blank">software project management plan</a> outlines the scheduling, budget, and staffing of the project, as well as what it aims to accomplish. The SPMP (and its corresponding SQA) was completed on time, on September 27th, 2017, with modifications as necessary to reflect any changes in the project as a whole, or to improve the document's functionality (such as hyper-linking with other documents, or a navigation bar to readily access any section of the document); elements were added, edited, or removed entirely.</p> 
 
     </div>
     
@@ -277,7 +302,7 @@
     <div>
         <h3 id="Analysis">Analysis Document</h3>
 
-        <p>The <a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Analysis%20Document/HTML/AnalysisDocument.html", target="_blank">analysis document</a> provides a more in-depth interpretation of the project beyond the initial requirements phase, and acts as a basis for the design document as well as for the project. The class diagram, use case diagram, and sequence diagrams were used in conjunction with object-oriented design to establish a starting point for project implementation. This document [and its corresponding SQA analysis] was completed on time, on September 27th, 2017, with minor changes done throughout the project's development as necessitated; elements were added, edited, or removed entirely.</p>
+        <p>The <a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Analysis%20Document/HTML/AnalysisDocument.html", target="_blank">analysis document</a> provides a more in-depth interpretation of the project beyond the initial requirements phase, and acts as a basis for the design document as well as for the project. The class diagram, use case diagram, and sequence diagrams were used in conjunction with object-oriented design to establish a starting point for project implementation. This document (and its corresponding SQA analysis) was completed on time, on September 27th, 2017, with minor changes done throughout the project's development as necessitated; elements were added, edited, or removed entirely.</p>
 
     </div>
     
@@ -298,7 +323,7 @@
     <div>
         <h3 id="Completion">Completion</h3>
 
-        <p>The project was not completed as originally intended, although many features were found to be working and functional to the degree that they were specified. The front-end HTML pages are complete, while the underlying JavaScript used to make these pages interactive was close to completion [as seen on the edit page - edit.html]. The JSON was also close to demonstrative functionality. The back-end were able to build and complete a majority of their components (such as the search, page storage, retrieval and deletion) but not enough to fully interact with the front end. Essentially a large number of working or almost working parts, although we were unable to thoroughly consolidate these parts into one.</p>
+        <p>The project was not completed as originally intended, although many features were found to be working and functional to the degree that they were specified. The front-end HTML pages are complete, while the underlying JavaScript used to make these pages interactive was close to completion (as seen on the edit page <a id="editHref", href="", onclick="goToEditHTML()">edit.html</a>). The JSON was also close to demonstrative functionality. The back-end were able to build and complete a majority of their components (such as the search, page storage, retrieval and deletion) but not enough to fully interact with the front end. Essentially a large number of working or almost working parts, although we were unable to thoroughly consolidate these parts into one.</p>
 
     </div>
     
@@ -312,7 +337,7 @@
     <div>
         <h3 id="Improve">Future Improvement</h3>
 
-        <p>As the project went on, certain individuals emerged as being more experienced with certain aspects [such as HTML and JavaScript]. It might have been helpful to assign these people as leaders earlier on in the development processes so they could better express just exactly how we would do things, as opposed than the laissez-faire style employed in the early stages.</p>
+        <p>As the project went on, certain individuals emerged as being more experienced with certain aspects (such as HTML and JavaScript). It might have been helpful to assign these people as leaders earlier on in the development processes so they could better express just exactly how we would do things, as opposed than the laissez-faire style employed in the early stages.</p>
 
     </div>
     
