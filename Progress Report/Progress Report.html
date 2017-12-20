@@ -61,6 +61,7 @@
         color: #FF0055;
     }
 	
+    /*CSS for footer button "Go to UPOD Library" */	
     .hoverButtonLeft {
         display: inline-block;
         border-radius: 10px;
@@ -78,6 +79,30 @@
         cursor: pointer;
         margin: 5px;
     }
+
+	.hoverButtonLeft span {
+        cursor:pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+    .hoverButtonLeft span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    .hoverButtonLeft:hover span {
+        padding-right: 25px;
+    }
+    .hoverButtonLeft:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    /*CSS for footer button "Back to Repository" */    
     .hoverButtonRight {
         display: inline-block;
         border-radius: 10px;
@@ -95,26 +120,14 @@
         cursor: pointer;
         margin: 5px;
     }
-    .hoverButtonLeft span {
-        cursor:pointer;
-        display: inline-block;
-        position: relative;
-        transition: 0.5s;
-    }
+
     .hoverButtonRight span {
         cursor:pointer;
         display: inline-block;
         position: relative;
         transition: 0.5s;
     }
-    .hoverButtonLeft span:after {
-        content: '\00bb';
-        position: absolute;
-        opacity: 0;
-        top: 0;
-        right: -20px;
-        transition: 0.5s;
-    }
+
     .hoverButtonRight span:after {
         content: '\00ab';
         position: absolute;
@@ -123,52 +136,17 @@
         left: -20px;
         transition: 0.5s;
     }
-    .hoverButtonLeft:hover span {
-        padding-right: 25px;
-    }
+
     .hoverButtonRight:hover span {
         padding-left: 25px;
     }
-    .hoverButtonLeft:hover span:after {
-        opacity: 1;
-        right: 0;
-    }
+
     .hoverButtonRight:hover span:after {
         opacity: 1;
         left: 0;
     }
 	
-    .navbar {
-        overflow: hidden;
-        background-color: #333;
-        position: fixed;
-        bottom: 0;
-        width: 1100px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-        text-align: center;
-        height: 18px;
-    }
-    .navbar a {
-        display: inline-block;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 6px 12px;
-        text-decoration: none;
-        font-size: 14px;
-        font-family: sans-serif;
-     }  
-    
-    .navbar a:hover {
-        background-color: #F9F9F9;
-        color: #0C0C0C;    
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
+    /*CSS for "Top" button in top right-hand corner of the page*/	
     #backToTopButton {
         background-color: white;
         border: none;   
@@ -206,18 +184,20 @@
         <title>Progress Report</title>
 
         <script>
+			//Function that opens the local Library of UPOD.html file only in the event that it is opened from the local Project Management Plan from within the repository, and for all other cases, the user is redirected to the online web version of Library of UPOD. 
             function goToUPODIndex() {
                 var url = document.URL; 
-                if (url.startsWith("file")==false) { //If not a file
-                    window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html");             
-                } else { //If a file
-                    if (url.includes("UPOD-master")) { //If a file and in repository
+                if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
+                    window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html");  //Then go to the online Library of UPOD 			             
+                } else { //If the current URL of Library of UPOD, is file and in repository
+                    if (url.includes("UPOD-master")) {
+                    	//Then go to the local Library of UPOD
                         var indexURL = url.substring(0, url.lastIndexOf('/')); 
                         indexURL = indexURL.substring(0, indexURL.lastIndexOf('/')); 
                         indexURL += "/Library of UPOD.html"
                         window.open(indexURL);
-                    } else { //If a file and not in repository              
-                        window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html");
+                    } else { //If the current URL of Library of UPOD, is a file and not in repository              
+                        window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html"); //Then go to the online Library of UPOD
                     }
                 }
             }
