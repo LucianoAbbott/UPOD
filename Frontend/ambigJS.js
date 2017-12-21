@@ -30,7 +30,7 @@ function addLinks(numLinks){
         var data = JSON.parse(raw);
         console.log(raw);
         for(var i = 0; i < numLinks; i++){
-          addLink(data.sections[0].title, data.sections[0].content);
+          addLink(data.sections[0].title, data.sections[0].text);
         }
     }
   }
