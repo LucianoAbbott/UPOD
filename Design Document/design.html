@@ -4,7 +4,7 @@
     html {
         background-color: #78909C;
     }
-    
+
     body {
         background-color: #ffffff;
         min-width: 480px;
@@ -13,16 +13,16 @@
         padding: 3% 3% 3% 3%;
         box-shadow: 0px 0px 10px #313131;
     }
-    
+
     img {
         width: 100%;
         margin-bottom: 30px;
     }
-    
+
     table {
         width: 100%;
     }
-    
+
     table,
     th,
     td {
@@ -30,7 +30,7 @@
         border-collapse: collapse;
         padding: 5px;
     }
-    
+
     th,
     td,
     h1,
@@ -45,28 +45,28 @@
     ul {
         font-family: 'Open Sans', sans-serif;
     }
-    
+
     .version {
         font-size: 12;
     }
-    
+
     div {
         border: 1px solid #A1A1A1;
         padding-bottom: 10px;
         border-width: 1px 0px 0px 0px;
     }
-    
+
     .errors {
         color: #FF0055;
     }
 
-    /*CSS for footer button "Go to UPOD Library" */	
+    /*CSS for footer button "Go to UPOD Library" */
     .hoverButtonLeft {
         display: inline-block;
         border-radius: 10px;
         background-color: white;
         border: none;
-        border-width:2px;  
+        border-width:2px;
         border-style:double;
         border-color:#2A2A2A;
         color: #2A2A2A;
@@ -109,7 +109,7 @@
         border-radius: 10px;
         background-color: white;
         border: none;
-        border-width:2px;  
+        border-width:2px;
         border-style:double;
         border-color:#2A2A2A;
         color: #2A2A2A;
@@ -147,7 +147,7 @@
         left: 0;
     }
 
-    /*CSS for horizontal navbar with hyperlinks*/	
+    /*CSS for horizontal navbar with hyperlinks*/
     .navbar {
         overflow: hidden;
         background-color: #333;
@@ -170,11 +170,11 @@
         text-decoration: none;
         font-size: 14px;
         font-family: sans-serif;
-     }  
-    
+     }
+
     .navbar a:hover {
         background-color: #F9F9F9;
-        color: #0C0C0C;    
+        color: #0C0C0C;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         border-bottom-left-radius: 10px;
@@ -184,7 +184,7 @@
     /*CSS for "Top" button in top right-hand corner of the page*/
     #backToTopButton {
         background-color: white;
-        border: none;   
+        border: none;
         border-radius: 5px;
         color: black;
         padding: 11px;
@@ -207,12 +207,12 @@
         background-color: #3d3d3d;
         color: white;
     }
-	
+
     #backToTopButton:active {
 	box-shadow: 0 0px #666;
 	transform: translateY(4px);
     }
-    
+
 </style>
 
 <html>
@@ -221,19 +221,19 @@
         <title>UPOD - Design</title>
 
         <script>
-            //Function that opens the local Library of UPOD.html file only in the event that it is opened from the local Project Management Plan from within the repository, and for all other cases, the user is redirected to the online web version of Library of UPOD.  
+            //Function that opens the local Library of UPOD.html file only in the event that it is opened from the local Project Management Plan from within the repository, and for all other cases, the user is redirected to the online web version of Library of UPOD.
             function goToUPODIndex() {
-                var url = document.URL; 
+                var url = document.URL;
                 if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
-                    window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html"); //Then go to the online Library of UPOD                        
+                    window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html"); //Then go to the online Library of UPOD
                 } else { //If the current URL of Library of UPOD, is a file
                     if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is file and in repository
-                        var indexURL = url.substring(0, url.lastIndexOf('/')); 
-                        indexURL = indexURL.substring(0, indexURL.lastIndexOf('/')); 
+                        var indexURL = url.substring(0, url.lastIndexOf('/'));
+                        indexURL = indexURL.substring(0, indexURL.lastIndexOf('/'));
                         indexURL += "/Library of UPOD.html"
                         window.open(indexURL);
-                    } else { //If the current URL of Library of UPOD, is a file and not in repository               
-                        window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html"); //Then go to the online Library of UPOD 
+                    } else { //If the current URL of Library of UPOD, is a file and not in repository
+                        window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html"); //Then go to the online Library of UPOD
                     }
                 }
             }
@@ -242,7 +242,7 @@
     </head>
 
 <body>
-	
+
     <div class="navbar">
         <a href="#introduction">Introduction </a>
 
@@ -254,18 +254,18 @@
 
         <a href="#method_detailed_design">Method Detailed Design</a>
     </div>
-	
+
     <header>
         <h1>Design Document for UPOD</h1>
-        
+
         <p>Authors: Luciano Abbott, Luke Turnbull, Nicholas Hallman, Nathan Kohler, Joseph Shannon</p>
-	<p class="version", align="right">Version 1.1</p> 
+	<p class="version", align="right">Version 1.1</p>
         <p class="version", id="date", align="right"></p>
         <script>
             var currentDate = new Date();
             document.getElementById("date").innerHTML = currentDate;
-        </script>	    
-	    
+        </script>
+
         <button onclick="topFunction()" id="backToTopButton" title="Scroll to top">Top</button>
         <script>
             window.onscroll = function() {scrollFunction()};
@@ -284,7 +284,7 @@
                 document.documentElement.scrollTop = 0;
             }
         </script>
-	    
+
         <div>
             <h2 id = "tableOfContents"> Table of Contents </h2>
             <ul>
@@ -305,7 +305,7 @@
                         <li><a href="#back_end">3.1 Back End UML</a></li>
 			<li><a href = #data_class_diagram">3.2 Database Class Diagram</a></li>
 		        <li><a href = #front_end">3.3 Front End UML</a></li>
-			
+
                     </ul>
                 </li>
 
@@ -329,7 +329,7 @@
                     <li><a href="#upoddao">5.3 UpodDao</a></li>
                     <li><a href="#application">5.4 Application</a></li>
                     <li><a href="#data_objects">5.5 Data Objects</a></li>
-		    
+
                 </ul>
             </ul>
         </div>
@@ -383,14 +383,14 @@
             <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/UPOD%20UML.png" style="max-width:1000px;">
         </a>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/assets/class.jpg" style="max-width:1000px;">
-	    
+
 	<h3 id="data_class_diagram">3.2 Database Class Diagram</h3>
 	<img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/Database%20Diagrams/DatabaseClassDiagram.JPG" style="max-width:1000px;">
 
         <h3 id="front_end">3.3 Front End UML</h3>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/assets/use.png" style="max-width:1000px;">
-				
-	
+
+
 
     </div>
 
@@ -473,7 +473,7 @@
         </table>
         <h4 id="article_view">4.1.3 ArticleView</h4>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/screenshots/page.PNG">
-	
+
         <table>
             <tr>
                 <th>Field</th>
@@ -506,7 +506,14 @@
                 <td>redirects user to a ArticleView about UPOD.</td>
             </tr>
         </table>
-
+        <p>The following are proposed methods on how to implement linkable equations:
+          Using MathJaxs, it would be possible to render svg equations based on latex. The corresponding ASCII-like svg tag would the
+          be parsed for the appropriate symbol. This possibility is advantageous because it would rely on a already well developed java script engine.
+          However, it rquires an asynchronous event system where the parse function must wait for mathjax to finish creating the symbols before they become linkable.
+          A secondary approach would be using MathML and a third party library to translate TeX or LaTeX to MathML and store the translated content in the database.
+          This approach is desireable due to its ease of implementation, however in reality due to MathML's lack of support from popular browsers, it is not
+          practical.
+        </p>
         <h4 id="page_edit_view">4.1.4 PageEditView</h4>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/screenshots/edit.PNG">
         <table>
@@ -783,13 +790,13 @@
         </div>
 
         <br/>
-        
+
         <div align="right">
             <button onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButtonLeft", style="vertical-align:middle; margin-top: 20px", title="UPOD Repository on Github"><span>Back to Repository</span></button>
-            <button onclick = "goToUPODIndex()", class="hoverButtonRight", style="vertical-align:middle; margin-top: 20px; float: left"><span>Go to UPOD Library</span></button> 
+            <button onclick = "goToUPODIndex()", class="hoverButtonRight", style="vertical-align:middle; margin-top: 20px; float: left"><span>Go to UPOD Library</span></button>
         </div>
-    </div>	
-	
+    </div>
+
 </body>
-	
+
 </html>
