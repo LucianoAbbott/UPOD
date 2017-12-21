@@ -59,26 +59,9 @@
     .errors {
         color: #FF0055;
     }
-	
-    .hoverButtonLeft {
-        display: inline-block;
-        border-radius: 10px;
-        background-color: white;
-        border: none;
-        border-width:2px;  
-        border-style:double;
-        border-color:#2A2A2A;
-        color: #2A2A2A;
-        text-align: center;
-        font-size: 16px;
-        padding: 10px;
-        width: 200px;
-        transition: all 0.5s;
-        cursor: pointer;
-        margin: 5px;
-    }
 
-    .hoverButtonRight {
+    /*CSS for footer button "Go to UPOD Library" */	
+    .hoverButtonLeft {
         display: inline-block;
         border-radius: 10px;
         background-color: white;
@@ -102,20 +85,47 @@
         position: relative;
         transition: 0.5s;
     }
-
-    .hoverButtonRight span {
-        cursor:pointer;
-        display: inline-block;
-        position: relative;
-        transition: 0.5s;
-    }
-
     .hoverButtonLeft span:after {
         content: '\00bb';
         position: absolute;
         opacity: 0;
         top: 0;
         right: -20px;
+        transition: 0.5s;
+    }
+
+    .hoverButtonLeft:hover span {
+        padding-right: 25px;
+    }
+
+    .hoverButtonLeft:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    /*CSS for footer button "Back to Repository" */
+    .hoverButtonRight {
+        display: inline-block;
+        border-radius: 10px;
+        background-color: white;
+        border: none;
+        border-width:2px;  
+        border-style:double;
+        border-color:#2A2A2A;
+        color: #2A2A2A;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    .hoverButtonRight span {
+        cursor:pointer;
+        display: inline-block;
+        position: relative;
         transition: 0.5s;
     }
 
@@ -128,24 +138,16 @@
         transition: 0.5s;
     }
 
-    .hoverButtonLeft:hover span {
-        padding-right: 25px;
-    }
-
     .hoverButtonRight:hover span {
         padding-left: 25px;
-    }
-
-    .hoverButtonLeft:hover span:after {
-        opacity: 1;
-        right: 0;
     }
 
     .hoverButtonRight:hover span:after {
         opacity: 1;
         left: 0;
     }
-	
+
+    /*CSS for horizontal navbar with hyperlinks*/	
     .navbar {
         overflow: hidden;
         background-color: #333;
@@ -179,6 +181,7 @@
         border-bottom-right-radius: 10px;
     }
 
+    /*CSS for "Top" button in top right-hand corner of the page*/
     #backToTopButton {
         background-color: white;
         border: none;   
@@ -204,6 +207,11 @@
         background-color: #3d3d3d;
         color: white;
     }
+	
+    #backToTopButton:active {
+	box-shadow: 0 0px #666;
+	transform: translateY(4px);
+    }
     
 </style>
 
@@ -213,18 +221,19 @@
         <title>UPOD - Design</title>
 
         <script>
+            //Function that opens the local Library of UPOD.html file only in the event that it is opened from the local Project Management Plan from within the repository, and for all other cases, the user is redirected to the online web version of Library of UPOD.  
             function goToUPODIndex() {
                 var url = document.URL; 
-                if (url.startsWith("file")==false) { //If not a file
-                    window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html");             
-                } else { //If a file
-                    if (url.includes("UPOD-master")) { //If a file and in repository
+                if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
+                    window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html"); //Then go to the online Library of UPOD                        
+                } else { //If the current URL of Library of UPOD, is a file
+                    if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is file and in repository
                         var indexURL = url.substring(0, url.lastIndexOf('/')); 
                         indexURL = indexURL.substring(0, indexURL.lastIndexOf('/')); 
-                        indexURL += "/docs/index.html"
+                        indexURL += "/Library of UPOD.html"
                         window.open(indexURL);
-                    } else { //If a file and not in repository              
-                        window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html");
+                    } else { //If the current URL of Library of UPOD, is a file and not in repository               
+                        window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html"); //Then go to the online Library of UPOD 
                     }
                 }
             }
@@ -241,17 +250,15 @@
 
         <a href="#diagrams">Diagrams</a>
 
-        <a href="#object_classification">Object Classification</a>
+        <a href="#interface">Description</a>
 
-        <a href="#interfaceDescription">Interface Description</a>
-
-        <a href="#methodDetailedDesign">Method Detailed Design</a>
+        <a href="#method_detailed_design">Method Detailed Design</a>
     </div>
 	
     <header>
         <h1>Design Document for UPOD</h1>
         
-        <p>Authors: Luciano Abbott, Luke Turnbull, Nicholas Hallman, Nathan Kohler</p>
+        <p>Authors: Luciano Abbott, Luke Turnbull, Nicholas Hallman, Nathan Kohler, Joseph Shannon</p>
 	<p class="version", align="right">Version 1.1</p> 
         <p class="version", id="date", align="right"></p>
         <script>
@@ -288,64 +295,40 @@
                     <li><a href="#references">1.3 References</a></li>
                 </ul>
                 <li><a href="#usecase">2. Use Cases</a></li>
-                <ul>
-                    <li><a href="#purpose">2.1 Actors</a></li>
                     <ul>
-                        <li><a href="#purpose">2.1.1 General Users</a></li>
-                        <li><a href="#purpose">2.1.2 Moderator</a></li>
-                        <li><a href="#purpose">2.1.3 Administrator</a></li>
-                    </ul>
-                    <li><a href="#purpose">2.2 List of Use Cases</a></li>
-                    <ul>
-                        <li><a href="#purpose">2.2.1 General User Use Cases</a></li>
-                        <ul>
-                            <li><a href="#purpose">2.2.1.1 Learn about an element of undergraduate physics</a></li>
-                        </ul>
-                        <li><a href="#purpose">2.2.2 Moderator Use Cases</a></li>
-                        <ul>
-                            <li><a href="#purpose">2.2.2.1 Create a new page</a></li>
-                            <li><a href="#purpose">2.2.2.2 Edit an existing page</a></li>
-                            <li><a href="#purpose">2.2.2.3 Remove a page that is deemed unwanted</a></li>
-                        </ul>
-                        <li><a href="#purpose">2.2.3 Administrator Use Cases</a></li>
-                        <ul>
-                            <li><a href="#purpose">2.2.2.2 Add a moderator</a></li>
-                            <li><a href="#purpose">2.2.2.2 Remove a moderator</a></li>
-                            <li><a href="#purpose">2.2.2.2 Add an administrator</a></li>
-                            <li><a href="#purpose">2.2.2.2 Remove an administrator</a></li>
-                        </ul>
-                    </ul>
-                </ul>
-
+                        <li><a href="#general_users">2.1 General Users</a></li>
+                        <li><a href="#moderators">2.2 Moderators</a></li>
+                        <li><a href="#administrators">2.3 Administrators</a></li>
+		    </ul>
                 <li><a href="#diagrams">3. Diagrams</a>
                     <ul>
                         <li><a href="#back_end">3.1 Back End UML</a></li>
-			<li><a href = #back_end">3.2 Database Class Diagram</a></li>
-		        <li><a href = #back_end">3.3 Front End UML</a></li>
+			<li><a href = #data_class_diagram">3.2 Database Class Diagram</a></li>
+		        <li><a href = #front_end">3.3 Front End UML</a></li>
 			
                     </ul>
                 </li>
 
-                <li>4. Interface Description </li>
+                <li><a href="#interface">4. Description </a></li>
                 <ul>
-                    <li>4.1 Module Interface</li>
+                    <li><a href="#mod_interface">4.1 Module Interface</a></li>
                     <ul>
-                        <li>4.1.1 HomeView</li>
-                        <li>4.1.2 SearchResultView</li>
-                        <li>4.1.3 ArticleView</li>
-                        <li>4.1.4 PageEditView</li>
-                        <li>4.1.5 LoginView</li>
-                        <li>4.1.5 AdminView</li>
+                        <li><a href="#home_view">4.1.1 HomeView</a></li>
+                        <li><a href="#search_result_view">4.1.2 SearchResultView</a></li>
+                        <li><a href="#article_view">4.1.3 ArticleView</a></li>
+                        <li><a href="#page_edit_view">4.1.4 PageEditView</a></li>
+                        <li><a href="#login_view">4.1.5 LoginView</a></li>
+                        <li><a href="#admin_view">4.1.5 AdminView</a></li>
                     </ul>
                 </ul>
 
-                <li>5. Method Detailed Design </li>
+                <li><a href="#method_detailed_design">5. Method Detailed Design </a></li>
                 <ul>
-                    <li>5.1 Controllers</li>
-                    <li>5.2 Services</li>
-                    <li>5.3 UpodDao</li>
-                    <li>5.4 Application</li>
-                    <li>5.5 Data Objects</li>
+                    <li><a href="#controllers">5.1 Controllers</a></li>
+                    <li><a href="#services">5.2 Services</a></li>
+                    <li><a href="#upoddao">5.3 UpodDao</a></li>
+                    <li><a href="#application">5.4 Application</a></li>
+                    <li><a href="#data_objects">5.5 Data Objects</a></li>
 		    
                 </ul>
             </ul>
@@ -362,20 +345,33 @@
         <h3 id="scope"> 1.2 Scope</h3>
         <p>This document is written to simplify the implementation of the modules for the front and back end devolpers.</p>
 
-        <h3 id="References"> 1.3 References</h3>
+        <h3 id="references"> 1.3 References</h3>
         <p>IEEE. IEEE Std 1016-1998 IEEE Recommended Practice for Software Design Descriptions. IEEE Computer Society, 1998</p>
 
     </div>
 
     <div>
-        <h2>2.Use Cases</h2>
-        <h3>2.1 Actors</h3>
-        <h4>2.1.1 General Users</h4>
+        <h2 id="usecase">2.Use Cases</h2>
+        <h3 id="general_users">2.1 General Users</h4>
         <p>The general user is any user on the website to access the content it serves.</p>
-        <h4>2.1.1 Moderators</h4>
+	<p>The general user's only use case is to directly access the information on the website.</p>
+        <h3 id="moderators">2.2 Moderators</h4>
         <p>The moderator is a user charged with creating and editing the content on UPOD. </p>
-        <h4>2.1.1 Administratos</h4>
+	<p>The moderator's use cases are as follows: </p>
+	    <ul>
+  		<li>A moderator can create new pages to showcase new information.</li>
+  		<li>A moderator can create edit already existing pages with information.</li>
+  		<li>A moderator can delete existing pages filled with information.</li>
+	    </ul>
+        <h3 id="administrators">2.3 Administrators</h4>
         <p>The administrator is a user responsible for maintaining the list of moderators and administrators. </p>
+	<p>The administrator's use cases are as follows: </p>
+	    <ul>
+  		<li>A administrator can add a moderator to the UPOD website.</li>
+  		<li>A administrator can remove a moderator from the UPOD website.</li>
+  		<li>A administrator can add a administrator to the UPOD website.</li>
+		<li>A administrator can remove a administrator from the UPOD website.</li>
+	    </ul>
         <p>Note: It should be noted that the moderator has access to the website's content and the administrator has access to both the website's content and the moderator's privileges.</p>
     </div>
 
@@ -388,7 +384,7 @@
         </a>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/assets/class.jpg" style="max-width:1000px;">
 	    
-	<h3 id="back_end">3.2 Database Class Diagram</h3>
+	<h3 id="data_class_diagram">3.2 Database Class Diagram</h3>
 	<img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/Database%20Diagrams/DatabaseClassDiagram.JPG" style="max-width:1000px;">
 
         <h3 id="front_end">3.3 Front End UML</h3>
@@ -400,8 +396,8 @@
 
     <div>
         <h2 id="interface">4. Interface Description</h2>
-        <h3>4.1. Module Interface</h3>
-        <h4>4.1.1 HomeView</h4>
+        <h3 id="mod_interface">4.1. Module Interface</h3>
+        <h4 id="home_view">4.1.1 HomeView</h4>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/screenshots/home.PNG">
         <table>
             <tr>
@@ -436,7 +432,7 @@
             </tr>
         </table>
 
-        <h4>4.1.2 SearchResultView</h4>
+        <h4 id="search_result_view">4.1.2 SearchResultView</h4>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/screenshots/searchresult.PNG">
         <table>
             <tr>
@@ -475,7 +471,7 @@
                 <td>Redirects user to ArticleView.</td>
             </tr>
         </table>
-        <h4>4.1.3 ArticleView</h4>
+        <h4 id="article_view">4.1.3 ArticleView</h4>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/screenshots/page.PNG">
 	
         <table>
@@ -511,7 +507,7 @@
             </tr>
         </table>
 
-        <h4>4.1.4 PageEditView</h4>
+        <h4 id="page_edit_view">4.1.4 PageEditView</h4>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/screenshots/edit.PNG">
         <table>
             <tr>
@@ -596,7 +592,7 @@
             </tr>
         </table>
 
-        <h4>4.1.5 LoginView</h4>
+        <h4 id="login_view">4.1.5 LoginView</h4>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/assets/5.png">
         <table>
             <tr>
@@ -626,7 +622,7 @@
             </tr>
         </table>
 
-        <h4>4.1.6 AdminView</h4>
+        <h4 id="admin_view">4.1.6 AdminView</h4>
         <img src="https://raw.githubusercontent.com/LucianoAbbott/UPOD/master/Design%20Document/assets/6.png">
         <table>
             <tr>
@@ -693,9 +689,9 @@
     </div>
 
     <div>
-        <h2>5. Method Detailed Design</h2>
+        <h2 id="method_detailed_design">5. Method Detailed Design</h2>
         <p>This section describes the specific objects used in the back end package. It details the specific requirements of each method.</p>
-        <h3>5.1 Controllers</h3>
+        <h3 id="controllers">5.1 Controllers</h3>
         <p>These objects are responsible for receiving api calls, triggering the correct actions and preparing a well formed response.</p>
         <h4>5.1.1 PageCtrl</h4>
         <p>This controller handles the page modification endpoints.</p>
@@ -713,7 +709,7 @@
         <p>Request type: DELETE<br> 1. Call PermissionService.removeMod(String currentUser, String userToRemove)<br> 2. Return ResponseEntity with success or error message</p>
         <h4>5.1.2.4 removeAdmin(String currentUser, String userToRemove)</h4>
         <p>Request type: PUT<br> 1. Call PermissionService.addAdmin(String currentUser, String userToAdmin)<br> 2. Return ResponseEntity with success or error message</p>
-        <h3>5.2 Services</h3>
+        <h3 id="services">5.2 Services</h3>
         <h4>PageService</h4>
         <p>This service handles the page modification operations.</p>
         <h4>5.2.1.1 createPage(String currentUser, Page page)</h4>
@@ -734,7 +730,7 @@
         </p>
         <h4>5.2.2.4 removeAdmin (String currentUser, String userToRemove)</h4>
         <p>1. Check that currentUser is an admin<br> 2. Call UpodDao removeAdmin with userToRemove<br> 3. Return success or failure</p>
-        <h3>5.3 UpodDao</h3>
+        <h3 id="upoddao">5.3 UpodDao</h3>
         <p>This object encapsulates all of the database's interactions with the system. All methods are simple operations. The database stores page urls, moderators and administrators. There will be one instance of the UpodDao created at application startup
             and accessable through the static Application getUpodDaoInstance method</p>
         <h4>5.3.1 pageExists(String url)</h4>
@@ -755,11 +751,11 @@
         <p>1. Add user to administrator table<br> 2. Return success or failure</p>
         <h4>5.3.9 removeAdmin(String user)</h4>
         <p>1. Remove user from administrator table<br> 2. Return success or failure</p>
-        <h3>5.4 Application</h3>
+        <h3 id="application">5.4 Application</h3>
         <p>This object contains the main method and hosts the single static instance of UpodDao.</p>
         <h4>5.4.1 getUpodDaoInstance()</h4>
         <p>1. Return the UpodDao</p>
-        <h3>5.5 Data Objects</h3>
+        <h3 id="data_objects">5.5 Data Objects</h3>
         <p>These objects represent data that will be passed from the front end.</p>
         <h4>5.5.1 Page</h4>
         <p>Represents a single entry in the database</p>
@@ -787,9 +783,10 @@
         </div>
 
         <br/>
+        
         <div align="right">
-            <button onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButtonLeft", style="vertical-align:middle; margin-top: 20px"><span>Back to Repository</span></button>
-            <button onclick = "goToUPODIndex()", class="hoverButtonRight", style="vertical-align:middle; margin-top: 20px; float: left"><span>Go to UPOD Index</span></button> 
+            <button onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButtonLeft", style="vertical-align:middle; margin-top: 20px", title="UPOD Repository on Github"><span>Back to Repository</span></button>
+            <button onclick = "goToUPODIndex()", class="hoverButtonRight", style="vertical-align:middle; margin-top: 20px; float: left"><span>Go to UPOD Library</span></button> 
         </div>
     </div>	
 	

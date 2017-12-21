@@ -1,0 +1,39 @@
+Measuring Voltage, Resistance, and Current
+
+Introduction
+Measuring voltage, resistance, and current is a very important task. Whether it be for knowledge or safety, it’s better to measure twice and not short a circuit. Voltage, resistance, and current can be measured by using a Multimeter or by doing some simple mathematics. 
+
+Measuring Voltage
+Voltage is measured in Volts (V) with a voltmeter by connecting the Test Probes in parallel with the object that needs to be measured. If the meter reads negative, the Test Probes are reversed. 
+http://denethor.wlu.ca/pc320/voltage/series1_v.gif 
+
+Another way to get the value of voltage is by multiplying the known values of resistance and current. 
+[V=IR] 
+V – Voltage (V)
+I – Current (A)
+R – Resistance ([Ohm symbol])
+
+Measuring Resistance
+Resistance is measured in Ohms ([Ohm symbol]) with an ohmmeter by first making sure the circuit is off, then connecting the Test Probes in parallel with the object that needs to be measured. 
+http://denethor.wlu.ca/pc320/images/dmm_resistor_measure.jpg 
+
+Another way to get the value of resistance is by dividing the known value of voltage by the known value of current. 
+[R=V/I] 
+V – Voltage (V)
+I – Current (A)
+R – Resistance ([Ohm symbol])
+
+Measuring Current
+Current is very dangerous to measure. If done wrong, one can fry a circuit. It is measured in Amperes (A) with an ammeter by first turning the circuit off, then connecting the Test Probes in series with the object that needs to be measured, and finally turning the circuit on to get a measurement. 
+http://denethor.wlu.ca/pc320/voltage/parallel_c.gif 
+
+Another way to get the value of current is by dividing the known value of voltage by the known value of resistance. This is a preferred way of getting current because there is lower risk of damaging equipment.  
+[I=V/R] 
+V – Voltage (V)
+I – Current (A)
+R – Resistance ([Ohm symbol])
+
+References
+http://denethor.wlu.ca/common/data_sheets/33xra_man.pdf 
+http://denethor.wlu.ca/pc320/resistance/resistor_lab.shtml 
+http://denethor.wlu.ca/pc320/voltage/voltage_lab.shtml 

@@ -2,7 +2,6 @@ package datatypes;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 /**
  * Data type representing a complete page in the wiki
@@ -14,10 +13,10 @@ public class Page implements Comparable<Page>{
 	private int pageId;
 	private String title; 
 	private String url; 
-	private ArrayList<Section> sections;
+	private Section[] sections;
 	
 	private double relevance; // the relevance a page has to a query string, used to sort the pages before returning them
-	
+	public static final int MAX_SECTION_COUNT = 20;
 	/**
 	 * Constructor for class "Page"
 	 * Preconditions:
@@ -30,11 +29,10 @@ public class Page implements Comparable<Page>{
 	 * @author Lauren Hepditch
 	 */
 	public Page(int pageId, String title, String url){
-		
 		this.pageId = pageId;
 		this.title = title;
 		this.url = url;
-		this.sections = new ArrayList<Section>();
+		this.sections = new Section[MAX_SECTION_COUNT];
 	}
 
 	/**
@@ -61,10 +59,7 @@ public class Page implements Comparable<Page>{
 	 * @author Lauren Hepditch
 	 */
 	public Page(){
-		pageId = 0;
-		title = null;
-		url = null;
-		sections = new ArrayList<Section>();
+		this(0,null,null);
 	}
 	
 	/**
@@ -141,7 +136,7 @@ public class Page implements Comparable<Page>{
 	 * Date last changed: 12/01/2017
 	 * @author 
 	 */
-	public void setSections (ArrayList<Section> sections) {
+	public void setSections (Section[] sections) {
 		this.sections = sections;
 	}
 
@@ -154,7 +149,7 @@ public class Page implements Comparable<Page>{
 	 * Date last changed: 12/01/2017
 	 * @author 
 	 */	
-	public ArrayList<Section> getSections () {
+	public Section[] getSections () {
 		return this.sections;
 	}
 	
@@ -191,7 +186,7 @@ public class Page implements Comparable<Page>{
 			Returns (String) sb.toString() - a string containing all the text in the Page.
 	 * Exceptions: None.
 	 * Date last changed: 
-	 * @author 
+	 * @author luciano
 	 */
 	/** 
 	 * Returns a string that contains all of the text in a page
@@ -202,10 +197,12 @@ public class Page implements Comparable<Page>{
 		sb.append(this.title);
 		sb.append(" ");
 		for (Section s : this.getSections()) {
-			sb.append(s.getTitle());
-			sb.append(" ");
-			sb.append(s.getText());
-			sb.append(" ");
+			if (s != null) {
+				sb.append(s.getTitle());
+				sb.append(" ");
+				sb.append(s.getText());
+				sb.append(" ");
+			}
 		}
 		return sb.toString();
 	}
@@ -217,7 +214,7 @@ public class Page implements Comparable<Page>{
 	 * Postconditions: Page are sorted relative to eachothers relevance.
 	 * Exceptions: None.
 	 * Date last changed: 
-	 * @author 
+	 * @author luciano
 	 */
 	@Override
 	public int compareTo(Page that) {

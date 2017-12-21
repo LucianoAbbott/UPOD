@@ -1,0 +1,28 @@
+Locations of key elements:
+(Note: "master" refers to the root folder of this repository, also known as "UPOD" when you download the entire ZIP)
+
+Index page - master/Library of UPOD.html
+
+Front-end HTML pages, CSS and JavaScript - master/Front End Proposals/HTML/flex
+
+Back-end - master/Backend
+Back-end SQA - master/Backend SQA
+
+Database - master/Database
+
+Project management document - master/Project Management Plans/ManagementDocumentFormatted.html
+Project management SQA - master/Project Management Plans/Management SQA Sheet.xls
+
+Requirements document - master/Requirements Document/Final HTML Format/Requirements.html
+Requirements SQA -master/Requirements Document/Requirements SQA Sheet.xls
+
+Analysis document - master/Analysis Document/HTML/AnalysisDocument.html
+Analysis SQA - master/Analysis Document/Analysis SQA Sheet.xls
+
+Design document - master/Design Document/design.html
+Design SQA - master/Design Document/Design SQA Sheet.xls
+
+Progress report - master/Progress Report/Progress Report.html
+Physics info pages - master/Sample Pages
+Documentation standard - master/Method Documentation
+User identities - master/github account map

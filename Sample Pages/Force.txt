@@ -1,0 +1,37 @@
+Force
+
+Introduction
+In everyday life, we encounter forces constantly. Forces are what cause objects to move or stay still. They are commonly defined as a push or pull acting on an object. Every time we move or touch objects we apply forces to them. This page will define multiple types of forces, including: Applied Force, Normal Force, Gravity, Frictional Force, Air Resistance, Tensional Force, and Spring Force.
+
+F = ma
+
+F, Force,  A push or pull acting on an object. Measured in Newtons.
+m, Mass, the amount of material in an object. Measured in Kilograms.
+a, Acceleration, the rate of change in the velocity of an object with respect to time.
+
+Applied Force
+A force applied to an object using another object. If a pool ball hits another pool ball, the first ball applies force to the second. When a person throws a ball, the person applies force to the ball in order to move it.
+
+Frictional Force
+A force applied by the surface an object is on. If we slide a wooden box across a carpet, the carpet exerts a frictional force on the box. If we slide the same wooden box across smooth ice, the frictional force would be much weaker than it is on the carpet. The box will only move if  the applied force is greater than the frictional force. 
+
+Gravity
+The attractive force of an object. All objects have gravity, but it is the most obvious on the astronomical scale. Objects such as planets attract less massive objects (like humans) towards their centres. Gravity differs as a function of mass, in that the more massive the object, the stronger its gravity. This is why Earth has stronger gravity than the moon. Earth's gravity is 9.8 Newtons while the moon's is ~1.6. Unlike mass, weight is also defined by gravity: Weight = Gravity x Mass. 
+
+g, Gravity, the attractive force of an object that varies based on the object's mass. Measured in Newtons. On Earth, gravity is 9.8 Newtons.
+
+Normal Force
+The force that from a stable object that pushes back on another object resting on it. For example: if an apple rests on a table, the table exerts a normal force on the apple that counters the gravitational force. Likewise, if a person leans against a wall, the wall pushes back on the person with a normal force.
+
+Air Resistance
+Friction as an object travels through air.  Air will work against the motion of an object, slowing or stopping it. If we drop a basketball from a window, air resistance will slow it as it falls, but not noticably. Air resistance's effect is very weak and as a result it is often left out of calculations. 
+
+Tension Force
+The force that travels along a rope or thread when it is pulled tight. Tension force pulls equally from both ends of the rope, whether there is an applied force at one end or both ends.
+
+Spring Force
+A force exterted on an object by a spring. When an object is attached to a spring, the spring will exert a force on it until the spring reaches an equilibrium. The strength of a spring force is proportional to the amount the spring is stretched or compressed.
+
+References (for sample page only)
+"Types of Forces.",The Physics Classroom, http://www.physicsclassroom.com/class/newtlaws/Lesson-2/Types-of-Forces. Accessed December 2017.
+"Gravity.",Wikipedia,https://en.wikipedia.org/wiki/Gravity. Accessed December 2017.

@@ -1,0 +1,74 @@
+UPOD Progress Report
+
+
+Overview
+
+The Undergraduate Online Physics Database is an online repository of data designed for students to access physics information, 
+equations and diagrams to help aid them in furthering their educations in their university careers. 
+The information on UPOD added, edited and removed by moderators and administrators that are approved to do so. 
+This is given with the assumption that moderator are Teaching Assistants and administrators are Professors.  
+This report will give a short summary of what was complete, when it was completed and what still needs to be finished.
+
+
+Software Project Management Plan (SPMP)
+
+The software project management plan is document which outlines, at its core, budget, staffing and the project schedule. 
+It outlines what the project it to accomplish, each sections of the project, and budget, staffing and the schedule for each project section. 
+The SPMP, and its corresponding SQA, was completed on time, on September 27th, 
+with minor changes done through the project development as certain, elements were added, edited or removed entirely.
+
+
+Requirements Document
+
+The requirements document is a document which outlines what the UPOD is capable of doing, in terms of functionality and design. 
+How it functions, how methods function and other such information that outlines the structure of UPOD. 
+The requirements document, and its corresponding SQA, was completed on time, 
+with minor changes done through the project development as certain, elements were added, edited or removed entirely.
+
+
+Analysis Document
+
+The analysis document is a document that provides an in-depth analysis of the project beyond the initial requirements phase. 
+It acts as a basis for the design document as well as for the project. 
+The class, use case, and sequence diagrams are used in conjunction with object-oriented design to establish a starting point 
+for project implementation. This document and its corresponding SQA, was completed on time, on September 27th, 
+with minor changes done through the project development as certain, elements were added, edited or removed entirely.
+
+
+Design Document
+
+The design document is a document that explains the projects design and setup of the UPOD application. 
+This document and its corresponding SQA, was completed on time, with minor changes done through the project development as certain, 
+elements were added, edited or removed entirely.
+
+
+Implementation
+
+The actual implementation of the project was divided into two sections- front and back end with about half of the group 
+belonging to each. The front-end was responsible for the design and programming of the user interface using HTML, CSS and JavaScript.
+The back-end involved storing data in a database using JDBC, and manipulating data using Java.
+
+
+Completion
+
+The project was not completed as originally intended, however we did get many things working and working quite well. The front-end
+HTML pages are complete, while the underlying JavaScript used to make these pages interactive was close to completion (as seen
+on the edit page). The JSON was also close to working. The back-end managed to get a lot of their stuff complete (such as the 
+search, page storage, retrieval and deletion) but not enough to fully interact with the front end. Essentially there are lots of 
+working or almost working parts, we just weren't quite able to put it all together.
+
+
+Challenges we faced
+
+We had trouble getting all the group members together with our varying schedules. There were also issues with getting the JSON to
+communicate with the data in the back-end. There were also issues with getting the front-end HTML working with all browsers, for
+example, it seemed like FireFox rendered the top search bar beside the body rather than above it, on every page that had it in
+the header.
+
+
+How we could improve
+
+As the project went on certain individuals emerged as being more experienced with certain aspects (such as HTML and JavaScript). It
+might have been helpful to assign these people as leaders earlier on in the cycle so they could better dictate just exactly how 
+we would do things, rather than the laissez-faire style employed in the early stages.
+

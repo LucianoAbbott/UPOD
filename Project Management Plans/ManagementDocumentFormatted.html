@@ -40,6 +40,7 @@
 	color: #FF0055;
     }
 
+    /*CSS for base button styling*/
     .button {
 	background-color: #e7e7e7; 
 	border: none;
@@ -55,12 +56,13 @@
 	cursor: pointer;
     }
 
-
+    /*CSS for the "Show/Hide Change History" button*/
     .showTableButton {
        	background-color: white;
     	color: black;
     	border: 2px solid #3D3D3D;
     	box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
+	outline: none;
     }
 
     .showTableButton:hover {
@@ -68,25 +70,13 @@
     	color: white;
     }
 
-    .hoverButtonLeft {
-	display: inline-block;
-	border-radius: 10px;
-	background-color: white;
-	border: none;
-	border-width:2px;  
-	border-style:double;
-	border-color:#2A2A2A;
-	color: #2A2A2A;
-	text-align: center;
-	font-size: 16px;
-	padding: 10px;
-	width: 200px;
-	transition: all 0.5s;
-	cursor: pointer;
-	margin: 5px;
+    .showTableButton:active {
+	box-shadow: 0 0px #666;
+	transform: translateY(4px);
     }
 
-    .hoverButtonRight {
+    /*CSS for footer button "Go to UPOD Library" */
+    .hoverButtonLeft {
 	display: inline-block;
 	border-radius: 10px;
 	background-color: white;
@@ -111,19 +101,46 @@
     	transition: 0.5s;
     }
 
-    .hoverButtonRight span {
-    	cursor:pointer;
-    	display: inline-block;
-    	position: relative;
-    	transition: 0.5s;
-    }
-
     .hoverButtonLeft span:after {
     	content: '\00bb';
     	position: absolute;
     	opacity: 0;
     	top: 0;
     	right: -20px;
+    	transition: 0.5s;
+    }
+
+    .hoverButtonLeft:hover span {
+    	padding-right: 25px;
+    }
+    .hoverButtonLeft:hover span:after {
+    	opacity: 1;
+    	right: 0;
+    }
+
+    /*CSS for footer button "Back to Repository" */
+    .hoverButtonRight {
+	display: inline-block;
+	border-radius: 10px;
+	background-color: white;
+	border: none;
+	border-width:2px;  
+	border-style:double;
+	border-color:#2A2A2A;
+	color: #2A2A2A;
+	text-align: center;
+	font-size: 16px;
+	padding: 10px;
+	width: 200px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+    }
+
+    .hoverButtonRight span {
+    	cursor:pointer;
+    	display: inline-block;
+    	position: relative;
     	transition: 0.5s;
     }
 
@@ -136,17 +153,8 @@
     	transition: 0.5s;
     }
 
-    .hoverButtonLeft:hover span {
-    	padding-right: 25px;
-    }
-
     .hoverButtonRight:hover span {
     	padding-left: 25px;
-    }
-
-    .hoverButtonLeft:hover span:after {
-    	opacity: 1;
-    	right: 0;
     }
 
     .hoverButtonRight:hover span:after {
@@ -154,6 +162,7 @@
     	left: 0;
     }
 	
+    /*CSS for horizontal navbar with hyperlinks*/
     .navbar {
 	overflow: hidden;
 	background-color: #333;
@@ -186,6 +195,7 @@
 	border-bottom-right-radius: 10px;
     }
 	
+    /*CSS for "Top" button in top right-hand corner of the page*/
     #backToTopButton {
 	background-color: white;
 	border: none;	
@@ -213,6 +223,11 @@
 	color: white;
     }
 	
+    #backToTopButton:active {
+	box-shadow: 0 0px #666;
+	transform: translateY(4px);
+    }
+	
 </style>
 
 <html>
@@ -220,20 +235,40 @@
 		<title>UPOD - Project Management Plan</title>
 
 		<script>
+			//Function that opens the local Library of UPOD.html file only in the event that it is opened from the local Project Management Plan from within the repository, and for all other cases, the user is redirected to the online web version of the Library of UPOD. 			
 			function goToUPODIndex() {
 				var url = document.URL; 
-				if (url.startsWith("file")==false) { //If not a file
-					window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html");				
-				} else { //If a file
-					if (url.includes("UPOD-master")) { //If a file and in repository
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
+					window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html"); //Then go to the online Library of UPOD 			
+				} else { //If the current URL of Library of UPOD, is a file
+					if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is file and in repository
+						//Then go to the local Library of UPOD
 						var indexURL = url.substring(0, url.lastIndexOf('/')); 
 						indexURL = indexURL.substring(0, indexURL.lastIndexOf('/')); 
-						indexURL += "/docs/index.html"
+						indexURL += "/Library of UPOD.html"
 						window.open(indexURL);
-					} else { //If a file and not in repository				
-						window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/docs/index.html");
+					} else { //If the current URL of Library of UPOD, is a file and not in repository		
+						window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Library%20of%20UPOD.html"); //Then go to the online Library of UPOD 
 					}
 				}
+			}
+
+			//Function that opens the local Progress Report.html only in the event that it is opened from the local Project Management Plan from within the repository, and for all other cases, the user is redirected to the online web version of the Library of UPOD
+			function openProgressReport() {
+				var url = document.URL; 
+				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
+					window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Progress%20Report/Progress%20Report.html#Implementation"); //Then go to the online Progress Report		
+				} else { //If the current URL of Library of UPOD, is a file
+					if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is file and in repository
+						//Then go to the local Progress Report
+						var indexURL = url.substring(0, url.lastIndexOf('/')); 
+						indexURL = indexURL.substring(0, indexURL.lastIndexOf('/')); 
+						indexURL += "/Progress%20Report/Progress%20Report.html#Implementation"
+						window.open(indexURL);
+					} else { //If the current URL of Library of UPOD, is a file and not in repository		
+						window.open("http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Progress%20Report/Progress%20Report.html#Implementation"); //Then go to the online Progress Report
+					}
+				}						
 			}
 		</script>
 
@@ -260,7 +295,7 @@
     <header>
 	<h1>Project Management Plan for UPOD</h1>
 	<p class="version">Authors: Richard Bouda, Abel Worku, Peter Smerchinski, Nathan Wickham</p>
-	<p class="version", align="right">Version 2.7.5</p> 
+	<p class="version", align="right">Version 3.0</p> 
 	<p class="version", id="date", align="right"></p>
 	<script>
 		var currentDate = new Date();
@@ -479,6 +514,16 @@
 			<td>Added a footer "Go to UPOD Index" button</td>
 		</tr>
 			
+		<tr>
+			<th>2.9</th>
+			<td>Removed section 1.2 due to conceptual obsolescence</td>
+		</tr>
+
+		<tr>
+			<th>3.0</th>
+			<td>Updated sections of the Project Management Plan and hyperlinked a few inline elements</td>
+		</tr>
+			
 	    </table>
 	</ul>
 			
@@ -589,7 +634,7 @@
 	<h2 id = "overview">1. Overview</h2>
  		<h3 id = "projectSummary">1.1 Project Summary</h3>
   			<h4 id="purpose">1.1.1 Purpose, Scope, and Objectives</h4>
-  			<p>UPOD (Undergraduate Online Physics Database) is software designed for students to access physics information, equations and diagrams as well as for professors to add, edit and remove those components. The scope is Wilfrid Laurier University and the objective is to create software that is easy to use for both students and professors alike. The finished version of UPOD will be delivered to David Brown who will also monitor and critique each stage of the development process. A more detailed overview can be found on this project's Requirements document <a href="#bottomPage">(linked at the bottom)</a>.</p>
+  			<p>UPOD (Undergraduate Online Physics Database) is software designed for students to access physics information, equations and diagrams as well as for professors to add, edit and remove those components. The scope is Wilfrid Laurier University and the objective is to create software that is easy to use for both students and professors alike. The finished version of UPOD will be delivered to David Brown who will also monitor and critique each stage of the development process. A more detailed overview can be found on this project's <a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Requirements%20Document/Final%20HTML%20Format/Requirements.html", target="_blank">requirements document</a>.</p> 
   
   			<h4 id="assumptions">1.1.2 Assumptions and Constraints</h4> 
   			<p>The project is to be completed by December 4th, 2017. The constraints include working around various group members' schedules to communicate effectively and fulfil tasks on time. It is assumed that all work will be completed by each deadline, and to further ensure such goals, deadlines will be set earlier than their official posting to facilitate time for necessary modifications and SQA testing. Coding is expected to follow Laurier's standards as well as our own documentation template found on the repository. Budget is not a factor in this project.</p>
@@ -852,7 +897,7 @@
    			<p>Work activities will be determined in greater detail once the project's requirements and design frameworks near their completion. It is however assumed that each individual working on the project will spend an average of five hours a week performing these work activities, with a natural increase in time spent to ten hours a week as the final deadline approaches.</p>
     
     			<h4 id="scheduleAllocation">5.2.2 Schedule Allocation</h4>
-     			<p>Scheduling will be determined by consensus within smaller, more specialized groups, such that they conform to the broader dates agreed upon by the client. The basics of the schedule will be kept in section 1.1.4 of this document, with frequent reminders given to the members of the project.</p>
+     			<p>Scheduling will be determined by consensus within smaller, more specialized groups, such that they conform to the broader dates agreed upon by the client. The basics of the schedule will be kept in <a href="#scheduleSummary">section 1.1.4</a> of this document, with frequent reminders given to the members of the project.</p>
      
     		<h3 id="controlPlan">5.3 Control Plan</h3>
     
@@ -945,7 +990,8 @@
  		<p>Any problems that may arise are settled democratically by ways of polling and surveying the most supported outcome. For instance, time conflicts and meetings will be decided by a vote, and the time with the highest number of votes will be selected as representative of the group majority.</p>
  
 	 	<h3 id="processImprovementPlan">7.7 Process Improvement Plan</h3>
- 		<p>Formulation of the process improvement plan should occur in the maintenance phase (post-implementation), when the team and its members have a more comprehensive understanding and experience of how the project UPOD has moved through the various processes of project development.</p>
+ 		<p>Pre-Implementation: Formulation of the process improvement plan should occur in the maintenance phase (post-implementation), when the team and its members have a more comprehensive understanding and experience of how the project UPOD has moved through the various processes of project development.</p>
+ 		<p>Post-implementation: The process improvement plan can be found <a href="", onclick="openProgressReport()">here</a>.</p>
 </div>
 
 	<br/>
@@ -963,7 +1009,7 @@
 		<br></br>
 
 		<div>
-			<a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Requirements%20Document/Final%20HTML%20Format/Requirements.html", id="bottomPage", target="_blank"><br>Requirements Document</br></a>
+			<a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Requirements%20Document/Final%20HTML%20Format/Requirements.html", target="_blank"><br>Requirements Document</br></a>
 
 			<a href="http://htmlpreview.github.io/?https://github.com/LucianoAbbott/UPOD/blob/master/Analysis%20Document/HTML/AnalysisDocument.html", target="_blank"><br>Analysis Document</br></a>
 
@@ -972,8 +1018,8 @@
 
 		<br/>
 		<div align="right">
-			<button onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButtonLeft", style="vertical-align:middle; margin-top: 20px"><span>Back to Repository</span></button>
-			<button onclick = "goToUPODIndex()", class="hoverButtonRight", style="vertical-align:middle; margin-top: 20px; float: left"><span>Go to UPOD Index</span></button>		
+			<button onclick="window.location='https://github.com/LucianoAbbott/UPOD';", class="hoverButtonLeft", style="vertical-align:middle; margin-top: 20px", title="UPOD Repository on Github"><span>Back to Repository</span></button>
+			<button onclick = "goToUPODIndex()", class="hoverButtonRight", style="vertical-align:middle; margin-top: 20px; float: left"><span>Go to UPOD Library</span></button>		
 		</div>
 	</div>
 
