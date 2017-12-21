@@ -38,6 +38,14 @@ public class MockUpodDao extends UpodDao {
 	
 	@Override
 	public ArrayList<Page> searchPages(String query) {
-		return null;
+		return buildPages();
+	}
+	
+	private ArrayList<Page> buildPages() {
+		ArrayList<Page> result = new ArrayList<Page>();
+		for (int i = 0; i < 7; i++) {
+			result.add(new Page(i, "page #" + i, "page/" + i));
+		}
+		return result;
 	}
 }

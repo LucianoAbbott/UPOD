@@ -93,8 +93,8 @@ public class PageService {
 		
 		pages.sort(null);
 		
-		for (Page page : pages) {
-			result.add(page);
+		for (int i = 0; i < MAX_QUERY_RESULT_COUNT; i++) {
+			result.add(pages.get(i));
 		}
 		return result.toArray(new Page[MAX_QUERY_RESULT_COUNT]);
 	}
