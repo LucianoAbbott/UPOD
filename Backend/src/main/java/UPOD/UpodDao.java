@@ -130,9 +130,6 @@ public class UpodDao {
 	private Section[] getSections(int pageId) throws SQLException {
 		Section[] sections = new Section[Page.MAX_SECTION_COUNT];
 		Section currentSection;
-		//Statement statement = createStatement();
-		//ResultSet sectionResult = statement.executeQuery("SELECT * FROM SECTION WHERE pageId = " + pageId); // get
-		
 		
 		PreparedStatement statement = null;
 		String selectSection = "SELECT * FROM SECTION WHERE pageId = ?"; 
@@ -163,11 +160,6 @@ public class UpodDao {
 		ArrayList<Variable> variables = new ArrayList<Variable>();
 		//Statement variableStatement, varIdListStatement;
 		//ResultSet variableResult, varIdListResult;
-
-		//varIdListStatement = createStatement();
-		//variableStatement = createStatement();
-
-		//varIdListResult = varIdListStatement.executeQuery("SELECT varId FROM SECVAR WHERE pageId = " + pageId + " AND sectionId = " + sectionId);
 
 		PreparedStatement varIdListStatement = null;
 		PreparedStatement variableStatement = null;
@@ -211,11 +203,7 @@ public class UpodDao {
 		ArrayList<Page> pages = new ArrayList<Page>();
 		int id, size, i;
 		Boolean inList = false;
-		//Statement stmt = createStatement();
-		//ResultSet rs;
-
-		//rs = stmt.executeQuery("SELECT PageId from PAGE WHERE title LIKE '%" + str + "%';");
-		
+	
 		PreparedStatement stmt = null;
 		String selectPageId = "SELECT PageId from PAGE WHERE title LIKE ?;"; 
 		connection.setAutoCommit(false);
@@ -228,14 +216,12 @@ public class UpodDao {
 			id = rs.getInt("pageId");
 			pages.add(getPage(id));
 		}
-
-		//rs = stmt.executeQuery("SELECT DISTINCT PageId from SECTION WHERE sectionTitle LIKE '%" + str
-				//+ "%' or sectionText LIKE '%" + str + "%';");
 		
 		selectPageId = "SELECT DISTINCT PageId from SECTION WHERE sectionTitle LIKE ? or sectionText LIKE ?;";
+		connection.setAutoCommit(false);
 		stmt = connection.prepareStatement(selectPageId);
 		stmt.setString(1, str);
-		stmt.setString(1, str);
+		stmt.setString(2, str);
 		rs = stmt.executeQuery();
 		connection.commit();
 		
