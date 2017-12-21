@@ -440,8 +440,7 @@
 				}	
 			}	
 			
-			//Function that opens the local 
-			file only in the event that it is opened from the local UPOD Library from within the repository, for all other cases, an alert prompt is shown indicating the latter before opening the index link. 
+			//Function that opens the local file only in the event that it is opened from the local UPOD Library from within the repository, for all other cases, an alert prompt is shown indicating the latter before opening the index link. 
 			function openAmbiguousHTML() {
 				var url = document.URL; 
 				if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
