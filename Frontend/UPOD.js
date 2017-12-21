@@ -993,7 +993,7 @@ function genJson() {
     submitText += "}\n";
 
     var xmlh = new XMLHttpRequest();
-    xmlh.open('POST', "http://rshopper.wlu.ca:8080/page/update", true);
+    xmlh.open('POST', "http://174.117.188.203:8080/page/update", true);
     xmlh.setRequestHeader("Content-type", "application/json");
     xmlh.send(submitText);
     console.log(submitText);
@@ -1001,10 +1001,7 @@ function genJson() {
     return submitText;
 }
 
-function searchTerms(event){
-  console.log("Search sent");
-  htp = new XMLHttpRequest;
-}
+
 
 function helloWorld() {
     alert("Hello World");
