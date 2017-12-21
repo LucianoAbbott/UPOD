@@ -1,4 +1,4 @@
-﻿/* General CSS*/
+﻿﻿﻿/* General CSS*/
 
 html {
     height: 100%;
@@ -181,7 +181,7 @@ a {
 }
 
 .homeBody {
-    height: 100%;
+    height: 100vh;
 }
 
 .center-row {
