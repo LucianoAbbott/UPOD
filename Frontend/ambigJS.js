@@ -23,7 +23,20 @@ function addLink(title, content){
 }
 
 function addLinks(numLinks){
-  for(var i = 0; i < numLinks; i++){
-    addLink();
+  var xmlh = new XMLHttpRequest();
+  xmlh.onreadystatechange = function() {
+    if (xmlh.readyState == 4) {
+        var raw = xmlh.responseText
+        var data = JSON.parse(raw);
+        console.log(raw);
+        for(var i = 0; i < numLinks; i++){
+          addLink(data.sections[0].title, data.sections[0].content);
+        }
+    }
   }
+
+  xmlh.open('GET', "http://174.117.188.203:8080/page/get/1", true);
+  xmlh.send(null);  
+
+ 
 }
