@@ -45,11 +45,10 @@ public class PageService {
 	 * @param pageId
 	 * @return true if the page was deleted
 	 */
-	public boolean deletePage(int pageId) throws SQLException {
+	public void deletePage(int pageId) throws SQLException {
 		if (upodDao.pageExists(pageId)) {
-			return upodDao.deletePage(pageId);
+			upodDao.deletePage(pageId);
 		}
-		return false;
 	}
 
 	/**
@@ -68,8 +67,9 @@ public class PageService {
 	 * Given query string, return a list of pages sorted by relevance to that string
 	 * @param query
 	 * @return 
+	 * @throws SQLException 
 	 */
-	public Page[] searchPages(String query) {
+	public Page[] searchPages(String query) throws SQLException {
 		SearchUtils.cleanQuery(query);
 		
 		ArrayList<Page> pages = new ArrayList<Page>();
