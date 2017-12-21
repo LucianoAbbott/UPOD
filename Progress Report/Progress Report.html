@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 <style>
@@ -79,7 +80,6 @@
         cursor: pointer;
         margin: 5px;
     }
-
 	.hoverButtonLeft span {
         cursor:pointer;
         display: inline-block;
@@ -101,7 +101,6 @@
         opacity: 1;
         right: 0;
     }
-
     /*CSS for footer button "Back to Repository" */    
     .hoverButtonRight {
         display: inline-block;
@@ -120,14 +119,12 @@
         cursor: pointer;
         margin: 5px;
     }
-
     .hoverButtonRight span {
         cursor:pointer;
         display: inline-block;
         position: relative;
         transition: 0.5s;
     }
-
     .hoverButtonRight span:after {
         content: '\00ab';
         position: absolute;
@@ -136,11 +133,9 @@
         left: -20px;
         transition: 0.5s;
     }
-
     .hoverButtonRight:hover span {
         padding-left: 25px;
     }
-
     .hoverButtonRight:hover span:after {
         opacity: 1;
         left: 0;
@@ -201,13 +196,11 @@
 			}
 		}
 	}
-
 	//Function that shows or hides the top-right corner info button, shown only in the event that the Library of UPOD has been opened as a local file from within the downloaded UPOD repository, and hidden visibility otherwise 
 	window.onload = function showOrHideEditHref() {
 		var url = document.URL;
 		if (url.startsWith("file")==false) { //If the current URL of Library of UPOD, is not a file
 			document.getElementById("editHref").style.display = "none"; //Then do not show the info button
-
 		} else { //If the current URL of Library of UPOD, is a file
 			if (url.includes("UPOD-master")) { //If the current URL of Library of UPOD, is a file and in repository
 				document.getElementById("editHref").style.display = "inline"; //Then show the info button					
@@ -216,7 +209,6 @@
 			}
 		}
 	}
-
 	//Function that accesses the local edit.html file
 	function goToEditHTML() {
 		var url = document.URL;
@@ -225,7 +217,6 @@
 		editURL += "/Front%20End%20Proposals/HTML/flex/Edit.html"
 		window.open(editURL);
 	}
-
         </script>
 
     </head>
@@ -316,7 +307,7 @@
     <div>
         <h3 id="Implementation">Implementation</h3>
 
-        <p>The implementation of the project was divided into two sections, front-end and back-end, with about half of the members of the group belonging to each. The front-end team was responsible for the design and programming of the user interface using HTML, CSS, and JavaScript. The back-end team was involved with storing data in a database using JDBC, and manipulating data using Java.</p>
+        <p>The implementation of the project was divided into two sections, front-end and back-end, with about half of the members of the group belonging to each. The front-end team was responsible for the design and programming of the user interface using HTML, CSS, and JavaScript. The back-end team was involved with storing data in a database using MySQL, and manipulating data using JavaSpring.</p>
 
     </div>
     
@@ -330,7 +321,7 @@
     <div>
         <h3 id="Challenges">Challenges We Faced</h3>
 
-        <p>We had trouble getting all the group members together with our varying schedules. There were also issues with getting the JSON to communicate with the data in the back-end. There were also issues with getting the front-end HTML working with all browsers, for example, it seemed like FireFox rendered the top search bar beside the body rather than above it, on every page that had it in the header.</p>
+        <p>We had trouble getting all the group members together with our varying schedules. There were also issues with getting the JSON to communicate with the data in the back-end. There are also issues with legacy browser support. Also on the Front-End, the decision to not use a framework, such as Bootstrap, increased development time, exponentially.</p>
 
     </div>
     
