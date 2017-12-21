@@ -27,8 +27,7 @@ public class MockUpodDao extends UpodDao {
 	}
 
 	@Override
-	public boolean deletePage(int id) {
-		return true;
+	public void deletePage(int id) {
 	}
 	
 	
