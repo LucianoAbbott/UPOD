@@ -1,0 +1,27 @@
+Optics
+
+Intro:
+
+	Optics is a branch of Physics dealing with light. It is divided into two branches: Geometrical (reflection and refraction in lenses) and Physical (polarization, interference and emission).
+
+	Light is a radiant energy made of particles called photons. Photons are used to explain how light interacts with matter, along with the resulting change of form of energy. Transverse waves are how light propagates through substances, described by oscillating points in the same plane, moving back and forth across a perpendicular axis that resembles a sine wave. As the wave front progresses, the radiant energy moves along the axis of the plane causing vibration at a point. The number of vibrations per second is referred to as frequency. 
+
+	Wavelength refers to the linear distance parallel to the axis between two points that occupy equivalent positions on the wave. Differences in wavelength can be seen as differences in colour on the spectrum of visible light.
+
+Geometrical optics:
+
+	Reflection and refraction refer to the way light travels through, enters, and is absorbed into different mediums. Each media has a refractive index which determines the amount light that is reflected. The plane of incidence contains the incident ray and the perpendicular normal line to the surface which meet at the point of incidence. The angle of incidence (reflection or refraction) is the angle between the incident (reflected or refracted) ray and this normal. According to the laws of reflection, the angle of incidence is equal to the angle of reflection. If the second medium has a smooth surface, it may produce a mirror image while if the medium is flat, the image will appear behind it. Note that not all light is reflected by the surface and that some of it gets absorbed or passes through the mirror. Reflection occurs when the light is rebounded by a surface and refraction occurs when light bends through the two media.
+
+	Lenses are are made with surfaces of small radii that have short focal lengths. A lens with two convex surfaces will refract rays so that they converge and focus on the opposite side of the lens. A lens with concave surfaces will cause the rays to diverge and appear only on the same side of the lens as the object being viewed.
+
+Physical optics:
+	
+	Polarization of light occurs when light emits pulses of radiation. A single atom produces a pulse that consists of a single wavelength, and the vector corresponding to this wave oscillates but keeps its angle (azimuth) as the wave travels through space. When a lot of atoms emit light, the azimuth can have random distribution (unpolarized) or have the same angle (polarized).
+
+	Interference can occur when two beams of light cross, resulting in a change in the intensity pattern. For example, the rainbow colours that appear when a film is placed on water are due to interference.
+
+	Spontaneous emission is what occurs when a lamp is turned on but if enough atoms have absorbed energy so that they are excited, then stimulated emission might occur. Stimulated emission amplifies the radiation that has a narrow beam spread so that material (such as gas, solid or liquid) may be shaped to form an interferometer where the wavelength is being reflected continuously. When optical frequencies are amplified in this way, it called a laser which is a concentrated, intense beam of light.
+
+Source:
+
+Microsoft Encarta Dictionary
