@@ -635,12 +635,6 @@ public class UpodDao {
 	 * @return success/fail
 	 */
 	public void deletePage(int pageId) throws SQLException {
-		//Statement pageStatement = createStatement();
-		//Statement sectionStatement = createStatement();
-
-		//pageStatement.execute("DELETE FROM PAGE WHERE PageId = " + pageId);
-		//sectionStatement.execute("DELETE FROM SECTION WHERE PageID = " + pageId);
-		
 		
 		PreparedStatement pageStatement = null;
 		PreparedStatement sectionStatement = null;
