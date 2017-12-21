@@ -492,31 +492,11 @@ function helloWorld() {
 // MY BAD
 // Was giving me errors so I'm hiding it for now sorry :( Nick~
 //fear ye mortals who enter this godforsaken realm of code
-/*
 function parseJSON() {
     // CALL JSON FROM DB
-    let data = '{"title": "Waves","sections": {"section1": {"secTitle": "Description","content": {"text": "The general body of text accompanying a section","image": "href to image stored in server","diagram": "href to diagram for ifram insert","equation": "latex for mathjax"}},"section2": {"secTitle": "General","content": {"text": "The general body of text accompanying a section",image": "href to image stored in server",diagram": "href to diagram for ifram insert","equation": "latex for mathjax"}},"section3":{ "secTitle": "Properties",content": {"text": "The general body of text accompanying a section","image": "href to image stored in server","diagram": "href to diagram for ifram insert","equation": "latex for mathjax}}}}';
+    alert("please help");
+    let data = '{"title": "Waves","sections": {"section1": {"secTitle": "Description","content": {"text": "The general body of text accompanying a section","image": "href to image stored in server","diagram": "href to diagram for ifram insert","equation": "latex for mathjax"}},"section2": {"secTitle": "General","content": {"text": "The general bod"}}}}'
     var parsed=JSON.parse(data);
-    alert(parsed);
-    window.sessionStorage.data=parsed;
-    if(window.sessionStorage){alert((window.sessionStorage.data.title))};
-    var test=window.open("");
-    alert(data.title);
-    //please do not look at the abomination of what i consider "code" below this comment
-    test.document.writeln("<html>");
-    test.document.writeln("<head>");
-    //test.document.writeln("<meta charset=ISO-8859-1>");
-    //test.document.writeln("<script src=UPOD.js></script>");
-    //test.document.writeln("<script src='Header.js'></script>");
-    //test.doxument.writeln("<link rel=stylesheet type=text/css href=Style.css>");
-    test.document.writeln("<title>"+JSON.stringify(data.title)+"</title>");
-    test.document.writeln("</head>");
-    test.docuemtn.writeln("<body>data.sections.section1.content.text");
-    //test.document.writeln("<script>genSearchSection();");
-    //test.document.writeln("</script>");
-    test.document.writeln("</body>");
-    test.document.writeln("</html>");
-    test.document.write("<html><head><title>MyTitle</title></head><body>test</body></html>");
+    
     //todo submit to data base yo
 }
-*/

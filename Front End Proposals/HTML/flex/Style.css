@@ -229,7 +229,7 @@ a {
 
 .bottom{
     float:left;
-    width:50%;
+    width:100%;
 }
 
 .leftF{
@@ -237,6 +237,7 @@ a {
     padding-left: 38%;
     padding-right: 10px;
     align-items: right;
+    width: 50%
     border-right: thin solid #fff;
 }
 
@@ -244,6 +245,7 @@ a {
     color: #fff;
     padding-right: 25%;
     padding-left: 10px;
+    width:50%;
     align-items: right;
 }
 
