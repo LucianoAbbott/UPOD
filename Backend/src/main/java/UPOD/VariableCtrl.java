@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,6 +25,7 @@ public class VariableCtrl {
 	 * @return Success or failure http code
 	 * @throws SQLException 
 	 */
+	@CrossOrigin
     @RequestMapping(method = RequestMethod.DELETE, value = "variable/{varid}/delete")
     public ResponseEntity<String> deleteVariable(@PathVariable("varid") int varId) throws SQLException {
     		variableService.deleteVariable(varId);

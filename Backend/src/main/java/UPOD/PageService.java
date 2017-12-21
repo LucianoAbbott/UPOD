@@ -24,10 +24,7 @@ public class PageService {
 		upodDao = UpodDao.getInstance();
 	}
 
-	/**
-	 * Constructor for testing purposes
-	 * @param upodDao
-	 */
+	 // Constructor for testing purposes
 	PageService(UpodDao upodDao) {}
 	
 	/**
@@ -89,21 +86,22 @@ public class PageService {
 	 * @return
 	 */
 	public Page[] sortPagesByRelevance(String query, ArrayList<Page> pages) {
-		int index = 0;
-		Page[] result = new Page[MAX_QUERY_RESULT_COUNT];
+		ArrayList<Page> result = new ArrayList<Page>();
 		for (Page page : pages) {
 			page.setRelevance(calculatePageRelevance(query, page));
 		}
+		
 		pages.sort(null);
+		
 		for (Page page : pages) {
-			result[index] = page;
-			index++;
+			result.add(page);
 		}
-		return result;
+		return result.toArray(new Page[MAX_QUERY_RESULT_COUNT]);
 	}
 	
 	/**
 	 * Calculate the relevance of page to query
+	 * relevance = # of occurances of each word in query / total words in page
 	 * @param query
 	 * @param page
 	 * @return
