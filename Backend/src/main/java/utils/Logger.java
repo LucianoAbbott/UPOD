@@ -52,6 +52,19 @@ public class Logger {
 	}
 
 	/**
+	 * Log message to system when a page is requested
+	 * Preconditions: 
+	 *		(Page) page - the page that was requested
+	 * Postconditions: log is printed to system
+	 * Exceptions: None.
+	 * Date last changed:
+	 * @author
+	 */
+	public static void logGet(String title) {
+		System.out.println("Getting page with title " + title);
+	}
+
+	/**
 	 * Log message to system when a page is search for with a query string.
 	 * Preconditions: 
 	 *		(String) query - search query used

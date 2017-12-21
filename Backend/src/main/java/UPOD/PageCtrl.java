@@ -25,7 +25,8 @@ public class PageCtrl {
 	private final String ENDPOINT_PREFIX = "/page";
 	private final String UPDATE_ENDPOINT = ENDPOINT_PREFIX + "/update";
 	private final String DELETE_ENDPOINT = ENDPOINT_PREFIX + "/delete/{pageid}";
-	private final String GET_ENDPOINT = ENDPOINT_PREFIX + "/get/{pageid}";
+	private final String GET_BY_ID_ENDPOINT = ENDPOINT_PREFIX + "/get/{pageid}";
+	private final String GET_BY_TITLE_ENDPOINT = ENDPOINT_PREFIX + "/get";
 	private final String SEARCH_ENDPOINT = ENDPOINT_PREFIX + "/search";
 
 	/**
@@ -60,6 +61,21 @@ public class PageCtrl {
 	}
 
 	/**
+	 * Endpoint to get a page from the database by id
+	 * 
+	 * @param pageId id of the page to update - if unused creates new page at that id
+	 * @return Success code & page object or failure http code
+	 * @throws SQLException
+	 */
+	@CrossOrigin
+	@RequestMapping(method = RequestMethod.GET, value = GET_BY_ID_ENDPOINT)
+	public ResponseEntity<Page> getPageById(@PathVariable("pageid") int pageId) throws SQLException {
+		Logger.logGet(pageId);
+		Page page = pageService.getPage(pageId);
+		return new ResponseEntity<Page>(page, HttpStatus.OK);
+	}
+
+	/**
 	 * Endpoint to get a page from the database
 	 * 
 	 * @param pageId id of the page to update - if unused creates new page at that id
@@ -67,13 +83,14 @@ public class PageCtrl {
 	 * @throws SQLException
 	 */
 	@CrossOrigin
-	@RequestMapping(method = RequestMethod.GET, value = GET_ENDPOINT)
-	public ResponseEntity<Page> getPage(@PathVariable("pageid") int pageId) throws SQLException {
-		Logger.logGet(pageId);
-		Page page = pageService.getPage(pageId);
+	@RequestMapping(method = RequestMethod.POST, value = GET_BY_TITLE_ENDPOINT)
+	public ResponseEntity<Page> getPageByTitle(@RequestBody String title) throws SQLException {
+		Logger.logGet(title);
+		Page page = pageService.getPage(title);
 		return new ResponseEntity<Page>(page, HttpStatus.OK);
 	}
 
+	
 	/**
 	 * Endpoint to get a page from the database
 	 * 

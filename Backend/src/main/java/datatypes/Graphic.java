@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class Graphic {
   
 	private int graphicId;
-	private String graphicURL; 
+	private String graphicUrl; 
 	private String description; 
 	
 	/**
@@ -24,11 +24,11 @@ public class Graphic {
 	 * Date last changed: 11/29/2017
 	 * @author Nathan Skof
 	 */
-	public Graphic(int gId, String gURL, String gDescription){
+	public Graphic(int graphicId, String graphicUrl, String description){
 		
-		this.graphicId = gId;
-		this.graphicURL = gURL;
-		this.description = gDescription;
+		this.graphicId = graphicId;
+		this.graphicUrl = graphicUrl;
+		this.description = description;
 	}
 	
 	/**
@@ -41,10 +41,10 @@ public class Graphic {
 	 */
 	public Graphic(){
 		this.graphicId = 0;
-		this.graphicURL = "";
+		this.graphicUrl = "";
 		this.description = "";
 	}
-	
+
 	/**
 	 * Constructor for class "Graphic"
 	 * Preconditions:
@@ -83,7 +83,7 @@ public class Graphic {
 	 * @author Nathan Skof
 	 */
 	public String getGraphicURL() {
-		return graphicURL;
+		return graphicUrl;
 	}
 	
 	/**
@@ -122,7 +122,7 @@ public class Graphic {
 	 * @author Nathan Skof
 	 */
 	public void setGraphicURL(String gGraphicURL){
-		this.graphicURL = gGraphicURL;	
+		this.graphicUrl = gGraphicURL;	
 	}
 
 }
