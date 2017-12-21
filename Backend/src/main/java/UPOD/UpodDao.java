@@ -76,15 +76,10 @@ public class UpodDao {
 	 * @return a complete page object.
 	 * @Author Lauren Hepditch
 	 */
-	public Page getPage(int pageId) throws SQLException { // working, needs more testing
+	public Page getPage(int pageId) throws SQLException {
 		Page page = null;
 		Section[] sections;
 
-		//Statement pageStatement = createStatement();
-		//ResultSet pageResult;
-		//pageResult = pageStatement.executeQuery("SELECT * FROM PAGE WHERE pageId = " + pageId); // get page
-		
-		
 		PreparedStatement pageStatement = null;
 		String selectPage = "SELECT * FROM PAGE WHERE pageId = ?";
 		connection.setAutoCommit(false);
@@ -110,20 +105,26 @@ public class UpodDao {
 	 * @return a complete page object.
 	 * @Author Lauren Hepditch
 	 */
-	public Page getPage(String title) throws SQLException { // working, needs more testing
+	public static Page getPage(String title) throws SQLException {
 		Page page = null;
 		Section[] sections;
 
-		Statement pageStatement = createStatement();
-		ResultSet pageResult;
-
-		pageResult = pageStatement.executeQuery("SELECT * FROM PAGE WHERE title = " + title); // get page
+		PreparedStatement pageStatement = null;
+		String selectPage = "SELECT * FROM PAGE WHERE title = ?";
+		connection.setAutoCommit(false);
+		pageStatement = connection.prepareStatement(selectPage);
+		pageStatement.setString(1, title);
+		ResultSet pageResult = pageStatement.executeQuery();
+		connection.commit();
+		
+		
 		pageResult.next();
 		page = new Page(pageResult);
 		sections = getSections(page.getId());
 		page.setSections(sections);
-
+		
 		pageStatement.close();
+		connection.setAutoCommit(true);
 		return page;
 	}
 	private Section[] getSections(int pageId) throws SQLException {
