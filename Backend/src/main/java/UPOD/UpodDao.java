@@ -64,6 +64,10 @@ public class UpodDao {
 			throw new IllegalStateException("Cannot connect to the database with information " + url, e);
 		}
 	}
+	
+	// exists for the mock upod dao, still useful don't remove
+	public UpodDao(UpodDao dao) {
+	}
 
 	/**
 	 * Access method for UpodDao - follows singleton pattern
