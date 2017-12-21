@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * @author Lauren Hepditch
  */
 public class Section {
-	public static final int MAX_VARIABLE_COUNT = 100;
+	public static final int MAX_VARIABLE_COUNT = 10;
 	
 	private int sectionId;
 	private String title;
@@ -42,7 +42,7 @@ public class Section {
 		this.bodyText = bodyText;
 		this.equations = equations;
 		this.graphic = graphic;
-		this.variables = new Variable[100];
+		this.variables = new Variable[MAX_VARIABLE_COUNT];
 	} 
 	
 	/**

@@ -103,7 +103,29 @@ public class UpodDao {
 		connection.setAutoCommit(true);
 		return page;
 	}
+	
+	/**
+	 * Pull a page object containing all page data from the database.
+	 * 
+	 * @return a complete page object.
+	 * @Author Lauren Hepditch
+	 */
+	public Page getPage(String title) throws SQLException { // working, needs more testing
+		Page page = null;
+		Section[] sections;
 
+		Statement pageStatement = createStatement();
+		ResultSet pageResult;
+
+		pageResult = pageStatement.executeQuery("SELECT * FROM PAGE WHERE title = " + title); // get page
+		pageResult.next();
+		page = new Page(pageResult);
+		sections = getSections(page.getId());
+		page.setSections(sections);
+
+		pageStatement.close();
+		return page;
+	}
 	private Section[] getSections(int pageId) throws SQLException {
 		Section[] sections = new Section[Page.MAX_SECTION_COUNT];
 		Section currentSection;

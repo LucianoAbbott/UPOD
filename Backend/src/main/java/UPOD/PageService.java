@@ -63,6 +63,17 @@ public class PageService {
 		return null;
 	}
 
+
+	/**
+	 * Get the page with the given title
+	 * @param title
+	 * @return the page, null if page not found
+	 */
+	public Page getPage(String title) throws SQLException {
+		return upodDao.getPage(title);
+	}
+
+	
 	/**
 	 * Given query string, return a list of pages sorted by relevance to that string
 	 * @param query
