@@ -158,8 +158,6 @@ public class UpodDao {
 
 	private ArrayList<Variable> getVariables(int pageId, int sectionId) throws SQLException {
 		ArrayList<Variable> variables = new ArrayList<Variable>();
-		//Statement variableStatement, varIdListStatement;
-		//ResultSet variableResult, varIdListResult;
 
 		PreparedStatement varIdListStatement = null;
 		PreparedStatement variableStatement = null;
@@ -250,12 +248,8 @@ public class UpodDao {
 	}
 
 	private Graphic getGraphic(int graphicId) throws SQLException {
-		//Statement statement;
-		//ResultSet result;
-		Graphic graphic = null;
 
-		//statement = createStatement();
-		//result = statement.executeQuery("SELECT * FROM GRAPHIC WHERE graphicId = " + graphicId); // get graphic
+		Graphic graphic = null;
 
 		PreparedStatement statement = null;
 		String selectGraphic = "SELECT * FROM GRAPHIC WHERE graphicId = ?"; 
@@ -420,10 +414,7 @@ public class UpodDao {
 	 */
 	public ArrayList<Variable> getAllVariables() throws SQLException {
 		ArrayList<Variable> var_list = new ArrayList<Variable>();
-		//Statement statement = createStatement();
-		//ResultSet rs = statement.executeQuery("SELECT * FROM VARIABLE");
-		
-		
+			
 		PreparedStatement statement = null;
 		String selectVar = "SELECT * FROM VARIABLE"; 
 		connection.setAutoCommit(false);
@@ -458,9 +449,6 @@ public class UpodDao {
 	 */
 	public ArrayList<Graphic> getAllGraphics() throws SQLException {
 		ArrayList<Graphic> graphics = new ArrayList<Graphic>();
-		//Statement stmt = createStatement();
-		//ResultSet rs = stmt.executeQuery("SELECT * FROM GRAPHIC"); // get all graphics from the database
-
 		
 		PreparedStatement stmt = null;
 		String selectGraphic = "SELECT * FROM GRAPHIC"; 
@@ -489,12 +477,7 @@ public class UpodDao {
 	 */
 	public boolean pageExists(int pageId) throws SQLException {
 		//Statement stmt = null;
-		boolean result;
-
-		//stmt = createStatement();
-		//stmt.executeQuery("Select * FROM PAGE where PageId = " + pageId);
-		//ResultSet rs1 = stmt.getResultSet();
-		
+		boolean result;	
 		
 		PreparedStatement stmt = null;
 		String selectPage = "Select * FROM PAGE where PageId = ?"; 
@@ -527,12 +510,6 @@ public class UpodDao {
 		String selectPage = "SELECT editing FROM PAGE WHERE pageId = ?"; 
 		
 		try {
-
-			//Statement stmt = createStatement();
-			//ResultSet rs;
-
-			//rs = stmt.executeQuery("SELECT editing FROM PAGE WHERE pageId=" + pageId);
-			
 			
 			connection.setAutoCommit(false);
 			stmt = connection.prepareStatement(selectPage);
@@ -566,13 +543,11 @@ public class UpodDao {
 		PreparedStatement stmt = null;
 		String selectPage = "UPDATE PAGE SET editing = ? WHERE pageId = ?;"; 
 		try {
-			//Statement stmt = createStatement();
-			//stmt.executeUpdate("UPDATE PAGE SET editing = " + status + " WHERE pageId = " + status);
 			
 			connection.setAutoCommit(false);
 			stmt = connection.prepareStatement(selectPage);
 			stmt.setBoolean(1, status);
-			stmt.setBoolean(2, status);
+			stmt.setBoolean(2, pageId);
 			stmt.executeUpdate();
 			connection.commit();
 			
